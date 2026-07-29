@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Nomad Tax Residency Quiz | Remotax</title>
+    <meta name="description" content="Take our 30-second smart matching quiz to find the most tax-efficient destination for your remote income and lifestyle goals.">
+    <meta name="keywords" content="nomad tax quiz, digital nomad country match, expat relocation quiz, find tax haven">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Smart Nomad Tax Residency Quiz | Remotax">
+    <meta property="og:description" content="Discover your ideal tax haven in 30 seconds.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">Remo<span class="logo-highlight">tax</span></span>
+                <span class="logo-badge">quiz</span>
+            </a>
+            <nav class="nav-links">
+                <a href="calculator.html" class="nav-link">Tax Calculator</a>
+                <a href="quiz.html" class="nav-link active">Smart Quiz</a>
+                <a href="benchmarks.html" class="nav-link">Benchmarks</a>
+                <a href="destinations.html" class="nav-link">Tax Havens</a>
+                <a href="blog.html" class="nav-link">Tax Blog</a>
+            </nav>
+            <div>
+                <a href="calculator.html" class="btn-secondary">Calculator ⚡</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quiz Main Section -->
+    <section class="section-container" id="nomad-quiz" style="padding-top: 3rem;">
+        <div class="glass-panel quiz-container">
+            <div class="quiz-header">
+                <span class="step-indicator">30-Second Quiz</span>
+                <h2>Find Your <span class="gradient-text">Ideal Tax Haven</span></h2>
+                <p>Answer 3 quick questions to discover the most tax-efficient destination for your income & lifestyle goals.</p>
+                <div class="quiz-progress-bar">
+                    <div class="quiz-progress-fill" id="quiz-progress" style="width: 33%;"></div>
+                </div>
+            </div>
+
+            <!-- Quiz Step Container -->
+            <div class="quiz-body" id="quiz-body">
+                <!-- Step 1 -->
+                <div class="quiz-step active-step" data-step="1">
+                    <h3 class="quiz-question">What is your estimated annual remote income?</h3>
+                    <div class="quiz-options-grid">
+                        <button class="quiz-opt-btn" data-field="income" data-val="low">
+                            <span class="opt-icon">💵</span>
+                            <span class="opt-title">Under $60,000 / year</span>
+                        </button>
+                        <button class="quiz-opt-btn" data-field="income" data-val="mid">
+                            <span class="opt-icon">💰</span>
+                            <span class="opt-title">$60,000 – $120,000 / year</span>
+                        </button>
+                        <button class="quiz-opt-btn" data-field="income" data-val="high">
+                            <span class="opt-icon">💎</span>
+                            <span class="opt-title">$120,000+ / year</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="quiz-step" data-step="2" style="display: none;">
+                    <h3 class="quiz-question">What is your primary relocation & financial goal?</h3>
+                    <div class="quiz-options-grid">
+                        <button class="quiz-opt-btn" data-field="goal" data-val="zero_tax">
+                            <span class="opt-icon">🇦🇪</span>
+                            <span class="opt-title">0% to 10% Tax Savings (Max Capital Growth)</span>
+                        </button>
+                        <button class="quiz-opt-btn" data-field="goal" data-val="eu_residency">
+                            <span class="opt-icon">🇪🇺</span>
+                            <span class="opt-title">EU Residency & High European Lifestyle</span>
+                        </button>
+                        <button class="quiz-opt-btn" data-field="goal" data-val="tropical">
+                            <span class="opt-icon">🌴</span>
+                            <span class="opt-title">Low Living Cost & Tropical Lifestyle (Asia)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="quiz-step" data-step="3" style="display: none;">
+                    <h3 class="quiz-question">What is your current work structure?</h3>
+                    <div class="quiz-options-grid">
+                        <button class="quiz-opt-btn" data-field="work" data-val="b2b">
+                            <span class="opt-icon">💼</span>
+                            <span class="opt-title">B2B Contractor / Freelancer (Overseas Clients)</span>
+                        </button>
+                        <button class="quiz-opt-btn" data-field="work" data-val="eor">
+                            <span class="opt-icon">👔</span>
+                            <span class="opt-title">Full Remote Employee (EOR Payroll)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz Result Output Card -->
+                <div class="quiz-result-card" id="quiz-result-card" style="display: none;">
+                    <div class="result-badge">⚡ YOUR PERFECT MATCH</div>
+                    <div class="result-match-header">
+                        <span class="result-flag" id="res-flag">🇦🇪</span>
+                        <div>
+                            <h3 id="res-country-name">Dubai, United Arab Emirates</h3>
+                            <span class="res-highlight-tag" id="res-tag">0% Income Tax • Virtual Work Visa</span>
+                        </div>
+                    </div>
+                    <p class="result-desc" id="res-desc">
+                        Based on your profile, Dubai offers 100% tax exemption on foreign remote income with zero personal tax filings.
+                    </p>
+                    <div class="result-actions">
+                        <a href="calculator.html" class="btn-primary" id="quiz-load-calc-btn">🚀 Calculate Take-Home Pay ➔</a>
+                        <button class="btn-secondary" id="quiz-restart-btn">↺ Retake Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">⚡ <span class="logo-text">Remo<span class="logo-highlight">tax</span></span></div>
+                <p>Empowering global remote workers with transparent, instant financial intelligence.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Services</h4>
+                    <a href="calculator.html">Tax Calculator</a>
+                    <a href="quiz.html">Smart Match Quiz</a>
+                    <a href="benchmarks.html">$100k Benchmarks</a>
+                    <a href="destinations.html">Tax Havens</a>
+                    <a href="blog.html">Tax Blog</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Remotax.dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- App JS Engine -->
+    <script src="app.js"></script>
+</body>
+</html>

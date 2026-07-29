@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="index.css">
     
     <style>
-        /* Blog Specific Custom Styling */
         .blog-hero {
             padding: 3.5rem 1.5rem 2rem;
             text-align: center;
@@ -83,6 +82,14 @@
             color: #fff;
             transform: translateX(4px);
         }
+        .card-thumb {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1rem;
+            border: 1px solid var(--bg-card-border);
+        }
         @media (max-width: 800px) {
             .featured-post {
                 grid-template-columns: 1fr;
@@ -100,13 +107,14 @@
                 <span class="logo-badge">blog</span>
             </a>
             <nav class="nav-links">
-                <a href="index.html#calculator" class="nav-link">Calculator</a>
-                <a href="index.html#destinations" class="nav-link">Destinations</a>
+                <a href="calculator.html" class="nav-link">Tax Calculator</a>
+                <a href="quiz.html" class="nav-link">Smart Quiz</a>
+                <a href="benchmarks.html" class="nav-link">Benchmarks</a>
+                <a href="destinations.html" class="nav-link">Tax Havens</a>
                 <a href="blog.html" class="nav-link active">Tax Blog</a>
-                <a href="index.html#faq" class="nav-link">FAQ</a>
             </nav>
             <div>
-                <a href="index.html#calculator" class="btn-secondary">Launch Calculator ➔</a>
+                <a href="calculator.html" class="btn-secondary">Calculator ⚡</a>
             </div>
         </div>
     </header>
@@ -123,7 +131,7 @@
     <!-- Blog Grid Container -->
     <main class="section-container">
         <div class="cards-grid">
-            <!-- Featured Pillar Article -->
+            <!-- Featured Pillar Article (Spain) -->
             <article class="guide-card glass-panel featured-post">
                 <div class="featured-content">
                     <div>
@@ -134,40 +142,39 @@
                     <p class="post-excerpt">Discover how remote workers and startup founders relocating to Spain can leverage the Beckham Law to pay a flat 24% tax rate instead of standard 47% progressive brackets.</p>
                     <a href="article-spain-beckham-law.html" class="read-more-btn">Read Full Guide ➔</a>
                 </div>
-                <div class="featured-badge-box insight-box">
-                    <div class="insight-icon">💡</div>
-                    <div class="insight-content">
-                        <h4>Key Takeaway</h4>
-                        <p>Non-residents under Beckham Law pay 24% tax up to €600,000 and are 100% exempt from Spanish tax on foreign asset wealth (Form 720).</p>
-                    </div>
+                <div>
+                    <img src="assets/spain-tax.jpg" alt="Spain Beckham Law Tax Guide" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--bg-card-border);">
                 </div>
             </article>
 
-            <!-- Card 2 -->
+            <!-- Card 2 (Portugal vs Spain) -->
             <article class="guide-card glass-panel">
+                <img src="assets/portugal-vs-spain.jpg" alt="Portugal vs Spain Tax Comparison" class="card-thumb">
                 <span class="meta-tag">🇵🇹 Portugal vs Spain</span>
                 <span class="post-date">July 2026 • 6 min read</span>
                 <h3 style="font-size: 1.2rem; margin: 0.5rem 0;">Portugal D8 Visa vs Spain Beckham Law: Which Saves More Tax?</h3>
                 <p class="post-excerpt">A head-to-head financial breakdown comparing Portugal's D8 Nomad Residence with Spain's 24% flat tax regime for freelancers earning $50k-$150k.</p>
-                <a href="article-spain-beckham-law.html" class="nav-link" style="font-weight: 700;">Read Article ➔</a>
+                <a href="article-spain-beckham-law.html" class="read-more-btn" style="width: 100%; justify-content: center; margin-top: 0.5rem;">Read Article ➔</a>
             </article>
 
-            <!-- Card 3 -->
+            <!-- Card 3 (Double Taxation 183-Day Rule) -->
             <article class="guide-card glass-panel">
+                <img src="assets/183-day-rule.jpg" alt="Double Taxation 183-Day Rule" class="card-thumb">
                 <span class="meta-tag">⚖️ Legal & Compliance</span>
                 <span class="post-date">July 2026 • 7 min read</span>
                 <h3 style="font-size: 1.2rem; margin: 0.5rem 0;">How Remote Workers Avoid Double Taxation (183-Day Rule)</h3>
                 <p class="post-excerpt">Learn how Double Tax Treaties (DTTs) work, how tax residency is established, and strategies to stay 100% legally compliant abroad.</p>
-                <a href="article-spain-beckham-law.html" class="nav-link" style="font-weight: 700;">Read Article ➔</a>
+                <a href="article-spain-beckham-law.html" class="read-more-btn" style="width: 100%; justify-content: center; margin-top: 0.5rem;">Read Article ➔</a>
             </article>
 
-            <!-- Card 4 -->
+            <!-- Card 4 (Dubai 0% Tax) -->
             <article class="guide-card glass-panel">
-                <span class="meta-tag">🇦🇪 Dubai 0% Tax</span>
-                <span class="post-date">July 2026 • 5 min read</span>
-                <h3 style="font-size: 1.2rem; margin: 0.5rem 0;">Dubai Virtual Work Visa: How to Legally Pay 0% Income Tax</h3>
+                <img src="assets/dubai-tax.jpg" alt="Dubai 0% Tax Guide" class="card-thumb">
+                <span class="meta-tag" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">🇦🇪 Dubai 0% Tax</span>
+                <span class="post-date">July 2026 • 6 min read</span>
+                <h3 style="font-size: 1.2rem; margin: 0.5rem 0;">Dubai Remote Work Visa: How to Legally Pay 0% Income Tax</h3>
                 <p class="post-excerpt">Step-by-step breakdown of Dubai's 1-year Virtual Working Visa for remote contractors, requiring $3,500 monthly income proof.</p>
-                <a href="article-spain-beckham-law.html" class="nav-link" style="font-weight: 700;">Read Article ➔</a>
+                <a href="article-dubai-zero-tax.html" class="read-more-btn" style="width: 100%; justify-content: center; margin-top: 0.5rem;">Read Full Article ➔</a>
             </article>
         </div>
     </main>

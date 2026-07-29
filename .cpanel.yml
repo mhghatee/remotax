@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/silverio/public_html/remotax
+    - /bin/cp -R * $DEPLOYPATH

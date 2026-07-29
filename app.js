@@ -11,10 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
         CAD: '$'
     };
 
-    // 20 Country Specific Regimes & Insight Content
+    // 20 Country Specific Regimes, Living Costs & Insight Content
     const COUNTRY_CONFIG = {
         ES: {
             name: "Spain",
+            city: "Madrid",
+            livingCost: 1850,
             symbol: "EUR",
             regimeName: "Apply Beckham Law (24% Flat Rate)",
             regimeHelp: "Special tax regime allowing qualifying expats & founders to pay a flat 24% tax rate up to €600,000.",
@@ -25,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         PT: {
             name: "Portugal",
+            city: "Lisbon",
+            livingCost: 1650,
             symbol: "EUR",
             regimeName: "Apply NHR / Digital Nomad Incentive (20% Flat)",
             regimeHelp: "Incentive for foreign high-value remote workers providing a flat 20% rate on qualified income.",
@@ -35,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         DE: {
             name: "Germany",
+            city: "Berlin",
+            livingCost: 2100,
             symbol: "EUR",
             regimeName: "Apply Single Filer Basic Tax-Free Allowance (€11,784)",
             regimeHelp: "Germany exempts the first €11,784 of taxable income (Grundfreibetrag) for single filers.",
@@ -45,6 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         GB: {
             name: "United Kingdom",
+            city: "London",
+            livingCost: 2850,
             symbol: "GBP",
             regimeName: "Apply UK Personal Allowance (£12,570 Tax-Free)",
             regimeHelp: "First £12,570 of earned income is tax-free under UK tax laws.",
@@ -55,6 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         US: {
             name: "United States",
+            city: "Austin / NYC Avg",
+            livingCost: 3200,
             symbol: "USD",
             regimeName: "Apply US Standard Deduction ($14,600 Single)",
             regimeHelp: "Deducts $14,600 from your taxable gross income before calculating federal brackets.",
@@ -65,6 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         CA: {
             name: "Canada",
+            city: "Toronto",
+            livingCost: 2400,
             symbol: "CAD",
             regimeName: "Apply Basic Personal Amount ($15,705)",
             regimeHelp: "Deducts basic personal non-refundable tax credit allowance.",
@@ -75,6 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         NL: {
             name: "Netherlands",
+            city: "Amsterdam",
+            livingCost: 2600,
             symbol: "EUR",
             regimeName: "Apply 30% Tax-Free Expat Ruling",
             regimeHelp: "Allows 30% of gross salary to be received tax-free for qualifying highly skilled migrants.",
@@ -85,6 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         AE: {
             name: "United Arab Emirates",
+            city: "Dubai",
+            livingCost: 2250,
             symbol: "USD",
             regimeName: "0% Personal Income Tax Regime",
             regimeHelp: "UAE applies 0% personal income tax and 0% social security on foreign remote workers.",
@@ -95,6 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         TH: {
             name: "Thailand",
+            city: "Bangkok",
+            livingCost: 1100,
             symbol: "USD",
             regimeName: "Apply Destination Thailand Visa (DTV) 17% Cap",
             regimeHelp: "Thailand's DTV & LTR visas offer 17% flat tax or foreign-sourced income tax exemption if not remitted in same year.",
@@ -105,6 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         IT: {
             name: "Italy",
+            city: "Rome",
+            livingCost: 1750,
             symbol: "EUR",
             regimeName: "Apply Lavoratori Impatriati (50% - 70% Tax Base Exemption)",
             regimeHelp: "Reduces taxable gross income base by up to 70% for qualifying workers moving tax residency to Italy.",
@@ -115,6 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         GR: {
             name: "Greece",
+            city: "Athens",
+            livingCost: 1350,
             symbol: "EUR",
             regimeName: "Apply 50% Tax Reduction Incentive for Expats",
             regimeHelp: "Cuts total taxable income base by 50% for 7 years for remote workers relocating tax residency to Greece.",
@@ -125,6 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         MT: {
             name: "Malta",
+            city: "Valletta",
+            livingCost: 1550,
             symbol: "EUR",
             regimeName: "Apply Nomad Residence Permit Flat 10% Tax Rate",
             regimeHelp: "Malta's Nomad Residence Permit caps income tax at a flat 10% for remote work earnings.",
@@ -135,6 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         CY: {
             name: "Cyprus",
+            city: "Nicosia",
+            livingCost: 1400,
             symbol: "EUR",
             regimeName: "Apply 50% Exemption for First Employment / Non-Dom",
             regimeHelp: "Exempts 50% of employment/freelance income exceeding €55,000 for non-domiciled residents.",
@@ -145,6 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         MC: {
             name: "Monaco",
+            city: "Monaco",
+            livingCost: 4500,
             symbol: "EUR",
             regimeName: "0% Personal Income Tax Status",
             regimeHelp: "Monaco levies zero personal income tax on resident individuals (excluding French nationals).",
@@ -155,6 +183,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         EE: {
             name: "Estonia",
+            city: "Tallinn",
+            livingCost: 1300,
             symbol: "EUR",
             regimeName: "Apply e-Residency B2B Corporate Retention (0% Undistributed)",
             regimeHelp: "Corporate income tax is 0% on retained & reinvested company earnings.",
@@ -165,6 +195,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         SG: {
             name: "Singapore",
+            city: "Singapore",
+            livingCost: 3400,
             symbol: "USD",
             regimeName: "Apply Territorial Foreign Earned Exemption",
             regimeHelp: "Foreign-source remote income not remitted into Singapore is generally exempt from Singapore tax.",
@@ -175,6 +207,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         MX: {
             name: "Mexico",
+            city: "Mexico City",
+            livingCost: 1250,
             symbol: "USD",
             regimeName: "Apply Residencia Temporal Foreign Source Exemption",
             regimeHelp: "Foreign remote earnings billed to non-Mexican clients are exempt from local ISR tax if tax resident elsewhere.",
@@ -184,7 +218,9 @@ document.addEventListener('DOMContentLoaded', () => {
             defaultRegime: true
         },
         ID: {
-            name: "Indonesia (Bali)",
+            name: "Indonesia",
+            city: "Bali",
+            livingCost: 1050,
             symbol: "USD",
             regimeName: "Apply Second Home Visa Foreign Income Exemption",
             regimeHelp: "Exempts foreign-sourced income earned by digital nomads living in Bali on foreign visas.",
@@ -195,6 +231,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         AU: {
             name: "Australia",
+            city: "Sydney",
+            livingCost: 2700,
             symbol: "USD",
             regimeName: "Apply Tax-Free Threshold ($18,200 AUD)",
             regimeHelp: "First $18,200 AUD of income is tax-free for Australian tax residents.",
@@ -205,6 +243,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         CH: {
             name: "Switzerland",
+            city: "Zurich",
+            livingCost: 3600,
             symbol: "USD",
             regimeName: "Apply Average Federal + Cantonal Tax (~18%)",
             regimeHelp: "Combines Swiss Federal Direct Tax with average cantonal/municipal tax rates.",
@@ -220,11 +260,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const incomeInput = document.getElementById('income-input');
     const incomeSlider = document.getElementById('income-slider');
     const globalCurrency = document.getElementById('global-currency');
-    const regimeContainer = document.getElementById('regime-container');
     const regimeToggle = document.getElementById('special-regime-toggle');
     const regimeText = document.getElementById('regime-text');
     const regimeHelp = document.getElementById('regime-help');
-    const empTypeRadios = document.getElementsByName('emp-type');
     const filingStatusSelect = document.getElementById('filing-status');
     const copySummaryBtn = document.getElementById('copy-summary-btn');
 
@@ -248,24 +286,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const insightTitle = document.getElementById('insight-title');
     const insightDesc = document.getElementById('insight-desc');
 
-    // --- State Variables ---
+    // State
     let currentCurrencySymbol = '$';
 
-    // Sync Slider & Number Input
+    // Event Listeners
     incomeSlider.addEventListener('input', (e) => {
         incomeInput.value = e.target.value;
         calculateTaxes();
     });
 
-    incomeInput.addEventListener('input', (e) => {
-        let val = parseFloat(e.target.value) || 0;
-        if (val > 500000) val = 500000;
-        incomeSlider.value = val;
-        calculateTaxes();
+    ['input', 'keyup', 'change'].forEach(evt => {
+        incomeInput.addEventListener(evt, (e) => {
+            let val = parseFloat(e.target.value) || 0;
+            if (val > 500000) val = 500000;
+            incomeSlider.value = val;
+            calculateTaxes();
+        });
+    });
+
+    // Radio Card Selector
+    document.querySelectorAll('.radio-card').forEach(card => {
+        card.addEventListener('click', () => {
+            document.querySelectorAll('.radio-card').forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            const radio = card.querySelector('input[name="emp-type"]');
+            if (radio) radio.checked = true;
+            calculateTaxes();
+        });
     });
 
     globalCurrency.addEventListener('change', (e) => {
         currentCurrencySymbol = CURRENCY_SYMBOLS[e.target.value] || '$';
+        const prefixSymbol = document.getElementById('currency-prefix-symbol');
+        if (prefixSymbol) prefixSymbol.textContent = currentCurrencySymbol;
         calculateTaxes();
     });
 
@@ -275,17 +328,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     regimeToggle.addEventListener('change', calculateTaxes);
-    filingStatusSelect.addEventListener('change', calculateTaxes);
+    if (filingStatusSelect) filingStatusSelect.addEventListener('change', calculateTaxes);
 
-    Array.from(empTypeRadios).forEach(radio => {
-        radio.addEventListener('change', (e) => {
-            document.querySelectorAll('.radio-card').forEach(card => card.classList.remove('active'));
-            e.target.closest('.radio-card').classList.add('active');
-            calculateTaxes();
-        });
-    });
-
-    // Update Country UI Labels & Insights
     function updateCountryUI() {
         const countryKey = countrySelect.value;
         const config = COUNTRY_CONFIG[countryKey];
@@ -300,15 +344,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             globalCurrency.value = config.symbol;
             currentCurrencySymbol = CURRENCY_SYMBOLS[config.symbol];
+            const prefixSymbol = document.getElementById('currency-prefix-symbol');
+            if (prefixSymbol) prefixSymbol.textContent = currentCurrencySymbol;
         }
     }
 
-    // --- Tax Calculation Engine (20 Countries) ---
+    // --- Tax Calculation Engine ---
     function calculateTaxes() {
         const gross = parseFloat(incomeInput.value) || 0;
         const country = countrySelect.value;
         const useRegime = regimeToggle.checked;
-        const empType = document.querySelector('input[name="emp-type"]:checked').value;
+        const empRadio = document.querySelector('input[name="emp-type"]:checked');
+        const empType = empRadio ? empRadio.value : 'contractor';
 
         let incomeTax = 0;
         let socialSecurity = 0;
@@ -412,7 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             case 'TH': // Thailand
                 if (useRegime) {
-                    incomeTax = gross * 0.17; // DTV / LTR flat 17% rate
+                    incomeTax = gross * 0.17;
                 } else {
                     incomeTax = calculateProgressiveTax(gross, [
                         { limit: 150000, rate: 0.05 },
@@ -428,7 +475,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
 
             case 'IT': // Italy
-                let taxableIT = useRegime ? gross * 0.30 : gross; // 70% Impatriati exemption
+                let taxableIT = useRegime ? gross * 0.30 : gross;
                 incomeTax = calculateProgressiveTax(taxableIT, [
                     { limit: 28000, rate: 0.23 },
                     { limit: 50000, rate: 0.35 },
@@ -438,7 +485,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
 
             case 'GR': // Greece
-                let taxableGR = useRegime ? gross * 0.50 : gross; // 50% Expat exemption
+                let taxableGR = useRegime ? gross * 0.50 : gross;
                 incomeTax = calculateProgressiveTax(taxableGR, [
                     { limit: 10000, rate: 0.09 },
                     { limit: 20000, rate: 0.22 },
@@ -477,7 +524,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
 
             case 'EE': // Estonia
-                incomeTax = gross * 0.20; // 20% Flat rate
+                incomeTax = gross * 0.20;
                 socialSecurity = empType === 'contractor' ? 0 : gross * 0.033;
                 break;
 
@@ -493,12 +540,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     { limit: 320000, rate: 0.19 },
                     { limit: Infinity, rate: 0.24 }
                 ]);
-                socialSecurity = 0; // Foreigners exempt from CPF
+                socialSecurity = 0;
                 break;
 
             case 'MX': // Mexico
                 if (useRegime) {
-                    incomeTax = 0; // Foreign source non-Mexican client exemption
+                    incomeTax = 0;
                 } else {
                     incomeTax = calculateProgressiveTax(gross, [
                         { limit: 15000, rate: 0.10 },
@@ -509,7 +556,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 socialSecurity = 0;
                 break;
 
-            case 'ID': // Indonesia (Bali)
+            case 'ID': // Indonesia
                 incomeTax = useRegime ? 0 : calculateProgressiveTax(gross, [
                     { limit: 4000, rate: 0.05 },
                     { limit: 16000, rate: 0.15 },
@@ -527,21 +574,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     { limit: 180000, rate: 0.37 },
                     { limit: Infinity, rate: 0.45 }
                 ]);
-                socialSecurity = gross * 0.02; // Medicare Levy
+                socialSecurity = gross * 0.02;
                 break;
 
             case 'CH': // Switzerland
-                incomeTax = gross * (useRegime ? 0.18 : 0.22); // Federal + Canton Average
-                socialSecurity = gross * 0.053; // AVS/AI
+                incomeTax = gross * (useRegime ? 0.18 : 0.22);
+                socialSecurity = gross * 0.053;
                 break;
         }
 
-        // Calculate Totals
+        // Totals
         const annualNet = Math.max(0, gross - incomeTax - socialSecurity);
         const monthlyNet = annualNet / 12;
         const effectiveRate = gross > 0 ? ((incomeTax + socialSecurity) / gross) * 100 : 0;
 
-        // Render Values to UI
+        // Render Values
         valGross.textContent = formatCurrency(gross);
         valTax.textContent = `-${formatCurrency(incomeTax)}`;
         valSocial.textContent = `-${formatCurrency(socialSecurity)}`;
@@ -564,9 +611,44 @@ document.addEventListener('DOMContentLoaded', () => {
         pctNet.textContent = `${netPct.toFixed(0)}%`;
         pctTax.textContent = `${taxPct.toFixed(0)}%`;
         pctSocial.textContent = `${socialPct.toFixed(0)}%`;
+
+        // Render Lifestyle & Purchasing Power Index
+        const config = COUNTRY_CONFIG[country];
+        if (config) {
+            const monthlyLivingCost = config.livingCost || 1800;
+            const monthlySavings = monthlyNet - monthlyLivingCost;
+
+            const lifestyleCityTitle = document.getElementById('lifestyle-city-title');
+            const lifestyleTierBadge = document.getElementById('lifestyle-tier-badge');
+            const valLivingCost = document.getElementById('val-living-cost');
+            const valNetSavings = document.getElementById('val-net-savings');
+            const lifestyleInsightDesc = document.getElementById('lifestyle-insight-desc');
+
+            if (lifestyleCityTitle) {
+                lifestyleCityTitle.textContent = `${config.city} (${config.name}) Lifestyle`;
+                valLivingCost.textContent = `${formatCurrency(monthlyLivingCost)}/mo`;
+                valNetSavings.textContent = `${formatCurrency(monthlySavings)}/mo`;
+
+                let tier = "✨ Solid Comfort";
+                if (monthlySavings >= 4000) {
+                    tier = "💎 Wealth Accumulator";
+                } else if (monthlySavings >= 2000) {
+                    tier = "🚀 High Savings & Luxury";
+                } else if (monthlySavings < 0) {
+                    tier = "⚠️ Deficit Hazard";
+                }
+                lifestyleTierBadge.textContent = tier;
+
+                if (monthlySavings > 0) {
+                    lifestyleInsightDesc.textContent = `In ${config.city}, a take-home pay of ${formatCurrency(monthlyNet)} covers average rent and local living costs (${formatCurrency(monthlyLivingCost)}), leaving an estimated ${formatCurrency(monthlySavings)} in net monthly savings.`;
+                } else {
+                    lifestyleInsightDesc.textContent = `In ${config.city}, average living costs (${formatCurrency(monthlyLivingCost)}) exceed your projected monthly take-home pay (${formatCurrency(monthlyNet)}). Consider tax incentives or higher rates.`;
+                }
+            }
+        }
     }
 
-    // Helper: Progressive Tax Bracket Calculator
+    // Helper: Progressive Tax Calculator
     function calculateProgressiveTax(income, brackets) {
         let tax = 0;
         let previousLimit = 0;
@@ -588,7 +670,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return currentCurrencySymbol + Math.round(amount).toLocaleString('en-US');
     }
 
-    // Clipboard Copy Feature for Summary
+    // Clipboard Copy Feature
     copySummaryBtn.addEventListener('click', () => {
         const country = COUNTRY_CONFIG[countrySelect.value].name;
         const gross = valGross.textContent;
@@ -601,7 +683,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `• Estimated Monthly Net Pay: ${netMonth}\n` +
             `• Estimated Annual Net Pay: ${netYear}\n` +
             `• ${effRate}\n` +
-            `Calculated at https://remotax.dev`;
+            `Calculated at https://silveriom.ir/remotax/`;
 
         navigator.clipboard.writeText(summaryText).then(() => {
             const origText = copySummaryBtn.textContent;
@@ -613,6 +695,239 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 2000);
         });
     });
+
+    // --- ITEM 2: Benchmark Salary Tabs & Infographic Data Calculation ---
+    const benchmarkBtns = document.querySelectorAll('.benchmark-btn');
+    const shareInfographicBtn = document.getElementById('share-infographic-btn');
+
+    benchmarkBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            benchmarkBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const salary = parseFloat(btn.getAttribute('data-salary')) || 100000;
+            updateInfographicData(salary);
+        });
+    });
+
+    function updateInfographicData(salary) {
+        // Dubai (0%)
+        const netAE = salary;
+        // Spain (Beckham 24% + ~4% Social)
+        const netES = salary <= 600000 ? salary * 0.72 : salary * 0.53;
+        // Portugal (NHR 20% + ~15% Social)
+        const netPT = salary * 0.65;
+        // Germany (Progressive + Social ~46%)
+        const netDE = salary * 0.54;
+
+        const infoNetAE = document.getElementById('info-net-ae');
+        const infoNetES = document.getElementById('info-net-es');
+        const infoNetPT = document.getElementById('info-net-pt');
+        const infoNetDE = document.getElementById('info-net-de');
+
+        if (infoNetAE) infoNetAE.textContent = '$' + Math.round(netAE).toLocaleString();
+        if (infoNetES) infoNetES.textContent = '$' + Math.round(netES).toLocaleString();
+        if (infoNetPT) infoNetPT.textContent = '$' + Math.round(netPT).toLocaleString();
+        if (infoNetDE) infoNetDE.textContent = '$' + Math.round(netDE).toLocaleString();
+    }
+
+    if (shareInfographicBtn) {
+        shareInfographicBtn.addEventListener('click', () => {
+            const activeBtn = document.querySelector('.benchmark-btn.active');
+            const salaryText = activeBtn ? activeBtn.textContent : '$100,000 / yr';
+            
+            const text = `📊 GLOBAL REMOTE WORKER TAX BENCHMARK (${salaryText})\n` +
+                `🇦🇪 Dubai (UAE): $100,000 Net (0% Tax)\n` +
+                `🇪🇸 Spain (Beckham Law): $72,000 Net (24% Flat)\n` +
+                `🇵🇹 Portugal (D8): $65,000 Net (20% Flat)\n` +
+                `🇩🇪 Germany: $54,000 Net (Standard Bracket)\n\n` +
+                `Compare 20 countries on Remotax: https://silveriom.ir/remotax/`;
+
+            navigator.clipboard.writeText(text).then(() => {
+                const origText = shareInfographicBtn.innerHTML;
+                shareInfographicBtn.innerHTML = '<span>✓ Comparison Copied to Clipboard!</span>';
+                shareInfographicBtn.style.background = '#10b981';
+                setTimeout(() => {
+                    shareInfographicBtn.innerHTML = origText;
+                    shareInfographicBtn.style.background = '';
+                }, 2500);
+            });
+        });
+    }
+
+    // --- ITEM 3: Nomad Tax Quiz Engine ---
+    const quizState = { income: null, goal: null, work: null };
+    let currentQuizStep = 1;
+
+    const quizProgress = document.getElementById('quiz-progress');
+    const quizResultCard = document.getElementById('quiz-result-card');
+    const quizRestartBtn = document.getElementById('quiz-restart-btn');
+    const quizLoadCalcBtn = document.getElementById('quiz-load-calc-btn');
+
+    let matchedCountryCode = 'AE';
+    let matchedIncomeVal = 100000;
+
+    document.querySelectorAll('.quiz-opt-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const field = btn.getAttribute('data-field');
+            const val = btn.getAttribute('data-val');
+            quizState[field] = val;
+
+            if (currentQuizStep < 3) {
+                // Hide current step, show next
+                const currStepEl = document.querySelector(`.quiz-step[data-step="${currentQuizStep}"]`);
+                if (currStepEl) currStepEl.style.display = 'none';
+
+                currentQuizStep++;
+                const nextStepEl = document.querySelector(`.quiz-step[data-step="${currentQuizStep}"]`);
+                if (nextStepEl) nextStepEl.style.display = 'block';
+
+                if (quizProgress) quizProgress.style.width = `${(currentQuizStep / 3) * 100}%`;
+            } else {
+                // Calculate Result Match
+                calculateQuizMatch();
+            }
+        });
+    });
+
+    function calculateQuizMatch() {
+        // Hide Step 3
+        const step3El = document.querySelector('.quiz-step[data-step="3"]');
+        if (step3El) step3El.style.display = 'none';
+
+        if (quizProgress) quizProgress.style.width = '100%';
+
+        // Match Logic
+        const { income, goal, work } = quizState;
+
+        let match = {
+            code: 'AE',
+            flag: '🇦🇪',
+            name: 'Dubai, United Arab Emirates',
+            tag: '0% Income Tax • Virtual Work Visa',
+            desc: 'Dubai offers 100% tax exemption on foreign remote earnings with 0% income tax and simple 1-year renewable visa eligibility.',
+            incomeVal: 120000
+        };
+
+        if (goal === 'eu_residency' || (income === 'mid' && goal !== 'zero_tax')) {
+            match = {
+                code: 'ES',
+                flag: '🇪🇸',
+                name: 'Spain (Madrid & Barcelona)',
+                tag: 'Beckham Law 24% Flat Rate • EU Residency',
+                desc: 'Spain\'s Beckham Law caps income tax at a flat 24% up to €600,000, offering EU residency and high quality of living.',
+                incomeVal: 90000
+            };
+        } else if (goal === 'tropical') {
+            match = {
+                code: 'TH',
+                flag: '🇹🇭',
+                name: 'Thailand (Bangkok & Chiang Mai)',
+                tag: 'Destination Thailand Visa (DTV) • Low Cost',
+                desc: 'Thailand offers a 5-year Destination Thailand Visa (DTV) with foreign-earned income exemptions and ultra-low living costs.',
+                incomeVal: 50000
+            };
+        } else if (income === 'low' && goal === 'eu_residency') {
+            match = {
+                code: 'PT',
+                flag: '🇵🇹',
+                name: 'Portugal (Lisbon & Algarve)',
+                tag: 'D8 Digital Nomad Visa • 20% Tax Incentive',
+                desc: 'Portugal\'s D8 Visa requires €3,280 monthly foreign income and grants Schengen residency with competitive 20% tax rates.',
+                incomeVal: 55000
+            };
+        }
+
+        matchedCountryCode = match.code;
+        matchedIncomeVal = match.incomeVal;
+
+        // Render Match
+        document.getElementById('res-flag').textContent = match.flag;
+        document.getElementById('res-country-name').textContent = match.name;
+        document.getElementById('res-tag').textContent = match.tag;
+        document.getElementById('res-desc').textContent = match.desc;
+
+        if (quizResultCard) quizResultCard.style.display = 'block';
+    }
+
+    if (quizRestartBtn) {
+        quizRestartBtn.addEventListener('click', () => {
+            currentQuizStep = 1;
+            quizState.income = null;
+            quizState.goal = null;
+            quizState.work = null;
+
+            if (quizResultCard) quizResultCard.style.display = 'none';
+            document.querySelectorAll('.quiz-step').forEach(step => step.style.display = 'none');
+            const step1El = document.querySelector('.quiz-step[data-step="1"]');
+            if (step1El) step1El.style.display = 'block';
+            if (quizProgress) quizProgress.style.width = '33%';
+        });
+    }
+
+    if (quizLoadCalcBtn) {
+        quizLoadCalcBtn.addEventListener('click', () => {
+            countrySelect.value = matchedCountryCode;
+            incomeInput.value = matchedIncomeVal;
+            incomeSlider.value = matchedIncomeVal;
+
+            updateCountryUI();
+            calculateTaxes();
+
+            // Smooth scroll up to calculator
+            const calcEl = document.getElementById('calculator');
+            if (calcEl) calcEl.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+
+    // --- Hub Tabbed Switcher (De-clutter Layout) ---
+    const hubTabBtns = document.querySelectorAll('.hub-tab-btn');
+    const hubPanels = document.querySelectorAll('.hub-panel');
+
+    hubTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetTab = btn.getAttribute('data-tab');
+
+            hubTabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            hubPanels.forEach(panel => {
+                panel.style.display = 'none';
+                panel.classList.remove('active-panel');
+            });
+
+            const activePanel = document.getElementById(`panel-${targetTab}`);
+            if (activePanel) {
+                activePanel.style.display = 'block';
+                activePanel.classList.add('active-panel');
+            }
+        });
+    });
+
+    // --- Mobile Menu Toggle ---
+    const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
+    const mainNavLinks = document.getElementById('main-nav-links');
+
+    if (mobileMenuBtn && mainNavLinks) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenuBtn.classList.toggle('active');
+            mainNavLinks.classList.toggle('mobile-active');
+        });
+
+        mainNavLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                mainNavLinks.classList.remove('mobile-active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mainNavLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenuBtn.classList.remove('active');
+                mainNavLinks.classList.remove('mobile-active');
+            }
+        });
+    }
 
     // Initialize UI
     updateCountryUI();

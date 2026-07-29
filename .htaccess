@@ -1,0 +1,18 @@
+# Disable directory browsing
+Options -Indexes
+
+# Enable Rewrite Engine
+RewriteEngine On
+RewriteBase /
+
+# 1. Allow clean URLs (automatically append .html if file exists)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
+
+# 2. Redirect explicit .html requests to clean URL (optional, maintains compatibility)
+# RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
+# RewriteRule ^ %1 [R=301,L]
+
+# 3. Custom 404 Error Page
+ErrorDocument 404 /404.html
