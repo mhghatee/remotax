@@ -1,3 +1,13 @@
+
+# Prevent browser caching of dynamic assets
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html|htm|js|css|json)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+</IfModule>
+
 # Disable directory browsing
 Options -Indexes
 
