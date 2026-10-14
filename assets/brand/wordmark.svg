@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 90" width="380" height="90">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700&amp;display=swap');
+    .wm-text {
+      font-family: 'Inter Tight', 'Inter', -apple-system, sans-serif;
+      font-size: 78px;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+    .remo { fill: #FFFFFF; }
+    .tax { fill: #F8DFC0; }
+  </style>
+  <text x="0" y="70" class="wm-text"><tspan class="remo">Remo</tspan><tspan class="tax">tax</tspan></text>
+</svg>

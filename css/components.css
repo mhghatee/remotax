@@ -45,33 +45,52 @@
 .nav-brand {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 10px;
     text-decoration: none;
     padding-right: 0.5rem;
 }
 
-.nav-logo-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--gradient-horizon-button);
+.nav-brand-mark {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #070b0f;
-    box-shadow: 0 0 14px rgba(217, 119, 47, 0.5);
-    transition: transform var(--duration-fast) var(--spring-bounce);
+    border-radius: 9px;
+    transition: transform var(--duration-fast) var(--spring-bounce), filter var(--duration-fast) var(--ease-out-quad);
 }
 
-.nav-brand:hover .nav-logo-icon {
-    transform: rotate(15deg) scale(1.08);
+.nav-brand-mark svg,
+.nav-brand-mark img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .nav-brand:hover .nav-brand-mark {
+        transform: scale(1.04) rotate(1deg);
+        filter: drop-shadow(0 0 10px rgba(244, 123, 32, 0.45));
+    }
 }
 
 .nav-brand-title {
-    font-size: 1.05rem;
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
     font-weight: 700;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.035em;
     color: #ffffff;
+    display: inline-flex;
+    align-items: baseline;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.nav-brand-title .brand-tax,
+.nav-brand-title .tax {
+    color: var(--horizon-peach, #F8DFC0);
 }
 
 .nav-brand-tag {
@@ -188,13 +207,20 @@
     }
 
     .nav-brand {
-        gap: 0.45rem;
+        gap: 8px;
         padding-right: 0;
         min-width: 0;
     }
 
+    .nav-brand-mark {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        min-height: 36px;
+    }
+
     .nav-brand-title {
-        font-size: 1rem;
+        font-size: 1.05rem;
     }
 
     .nav-brand-tag {
@@ -312,16 +338,18 @@
     }
 
     .nav-brand {
-        gap: 0.35rem;
+        gap: 6px;
     }
 
-    .nav-logo-icon {
-        width: 28px;
-        height: 28px;
+    .nav-brand-mark {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        min-height: 32px;
     }
 
     .nav-brand-title {
-        font-size: 0.92rem;
+        font-size: 0.96rem;
     }
 
     .nav-brand-tag {
@@ -354,6 +382,9 @@
 
 @media (max-width: 359px) {
     .nav-actions .nav-cta {
+        display: none !important;
+    }
+    .nav-brand-tag {
         display: none !important;
     }
 }
