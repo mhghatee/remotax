@@ -22,7 +22,8 @@
     bottom: -150px;
     left: 50%;
     transform: translateX(-50%);
-    width: 900px;
+    width: min(900px, 94vw);
+    max-width: 100%;
     height: 500px;
     background: radial-gradient(ellipse 65% 55% at 50% 100%, 
         #f6dfbf 0%, 
@@ -51,6 +52,12 @@
     transform: translateX(-50%);
     pointer-events: none;
     z-index: 1;
+}
+
+@media (max-width: 640px) {
+    .orbiting-chips-track {
+        display: none !important;
+    }
 }
 
 .floating-chip {
@@ -133,6 +140,40 @@
 
 .hero-paycheck-container:hover .layer-social {
     transform: translateZ(-60px) translateY(48px);
+}
+
+@media (max-width: 768px) {
+    .hero-paycheck-container {
+        margin: 1.5rem auto 1rem;
+        max-width: 100%;
+        perspective: 600px;
+    }
+
+    .paycheck-glass-stack {
+        height: 135px;
+    }
+
+    .paycheck-layer {
+        padding: 0.9rem 1.25rem;
+        border-radius: var(--radius-md);
+    }
+
+    #hero-net-val {
+        font-size: clamp(2.2rem, 9vw, 3rem) !important;
+        line-height: 1.1;
+    }
+
+    .layer-net {
+        transform: translateZ(24px);
+    }
+
+    .layer-tax {
+        transform: translateZ(0px) translateY(12px) scale(0.97);
+    }
+
+    .layer-social {
+        transform: translateZ(-24px) translateY(24px) scale(0.94);
+    }
 }
 
 /* --- 3. FREELANCER TAX HERO: INVOICE STACK & TAX-SAVED COUNTER --- */

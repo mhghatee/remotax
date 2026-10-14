@@ -351,6 +351,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const prefixSymbol = document.getElementById('currency-prefix-symbol');
             if (prefixSymbol) prefixSymbol.textContent = currentCurrencySymbol;
 
+            const rangeLabel = document.getElementById('income-range-label');
+            if (rangeLabel) rangeLabel.textContent = `${currentCurrencySymbol}10,000 – ${currentCurrencySymbol}1,000,000`;
+
+            const currencyCalcNote = document.getElementById('currency-calc-note');
+            if (currencyCalcNote) {
+                currencyCalcNote.textContent = config.currency !== 'USD'
+                    ? `Modeled in ${config.country} local statutory currency (${config.currency} ${currentCurrencySymbol}) • Baseline USD equivalence.`
+                    : `Modeled in USD ($).`;
+            }
+
             // Filing status support
             if (filingStatusSelect) {
                 const filingGroup = filingStatusSelect.closest('.input-group') || filingStatusSelect.closest('.form-group');
@@ -425,6 +435,12 @@ document.addEventListener('DOMContentLoaded', () => {
             currentCurrencySymbol = CURRENCY_SYMBOLS[e.target.value] || '$';
             const prefixSymbol = document.getElementById('currency-prefix-symbol');
             if (prefixSymbol) prefixSymbol.textContent = currentCurrencySymbol;
+            const rangeLabel = document.getElementById('income-range-label');
+            if (rangeLabel) rangeLabel.textContent = `${currentCurrencySymbol}10,000 – ${currentCurrencySymbol}1,000,000`;
+            const currencyCalcNote = document.getElementById('currency-calc-note');
+            if (currencyCalcNote) {
+                currencyCalcNote.textContent = `Modeled in selected currency (${e.target.value} ${currentCurrencySymbol}) • Baseline parity.`;
+            }
             calculateTaxes();
         });
     }
@@ -716,40 +732,70 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Mobile Drawer Handlers ---
-    const mobileDrawer = document.getElementById('mobile-drawer');
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const mobileDrawerClose = document.getElementById('mobile-drawer-close');
-
-    function openMobileDrawer() {
-        if (mobileDrawer) mobileDrawer.classList.add('open');
-        document.body.style.overflow = 'hidden';
+    // --- Jurisdictions Mobile Carousel Dots Sync ---
+    const jCarousel = document.getElementById('jurisdictions-carousel');
+    const jDots = document.getElementById('jurisdictions-dots');
+    if (jCarousel && jDots) {
+        const dots = jDots.querySelectorAll('.carousel-dot');
+        jCarousel.addEventListener('scroll', () => {
+            const scrollLeft = jCarousel.scrollLeft;
+            const firstCard = jCarousel.firstElementChild;
+            const cardWidth = (firstCard ? firstCard.offsetWidth : 300) + 14;
+            const activeIndex = Math.min(dots.length - 1, Math.max(0, Math.round(scrollLeft / cardWidth)));
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === activeIndex);
+            });
+        }, { passive: true });
     }
 
-    function closeMobileDrawer() {
-        if (mobileDrawer) mobileDrawer.classList.remove('open');
-        document.body.style.overflow = '';
-    }
+    // --- Mobile Drawer Handlers (Fallback if not already handled by js/nav.js) ---
+    if (!window.__remotaxNavInitialized && !document.querySelector('script[src*="nav.js"]')) {
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileDrawerClose = document.getElementById('mobile-drawer-close');
 
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            openMobileDrawer();
-        });
-    }
+        function openMobileDrawer() {
+            if (mobileDrawer) {
+                mobileDrawer.classList.add('open');
+                mobileDrawer.setAttribute('aria-hidden', 'false');
+            }
+            if (mobileMenuToggle) mobileMenuToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
 
-    if (mobileDrawerClose) {
-        mobileDrawerClose.addEventListener('click', closeMobileDrawer);
-    }
+        function closeMobileDrawer() {
+            if (mobileDrawer) {
+                mobileDrawer.classList.remove('open');
+                mobileDrawer.setAttribute('aria-hidden', 'true');
+            }
+            if (mobileMenuToggle) mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
 
-    if (mobileDrawer) {
-        mobileDrawer.addEventListener('click', (e) => {
-            if (e.target === mobileDrawer) closeMobileDrawer();
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) closeMobileDrawer();
-        });
-        mobileDrawer.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileDrawer));
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (mobileDrawer && mobileDrawer.classList.contains('open')) {
+                    closeMobileDrawer();
+                } else {
+                    openMobileDrawer();
+                }
+            });
+        }
+
+        if (mobileDrawerClose) {
+            mobileDrawerClose.addEventListener('click', closeMobileDrawer);
+        }
+
+        if (mobileDrawer) {
+            mobileDrawer.addEventListener('click', (e) => {
+                if (e.target === mobileDrawer) closeMobileDrawer();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) closeMobileDrawer();
+            });
+            mobileDrawer.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileDrawer));
+        }
     }
 
     // Initialize UI

@@ -23,6 +23,11 @@
 }
 
 /* Button Bridges */
+.nav-pill .btn-primary {
+    padding: 0.45rem 1.1rem;
+    font-size: 0.84rem;
+}
+
 .btn-primary {
     display: inline-flex;
     align-items: center;

@@ -46,33 +46,64 @@
     <div class="horizon-ambiance" aria-hidden="true"><div class="horizon-sun" style="transform: translateX(-50%) translateY(30px);"></div></div>
 
     <!-- Floating Glass Navbar -->
+    <!-- Unified Liquid Glass Navigation -->
     <header class="navbar-floating">
         <nav class="nav-pill">
             <a href="index.html" class="nav-brand">
                 <div class="nav-logo-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                     </svg>
                 </div>
                 <span class="nav-brand-title">Remotax</span>
-                <span class="nav-brand-tag">spain</span>
+                <span class="nav-brand-tag">2026</span>
             </a>
 
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="calculators/take-home-pay.html" class="nav-link">Take Home Pay</a></li>
+                <li><a href="calculator.html" class="nav-link">Calculator</a></li>
+                <li><a href="calculators/take-home-pay.html" class="nav-link">Take Home</a></li>
                 <li><a href="calculators/freelancer-tax.html" class="nav-link">Freelancer</a></li>
                 <li><a href="comparisons/spain-vs-portugal.html" class="nav-link">Comparisons</a></li>
                 <li><a href="destinations.html" class="nav-link">Tax Havens</a></li>
-                <li><a href="blog.html" class="nav-link active">Tax Blog</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
                 <li><a href="faq.html" class="nav-link">FAQ</a></li>
             </ul>
 
             <div class="nav-actions">
-                <a href="tax-calculator/spain.html" class="btn-primary nav-cta">Spain Calc</a>
+                <a href="quiz.html" class="btn-primary nav-cta">Find Match</a>
+                <button type="button" class="nav-mobile-toggle" id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
             </div>
         </nav>
     </header>
+
+    <!-- Mobile Drawer / Full-Screen Glass Sheet -->
+    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true">
+        <div class="mobile-drawer-sheet">
+            <div class="mobile-drawer-header">
+                <div class="mobile-drawer-title">Navigation</div>
+                <button type="button" id="mobile-drawer-close" class="btn-glass mobile-drawer-close-btn" aria-label="Close navigation menu">Close</button>
+            </div>
+            <div class="mobile-nav-links">
+                <a href="calculator.html" class="mobile-nav-link"><span>Tax Calculator</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="calculators/take-home-pay.html" class="mobile-nav-link"><span>Take Home Pay</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="calculators/freelancer-tax.html" class="mobile-nav-link"><span>Freelancer Tax</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="calculators/remote-worker-tax.html" class="mobile-nav-link"><span>Remote Worker Tax</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="calculators/remote-work-savings.html" class="mobile-nav-link"><span>Remote Work Savings</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="comparisons/spain-vs-portugal.html" class="mobile-nav-link"><span>Spain vs Portugal</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="destinations.html" class="mobile-nav-link"><span>Tax Havens Directory</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="blog.html" class="mobile-nav-link"><span>Tax Blog</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="faq.html" class="mobile-nav-link"><span>FAQ</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="quiz.html" class="btn-primary" style="margin-top: 1rem; text-align: center; justify-content: center; min-height: 48px; display: flex; align-items: center;">Smart Match Quiz</a>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Main Editorial Container -->
     <div class="container article-shell" style="padding-top: calc(var(--header-height) + 3rem);">
@@ -299,5 +330,6 @@
         });
     });
     </script>
+    <script src="js/nav.js?v=3.2.0"></script>
 </body>
 </html>

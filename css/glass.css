@@ -173,22 +173,48 @@
 
 /* --- Glass Input Controls --- */
 .glass-input,
-.glass-select,
-.form-input,
-.form-select {
+.form-input {
     width: 100%;
-    padding: 0.8rem 1rem;
+    padding: 0.85rem 1rem;
     font-family: var(--font-sans);
-    font-size: 0.95rem;
+    font-size: 16px; /* 16px prevents iOS browser auto-zoom */
     color: var(--text-primary);
     background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--radius-sm);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    box-sizing: border-box;
     transition: 
         border-color var(--duration-fast) var(--ease-out-quad),
         background var(--duration-fast) var(--ease-out-quad),
+        box-shadow var(--duration-fast) var(--ease-out-quad);
+    outline: none;
+}
+
+.glass-select,
+.form-select {
+    width: 100%;
+    padding: 0.85rem 2.5rem 0.85rem 1rem;
+    font-family: var(--font-sans);
+    font-size: 16px; /* 16px prevents iOS browser auto-zoom */
+    color: #ffffff;
+    background-color: rgba(13, 18, 24, 0.88);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.75)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: var(--radius-sm);
+    -webkit-appearance: none;
+    appearance: none;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 
+        border-color var(--duration-fast) var(--ease-out-quad),
+        background-color var(--duration-fast) var(--ease-out-quad),
         box-shadow var(--duration-fast) var(--ease-out-quad);
     outline: none;
 }
@@ -198,14 +224,15 @@
 .form-input:focus,
 .form-select:focus {
     border-color: var(--horizon-orange);
-    background: rgba(255, 255, 255, 0.08);
+    background-color: rgba(20, 26, 35, 0.95);
     box-shadow: 0 0 0 3px rgba(217, 119, 47, 0.25);
 }
 
 .glass-select option,
 .form-select option {
-    background-color: var(--bg-elevated);
-    color: var(--text-primary);
+    background-color: #0d1218;
+    color: #ffffff;
+    padding: 0.6rem;
 }
 
 /* --- iOS Glass Slider --- */
@@ -298,8 +325,29 @@
     .liquid-glass,
     .glass-panel,
     .glass-card {
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-        background: rgba(13, 18, 24, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        background: rgba(13, 18, 24, 0.90);
+    }
+
+    /* Disable hover-based specular glare animation on touch devices */
+    .glass-card-interactive::after {
+        display: none !important;
+    }
+
+    /* Larger touch-friendly slider thumbs on mobile */
+    .glass-slider {
+        height: 8px;
+        margin: 1.5rem 0;
+    }
+
+    .glass-slider::-webkit-slider-thumb {
+        width: 28px;
+        height: 28px;
+    }
+
+    .glass-slider::-moz-range-thumb {
+        width: 28px;
+        height: 28px;
     }
 }

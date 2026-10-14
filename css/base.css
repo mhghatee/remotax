@@ -13,12 +13,18 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-height, 72px) + env(safe-area-inset-top, 0px) + 2rem);
     background-color: var(--bg-canvas);
     color: var(--text-body);
 }
 
+[id] {
+    scroll-margin-top: calc(var(--header-height, 72px) + env(safe-area-inset-top, 0px) + 1.5rem);
+}
+
 body {
     min-height: 100vh;
+    min-height: 100dvh;
     font-family: var(--font-sans);
     line-height: 1.6;
     background-color: var(--bg-canvas);
@@ -171,6 +177,13 @@ a:hover {
     z-index: 1;
 }
 
+@media (max-width: 768px) {
+    .container {
+        padding-left: max(1rem, env(safe-area-inset-left, 0px));
+        padding-right: max(1rem, env(safe-area-inset-right, 0px));
+    }
+}
+
 .container-narrow {
     max-width: var(--container-narrow);
 }
@@ -179,6 +192,27 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .grid-12 {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    .grid-12 > * {
+        grid-column: span 12 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* Mobile-safe Table Overflow Wrapper */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1.5rem 0;
 }
 
 /* Semantic Value Colors */
