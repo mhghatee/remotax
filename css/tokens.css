@@ -1,0 +1,120 @@
+/* =========================================================================
+   REMOTAX — DESIGN TOKENS
+   iOS Liquid Glass System (Dark Fintech Edition)
+   ========================================================================= */
+
+:root {
+    /* --- Base Palette --- */
+    --bg-canvas: #070b0f;
+    --bg-canvas-rgb: 7, 11, 15;
+    --bg-elevated: #0d1218;
+    --bg-elevated-rgb: 13, 18, 24;
+
+    /* --- Signature Horizon Palette --- */
+    --horizon-top: #070b0f;
+    --horizon-deep: #2a1206;
+    --horizon-rust: #7a3b1a;
+    --horizon-orange: #d9772f;
+    --horizon-amber: #e8853f;
+    --horizon-peach: #f2b283;
+    --horizon-cream: #f6dfbf;
+
+    /* --- Signature Gradients --- */
+    --gradient-horizon: linear-gradient(180deg, 
+        rgba(7, 11, 15, 0) 0%, 
+        rgba(42, 18, 6, 0.45) 45%, 
+        rgba(122, 59, 26, 0.65) 70%, 
+        rgba(217, 119, 47, 0.85) 88%, 
+        rgba(246, 223, 191, 0.95) 100%
+    );
+
+    --gradient-horizon-card: linear-gradient(135deg, 
+        rgba(217, 119, 47, 0.18) 0%, 
+        rgba(122, 59, 26, 0.10) 40%, 
+        rgba(7, 11, 15, 0.60) 100%
+    );
+
+    --gradient-horizon-button: linear-gradient(135deg, 
+        #d9772f 0%, 
+        #e8853f 40%, 
+        #f2b283 100%
+    );
+
+    --gradient-horizon-text: linear-gradient(180deg, 
+        #ffffff 15%, 
+        #f6dfbf 75%, 
+        #e8853f 100%
+    );
+
+    /* --- Semantic Colors (Warm-Tuned) --- */
+    --color-net: #7ee0b0;
+    --color-net-rgb: 126, 224, 176;
+    --color-net-glow: rgba(126, 224, 176, 0.28);
+    --color-net-surface: rgba(126, 224, 176, 0.08);
+
+    --color-tax: #ff7a59;
+    --color-tax-rgb: 255, 122, 89;
+    --color-tax-glow: rgba(255, 122, 89, 0.28);
+    --color-tax-surface: rgba(255, 122, 89, 0.08);
+
+    --color-social: #f5b94a;
+    --color-social-rgb: 245, 185, 74;
+    --color-social-glow: rgba(245, 185, 74, 0.28);
+    --color-social-surface: rgba(245, 185, 74, 0.08);
+
+    --color-info: #60a5fa;
+    --color-accent: #e8853f;
+
+    /* --- Typography Colors --- */
+    --text-primary: #ffffff;
+    --text-body: #a8a29a;
+    --text-muted: #827c75;
+    --text-dim: #544f49;
+
+    /* --- Liquid Glass Surfaces --- */
+    --glass-bg-subtle: rgba(255, 255, 255, 0.035);
+    --glass-bg-base: rgba(255, 255, 255, 0.065);
+    --glass-bg-elevated: rgba(255, 255, 255, 0.095);
+    --glass-bg-active: rgba(255, 255, 255, 0.135);
+
+    --glass-border-subtle: rgba(255, 255, 255, 0.08);
+    --glass-border-base: rgba(255, 255, 255, 0.12);
+    --glass-border-highlight: rgba(255, 255, 255, 0.24);
+
+    --glass-blur-sm: blur(16px) saturate(160%);
+    --glass-blur-md: blur(28px) saturate(170%);
+    --glass-blur-lg: blur(40px) saturate(180%);
+
+    /* Layered Soft Shadows */
+    --glass-shadow-sm: 0 4px 16px -2px rgba(0, 0, 0, 0.35);
+    --glass-shadow-md: 0 12px 32px -4px rgba(0, 0, 0, 0.45), 0 0 1px 1px rgba(255, 255, 255, 0.05) inset;
+    --glass-shadow-lg: 0 24px 64px -8px rgba(0, 0, 0, 0.65), 0 0 1px 1px rgba(255, 255, 255, 0.08) inset;
+    --glass-shadow-horizon: 0 20px 60px -10px rgba(217, 119, 47, 0.20), 0 0 40px -5px rgba(122, 59, 26, 0.30);
+
+    /* --- Radii (Concentric iOS Scales) --- */
+    --radius-xs: 8px;
+    --radius-sm: 14px;
+    --radius-md: 20px;
+    --radius-lg: 28px;
+    --radius-xl: 36px;
+    --radius-pill: 9999px;
+
+    /* --- Typography Families --- */
+    --font-sans: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Monaco, Consolas, monospace;
+    --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+
+    /* --- Micro-interactions & Spring Easings --- */
+    --spring-bounce: cubic-bezier(0.2, 0.9, 0.3, 1.2);
+    --spring-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    --duration-fast: 160ms;
+    --duration-normal: 280ms;
+    --duration-slow: 480ms;
+
+    /* Grid & Layout */
+    --container-max: 1240px;
+    --container-narrow: 880px;
+    --header-height: 72px;
+}

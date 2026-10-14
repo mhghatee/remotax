@@ -3,161 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remote Work Savings Calculator 2026 — Remote vs Office Cost | Remotax</title>
-    <meta name="description" content="Calculate how much money you save by working remotely from home vs commuting to an office. Estimate commute, meals, wardrobe, and annual net savings.">
-    <meta name="keywords" content="remote work savings calculator, work from home savings, commute cost calculator, remote vs office cost">
+    <title>Remote Work Savings Calculator 2026 — Office vs Remote Financial Delta | Remotax</title>
+    <meta name="description" content="Calculate how much money you save working remotely vs commuting to an office. Simulate commute transit, meals, wardrobe, and home office setup costs.">
+    <meta name="keywords" content="remote work savings calculator, work from home savings, commute cost calculator, remote vs office costs 2026">
+    
+    <link rel="canonical" href="https://afrix.ir/remotax/calculators/remote-work-savings.html">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Remote Work Savings Calculator 2026 — Remotax">
-    <meta property="og:description" content="Calculate your annual financial savings from working remotely vs working in an office.">
+    <meta property="og:description" content="Simulate real financial savings of working remotely vs office commute.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://afrix.ir/remotax/calculators/remote-work-savings.html">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../index.css?v=3.1.0">
+    <link rel="stylesheet" href="../index.css?v=3.2.0">
 </head>
 <body>
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="logo">
-                <div class="logo-icon">⚡</div>
-                <span class="logo-text">Remo<span class="logo-highlight">tax</span></span>
-                <span class="logo-badge">savings</span>
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="horizon-ambiance" aria-hidden="true"><div class="horizon-sun" style="transform: translateX(-50%) translateY(35px);"></div></div>
+
+    <!-- Floating Glass Navbar -->
+    <header class="navbar-floating">
+        <nav class="nav-pill">
+            <a href="../index.html" class="nav-brand">
+                <div class="nav-logo-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                </div>
+                <span class="nav-brand-title">Remotax</span>
+                <span class="nav-brand-tag">savings</span>
             </a>
-            <nav class="nav-links">
-                <a href="../index.html" class="nav-link">Home</a>
-                <a href="take-home-pay.html" class="nav-link">Take Home Pay</a>
-                <a href="freelancer-tax.html" class="nav-link">Freelancer Tax</a>
-                <a href="remote-work-savings.html" class="nav-link active">Remote Savings</a>
-                <a href="../comparisons/spain-vs-portugal.html" class="nav-link">Comparisons</a>
-                <a href="../blog.html" class="nav-link">Tax Blog</a>
-            </nav>
-            <div>
-                <a href="../quiz.html" class="btn-secondary">Smart Quiz 🧩</a>
+
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="take-home-pay.html" class="nav-link">Take Home</a></li>
+                <li><a href="freelancer-tax.html" class="nav-link">Freelancer</a></li>
+                <li><a href="remote-worker-tax.html" class="nav-link">Remote Tax</a></li>
+                <li><a href="../comparisons/spain-vs-portugal.html" class="nav-link">Comparisons</a></li>
+                <li><a href="../blog.html" class="nav-link">Tax Blog</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="../quiz.html" class="btn-primary nav-cta">Find Match</a>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <div class="section-container" style="padding-top: 1.5rem; padding-bottom: 0;">
-        <nav style="font-size: 0.85rem; color: var(--text-muted);">
-            <a href="../index.html" style="color: var(--text-muted); text-decoration: none;">Home</a> &gt; 
-            <a href="../calculator.html" style="color: var(--text-muted); text-decoration: none;">Calculators</a> &gt; 
-            <span style="color: var(--text-main);">Remote Work Savings Calculator</span>
-        </nav>
-    </div>
+    <!-- Cinematic Hero Section with Dual Glass Monoliths (Office vs Remote) -->
+    <section class="container" style="padding-top: calc(var(--header-height) + 3.5rem); text-align: center;">
+        <div class="pill-tag"><span class="pill-dot"></span> Real Discretionary Delta</div>
+        <h1>
+            Remote Work <span class="gradient-text">Savings Calculator</span>
+        </h1>
+        <p style="max-width: 620px; margin: 1rem auto 2rem; color: var(--text-body);">
+            Quantify the hidden overhead of office commutes, dining out, and wardrobe, vs home office efficiency.
+        </p>
 
-    <section class="hero-container" style="padding-top: 1rem;">
-        <div class="hero-content">
-            <div class="pill-tag">
-                <span class="pill-dot"></span> Remote Work Financial Intelligence
+        <!-- Dual Monoliths Component -->
+        <div class="savings-monoliths-grid">
+            <div class="monolith-col monolith-office glass-card-interactive">
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-tax); font-weight: 700;">Traditional Office Overhead</span>
+                <div class="tabular-nums" style="font-size: 2rem; font-weight: 800; color: var(--color-tax); margin: 0.5rem 0;" id="hero-office-waste">$9,120 / yr</div>
+                <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0;">Transit, fuel, daily dining, parking & wardrobe depreciation.</p>
             </div>
-            <h1 class="hero-title">Remote Work <span class="gradient-text">Savings Calculator 2026</span></h1>
-            <p class="hero-subtitle">Estimate how much money and time you retain by working from home compared to working in a corporate office.</p>
+            <div class="monolith-col monolith-remote glass-card-interactive">
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-net); font-weight: 700;">Net Remote Capital Retained</span>
+                <div class="tabular-nums" style="font-size: 2rem; font-weight: 800; color: var(--color-net); margin: 0.5rem 0;" id="hero-remote-kept">+$8,120 / yr</div>
+                <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0;">Capital preserved for liquid investments & retirement.</p>
+            </div>
         </div>
     </section>
 
-    <main class="main-container" style="margin-top: 1rem;">
+    <!-- Calculator Main Workspace -->
+    <main class="container" style="margin-top: 2rem;">
         <div class="app-layout">
             <!-- Left Column: Inputs -->
-            <div class="calculator-card glass-panel">
+            <div class="calculator-card glass-panel glass-card-interactive">
                 <div class="card-header">
-                    <h2>Office Expenses & Commute</h2>
-                    <p>Enter your typical daily expenses when working on-site.</p>
+                    <h2>Commute & Living Inputs</h2>
+                    <p>Enter your typical workplace expenses.</p>
                 </div>
 
-                <div class="input-group">
-                    <label for="commute-cost">Daily Commute Cost (Transit / Fuel / Parking)</label>
-                    <input type="number" id="commute-cost" class="form-input" value="15" min="0" max="150" step="1">
-                </div>
-
-                <div class="input-group">
-                    <label for="meal-cost">Daily Office Lunches, Snacks & Coffee</label>
-                    <input type="number" id="meal-cost" class="form-input" value="18" min="0" max="150" step="1">
-                </div>
-
-                <div class="input-group">
-                    <label for="wardrobe-cost">Annual Work Attire & Dry Cleaning</label>
-                    <input type="number" id="wardrobe-cost" class="form-input" value="1200" min="0" max="10000" step="100">
-                </div>
-
-                <div class="input-group">
-                    <label for="office-days">Office Days Per Week</label>
+                <div class="form-group">
+                    <label for="office-days">Required In-Office Days Per Week</label>
                     <select id="office-days" class="form-select">
-                        <option value="5" selected>5 Days / Week (Full-time On-site)</option>
-                        <option value="4">4 Days / Week</option>
+                        <option value="5" selected>5 Days / Week (Full Office)</option>
+                        <option value="4">4 Days / Week (Hybrid)</option>
                         <option value="3">3 Days / Week (Hybrid)</option>
-                        <option value="2">2 Days / Week</option>
+                        <option value="2">2 Days / Week (Hybrid)</option>
                     </select>
                 </div>
 
-                <div class="input-group">
-                    <label for="setup-cost">One-Time Home Office Setup / Year</label>
-                    <input type="number" id="setup-cost" class="form-input" value="1000" min="0" max="10000" step="100">
+                <div class="form-group">
+                    <label for="commute-cost">Daily Commute & Transit / Fuel Cost</label>
+                    <div class="input-with-symbol">
+                        <span class="symbol-prefix">$</span>
+                        <input type="number" id="commute-cost" class="form-input" value="18" placeholder="e.g. 18">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="meal-cost">Daily Office Lunches, Coffee & Snacks</label>
+                    <div class="input-with-symbol">
+                        <span class="symbol-prefix">$</span>
+                        <input type="number" id="meal-cost" class="form-input" value="15" placeholder="e.g. 15">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="wardrobe-cost">Annual Work Wardrobe & Dry Cleaning</label>
+                    <div class="input-with-symbol">
+                        <span class="symbol-prefix">$</span>
+                        <input type="number" id="wardrobe-cost" class="form-input" value="1200" placeholder="e.g. 1200">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="setup-cost">One-Time Home Office Ergonomics / Desk Setup</label>
+                    <div class="input-with-symbol">
+                        <span class="symbol-prefix">$</span>
+                        <input type="number" id="setup-cost" class="form-input" value="1000" placeholder="e.g. 1000">
+                    </div>
                 </div>
             </div>
 
-            <!-- Right Column: Results -->
-            <div class="results-card glass-panel">
-                <div class="net-banner">
-                    <span class="net-label">Estimated Annual Remote Savings</span>
-                    <div class="net-value" id="net-savings-annual" style="color: #34d399;">$8,120</div>
-                    <div class="net-sub" id="net-savings-monthly">Monthly Net Savings: $677 / month</div>
-                    <div class="badge badge-accent">Boosts Take-Home Pay by ~8% - 15%</div>
+            <!-- Right Column: Results & Savings Breakdown -->
+            <div class="calculator-card glass-panel glass-card-interactive">
+                <div class="output-hero-card">
+                    <span class="output-hero-label">Net Annual Savings Kept</span>
+                    <div class="output-hero-val tabular-nums text-net" id="net-savings-annual">$8,120</div>
+                    <div class="output-hero-sub tabular-nums" id="net-savings-monthly">Monthly Net Savings: $677 / month</div>
                 </div>
 
-                <div class="results-table">
+                <div class="breakdown-table">
                     <div class="table-row">
                         <span class="row-label">Annual Transit & Commute Avoided</span>
-                        <span class="row-value" id="res-commute">$3,600 / yr</span>
+                        <span class="row-value tabular-nums" id="res-commute">$4,320 / yr</span>
                     </div>
                     <div class="table-row">
-                        <span class="row-label">Annual Office Food & Coffee Saved</span>
-                        <span class="row-value" id="res-meals">$4,320 / yr</span>
+                        <span class="row-label">Annual Lunch & Coffee Expenses Saved</span>
+                        <span class="row-value tabular-nums" id="res-meals">$3,600 / yr</span>
                     </div>
                     <div class="table-row">
                         <span class="row-label">Annual Wardrobe Expenses Saved</span>
-                        <span class="row-value" id="res-wardrobe">$1,200 / yr</span>
+                        <span class="row-value tabular-nums" id="res-wardrobe">$1,200 / yr</span>
                     </div>
                     <div class="table-row highlight-row">
                         <span class="row-label">Total Office Overhead Avoided</span>
-                        <span class="row-value net-color" id="res-total-office">$9,120 / yr</span>
+                        <span class="row-value net-color tabular-nums" id="res-total-office">$9,120 / yr</span>
                     </div>
                     <div class="table-row">
-                        <span class="row-label">Home Office Setup Costs</span>
-                        <span class="row-value tax-color" id="res-setup">-$1,000</span>
+                        <span class="row-label">One-Time Home Office Setup Offset</span>
+                        <span class="row-value tax-color tabular-nums" id="res-setup">-$1,000</span>
                     </div>
                     <div class="table-row highlight-row">
-                        <span class="row-label">Net Financial Savings Kept</span>
-                        <span class="row-value net-color" id="res-net-final">$8,120 / yr</span>
+                        <span class="row-label">Net Discretionary Financial Savings</span>
+                        <span class="row-value net-color tabular-nums" id="res-net-final">$8,120 / yr</span>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <div class="logo">⚡ <span class="logo-text">Remo<span class="logo-highlight">tax</span></span></div>
-                <p>Global Remote Work Financial Intelligence Platform.</p>
-            </div>
-            <div class="footer-links">
-                <div class="link-group">
-                    <span class="link-group-title">Calculators</span>
-                    <a href="take-home-pay.html">Take Home Pay</a>
-                    <a href="freelancer-tax.html">Freelancer Tax</a>
-                    <a href="remote-work-savings.html">Remote Savings</a>
+    <!-- Unified Liquid Glass Footer -->
+    <footer class="footer-unified">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand-col">
+                    <div class="nav-brand" style="padding: 0;">
+                        <div class="nav-logo-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
+                        </div>
+                        <span class="nav-brand-title">Remotax</span>
+                        <span class="nav-brand-tag">2026</span>
+                    </div>
+                    <p>Global Remote Work Financial Intelligence Platform. Precision cross-border tax, net pay, and relocation intelligence.</p>
                 </div>
+                <div class="footer-col">
+                    <h4>Calculators</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="take-home-pay.html">Take Home Pay</a></li>
+                        <li><a href="freelancer-tax.html">Freelancer Tax</a></li>
+                        <li><a href="remote-worker-tax.html">Remote Worker Tax</a></li>
+                        <li><a href="remote-work-savings.html">Remote Savings</a></li>
+                        <li><a href="../comparisons/spain-vs-portugal.html">Spain vs Portugal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Country Engines</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="../tax-calculator/spain.html">Spain Beckham Law</a></li>
+                        <li><a href="../tax-calculator/portugal.html">Portugal D8 & IFICI</a></li>
+                        <li><a href="../tax-calculator/germany.html">Germany Einkommensteuer</a></li>
+                        <li><a href="../tax-calculator/uae.html">Dubai 0% Tax Haven</a></li>
+                        <li><a href="../tax-calculator/uk.html">UK PAYE & NI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Transparency</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="../faq.html">Tax Residency FAQ</a></li>
+                        <li><a href="../privacy.html">Privacy Policy</a></li>
+                        <li><a href="../terms.html">Terms of Service</a></li>
+                        <li><a href="../adsense-disclosure.html">AdSense Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom-bar">
+                <div>© 2026 Remotax. All rights reserved. Global Remote Work Financial Intelligence Platform.</div>
             </div>
         </div>
     </footer>
 
-    <script src="../data/countries.js?v=3.1.0"></script>
-    <script src="../engine/taxEngine.js?v=3.1.0"></script>
+    <script src="../data/countries.js?v=3.2.0"></script>
+    <script src="../engine/taxEngine.js?v=3.2.0"></script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const commuteInput = document.getElementById('commute-cost');
@@ -183,10 +249,24 @@
             document.getElementById('res-total-office').textContent = `$${res.totalAnnualOfficeExpenses.toLocaleString()} / yr`;
             document.getElementById('res-setup').textContent = `-$${res.remoteSetupCost.toLocaleString()}`;
             document.getElementById('res-net-final').textContent = `$${res.netAnnualSavings.toLocaleString()} / yr`;
+
+            const heroOffice = document.getElementById('hero-office-waste');
+            const heroRemote = document.getElementById('hero-remote-kept');
+            if (heroOffice) heroOffice.textContent = `$${res.totalAnnualOfficeExpenses.toLocaleString()} / yr`;
+            if (heroRemote) heroRemote.textContent = `+$${res.netAnnualSavings.toLocaleString()} / yr`;
         }
 
         [commuteInput, mealInput, wardrobeInput, setupInput].forEach(el => el.addEventListener('input', update));
         daysSelect.addEventListener('change', update);
+
+        document.addEventListener('mousemove', (e) => {
+            document.querySelectorAll('.glass-card-interactive, .nav-pill').forEach(card => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+            });
+        });
+
         update();
     });
     </script>

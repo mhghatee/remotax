@@ -3,267 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Remote Tax & Net Pay Calculator | Remotax</title>
-    <meta name="description" content="Calculate your exact monthly take-home net salary across 20 top remote worker destinations with local tax regimes, Beckham Law, NHR, and 0% tax schemes.">
+    <title>Global Remote Tax & Net Pay Calculator 2026 | Remotax</title>
+    <meta name="description" content="Calculate your exact monthly take-home net salary across 17 top remote worker destinations with local tax regimes, Beckham Law, NHR, and 0% tax schemes.">
     <meta name="keywords" content="digital nomad tax calculator, remote net pay calculator, expat tax calculator 2026, beckham law calculator, dubai zero tax calculator">
+    
+    <link rel="canonical" href="https://afrix.ir/remotax/calculator.html">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Global Remote Tax & Net Pay Calculator | Remotax">
     <meta property="og:description" content="High-precision net pay estimator for remote workers, freelancers, and expats.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://afrix.ir/remotax/calculator.html">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="index.css?v=3.1.0">
+    <link rel="stylesheet" href="index.css?v=3.2.0">
 </head>
 <body>
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">⚡</div>
-                <span class="logo-text">Remo<span class="logo-highlight">tax</span></span>
-                <span class="logo-badge">calculator</span>
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="horizon-ambiance" aria-hidden="true"><div class="horizon-sun" style="transform: translateX(-50%) translateY(30px);"></div></div>
+
+    <!-- Floating Glass Navbar -->
+    <header class="navbar-floating">
+        <nav class="nav-pill">
+            <a href="index.html" class="nav-brand">
+                <div class="nav-logo-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                </div>
+                <span class="nav-brand-title">Remotax</span>
+                <span class="nav-brand-tag">calc</span>
             </a>
-            <nav class="nav-links">
-                <a href="calculator.html" class="nav-link active">Tax Calculator</a>
-                <a href="calculators/take-home-pay.html" class="nav-link">Take Home Pay</a>
-                <a href="calculators/freelancer-tax.html" class="nav-link">Freelancer Tax</a>
-                <a href="comparisons/spain-vs-portugal.html" class="nav-link">Comparisons</a>
-                <a href="blog.html" class="nav-link">Tax Blog</a>
-            </nav>
-            <div>
-                <a href="quiz.html" class="btn-secondary">Find Match 🧩</a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="calculator.html" class="nav-link active">Calculator</a></li>
+                <li><a href="calculators/take-home-pay.html" class="nav-link">Take Home</a></li>
+                <li><a href="calculators/freelancer-tax.html" class="nav-link">Freelancer</a></li>
+                <li><a href="comparisons/spain-vs-portugal.html" class="nav-link">Comparisons</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="quiz.html" class="btn-primary nav-cta">Find Match</a>
             </div>
-        </div>
+        </nav>
     </header>
 
     <!-- Hero Header -->
-    <section class="hero-container">
-        <div class="hero-content">
-            <div class="pill-tag">
-                <span class="pill-dot"></span> High-Precision 2026 Engine
-            </div>
-            <h1 class="hero-title">Global Tax & <span class="gradient-text">Net Salary Calculator</span></h1>
-            <p class="hero-subtitle">Estimate exact monthly take-home pay, local social security, and purchasing power across 20 global destinations.</p>
-        </div>
+    <section class="container" style="padding-top: calc(var(--header-height) + 3.5rem); text-align: center;">
+        <div class="pill-tag"><span class="pill-dot"></span> Sovereign Net Pay Engine</div>
+        <h1>
+            Global Tax & <span class="gradient-text">Net Salary Calculator</span>
+        </h1>
+        <p style="max-width: 640px; margin: 1rem auto 2.5rem; color: var(--text-body);">
+            Estimate exact monthly take-home pay, local social security, and purchasing power across 17 statutory jurisdictions.
+        </p>
     </section>
 
     <!-- Calculator App Main Workspace -->
-    <main class="section-container" id="calculator" style="padding-top: 1rem;">
-        <div class="calculator-grid glass-panel">
-            <!-- Form Column -->
-            <div class="form-column">
-                <div class="form-group">
-                    <label for="country-select">Target Country / Tax Residency</label>
-                    <div class="custom-select-wrapper">
-                        <select id="country-select" class="form-input">
-                            <option value="ES">🇪🇸 Spain (Beckham Law vs Standard)</option>
-                            <option value="PT">🇵🇹 Portugal (D8 / NHR 20% Incentive)</option>
-                            <option value="DE">🇩🇪 Germany (Progressive Brackets)</option>
-                            <option value="GB">🇬🇧 United Kingdom (HMRC Allowances)</option>
-                            <option value="US">🇺🇸 United States (Federal + FICA)</option>
-                            <option value="CA">🇨🇦 Canada (Federal + Provincial)</option>
-                            <option value="NL">🇳🇱 Netherlands (30% Expat Ruling)</option>
-                            <option value="AE">🇦🇪 United Arab Emirates (Dubai 0% Tax)</option>
-                            <option value="TH">🇹🇭 Thailand (DTV Visa 17% Cap)</option>
-                            <option value="IT">🇮🇹 Italy (Impatriati Exemption)</option>
-                            <option value="GR">🇬🇷 Greece (50% Tax Exemption)</option>
-                            <option value="MT">🇲🇹 Malta (Nomad 10% Flat Rate)</option>
-                            <option value="CY">🇨🇾 Cyprus (Non-Dom 50% Exemption)</option>
-                            <option value="MC">🇲🇨 Monaco (0% Personal Tax)</option>
-                            <option value="EE">🇪🇪 Estonia (e-Residency 0% Corporate)</option>
-                            <option value="SG">🇸🇬 Singapore (Territorial Tax)</option>
-                            <option value="MX">🇲🇽 Mexico (Residencia Temporal)</option>
-                            <option value="ID">🇮🇩 Indonesia (Bali Nomad Visa)</option>
-                            <option value="AU">🇦🇺 Australia (Resident Brackets)</option>
-                            <option value="CH">🇨🇭 Switzerland (Cantonal Average)</option>
+    <main class="container" id="calculator">
+        <div class="app-layout">
+            <!-- Left Column: Controls -->
+            <div class="calculator-card glass-panel glass-card-interactive">
+                <div class="card-header" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <div>
+                        <h2>Parameters & Classification</h2>
+                        <p>Configure tax jurisdiction and compensation structure.</p>
+                    </div>
+                    <button type="button" id="reset-calc-btn" class="btn-secondary" style="font-size: 0.8rem; padding: 0.4rem 0.85rem;" title="Reset fields">↺ Reset</button>
+                </div>
+
+                <form id="tax-form" onsubmit="return false;">
+                    <div class="form-group">
+                        <label for="country-select">Tax Jurisdiction</label>
+                        <select id="country-select" class="form-select">
+                            <!-- Populated dynamically -->
                         </select>
                     </div>
-                </div>
 
-                <div class="form-group regime-group" id="regime-container">
-                    <label class="toggle-label">
-                        <input type="checkbox" id="special-regime-toggle" checked>
-                        <span class="toggle-slider"></span>
-                        <span class="toggle-text" id="regime-text">Apply Beckham Law (24% Flat Rate)</span>
-                    </label>
-                    <small class="help-text" id="regime-help">Expats in Spain can qualify for a 24% flat tax rate on income up to €600,000.</small>
-                </div>
+                    <div class="form-group">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                            <label for="income-input" style="margin-bottom: 0;">Gross Annual Earnings</label>
+                            <span class="tabular-nums" style="font-size: 0.82rem; color: var(--text-muted);">$10,000 – $1,000,000</span>
+                        </div>
+                        <div class="input-with-symbol">
+                            <span class="symbol-prefix" id="currency-prefix-symbol">$</span>
+                            <input type="text" id="income-input" class="form-input" value="100,000" inputmode="numeric">
+                        </div>
+                        <input type="range" id="income-slider" class="glass-slider" min="10000" max="500000" step="2500" value="100000" aria-label="Income slider">
+                    </div>
 
-                <div class="form-group">
-                    <div class="label-with-val">
-                        <label for="income-input">Annual Gross Income</label>
-                        <div class="income-input-container">
-                            <span class="income-currency-prefix" id="currency-prefix-symbol">$</span>
-                            <input type="number" id="income-input" class="inline-income-val" value="76000" min="1000" max="500000" step="1000">
+                    <div class="form-group">
+                        <label>Engagement Classification</label>
+                        <div class="radio-cards-grid">
+                            <div class="radio-card active" data-type="contractor">
+                                <input type="radio" name="emp-type" value="contractor" checked class="sr-only">
+                                <h4>Contractor / B2B</h4>
+                                <p>Self-employed freelancer with expense deductions.</p>
+                            </div>
+                            <div class="radio-card" data-type="employee">
+                                <input type="radio" name="emp-type" value="employee" class="sr-only">
+                                <h4>Employee (EOR)</h4>
+                                <p>Direct payroll with statutory social contributions.</p>
+                            </div>
                         </div>
                     </div>
-                    <input type="range" id="income-slider" class="range-slider" min="10000" max="250000" step="2500" value="76000">
-                    <div class="slider-marks">
-                        <span>$10k</span>
-                        <span>$75k</span>
-                        <span>$150k</span>
-                        <span>$250k+</span>
-                    </div>
-                </div>
 
-                <div class="form-group">
-                    <label>Employment Structure</label>
-                    <div class="radio-grid">
-                        <label class="radio-card active">
-                            <input type="radio" name="emp-type" value="contractor" checked>
-                            <span class="radio-title">B2B / Contractor</span>
-                            <span class="radio-sub">Self-employed / Freelancer</span>
+                    <div class="toggle-group" id="special-regime-group">
+                        <label class="switch">
+                            <input type="checkbox" id="special-regime-toggle" checked>
+                            <span class="slider-switch"></span>
                         </label>
-                        <label class="radio-card">
-                            <input type="radio" name="emp-type" value="employee">
-                            <span class="radio-title">Full Employee (EOR)</span>
-                            <span class="radio-sub">Standard Employment</span>
-                        </label>
+                        <div>
+                            <span style="font-weight: 600; font-size: 0.95rem; color: #ffffff;" id="regime-text">Special Tax Regime</span>
+                            <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem;" id="regime-help">
+                                Expat incentive capping taxes or granting flat-rate benefits.
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label for="filing-status">Filing Status</label>
-                    <div class="custom-select-wrapper">
-                        <select id="filing-status" class="form-input">
-                            <option value="single">Single Filer</option>
-                            <option value="married">Married / Joint Filer</option>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label for="filing-status">Filing Status</label>
+                        <select id="filing-status" class="form-select">
+                            <option value="single" selected>Single Taxpayer</option>
+                            <option value="married_joint">Married Filing Jointly (Splitting)</option>
                         </select>
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="global-currency">Display Currency</label>
-                    <div class="custom-select-wrapper">
-                        <select id="global-currency" class="form-input">
-                            <option value="USD">USD ($)</option>
-                            <option value="EUR">EUR (€)</option>
-                            <option value="GBP">GBP (£)</option>
-                            <option value="CAD">CAD ($)</option>
-                        </select>
-                    </div>
-                </div>
+                </form>
             </div>
 
-            <!-- Results Column -->
-            <div class="results-column">
-                <div class="summary-card">
-                    <span class="summary-label">Estimated Monthly Take-Home Net</span>
-                    <div class="net-amount" id="net-monthly-amount">$4,812</div>
-                    <div class="net-sub" id="net-annual-amount">Annual Net: $57,750 / year</div>
-                    <div class="badge badge-effective" id="effective-tax-badge">Effective Tax & Social Rate: 24.0%</div>
-                </div>
-
-                <div class="breakdown-chart">
-                    <div class="bar-stacked">
-                        <div class="bar-segment bar-net" id="bar-net" style="width: 76%;"></div>
-                        <div class="bar-segment bar-tax" id="bar-tax" style="width: 24%;"></div>
-                        <div class="bar-segment bar-social" id="bar-social" style="width: 0%;"></div>
-                    </div>
-                    <div class="bar-legend">
-                        <div class="legend-item"><span class="dot dot-net"></span> Net Pay (<span id="pct-net">76%</span>)</div>
-                        <div class="legend-item"><span class="dot dot-tax"></span> Tax (<span id="pct-tax">24%</span>)</div>
-                        <div class="legend-item"><span class="dot dot-social"></span> Social (<span id="pct-social">0%</span>)</div>
+            <!-- Right Column: Outputs -->
+            <div class="calculator-card glass-panel glass-card-interactive">
+                <div class="output-hero-card">
+                    <span class="output-hero-label">Estimated Monthly Net Take-Home</span>
+                    <div class="output-hero-val tabular-nums" id="net-monthly-amount">$5,975</div>
+                    <div class="output-hero-sub tabular-nums" id="net-annual-amount">Annual Net: $71,700 / year</div>
+                    <div>
+                        <span class="badge-effective-tax tabular-nums" id="effective-tax-badge">Effective Tax & Social Rate: 28.3%</span>
                     </div>
                 </div>
 
-                <div class="results-table">
+                <div>
+                    <div class="breakdown-stacked-bar">
+                        <div class="bar-segment bar-segment-net" id="bar-net" style="width: 71.7%;"></div>
+                        <div class="bar-segment bar-segment-tax" id="bar-tax" style="width: 24.0%;"></div>
+                        <div class="bar-segment bar-segment-social" id="bar-social" style="width: 4.3%;"></div>
+                    </div>
+                    <div class="breakdown-legend">
+                        <div class="legend-item"><span class="legend-dot" style="background: var(--color-net);"></span>Net: <span class="legend-val" id="pct-net">72%</span></div>
+                        <div class="legend-item"><span class="legend-dot" style="background: var(--color-tax);"></span>Tax: <span class="legend-val" id="pct-tax">24%</span></div>
+                        <div class="legend-item"><span class="legend-dot" style="background: var(--color-social);"></span>Social: <span class="legend-val" id="pct-social">4%</span></div>
+                    </div>
+                </div>
+
+                <div class="breakdown-table">
                     <div class="table-row">
-                        <span class="row-label">Gross Annual Income</span>
-                        <span class="row-value" id="val-gross">$76,000</span>
+                        <span class="row-label">Gross Compensation</span>
+                        <span class="row-value tabular-nums" id="val-gross">$100,000</span>
                     </div>
                     <div class="table-row">
-                        <span class="row-label">Estimated Income Tax</span>
-                        <span class="row-value tax-color" id="val-tax">-$18,240</span>
+                        <span class="row-label">Income Tax Assessment</span>
+                        <span class="row-value tax-color tabular-nums" id="val-tax">-$24,000</span>
                     </div>
                     <div class="table-row">
-                        <span class="row-label">Estimated Social Contributions</span>
-                        <span class="row-value social-color" id="val-social">-$0</span>
+                        <span class="row-label">Social Welfare & Healthcare</span>
+                        <span class="row-value social-color tabular-nums" id="val-social">-$4,300</span>
                     </div>
                     <div class="table-row highlight-row">
-                        <span class="row-label">Net Annual Pay</span>
-                        <span class="row-value net-color" id="val-net-annual">$57,760</span>
+                        <span class="row-label">Annual Net Take-Home</span>
+                        <span class="row-value net-color tabular-nums" id="val-net-annual">$71,700</span>
                     </div>
                     <div class="table-row highlight-row">
-                        <span class="row-label">Net Monthly Take-Home</span>
-                        <span class="row-value net-color" id="val-net-monthly">$4,813</span>
+                        <span class="row-label">Monthly Net Take-Home</span>
+                        <span class="row-value net-color tabular-nums" id="val-net-monthly">$5,975</span>
                     </div>
                 </div>
 
-                <div style="display: flex; gap: 0.8rem; margin-bottom: 1.5rem;">
-                    <button class="btn-primary" id="copy-summary-btn" style="flex: 1; justify-content: center;">
-                        <span>⚡ Copy Tax Breakdown</span>
-                    </button>
-                </div>
-
-                <!-- Box 1: Country Tax Insights -->
-                <div class="insight-box glass-panel" id="country-insight">
-                    <div class="insight-icon">💡</div>
-                    <div class="insight-content">
-                        <h4 id="insight-title">Spain Tax Insights</h4>
-                        <p id="insight-desc">Under Spain's Beckham Law, foreign remote workers paying tax as non-residents benefit from a flat 24% tax rate up to €600,000.</p>
-                    </div>
-                </div>
-
-                <!-- Box 2: Purchasing Power & Lifestyle Index -->
-                <div class="lifestyle-card glass-panel" id="lifestyle-box">
+                <div class="lifestyle-card">
                     <div class="lifestyle-header">
-                        <div>
-                            <span class="lifestyle-tag">⚡ REMOTAX INDEX</span>
-                            <h3 id="lifestyle-city-title">Madrid (Spain) Lifestyle</h3>
-                        </div>
-                        <div class="lifestyle-badge" id="lifestyle-tier-badge">🚀 High Savings & Luxury</div>
+                        <h4 id="lifestyle-city-title">Madrid (Spain) Lifestyle</h4>
+                        <span class="tier-badge" id="lifestyle-tier-badge">Wealth Accumulator</span>
                     </div>
-
-                    <div class="lifestyle-metrics-grid">
-                        <div class="lifestyle-metric">
-                            <span class="m-label">Est. Living & Rent Cost</span>
-                            <span class="m-val" id="val-living-cost">$1,850/mo</span>
-                        </div>
-                        <div class="lifestyle-metric highlight-metric">
-                            <span class="m-label">Est. Monthly Net Savings</span>
-                            <span class="m-val net-color" id="val-net-savings">$2,962/mo</span>
-                        </div>
-                    </div>
-
-                    <p class="lifestyle-insight-text" id="lifestyle-insight-desc">
-                        In Madrid, a take-home pay of $4,812 covers average rent and local living costs ($1,850), leaving an estimated $2,962 in net monthly savings.
+                    <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;" id="lifestyle-insight-desc">
+                        Living costs average $1,850/mo, leaving ample disposable savings.
                     </p>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <button type="button" id="copy-summary-btn" class="btn-glass" style="width: 100%; justify-content: center;">
+                        Copy Financial Breakdown
+                    </button>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <div class="logo">⚡ <span class="logo-text">Remo<span class="logo-highlight">tax</span></span></div>
-                <p>Empowering global remote workers with transparent, instant financial intelligence.</p>
-            </div>
-            <div class="footer-links">
-                <div class="link-group">
-                    <h4>Services</h4>
-                    <a href="calculator.html">Tax Calculator</a>
-                    <a href="quiz.html">Smart Match Quiz</a>
-                    <a href="benchmarks.html">$100k Benchmarks</a>
-                    <a href="destinations.html">Tax Havens</a>
-                    <a href="blog.html">Tax Blog</a>
+    <!-- Unified Liquid Glass Footer -->
+    <footer class="footer-unified">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand-col">
+                    <div class="nav-brand" style="padding: 0;">
+                        <div class="nav-logo-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
+                        </div>
+                        <span class="nav-brand-title">Remotax</span>
+                        <span class="nav-brand-tag">2026</span>
+                    </div>
+                    <p>Global Remote Work Financial Intelligence Platform. Precision cross-border tax, net pay, and relocation intelligence.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculators</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="calculators/take-home-pay.html">Take Home Pay</a></li>
+                        <li><a href="calculators/freelancer-tax.html">Freelancer Tax</a></li>
+                        <li><a href="calculators/remote-worker-tax.html">Remote Worker Tax</a></li>
+                        <li><a href="calculators/remote-work-savings.html">Remote Savings</a></li>
+                        <li><a href="comparisons/spain-vs-portugal.html">Spain vs Portugal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Country Engines</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="tax-calculator/spain.html">Spain Beckham Law</a></li>
+                        <li><a href="tax-calculator/portugal.html">Portugal D8 & IFICI</a></li>
+                        <li><a href="tax-calculator/germany.html">Germany Einkommensteuer</a></li>
+                        <li><a href="tax-calculator/uae.html">Dubai 0% Tax Haven</a></li>
+                        <li><a href="tax-calculator/uk.html">UK PAYE & NI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Transparency</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="faq.html">Tax Residency FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="adsense-disclosure.html">AdSense Disclosure</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 Remotax. All rights reserved.</p>
+            <div class="footer-bottom-bar">
+                <div>© 2026 Remotax. All rights reserved. Global Remote Work Financial Intelligence Platform.</div>
+            </div>
         </div>
     </footer>
 
-    <!-- App JS Engine -->
-    <script src="app.js?v=3.1.0"></script>
+    <script src="data/countries.js?v=3.2.0"></script>
+    <script src="engine/taxEngine.js?v=3.2.0"></script>
+    <script src="app.js?v=3.2.0"></script>
 </body>
 </html>

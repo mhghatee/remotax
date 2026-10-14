@@ -3,202 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Remote Salary & Net Income Benchmarks | Remotax</title>
+    <title>Global Remote Salary & Net Income Benchmarks 2026 | Remotax</title>
     <meta name="description" content="Interactive visual data comparing real net take-home pay across top remote worker destinations at $50k, $100k, $150k, and $200k salary benchmarks.">
     <meta name="keywords" content="remote salary benchmark, net income comparison, expat tax data, where does 100k go">
+    
+    <link rel="canonical" href="https://afrix.ir/remotax/benchmarks.html">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Global Remote Salary & Net Income Benchmarks | Remotax">
     <meta property="og:description" content="Visual net take-home comparison for global remote talent.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://afrix.ir/remotax/benchmarks.html">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="index.css?v=3.1.0">
+    <link rel="stylesheet" href="index.css?v=3.2.0">
 </head>
 <body>
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">⚡</div>
-                <span class="logo-text">Remo<span class="logo-highlight">tax</span></span>
-                <span class="logo-badge">benchmarks</span>
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="horizon-ambiance" aria-hidden="true"><div class="horizon-sun" style="transform: translateX(-50%) translateY(30px);"></div></div>
+
+    <!-- Floating Glass Navbar -->
+    <header class="navbar-floating">
+        <nav class="nav-pill">
+            <a href="index.html" class="nav-brand">
+                <div class="nav-logo-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                </div>
+                <span class="nav-brand-title">Remotax</span>
+                <span class="nav-brand-tag">benchmarks</span>
             </a>
-            <nav class="nav-links">
-                <a href="calculator.html" class="nav-link">Tax Calculator</a>
-                <a href="quiz.html" class="nav-link">Smart Quiz</a>
-                <a href="benchmarks.html" class="nav-link active">Benchmarks</a>
-                <a href="destinations.html" class="nav-link">Tax Havens</a>
-                <a href="blog.html" class="nav-link">Tax Blog</a>
-            </nav>
-            <div>
-                <a href="calculator.html" class="btn-secondary">Calculator ⚡</a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Calculator</a></li>
+                <li><a href="calculators/take-home-pay.html" class="nav-link">Take Home</a></li>
+                <li><a href="calculators/freelancer-tax.html" class="nav-link">Freelancer</a></li>
+                <li><a href="comparisons/spain-vs-portugal.html" class="nav-link">Comparisons</a></li>
+                <li><a href="destinations.html" class="nav-link">Tax Havens</a></li>
+                <li><a href="benchmarks.html" class="nav-link active">Benchmarks</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="quiz.html" class="btn-primary nav-cta">Find Match</a>
             </div>
-        </div>
+        </nav>
     </header>
 
     <!-- Benchmarks Main Section -->
-    <section class="section-container" id="visual-comparison" style="padding-top: 3rem;">
-        <div class="section-header">
-            <div class="pill-tag">
-                <span class="pill-dot"></span> Visual Data & Benchmark Comparison
-            </div>
-            <h2>Where Does Your <span class="gradient-text">$100,000</span> Go Globally?</h2>
-            <p>Compare real net take-home pay across top remote worker destinations side-by-side.</p>
-            
-            <!-- Benchmark Salary Selector Tabs -->
-            <div class="benchmark-tabs" id="benchmark-tabs">
-                <button class="benchmark-btn" data-salary="50000">$50,000 / yr</button>
-                <button class="benchmark-btn active" data-salary="100000">$100,000 / yr</button>
-                <button class="benchmark-btn" data-salary="150000">$150,000 / yr</button>
-                <button class="benchmark-btn" data-salary="200000">$200,000 / yr</button>
+    <section class="container" style="padding-top: calc(var(--header-height) + 3.5rem); text-align: center;">
+        <div class="pill-tag"><span class="pill-dot"></span> Sovereign Capital Retention</div>
+        <h1>
+            Where Does Your <br>
+            <span class="gradient-text">$100,000</span> Actually
+            <span class="serif-accent">Go Globally?</span>
+        </h1>
+        <p style="max-width: 640px; margin: 1rem auto 2.5rem; color: var(--text-body);">
+            Compare retained net income across leading remote worker jurisdictions side-by-side at standardized compensation milestones.
+        </p>
+
+        <!-- Benchmark Salary Tabs -->
+        <div style="display: flex; justify-content: center; margin-bottom: 3rem;">
+            <div class="segmented-control" id="benchmark-tabs">
+                <button type="button" class="segmented-option benchmark-btn" data-salary="50000">$50,000 / yr</button>
+                <button type="button" class="segmented-option benchmark-btn active" data-salary="100000">$100,000 / yr</button>
+                <button type="button" class="segmented-option benchmark-btn" data-salary="150000">$150,000 / yr</button>
+                <button type="button" class="segmented-option benchmark-btn" data-salary="200000">$200,000 / yr</button>
             </div>
         </div>
 
-        <!-- Infographic Cards Grid -->
-        <div class="infographic-grid" id="infographic-cards-container">
+        <!-- Cards Grid -->
+        <div class="grid-12" id="infographic-cards-container">
             <!-- Dubai Card -->
-            <div class="info-card glass-panel highlight-info-card">
-                <div class="info-card-header">
-                    <div class="info-flag">🇦🇪</div>
-                    <div>
-                        <span class="info-country">Dubai (UAE)</span>
-                        <span class="info-regime">0% Personal Tax Scheme</span>
+            <div class="glass-panel glass-card-interactive" style="grid-column: span 6; padding: 2rem; border-color: rgba(126, 224, 176, 0.35); text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <span class="country-code-badge" style="background: rgba(126, 224, 176, 0.2); color: var(--color-net);">AE</span>
+                        <div>
+                            <span style="font-weight: 700; color: #fff; font-size: 1.1rem;">Dubai (UAE)</span>
+                            <span style="display: block; font-size: 0.8rem; color: var(--text-muted);">0% Sovereign Personal Tax Scheme</span>
+                        </div>
                     </div>
-                    <div class="info-rank-badge">#1 Max Net</div>
+                    <span class="badge-effective-tax" style="margin: 0; color: var(--color-net);">#1 Max Net (100%)</span>
                 </div>
-                <div class="info-bar-container">
-                    <div class="info-bar-fill net-bar" style="width: 100%;"></div>
+                <div class="breakdown-stacked-bar" style="margin: 1.25rem 0;">
+                    <div class="bar-segment bar-segment-net" style="width: 100%;"></div>
                 </div>
-                <div class="info-card-stats">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <span class="info-label">Net Take-Home</span>
-                        <span class="info-val green-text" id="info-net-ae">$100,000</span>
+                        <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted);">Net Take-Home</span>
+                        <div class="tabular-nums text-net" style="font-size: 1.85rem; font-weight: 800;" id="info-net-ae">$100,000</div>
                     </div>
-                    <div>
-                        <span class="info-label">Tax & Social Kept</span>
-                        <span class="info-val">100% Net</span>
+                    <div style="text-align: right;">
+                        <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted);">Effective Rate</span>
+                        <div class="tabular-nums" style="font-size: 1.35rem; font-weight: 700; color: #fff;">0.0%</div>
                     </div>
                 </div>
             </div>
 
             <!-- Spain Card -->
-            <div class="info-card glass-panel">
-                <div class="info-card-header">
-                    <div class="info-flag">🇪🇸</div>
-                    <div>
-                        <span class="info-country">Spain (Madrid)</span>
-                        <span class="info-regime">Beckham Law (24% Flat)</span>
+            <div class="glass-panel glass-card-interactive" style="grid-column: span 6; padding: 2rem; text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <span class="country-code-badge" style="background: rgba(217, 119, 47, 0.2); color: var(--horizon-peach);">ES</span>
+                        <div>
+                            <span style="font-weight: 700; color: #fff; font-size: 1.1rem;">Spain (Madrid)</span>
+                            <span style="display: block; font-size: 0.8rem; color: var(--text-muted);">Beckham Law (24% Flat Rate)</span>
+                        </div>
                     </div>
-                    <div class="info-rank-badge rank-eu">Top EU Choice</div>
+                    <span class="badge-effective-tax" style="margin: 0; color: var(--horizon-peach);">Top EU Choice</span>
                 </div>
-                <div class="info-bar-container">
-                    <div class="info-bar-fill net-bar" style="width: 72%;"></div>
+                <div class="breakdown-stacked-bar" style="margin: 1.25rem 0;">
+                    <div class="bar-segment bar-segment-net" style="width: 72%;"></div>
+                    <div class="bar-segment bar-segment-tax" style="width: 28%;"></div>
                 </div>
-                <div class="info-card-stats">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <span class="info-label">Net Take-Home</span>
-                        <span class="info-val green-text" id="info-net-es">$72,000</span>
+                        <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted);">Net Take-Home</span>
+                        <div class="tabular-nums text-net" style="font-size: 1.85rem; font-weight: 800;" id="info-net-es">$72,000</div>
                     </div>
-                    <div>
-                        <span class="info-label">Effective Tax Rate</span>
-                        <span class="info-val">28.0%</span>
+                    <div style="text-align: right;">
+                        <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted);">Effective Rate</span>
+                        <div class="tabular-nums" style="font-size: 1.35rem; font-weight: 700; color: #fff;">28.0%</div>
                     </div>
                 </div>
             </div>
 
             <!-- Portugal Card -->
-            <div class="info-card glass-panel">
-                <div class="info-card-header">
-                    <div class="info-flag">🇵🇹</div>
-                    <div>
-                        <span class="info-country">Portugal</span>
-                        <span class="info-regime">D8 Nomad Incentive</span>
+            <div class="glass-panel glass-card-interactive" style="grid-column: span 6; padding: 2rem; text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <span class="country-code-badge" style="background: rgba(126, 224, 176, 0.2); color: var(--color-net);">PT</span>
+                        <div>
+                            <span style="font-weight: 700; color: #fff; font-size: 1.1rem;">Portugal (Lisbon)</span>
+                            <span style="display: block; font-size: 0.8rem; color: var(--text-muted);">D8 Nomad / IFICI 20% Incentive</span>
+                        </div>
                     </div>
-                    <div class="info-rank-badge rank-nomad">Nomad Favorite</div>
+                    <span class="badge-effective-tax" style="margin: 0; color: var(--color-net);">Schengen Access</span>
                 </div>
-                <div class="info-bar-container">
-                    <div class="info-bar-fill net-bar" style="width: 65%;"></div>
+                <div class="breakdown-stacked-bar" style="margin: 1.25rem 0;">
+                    <div class="bar-segment bar-segment-net" style="width: 65%;"></div>
+                    <div class="bar-segment bar-segment-tax" style="width: 35%;"></div>
                 </div>
-                <div class="info-card-stats">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <span class="info-label">Net Take-Home</span>
-                        <span class="info-val green-text" id="info-net-pt">$65,000</span>
+                        <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted);">Net Take-Home</span>
+                        <div class="tabular-nums text-net" style="font-size: 1.85rem; font-weight: 800;" id="info-net-pt">$65,000</div>
                     </div>
-                    <div>
-                        <span class="info-label">Effective Tax Rate</span>
-                        <span class="info-val">35.0%</span>
+                    <div style="text-align: right;">
+                        <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted);">Effective Rate</span>
+                        <div class="tabular-nums" style="font-size: 1.35rem; font-weight: 700; color: #fff;">35.0%</div>
                     </div>
                 </div>
             </div>
 
             <!-- Germany Card -->
-            <div class="info-card glass-panel">
-                <div class="info-card-header">
-                    <div class="info-flag">🇩🇪</div>
-                    <div>
-                        <span class="info-country">Germany</span>
-                        <span class="info-regime">Standard Progressive</span>
+            <div class="glass-panel glass-card-interactive" style="grid-column: span 6; padding: 2rem; text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <span class="country-code-badge" style="background: rgba(96, 165, 250, 0.2); color: var(--color-info);">DE</span>
+                        <div>
+                            <span style="font-weight: 700; color: #fff; font-size: 1.1rem;">Germany (Berlin)</span>
+                            <span style="display: block; font-size: 0.8rem; color: var(--text-muted);">Progressive Einkommensteuer</span>
+                        </div>
                     </div>
-                    <div class="info-rank-badge rank-social">High Security</div>
+                    <span class="badge-effective-tax" style="margin: 0;">Full Social Net</span>
                 </div>
-                <div class="info-bar-container">
-                    <div class="info-bar-fill net-bar" style="width: 54%;"></div>
+                <div class="breakdown-stacked-bar" style="margin: 1.25rem 0;">
+                    <div class="bar-segment bar-segment-net" style="width: 54%;"></div>
+                    <div class="bar-segment bar-segment-tax" style="width: 46%;"></div>
                 </div>
-                <div class="info-card-stats">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <span class="info-label">Net Take-Home</span>
-                        <span class="info-val green-text" id="info-net-de">$54,000</span>
+                        <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted);">Net Take-Home</span>
+                        <div class="tabular-nums text-net" style="font-size: 1.85rem; font-weight: 800;" id="info-net-de">$54,000</div>
                     </div>
-                    <div>
-                        <span class="info-label">Effective Tax & Social</span>
-                        <span class="info-val">46.0%</span>
+                    <div style="text-align: right;">
+                        <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted);">Effective Rate</span>
+                        <div class="tabular-nums" style="font-size: 1.35rem; font-weight: 700; color: #fff;">46.0%</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Share & Viral Action Banner -->
-        <div class="visual-share-banner glass-panel">
-            <div class="share-banner-content">
-                <h3>📢 Share This Global Tax Breakdown</h3>
-                <p>Help fellow digital nomads and freelancers optimize their global tax footprint legally.</p>
-            </div>
-            <button class="btn-primary" id="share-infographic-btn" style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important; color: #ffffff !important; border: 1px solid rgba(255, 255, 255, 0.2) !important; padding: 0.85rem 1.8rem !important; border-radius: 12px !important; font-weight: 700 !important; font-size: 0.95rem !important; cursor: pointer !important; display: inline-flex !important; align-items: center !important; gap: 0.6rem !important; box-shadow: 0 4px 20px rgba(99, 102, 241, 0.45) !important;">
-                <span>⚡ Copy Comparison Summary</span>
+        <div style="margin-top: 3rem; display: flex; justify-content: center; gap: 1rem;">
+            <button type="button" id="share-infographic-btn" class="btn-glass" style="padding: 0.85rem 2rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="18" cy="5" r="3"></circle>
+                    <circle cx="6" cy="12" r="3"></circle>
+                    <circle cx="18" cy="19" r="3"></circle>
+                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                </svg>
+                Copy Benchmark Comparison
             </button>
+            <a href="index.html" class="btn-primary" style="padding: 0.85rem 2rem;">Open Full Calculator →</a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <div class="logo">⚡ <span class="logo-text">Remo<span class="logo-highlight">tax</span></span></div>
-                <p>Empowering global remote workers with transparent, instant financial intelligence.</p>
-            </div>
-            <div class="footer-links">
-                <div class="link-group">
-                    <h4>Services</h4>
-                    <a href="calculator.html">Tax Calculator</a>
-                    <a href="quiz.html">Smart Match Quiz</a>
-                    <a href="benchmarks.html">$100k Benchmarks</a>
-                    <a href="destinations.html">Tax Havens</a>
-                    <a href="blog.html">Tax Blog</a>
+    <!-- Unified Liquid Glass Footer -->
+    <footer class="footer-unified">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand-col">
+                    <div class="nav-brand" style="padding: 0;">
+                        <div class="nav-logo-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
+                        </div>
+                        <span class="nav-brand-title">Remotax</span>
+                        <span class="nav-brand-tag">2026</span>
+                    </div>
+                    <p>Global Remote Work Financial Intelligence Platform. Precision cross-border tax, net pay, and relocation intelligence.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Calculators</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="calculators/take-home-pay.html">Take Home Pay</a></li>
+                        <li><a href="calculators/freelancer-tax.html">Freelancer Tax</a></li>
+                        <li><a href="calculators/remote-worker-tax.html">Remote Worker Tax</a></li>
+                        <li><a href="calculators/remote-work-savings.html">Remote Savings</a></li>
+                        <li><a href="comparisons/spain-vs-portugal.html">Spain vs Portugal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Country Engines</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="tax-calculator/spain.html">Spain Beckham Law</a></li>
+                        <li><a href="tax-calculator/portugal.html">Portugal D8 & IFICI</a></li>
+                        <li><a href="tax-calculator/germany.html">Germany Einkommensteuer</a></li>
+                        <li><a href="tax-calculator/uae.html">Dubai 0% Tax Haven</a></li>
+                        <li><a href="tax-calculator/uk.html">UK PAYE & NI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Transparency</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="faq.html">Tax Residency FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="adsense-disclosure.html">AdSense Disclosure</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 Remotax. All rights reserved.</p>
+            <div class="footer-bottom-bar">
+                <div>© 2026 Remotax. All rights reserved. Global Remote Work Financial Intelligence Platform.</div>
+            </div>
         </div>
     </footer>
 
-    <!-- App JS Engine -->
-    <script src="app.js?v=3.1.0"></script>
+    <script src="data/countries.js?v=3.2.0"></script>
+    <script src="engine/taxEngine.js?v=3.2.0"></script>
+    <script src="app.js?v=3.2.0"></script>
 </body>
 </html>

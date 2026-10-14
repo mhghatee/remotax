@@ -1,7 +1,7 @@
 /* =========================================================================
    REMOTAX — GLOBAL REMOTE WORK FINANCIAL INTELLIGENCE PLATFORM
-   Unified UI Controller & State Manager (Tax Year: 2026)
-   Conforms to Remotax Platform Specification (Sections 2, 4, 5, 6, 7, 8, 9, 10, 13, 26, 27, 28, 44)
+   Unified Liquid Glass UI Controller & State Manager (Tax Year: 2026)
+   Conforms to Remotax Platform Specification (Apple-grade iOS Liquid Glass)
    ========================================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -48,12 +48,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const insightTitle = document.getElementById('insight-title');
     const insightDesc = document.getElementById('insight-desc');
+    const horizonSun = document.querySelector('.horizon-sun');
+    const rankedTableBody = document.getElementById('ranked-countries-tbody');
+    const rankSortToggle = document.getElementById('rank-sort-toggle');
 
     // Current State
     let currentCurrencySymbol = '$';
+    let currentRankSort = 'takehome'; // 'takehome' or 'savings'
+    let lastAnimatedMonthlyNet = 0;
 
     /**
-     * Robust number parser (Section 6)
+     * Robust number parser
      * Handles `$100,000`, `100 000`, `€85,000`, negative numbers, decimals, empty input
      */
     function sanitizeInput(val, fallback = 0) {
@@ -72,6 +77,67 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     function formatCurrency(amount) {
         return currentCurrencySymbol + Math.round(amount).toLocaleString('en-US');
+    }
+
+    /**
+     * Smooth Number Rolling Animation (Apple-grade micro-interaction)
+     */
+    function animateValue(element, start, end, duration = 400) {
+        if (!element) return;
+        if (Math.abs(end - start) < 2) {
+            element.textContent = formatCurrency(end);
+            return;
+        }
+
+        const startTime = performance.now();
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Spring ease out quad
+            const ease = 1 - Math.pow(1 - progress, 3);
+            const current = Math.round(start + (end - start) * ease);
+            element.textContent = formatCurrency(current);
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                element.textContent = formatCurrency(end);
+            }
+        }
+        requestAnimationFrame(update);
+    }
+
+    /**
+     * Strictly Data-Driven Country Select Initialization
+     * Syncs dropdown options strictly from data/countries.js (17 statutory countries)
+     */
+    function initDataDrivenCountrySelect() {
+        if (!countrySelect) return;
+        const countriesObj = (window.RemotaxEngine && window.RemotaxEngine.COUNTRIES) 
+            ? window.RemotaxEngine.COUNTRIES 
+            : (window.REMOTAX_COUNTRIES || null);
+
+        if (!countriesObj) return;
+
+        const supportedKeys = Object.keys(countriesObj);
+        const currentVal = countrySelect.value || 'ES';
+
+        // Check if we need to regenerate options
+        const existingKeys = Array.from(countrySelect.options).map(o => o.value);
+        const isDiscrepant = existingKeys.length !== supportedKeys.length || !supportedKeys.every(k => existingKeys.includes(k));
+
+        if (isDiscrepant) {
+            countrySelect.innerHTML = '';
+            supportedKeys.forEach(code => {
+                const c = countriesObj[code];
+                const opt = document.createElement('option');
+                opt.value = code;
+                const regimePreview = (c.regimes && c.regimes[0]) ? ` (${c.regimes[0].name.split('(')[0].trim()})` : '';
+                opt.textContent = `${c.country}${regimePreview}`;
+                countrySelect.appendChild(opt);
+            });
+            countrySelect.value = supportedKeys.includes(currentVal) ? currentVal : 'ES';
+        }
     }
 
     /**
@@ -110,20 +176,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 effectiveTaxRate: gross > 0 ? parseFloat((((tax + soc) / gross) * 100).toFixed(1)) : 0,
                 city: "Madrid",
                 country: "Spain",
-                tier: "💎 Wealth Accumulator",
+                tier: "Wealth Accumulator",
                 monthlyLivingCost: 1850,
                 netMonthlySavings: Math.round((net / 12) - 1850)
             };
         }
 
-        // Render Values
+        // Render Values with Smooth Animation
         if (valGross) valGross.textContent = formatCurrency(res.grossIncome);
         if (valTax) valTax.textContent = `-${formatCurrency(res.incomeTax)}`;
         if (valSocial) valSocial.textContent = `-${formatCurrency(res.socialSecurity)}`;
         if (valNetAnnual) valNetAnnual.textContent = formatCurrency(res.netAnnual);
         if (valNetMonthly) valNetMonthly.textContent = formatCurrency(res.netMonthly);
 
-        if (netMonthlyAmount) netMonthlyAmount.textContent = formatCurrency(res.netMonthly);
+        if (netMonthlyAmount) {
+            animateValue(netMonthlyAmount, lastAnimatedMonthlyNet || res.netMonthly, res.netMonthly, 350);
+            lastAnimatedMonthlyNet = res.netMonthly;
+        }
         if (netAnnualAmount) netAnnualAmount.textContent = `Annual Net: ${formatCurrency(res.netAnnual)} / year`;
         if (effectiveTaxBadge) effectiveTaxBadge.textContent = `Effective Tax & Social Rate: ${res.effectiveTaxRate}%`;
 
@@ -140,6 +209,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (pctTax) pctTax.textContent = `${Math.round(taxPct)}%`;
         if (pctSocial) pctSocial.textContent = `${Math.round(socialPct)}%`;
 
+        // Reactive Living Horizon Sun Elevation (Moves as income changes)
+        if (horizonSun) {
+            const normalizedIncome = Math.min(Math.max((gross - 20000) / 230000, 0), 1);
+            // Move sun upwards as income rises
+            const translateY = Math.round(120 - normalizedIncome * 180);
+            horizonSun.style.transform = `translateX(-50%) translateY(${translateY}px)`;
+            horizonSun.style.opacity = `${0.60 + normalizedIncome * 0.38}`;
+        }
+
         // Render Lifestyle & Purchasing Power Index
         const lifestyleCityTitle = document.getElementById('lifestyle-city-title');
         const lifestyleTierBadge = document.getElementById('lifestyle-tier-badge');
@@ -151,16 +229,92 @@ document.addEventListener('DOMContentLoaded', () => {
             lifestyleCityTitle.textContent = `${res.city} (${res.country}) Lifestyle`;
             if (valLivingCost) valLivingCost.textContent = `${formatCurrency(res.monthlyLivingCost)}/mo`;
             if (valNetSavings) valNetSavings.textContent = `${formatCurrency(res.netMonthlySavings)}/mo`;
-            if (lifestyleTierBadge) lifestyleTierBadge.textContent = res.tier;
+            if (lifestyleTierBadge) lifestyleTierBadge.textContent = res.tier.replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, '').trim();
 
             if (lifestyleInsightDesc) {
                 if (res.netMonthlySavings >= 0) {
-                    lifestyleInsightDesc.textContent = `In ${res.city}, a take-home pay of ${formatCurrency(res.netMonthly)} covers average rent and living costs (${formatCurrency(res.monthlyLivingCost)}), leaving an estimated ${formatCurrency(res.netMonthlySavings)} in net monthly savings.`;
+                    lifestyleInsightDesc.textContent = `In ${res.city}, an estimated take-home pay of ${formatCurrency(res.netMonthly)} covers average rent and living costs (${formatCurrency(res.monthlyLivingCost)}), leaving ${formatCurrency(res.netMonthlySavings)} in net monthly savings.`;
                 } else {
-                    lifestyleInsightDesc.textContent = `In ${res.city}, average living costs (${formatCurrency(res.monthlyLivingCost)}) exceed your projected monthly take-home pay (${formatCurrency(res.netMonthly)}). Consider tax incentives or higher rates.`;
+                    lifestyleInsightDesc.textContent = `In ${res.city}, average living costs (${formatCurrency(res.monthlyLivingCost)}) exceed your projected monthly take-home pay (${formatCurrency(res.netMonthly)}).`;
                 }
             }
         }
+
+        // Render Ranked Comparison Across All 17 Countries
+        renderRankedComparison(gross, empType);
+    }
+
+    /**
+     * Ranked "Same Income, Every Country" List (Sortable: Take-home / Savings)
+     */
+    function renderRankedComparison(gross, empType) {
+        if (!rankedTableBody || !window.RemotaxEngine || !window.RemotaxEngine.COUNTRIES) return;
+
+        const countries = Object.keys(window.RemotaxEngine.COUNTRIES).map(code => {
+            const data = window.RemotaxEngine.calculateTax({
+                grossIncome: gross,
+                countryCode: code,
+                workerType: empType,
+                useSpecialRegime: true
+            });
+            const cMeta = window.RemotaxEngine.COUNTRIES[code];
+            return {
+                code,
+                country: cMeta.country,
+                city: cMeta.city,
+                symbol: cMeta.symbol,
+                regimeName: cMeta.regimes && cMeta.regimes[0] ? cMeta.regimes[0].name.split('(')[0].trim() : 'Standard Progressive',
+                netAnnual: data.netAnnual,
+                netMonthly: data.netMonthly,
+                effectiveRate: data.effectiveTaxRate,
+                livingCost: data.monthlyLivingCost,
+                netSavings: data.netMonthlySavings
+            };
+        });
+
+        // Sort based on current mode
+        if (currentRankSort === 'savings') {
+            countries.sort((a, b) => b.netSavings - a.netSavings);
+        } else {
+            countries.sort((a, b) => b.netAnnual - a.netAnnual);
+        }
+
+        rankedTableBody.innerHTML = '';
+        countries.forEach((item, index) => {
+            const row = document.createElement('tr');
+            row.className = 'ranked-row';
+            row.innerHTML = `
+                <td>
+                    <div class="country-cell">
+                        <span class="country-code-badge">${index + 1}</span>
+                        <div>
+                            <span class="country-name-bold">${item.country}</span>
+                            <span class="country-regime-sub">${item.city} • ${item.regimeName}</span>
+                        </div>
+                    </div>
+                </td>
+                <td class="tabular-nums" style="font-weight: 700; color: #ffffff;">${item.symbol}${item.netAnnual.toLocaleString()}</td>
+                <td class="tabular-nums text-net" style="font-weight: 700;">${item.symbol}${item.netMonthly.toLocaleString()}/mo</td>
+                <td class="tabular-nums" style="color: var(--text-muted);">${item.effectiveRate}%</td>
+                <td class="tabular-nums" style="color: var(--text-muted);">${item.symbol}${item.livingCost.toLocaleString()}/mo</td>
+                <td class="tabular-nums" style="font-weight: 700; color: ${item.netSavings >= 0 ? 'var(--color-net)' : 'var(--color-tax)'};">
+                    ${item.netSavings >= 0 ? '+' : ''}${item.symbol}${item.netSavings.toLocaleString()}/mo
+                </td>
+            `;
+            rankedTableBody.appendChild(row);
+        });
+    }
+
+    if (rankSortToggle) {
+        rankSortToggle.addEventListener('click', (e) => {
+            const btn = e.target.closest('.segmented-option');
+            if (btn) {
+                rankSortToggle.querySelectorAll('.segmented-option').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentRankSort = btn.getAttribute('data-sort') || 'takehome';
+                calculateTaxes();
+            }
+        });
     }
 
     /**
@@ -214,6 +368,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- Interactive Specular Glare Movement (Light that reacts) ---
+    document.addEventListener('mousemove', (e) => {
+        const interactiveCards = document.querySelectorAll('.glass-card-interactive, .calculator-card, .nav-pill');
+        interactiveCards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+
+    // --- Floating Navbar Morph On Scroll ---
+    const floatingNav = document.querySelector('.navbar-floating');
+    if (floatingNav) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                floatingNav.classList.add('scrolled');
+            } else {
+                floatingNav.classList.remove('scrolled');
+            }
+        }, { passive: true });
+    }
+
     // --- Input Event Listeners ---
     if (incomeSlider && incomeInput) {
         incomeSlider.addEventListener('input', (e) => {
@@ -261,7 +439,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (regimeToggle) regimeToggle.addEventListener('change', calculateTaxes);
     if (filingStatusSelect) filingStatusSelect.addEventListener('change', calculateTaxes);
 
-    // --- Reset Calculator (Section 44) ---
+    // --- Reset Calculator ---
     if (resetCalcBtn) {
         resetCalcBtn.addEventListener('click', () => {
             if (countrySelect) countrySelect.value = 'ES';
@@ -283,7 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Clipboard Copy Feature (Section 26) ---
+    // --- Clipboard Copy Feature ---
     if (copySummaryBtn) {
         copySummaryBtn.addEventListener('click', () => {
             const country = countrySelect ? countrySelect.options[countrySelect.selectedIndex].text : "Spain";
@@ -293,20 +471,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const effRate = effectiveTaxBadge ? effectiveTaxBadge.textContent : "28.3%";
             const empType = document.querySelector('input[name="emp-type"]:checked')?.value || "contractor";
 
-            const summaryText = `⚡ REMOTAX FINANCIAL SUMMARY (Tax Year: 2026)\n` +
+            const summaryText = `REMOTAX FINANCIAL INTELLIGENCE SUMMARY (Tax Year: 2026)\n` +
                 `• Country: ${country}\n` +
                 `• Classification: ${empType === 'employee' ? 'Employee (EOR)' : 'B2B Contractor / Freelancer'}\n` +
                 `• Gross Annual Income: ${gross}\n` +
                 `• Estimated Monthly Net Pay: ${netMonth}\n` +
                 `• Estimated Annual Net Pay: ${netYear}\n` +
                 `• ${effRate}\n` +
-                `• Disclaimer: Estimates for financial comparison only; not formal tax advice.\n` +
+                `• Note: Estimates for relocation benchmarking; not formal tax advice.\n` +
                 `Calculated at ${CANONICAL_BASE_URL}`;
 
             const copySuccess = () => {
                 const origText = copySummaryBtn.textContent;
-                copySummaryBtn.textContent = '✓ Copied to Clipboard!';
-                copySummaryBtn.style.borderColor = '#10b981';
+                copySummaryBtn.textContent = 'Copied to Clipboard';
+                copySummaryBtn.style.borderColor = 'var(--color-net)';
                 setTimeout(() => {
                     copySummaryBtn.textContent = origText;
                     copySummaryBtn.style.borderColor = '';
@@ -342,7 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.removeChild(textArea);
     }
 
-    // --- Benchmark Salary Tabs & Calculator Synchronization (Section 28) ---
+    // --- Benchmark Salary Tabs & Calculator Synchronization ---
     const benchmarkBtns = document.querySelectorAll('.benchmark-btn');
     const shareInfographicBtn = document.getElementById('share-infographic-btn');
 
@@ -352,7 +530,6 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
             const salary = sanitizeInput(btn.getAttribute('data-salary'), 100000);
 
-            // Synchronize with main calculator (Section 28)
             if (incomeInput && incomeSlider) {
                 incomeInput.value = salary;
                 incomeSlider.value = salary;
@@ -385,26 +562,28 @@ document.addEventListener('DOMContentLoaded', () => {
             const activeBtn = document.querySelector('.benchmark-btn.active');
             const salaryText = activeBtn ? activeBtn.textContent : '$100,000 / yr';
 
-            const text = `📊 REMOTAX GLOBAL REMOTE WORKER BENCHMARK (${salaryText})\n` +
-                `🇦🇪 Dubai (UAE): $100,000 Net (0% Tax)\n` +
-                `🇪🇸 Spain (Beckham Law): $72,000 Net (24% Flat)\n` +
-                `🇵🇹 Portugal (D8 / NHR 2.0): $65,000 Net (20% Flat)\n` +
-                `🇩🇪 Germany: $54,000 Net (Standard Bracket)\n\n` +
-                `Compare 20 countries on Remotax: ${CANONICAL_BASE_URL}`;
+            const text = `REMOTAX GLOBAL REMOTE WORKER BENCHMARK (${salaryText})\n` +
+                `Dubai (UAE): $100,000 Net (0% Tax)\n` +
+                `Spain (Beckham Law): $72,000 Net (24% Flat)\n` +
+                `Portugal (D8 / NHR 2.0): $65,000 Net (20% Flat)\n` +
+                `Germany: $54,000 Net (Standard Bracket)\n\n` +
+                `Compare all countries on Remotax: ${CANONICAL_BASE_URL}`;
 
             fallbackCopyText(text, () => {
                 const origText = shareInfographicBtn.innerHTML;
-                shareInfographicBtn.innerHTML = '<span>✓ Comparison Copied to Clipboard!</span>';
-                shareInfographicBtn.style.background = '#10b981';
+                shareInfographicBtn.innerHTML = '<span>Comparison Copied</span>';
+                shareInfographicBtn.style.background = 'var(--color-net)';
+                shareInfographicBtn.style.color = '#070b0f';
                 setTimeout(() => {
                     shareInfographicBtn.innerHTML = origText;
                     shareInfographicBtn.style.background = '';
+                    shareInfographicBtn.style.color = '';
                 }, 2500);
             });
         });
     }
 
-    // --- Smart Match Nomad Quiz Engine (Section 27) ---
+    // --- Smart Match Nomad Quiz Engine ---
     const quizState = { income: null, goal: null, work: null };
     let currentQuizStep = 1;
 
@@ -437,7 +616,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Previous Question Button Handler
     document.querySelectorAll('.quiz-prev-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             if (currentQuizStep > 1) {
@@ -459,11 +637,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (quizProgress) quizProgress.style.width = '100%';
 
-        const { income, goal, work } = quizState;
+        const { income, goal } = quizState;
 
         let match = {
             code: 'AE',
-            flag: '🇦🇪',
             name: 'Dubai, United Arab Emirates',
             tag: '0% Income Tax • Virtual Work Visa',
             desc: 'Dubai offers 100% tax exemption on foreign remote earnings with 0% personal income tax and simple 1-year renewable visa eligibility.',
@@ -473,7 +650,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (goal === 'eu_residency' || (income === 'mid' && goal !== 'zero_tax')) {
             match = {
                 code: 'ES',
-                flag: '🇪🇸',
                 name: 'Spain (Madrid & Barcelona)',
                 tag: 'Beckham Law 24% Flat Rate • EU Residency',
                 desc: 'Spain\'s Beckham Law caps income tax at a flat 24% up to €600,000, offering EU residency and high quality of living.',
@@ -482,7 +658,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (goal === 'tropical') {
             match = {
                 code: 'TH',
-                flag: '🇹🇭',
                 name: 'Thailand (Bangkok & Chiang Mai)',
                 tag: 'Destination Thailand Visa (DTV) • Low Cost',
                 desc: 'Thailand offers a 5-year Destination Thailand Visa (DTV) with foreign-earned income exemptions and ultra-low living costs.',
@@ -491,7 +666,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (income === 'low' && goal === 'eu_residency') {
             match = {
                 code: 'PT',
-                flag: '🇵🇹',
                 name: 'Portugal (Lisbon & Algarve)',
                 tag: 'D8 Digital Nomad Visa • 20% Tax Incentive',
                 desc: 'Portugal\'s D8 Visa requires €3,280 monthly foreign income and grants Schengen residency with competitive 20% tax rates.',
@@ -502,12 +676,10 @@ document.addEventListener('DOMContentLoaded', () => {
         matchedCountryCode = match.code;
         matchedIncomeVal = match.incomeVal;
 
-        const resFlag = document.getElementById('res-flag');
         const resName = document.getElementById('res-country-name');
         const resTag = document.getElementById('res-tag');
         const resDesc = document.getElementById('res-desc');
 
-        if (resFlag) resFlag.textContent = match.flag;
         if (resName) resName.textContent = match.name;
         if (resTag) resTag.textContent = match.tag;
         if (resDesc) resDesc.textContent = match.desc;
@@ -544,66 +716,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Hub Tabbed Switcher ---
-    const hubTabBtns = document.querySelectorAll('.hub-tab-btn');
-    const hubPanels = document.querySelectorAll('.hub-panel');
+    // --- Mobile Drawer Handlers ---
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileDrawerClose = document.getElementById('mobile-drawer-close');
 
-    hubTabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const targetTab = btn.getAttribute('data-tab');
+    function openMobileDrawer() {
+        if (mobileDrawer) mobileDrawer.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
 
-            hubTabBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+    function closeMobileDrawer() {
+        if (mobileDrawer) mobileDrawer.classList.remove('open');
+        document.body.style.overflow = '';
+    }
 
-            hubPanels.forEach(panel => {
-                panel.style.display = 'none';
-                panel.classList.remove('active-panel');
-            });
-
-            const activePanel = document.getElementById(`panel-${targetTab}`);
-            if (activePanel) {
-                activePanel.style.display = 'block';
-                activePanel.classList.add('active-panel');
-            }
-        });
-    });
-
-    // --- Mobile Menu Toggle & Keyboard Accessibility (Section 2 & 34) ---
-    const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
-    const mainNavLinks = document.getElementById('main-nav-links');
-
-    if (mobileMenuBtn && mainNavLinks) {
-        mobileMenuBtn.addEventListener('click', (e) => {
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
-            mobileMenuBtn.classList.toggle('active');
-            mainNavLinks.classList.toggle('mobile-active');
-        });
-
-        mainNavLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                mainNavLinks.classList.remove('mobile-active');
-            });
-        });
-
-        // Click outside closes menu
-        document.addEventListener('click', (e) => {
-            if (!mainNavLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                mobileMenuBtn.classList.remove('active');
-                mainNavLinks.classList.remove('mobile-active');
-            }
-        });
-
-        // Escape key closes menu (Section 2)
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && mainNavLinks.classList.contains('mobile-active')) {
-                mobileMenuBtn.classList.remove('active');
-                mainNavLinks.classList.remove('mobile-active');
-            }
+            openMobileDrawer();
         });
     }
 
+    if (mobileDrawerClose) {
+        mobileDrawerClose.addEventListener('click', closeMobileDrawer);
+    }
+
+    if (mobileDrawer) {
+        mobileDrawer.addEventListener('click', (e) => {
+            if (e.target === mobileDrawer) closeMobileDrawer();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) closeMobileDrawer();
+        });
+        mobileDrawer.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileDrawer));
+    }
+
     // Initialize UI
+    initDataDrivenCountrySelect();
     updateCountryUI();
     calculateTaxes();
 });
