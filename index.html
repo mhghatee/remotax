@@ -8,11 +8,13 @@
     <meta name="keywords" content="digital nomad tax calculator, remote worker net pay, beckham law calculator, freelance tax estimation, expat net income">
     <meta name="author" content="Remotax">
     
+    <link rel="canonical" href="https://afrix.ir/remotax/">
+    
     <!-- Open Graph & Twitter Cards -->
-    <meta property="og:title" content="Remotax - Global Remote Worker Net Pay Calculator">
+    <meta property="og:title" content="Remotax — Global Remote Worker Net Pay Calculator">
     <meta property="og:description" content="Free, instant net pay & tax calculator for digital nomads & remote workers worldwide.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://remotax.dev">
+    <meta property="og:url" content="https://afrix.ir/remotax/">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,7 +57,7 @@
                 <a href="calculators/freelancer-tax.html" class="nav-link">Freelancer Tax</a>
                 <a href="comparisons/spain-vs-portugal.html" class="nav-link">Comparisons</a>
                 <a href="blog.html" class="nav-link">Tax Blog</a>
-                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
             </nav>
 
             <div class="nav-actions">
@@ -94,9 +96,12 @@
         <div class="app-layout">
             <!-- Left Column: Controls & Inputs -->
             <div class="calculator-card glass-panel">
-                <div class="card-header">
-                    <h2>Income & Destination Details</h2>
-                    <p>Select your target destination and annual gross income.</p>
+                <div class="card-header" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <div>
+                        <h2>Income & Destination Details</h2>
+                        <p>Select your target destination and annual gross income.</p>
+                    </div>
+                    <button type="button" id="reset-calc-btn" class="btn-secondary" style="font-size: 0.8rem; padding: 0.4rem 0.8rem; border-radius: var(--radius-sm); cursor: pointer;" title="Reset all fields to default">↺ Reset</button>
                 </div>
 
                 <form id="tax-form" onsubmit="return false;">
@@ -347,6 +352,7 @@
                                     <span class="opt-title">Low Living Cost & Tropical Lifestyle (Asia)</span>
                                 </button>
                             </div>
+                            <button type="button" class="btn-secondary quiz-prev-btn" style="margin-top: 1rem; font-size: 0.85rem; padding: 0.4rem 0.8rem;">← Previous Question</button>
                         </div>
 
                         <!-- Step 3 -->
@@ -362,6 +368,7 @@
                                     <span class="opt-title">Full Remote Employee (EOR Payroll)</span>
                                 </button>
                             </div>
+                            <button type="button" class="btn-secondary quiz-prev-btn" style="margin-top: 1rem; font-size: 0.85rem; padding: 0.4rem 0.8rem;">← Previous Question</button>
                         </div>
 
                         <!-- Quiz Result Card -->
@@ -675,14 +682,14 @@
     <!-- Informational SEO Content Section (Prevents Thin Content Rejection) -->
     <section class="section-container content-section" id="guides">
         <div class="glass-panel text-content-box">
-            <h2>Understanding Remote Worker Tax Residency (The 183-Day Rule)</h2>
-            <p>Navigating cross-border taxes is the single most important financial step for any digital nomad or remote employee. Most countries enforce the <strong>183-day rule</strong>, meaning that if you spend more than 183 days within a calendar year in a single jurisdiction, you automatically become a tax resident subject to local income taxes on your worldwide income.</p>
+            <h2>Understanding Remote Worker Tax Residency (The 183-Day Framework)</h2>
+            <p>Navigating cross-border taxes is the single most important financial step for any digital nomad or remote employee. While spending more than <strong>183 days</strong> in a country within a tax year is the most common statutory threshold triggering local tax residency, it is not the sole test. Tax residency rules vary across jurisdictions and frequently evaluate your permanent home, center of vital interests (family, economic, and banking ties), and habitual abode.</p>
 
-            <h3>Key Factors Determining Your Tax Obligations:</h3>
+            <h3>Key Factors Determining Your Worldwide Tax Obligations:</h3>
             <ul>
-                <li><strong>Tax Residency vs. Physical Presence:</strong> Physical presence triggers tax liability, but double taxation treaties (DTTs) prevent paying tax twice on the same income.</li>
-                <li><strong>B2B Freelance vs. EOR Employment:</strong> Operating as a B2B contractor usually allows you to deduct valid business expenses (laptops, co-working spaces, software) before computing taxable net pay.</li>
-                <li><strong>Digital Nomad Visas:</strong> Countries like Spain, Portugal, Greece, and Dubai offer specific tax incentives to attract remote workers without burdening local labor markets.</li>
+                <li><strong>Statutory Presence vs. Center of Vital Interests:</strong> Physical presence triggers domestic tax residency, but bilateral Double Tax Treaties (DTTs) employ "tie-breaker" rules to prevent dual taxation on the same income stream.</li>
+                <li><strong>Visas vs. Tax Regimes:</strong> Holding a Digital Nomad Visa or residence permit does not automatically grant tax exemption. Tax liability is governed separately by domestic tax codes and special incentive programs (e.g. Beckham Law in Spain, IFICI in Portugal).</li>
+                <li><strong>B2B Freelance vs. EOR Employment:</strong> Operating as a registered B2B contractor allows deduction of valid business overheads before computing taxable profit, whereas EOR employees are taxed via mandatory source withholding.</li>
             </ul>
 
             <div class="callout-box">
@@ -733,24 +740,30 @@
             <div class="footer-links">
                 <div class="link-group">
                     <h4>Top Tools</h4>
-                    <a href="#">Spain Tax Calculator</a>
-                    <a href="#">Portugal Net Pay</a>
-                    <a href="#">Germany Einkommensteuer</a>
+                    <a href="tax-calculator/spain.html">Spain Tax Calculator</a>
+                    <a href="tax-calculator/portugal.html">Portugal Net Pay</a>
+                    <a href="tax-calculator/germany.html">Germany Einkommensteuer</a>
+                    <a href="tax-calculator/uae.html">Dubai 0% Calculator</a>
+                    <a href="tax-calculator/uk.html">UK PAYE Calculator</a>
                 </div>
                 <div class="link-group">
-                    <h4>Legal & Privacy</h4>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">AdSense Disclosure</a>
+                    <h4>Legal & Transparency</h4>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="adsense-disclosure.html">AdSense Disclosure</a>
+                    <a href="faq.html">FAQ</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Remotax.dev. All rights reserved. Designed for Google AdSense monetization & global remote workers.</p>
+            <p>© 2026 Remotax. All rights reserved. Global Remote Work Financial Intelligence Platform.</p>
         </div>
     </footer>
 
-    <!-- JavaScript Engine -->
+    <!-- Core Architecture: Data & Pure Engine -->
+    <script src="data/countries.js"></script>
+    <script src="engine/taxEngine.js"></script>
+    <!-- UI Controller -->
     <script src="app.js"></script>
 </body>
 </html>

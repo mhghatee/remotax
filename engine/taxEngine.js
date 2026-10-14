@@ -1,7 +1,7 @@
 /**
- * REMOTAX PURE CALCULATION ENGINE v1.0
+ * REMOTAX PURE CALCULATION ENGINE v1.1
  * Decoupled, functional, zero-DOM tax & salary calculation architecture.
- * Conforms to Remotax Platform Specification (Sections 3, 7, 9, 16, 19, 27, 63, 64)
+ * Conforms to Remotax Platform Specification (Sections 3, 6, 7, 8, 9, 10, 11, 12, 13, 19, 22, 23, 27)
  */
 
 (function (root, factory) {
@@ -15,6 +15,19 @@
     }
 }(typeof self !== 'undefined' ? self : this, function (REMOTAX_COUNTRIES) {
     'use strict';
+
+    /**
+     * Robust numeric input sanitizer (Section 6)
+     */
+    function parseValidNumber(inputVal, fallback = 0) {
+        if (typeof inputVal === 'number') {
+            return (isNaN(inputVal) || !isFinite(inputVal)) ? fallback : Math.max(0, inputVal);
+        }
+        if (!inputVal) return fallback;
+        const cleaned = String(inputVal).replace(/[^0-9.-]/g, '');
+        const num = parseFloat(cleaned);
+        return (isNaN(num) || !isFinite(num)) ? fallback : Math.max(0, num);
+    }
 
     /**
      * Progressive bracket calculator helper
@@ -42,17 +55,21 @@
      * @returns {Object} Full standardized financial breakdown
      */
     function calculateTax(params) {
-        const gross = Math.max(0, parseFloat(params.grossIncome) || 0);
-        const countryCode = (params.countryCode || 'ES').toUpperCase();
+        params = params || {};
+        const gross = parseValidNumber(params.grossIncome, 0);
+        const countryCode = String(params.countryCode || 'ES').toUpperCase();
         const workerType = params.workerType || 'contractor'; // 'employee' | 'freelancer' | 'contractor'
+        const filingStatus = params.filingStatus || 'single'; // 'single' | 'married_joint'
         const useRegime = params.useSpecialRegime !== false;
-        const expenses = Math.max(0, parseFloat(params.businessExpenses) || 0);
+        const expenses = parseValidNumber(params.businessExpenses, 0);
+
         const countryData = REMOTAX_COUNTRIES[countryCode] || REMOTAX_COUNTRIES.ES;
         const taxYear = params.taxYear || countryData.taxYear || 2026;
 
         let incomeTax = 0;
         let socialSecurity = 0;
         let taxableIncome = Math.max(0, gross - expenses);
+        let activeRegimeNote = "";
 
         // --- Country-Specific Statutory Rules ---
         switch (countryCode) {
@@ -60,8 +77,14 @@
                 if (useRegime && countryData.regimes && countryData.regimes[0]) {
                     const r = countryData.regimes[0];
                     incomeTax = taxableIncome <= r.cap ? taxableIncome * r.flatRate : (r.cap * r.flatRate) + ((taxableIncome - r.cap) * r.overflowRate);
+                    activeRegimeNote = r.eligibilityNote || "";
                 } else {
-                    incomeTax = calculateBrackets(taxableIncome, countryData.taxBrackets);
+                    let baseDeduction = countryData.deductions.standardAllowance || 5550;
+                    if (filingStatus === 'married_joint') {
+                        baseDeduction += (countryData.deductions.jointDeduction || 3400);
+                    }
+                    const taxableES = Math.max(0, taxableIncome - baseDeduction);
+                    incomeTax = calculateBrackets(taxableES, countryData.taxBrackets);
                 }
                 if (workerType === 'employee') {
                     socialSecurity = gross * countryData.socialSecurity.employeeRate;
@@ -73,8 +96,10 @@
             case 'PT': // Portugal
                 if (useRegime && countryData.regimes && countryData.regimes[0]) {
                     incomeTax = taxableIncome * countryData.regimes[0].flatRate;
+                    activeRegimeNote = countryData.regimes[0].eligibilityNote || "";
                 } else {
-                    incomeTax = calculateBrackets(taxableIncome, countryData.taxBrackets);
+                    const taxablePT = Math.max(0, taxableIncome - (countryData.deductions.standardAllowance || 4104));
+                    incomeTax = calculateBrackets(taxablePT, countryData.taxBrackets);
                 }
                 if (workerType === 'employee') {
                     socialSecurity = gross * countryData.socialSecurity.employeeRate;
@@ -86,10 +111,19 @@
             case 'AE': // UAE
                 incomeTax = 0;
                 socialSecurity = 0;
+                if (useRegime && countryData.regimes && countryData.regimes[0]) {
+                    activeRegimeNote = countryData.regimes[0].eligibilityNote || "";
+                }
                 break;
 
             case 'DE': // Germany
-                const baseAllowanceDE = useRegime ? (countryData.regimes[0].allowance || 11784) : 0;
+                let baseAllowanceDE = 0;
+                if (useRegime && countryData.regimes && countryData.regimes[0]) {
+                    baseAllowanceDE = (filingStatus === 'married_joint')
+                        ? (countryData.regimes[0].allowanceJoint || 23568)
+                        : (countryData.regimes[0].allowanceSingle || 11784);
+                    activeRegimeNote = countryData.regimes[0].eligibilityNote || "";
+                }
                 const netTaxableDE = Math.max(0, taxableIncome - baseAllowanceDE);
                 incomeTax = calculateBrackets(netTaxableDE, countryData.taxBrackets);
                 socialSecurity = workerType === 'employee'
@@ -98,45 +132,87 @@
                 break;
 
             case 'GB': // UK
-                const allowanceUK = useRegime ? (countryData.regimes[0].allowance || 12570) : 0;
-                const netTaxableUK = Math.max(0, taxableIncome - allowanceUK);
+                const allowanceUK = useRegime ? (countryData.regimes[0].allowanceSingle || 12570) : 0;
+                // UK personal allowance tapers by £1 for every £2 over £100,000
+                let adjustedAllowance = allowanceUK;
+                if (gross > 100000 && allowanceUK > 0) {
+                    adjustedAllowance = Math.max(0, allowanceUK - ((gross - 100000) / 2));
+                }
+                const netTaxableUK = Math.max(0, taxableIncome - adjustedAllowance);
                 incomeTax = calculateBrackets(netTaxableUK, countryData.taxBrackets);
                 socialSecurity = workerType === 'employee'
                     ? Math.min(gross * countryData.socialSecurity.employeeRate, countryData.socialSecurity.freelancerMaxAnnual)
                     : Math.min(gross * countryData.socialSecurity.contractorRate, 4500);
+                if (useRegime && countryData.regimes && countryData.regimes[0]) {
+                    activeRegimeNote = countryData.regimes[0].eligibilityNote || "";
+                }
                 break;
 
             case 'US': // USA
-                const deductionUS = useRegime ? (countryData.regimes[0].allowance || 14600) : 0;
+                let deductionUS = 0;
+                let activeBrackets = countryData.taxBrackets;
+                if (useRegime && countryData.regimes && countryData.regimes[0]) {
+                    if (filingStatus === 'married_joint') {
+                        deductionUS = countryData.regimes[0].allowanceJoint || 29200;
+                        activeBrackets = countryData.taxBracketsJoint || countryData.taxBrackets;
+                    } else {
+                        deductionUS = countryData.regimes[0].allowanceSingle || 14600;
+                    }
+                }
                 const netTaxableUS = Math.max(0, taxableIncome - deductionUS);
-                incomeTax = calculateBrackets(netTaxableUS, countryData.taxBrackets);
+                incomeTax = calculateBrackets(netTaxableUS, activeBrackets);
                 socialSecurity = gross * (workerType === 'employee' ? countryData.socialSecurity.employeeRate : countryData.socialSecurity.contractorRate);
                 break;
 
             case 'CA': // Canada
-                const bpaCA = useRegime ? (countryData.regimes[0].allowance || 15705) : 0;
+                const bpaCA = useRegime ? (countryData.regimes[0].allowanceSingle || 15705) : 0;
                 const netTaxableCA = Math.max(0, taxableIncome - bpaCA);
                 incomeTax = calculateBrackets(netTaxableCA, countryData.taxBrackets);
                 socialSecurity = Math.min(gross * countryData.socialSecurity.employeeRate, countryData.socialSecurity.freelancerMaxAnnual);
                 break;
 
             case 'NL': // Netherlands
-                let taxableNL = (useRegime && countryData.regimes[0]) ? taxableIncome * countryData.regimes[0].taxableMultiplier : taxableIncome;
+                let taxableNL = (useRegime && countryData.regimes && countryData.regimes[0])
+                    ? taxableIncome * countryData.regimes[0].taxableMultiplier
+                    : taxableIncome;
                 incomeTax = calculateBrackets(taxableNL, countryData.taxBrackets);
-                socialSecurity = workerType === 'employee' ? gross * countryData.socialSecurity.employeeRate : Math.min(gross * countryData.socialSecurity.contractorRate, countryData.socialSecurity.freelancerMaxAnnual);
+                socialSecurity = workerType === 'employee'
+                    ? gross * countryData.socialSecurity.employeeRate
+                    : Math.min(gross * countryData.socialSecurity.contractorRate, countryData.socialSecurity.freelancerMaxAnnual);
+                if (useRegime && countryData.regimes && countryData.regimes[0]) {
+                    activeRegimeNote = countryData.regimes[0].eligibilityNote || "";
+                }
                 break;
 
             case 'IT': // Italy
-                let taxableIT = (useRegime && countryData.regimes[0]) ? taxableIncome * countryData.regimes[0].taxableMultiplier : taxableIncome;
+                let taxableIT = (useRegime && countryData.regimes && countryData.regimes[0])
+                    ? taxableIncome * countryData.regimes[0].taxableMultiplier
+                    : taxableIncome;
                 incomeTax = calculateBrackets(taxableIT, countryData.taxBrackets);
                 socialSecurity = gross * (workerType === 'employee' ? countryData.socialSecurity.employeeRate : countryData.socialSecurity.contractorRate);
+                if (useRegime && countryData.regimes && countryData.regimes[0]) {
+                    activeRegimeNote = countryData.regimes[0].eligibilityNote || "";
+                }
+                break;
+
+            case 'GR': // Greece
+                let taxableGR = (useRegime && countryData.regimes && countryData.regimes[0])
+                    ? taxableIncome * countryData.regimes[0].taxableMultiplier
+                    : taxableIncome;
+                incomeTax = calculateBrackets(taxableGR, countryData.taxBrackets);
+                socialSecurity = Math.min(gross * countryData.socialSecurity.employeeRate, countryData.socialSecurity.freelancerMaxAnnual);
+                if (useRegime && countryData.regimes && countryData.regimes[0]) {
+                    activeRegimeNote = countryData.regimes[0].eligibilityNote || "";
+                }
                 break;
 
             case 'TH': // Thailand
-                if (useRegime && countryData.regimes[0]) {
+                if (useRegime && countryData.regimes && countryData.regimes[0]) {
                     incomeTax = taxableIncome * countryData.regimes[0].flatRate;
+                    activeRegimeNote = countryData.regimes[0].eligibilityNote || "";
                 } else {
-                    incomeTax = calculateBrackets(taxableIncome, countryData.taxBrackets);
+                    const taxableTH = Math.max(0, taxableIncome - (countryData.deductions.standardAllowance || 60000));
+                    incomeTax = calculateBrackets(taxableTH, countryData.taxBrackets);
                 }
                 socialSecurity = 0;
                 break;
@@ -144,6 +220,9 @@
             case 'SG': // Singapore
                 if (useRegime) {
                     incomeTax = 0; // Foreign territorial exemption
+                    if (countryData.regimes && countryData.regimes[0]) {
+                        activeRegimeNote = countryData.regimes[0].eligibilityNote || "";
+                    }
                 } else {
                     incomeTax = calculateBrackets(taxableIncome, countryData.taxBrackets);
                 }
@@ -154,21 +233,62 @@
                 const swissRate = useRegime ? 0.18 : 0.22;
                 incomeTax = taxableIncome * swissRate;
                 socialSecurity = gross * countryData.socialSecurity.employeeRate;
+                if (useRegime && countryData.regimes && countryData.regimes[0]) {
+                    activeRegimeNote = countryData.regimes[0].eligibilityNote || "";
+                }
+                break;
+
+            case 'MT': // Malta
+                incomeTax = (useRegime && countryData.regimes && countryData.regimes[0])
+                    ? taxableIncome * countryData.regimes[0].flatRate
+                    : calculateBrackets(taxableIncome, countryData.taxBrackets);
+                socialSecurity = Math.min(gross * countryData.socialSecurity.employeeRate, countryData.socialSecurity.freelancerMaxAnnual);
+                if (useRegime && countryData.regimes && countryData.regimes[0]) {
+                    activeRegimeNote = countryData.regimes[0].eligibilityNote || "";
+                }
+                break;
+
+            case 'CY': // Cyprus
+                let taxableCY = (useRegime && countryData.regimes && countryData.regimes[0] && gross > 55000)
+                    ? taxableIncome * countryData.regimes[0].taxableMultiplier
+                    : taxableIncome;
+                incomeTax = calculateBrackets(taxableCY, countryData.taxBrackets);
+                socialSecurity = Math.min(gross * countryData.socialSecurity.employeeRate, countryData.socialSecurity.freelancerMaxAnnual);
+                if (useRegime && countryData.regimes && countryData.regimes[0]) {
+                    activeRegimeNote = countryData.regimes[0].eligibilityNote || "";
+                }
+                break;
+
+            case 'EE': // Estonia
+                incomeTax = taxableIncome * 0.20;
+                socialSecurity = workerType === 'employee' ? gross * countryData.socialSecurity.employeeRate : 0;
+                break;
+
+            case 'AU': // Australia
+                const thresholdAU = useRegime ? (countryData.regimes[0].allowanceSingle || 18200) : 0;
+                const netTaxableAU = Math.max(0, taxableIncome - thresholdAU);
+                incomeTax = calculateBrackets(netTaxableAU, countryData.taxBrackets);
+                socialSecurity = Math.min(gross * countryData.socialSecurity.employeeRate, countryData.socialSecurity.freelancerMaxAnnual);
                 break;
 
             default:
-                incomeTax = calculateBrackets(taxableIncome, countryData.taxBrackets);
+                incomeTax = calculateBrackets(taxableIncome, countryData.taxBrackets || []);
                 socialSecurity = gross * 0.10;
                 break;
         }
 
-        // Totals & Rates
-        const totalDeductions = incomeTax + socialSecurity + expenses;
-        const netAnnual = Math.max(0, gross - incomeTax - socialSecurity - expenses);
-        const netMonthly = netAnnual / 12;
-        const netWeekly = netAnnual / 52;
-        const netHourly = netAnnual / 2000; // Standard 2,000 working hours/yr
-        const effectiveTaxRate = gross > 0 ? ((incomeTax + socialSecurity) / gross) * 100 : 0;
+        // Section 10: Strict Mathematical Consistency
+        // Gross - Income Tax - Social Security - Expenses = Net Income
+        incomeTax = Math.max(0, Math.round(incomeTax));
+        socialSecurity = Math.max(0, Math.round(socialSecurity));
+        const totalDeductions = incomeTax + socialSecurity + Math.round(expenses);
+        const netAnnual = Math.max(0, Math.round(gross - totalDeductions));
+        const netMonthly = Math.round(netAnnual / 12);
+        const netWeekly = Math.round(netAnnual / 52);
+
+        // Standard 2,000 work hours/year (Section 11)
+        const netHourly = parseFloat((netAnnual / 2000).toFixed(2));
+        const effectiveTaxRate = gross > 0 ? parseFloat(Math.min(100, Math.max(0, ((incomeTax + socialSecurity) / gross) * 100)).toFixed(1)) : 0.0;
 
         // Cost of Living & Purchasing Power
         const monthlyLivingCost = countryData.livingCost || 1800;
@@ -191,72 +311,81 @@
             city: countryData.city,
             taxYear: taxYear,
             workerType: workerType,
-            grossIncome: gross,
-            businessExpenses: expenses,
-            taxableIncome: taxableIncome,
-            incomeTax: Math.round(incomeTax),
-            socialSecurity: Math.round(socialSecurity),
-            totalDeductions: Math.round(totalDeductions),
-            effectiveTaxRate: parseFloat(effectiveTaxRate.toFixed(1)),
-            netAnnual: Math.round(netAnnual),
-            netMonthly: Math.round(netMonthly),
-            netWeekly: Math.round(netWeekly),
-            netHourly: parseFloat(netHourly.toFixed(2)),
+            filingStatus: filingStatus,
+            supportsFilingStatus: !!countryData.supportsFilingStatus,
+            grossIncome: Math.round(gross),
+            businessExpenses: Math.round(expenses),
+            taxableIncome: Math.round(taxableIncome),
+            incomeTax: incomeTax,
+            socialSecurity: socialSecurity,
+            totalDeductions: totalDeductions,
+            effectiveTaxRate: effectiveTaxRate,
+            netAnnual: netAnnual,
+            netMonthly: netMonthly,
+            netWeekly: netWeekly,
+            netHourly: netHourly,
             monthlyLivingCost: monthlyLivingCost,
-            netMonthlySavings: Math.round(netMonthlySavings),
+            netMonthlySavings: netMonthlySavings,
             tier: tier,
+            activeRegimeNote: activeRegimeNote,
             sources: countryData.sources || [],
-            lastUpdated: countryData.lastUpdated || "October 2026"
+            lastUpdated: countryData.lastUpdated || "October 2026",
+            calculationVersion: "2026.2"
         };
     }
 
     /**
-     * Side-by-Side Comparison Engine (Section 19)
+     * Side-by-Side Comparison Engine (Sections 19, 22, 23)
      */
-    function compareCountries(income, countryA, countryB, workerType) {
-        const resA = calculateTax({ grossIncome: income, countryCode: countryA, workerType: workerType, useSpecialRegime: true });
-        const resB = calculateTax({ grossIncome: income, countryCode: countryB, workerType: workerType, useSpecialRegime: true });
-        const annualDiff = resB.netAnnual - resA.netAnnual;
-        const monthlyDiff = resB.netMonthly - resA.netMonthly;
+    function compareCountries(income, countryA, countryB, workerType, filingStatus) {
+        const resA = calculateTax({ grossIncome: income, countryCode: countryA, workerType: workerType, filingStatus: filingStatus, useSpecialRegime: true });
+        const resB = calculateTax({ grossIncome: income, countryCode: countryB, workerType: workerType, filingStatus: filingStatus, useSpecialRegime: true });
+
+        const annualNetDiff = resB.netAnnual - resA.netAnnual;
+        const monthlyNetDiff = resB.netMonthly - resA.netMonthly;
+        const taxDiff = resB.incomeTax - resA.incomeTax;
+        const livingCostDiff = (resB.monthlyLivingCost * 12) - (resA.monthlyLivingCost * 12);
+        const annualDisposableDiff = (resB.netMonthlySavings * 12) - (resA.netMonthlySavings * 12);
 
         let winnerText = "";
-        if (annualDiff > 0) {
-            winnerText = `${resB.country} leaves you approximately ${resB.symbol}${Math.abs(annualDiff).toLocaleString()} more per year than ${resA.country}.`;
-        } else if (annualDiff < 0) {
-            winnerText = `${resA.country} leaves you approximately ${resA.symbol}${Math.abs(annualDiff).toLocaleString()} more per year than ${resB.country}.`;
+        if (annualDisposableDiff > 0) {
+            winnerText = `${resB.country} provides higher estimated annual disposable income (approx. ${resB.symbol}${Math.abs(annualDisposableDiff).toLocaleString()} more/yr) after local taxes and living expenses under these assumptions.`;
+        } else if (annualDisposableDiff < 0) {
+            winnerText = `${resA.country} provides higher estimated annual disposable income (approx. ${resA.symbol}${Math.abs(annualDisposableDiff).toLocaleString()} more/yr) after local taxes and living expenses under these assumptions.`;
         } else {
-            winnerText = `Both ${resA.country} and ${resB.country} yield approximately identical net take-home pay.`;
+            winnerText = `Both ${resA.country} and ${resB.country} offer approximately identical estimated net disposable income under these assumptions.`;
         }
 
         return {
             countryA: resA,
             countryB: resB,
-            annualDifference: annualDiff,
-            monthlyDifference: monthlyDiff,
+            annualDifference: annualNetDiff,
+            monthlyDifference: monthlyNetDiff,
+            taxDifference: taxDiff,
+            livingCostDifference: livingCostDiff,
+            annualDisposableDifference: annualDisposableDiff,
             winnerText: winnerText
         };
     }
 
     /**
-     * Freelancer Hourly Rate Calculator (Section 27 & 28)
+     * Freelancer Hourly Rate Calculator with Configurable Hours (Sections 12, 27, 28)
      */
     function calculateHourlyRate(params) {
-        const desiredNet = parseFloat(params.desiredAnnualNet) || 70000;
-        const hoursPerDay = parseFloat(params.hoursPerDay) || 6; // billable hours
-        const daysPerWeek = parseFloat(params.daysPerWeek) || 5;
-        const weeksPerYear = Math.max(1, 52 - (parseFloat(params.vacationWeeks) || 4));
-        const billableHoursYear = hoursPerDay * daysPerWeek * weeksPerYear;
-        const expenses = parseFloat(params.annualExpenses) || 6000;
-        const estTaxRate = (parseFloat(params.estimatedTaxPct) || 28) / 100;
+        params = params || {};
+        const desiredNet = parseValidNumber(params.desiredAnnualNet, 70000);
+        const billableHours = parseValidNumber(params.billableHoursYear, 1440);
+        const expenses = parseValidNumber(params.annualExpenses, 6000);
+        const estTaxRate = Math.min(90, Math.max(0, parseValidNumber(params.estimatedTaxPct, 28))) / 100;
 
         // Gross needed = (desiredNet / (1 - estTaxRate)) + expenses
         const grossNeeded = (desiredNet / Math.max(0.01, 1 - estTaxRate)) + expenses;
-        const minHourlyRate = billableHoursYear > 0 ? grossNeeded / billableHoursYear : 0;
+        const minHourlyRate = billableHours > 0 ? grossNeeded / billableHours : 0;
         const recommendedHourlyRate = minHourlyRate * 1.20; // 20% margin for admin, gap periods
 
         return {
-            desiredNet: desiredNet,
-            billableHoursYear: Math.round(billableHoursYear),
+            desiredNet: Math.round(desiredNet),
+            billableHoursYear: Math.round(billableHours),
             grossRevenueRequired: Math.round(grossNeeded),
             minHourlyRate: Math.round(minHourlyRate),
             recommendedHourlyRate: Math.round(recommendedHourlyRate)
@@ -267,16 +396,18 @@
      * Remote Work vs Office Savings Calculator (Section 25)
      */
     function calculateRemoteSavings(params) {
-        const dailyCommuteCost = parseFloat(params.dailyCommuteCost) || 12;
-        const dailyMealCoffee = parseFloat(params.dailyMealCoffee) || 18;
-        const annualOfficeClothing = parseFloat(params.annualOfficeClothing) || 1200;
-        const officeDaysYear = (parseFloat(params.officeDaysPerWeek) || 5) * 48; // 48 work weeks
+        params = params || {};
+        const dailyCommuteCost = parseValidNumber(params.dailyCommuteCost, 15);
+        const dailyMealCoffee = parseValidNumber(params.dailyMealCoffee, 18);
+        const annualOfficeClothing = parseValidNumber(params.annualOfficeClothing, 1200);
+        const daysPerWeek = parseValidNumber(params.officeDaysPerWeek, 5);
+        const officeDaysYear = Math.min(365, daysPerWeek * 48); // 48 work weeks
         const annualCommute = dailyCommuteCost * officeDaysYear;
         const annualMeals = dailyMealCoffee * officeDaysYear;
-        const remoteSetupCost = parseFloat(params.remoteSetupCost) || 1000;
+        const remoteSetupCost = parseValidNumber(params.remoteSetupCost, 1000);
 
         const totalAnnualOfficeExpenses = annualCommute + annualMeals + annualOfficeClothing;
-        const netAnnualSavings = totalAnnualOfficeExpenses - remoteSetupCost;
+        const netAnnualSavings = Math.max(0, totalAnnualOfficeExpenses - remoteSetupCost);
 
         return {
             annualCommute: Math.round(annualCommute),
@@ -294,6 +425,7 @@
         compareCountries: compareCountries,
         calculateHourlyRate: calculateHourlyRate,
         calculateRemoteSavings: calculateRemoteSavings,
+        parseValidNumber: parseValidNumber,
         COUNTRIES: REMOTAX_COUNTRIES
     };
 }));

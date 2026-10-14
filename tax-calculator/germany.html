@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Germany Tax Calculator 2026 — Einkommensteuer & Social Security | Remotax</title>
+    <meta name="description" content="Calculate your estimated German income tax (Einkommensteuer), Grundfreibetrag (€11,784), health insurance, and net salary in Berlin or Munich for 2026.">
+    <link rel="canonical" href="https://afrix.ir/remotax/tax-calculator/germany.html">
+    <meta property="og:title" content="Germany Tax Calculator 2026 — Remotax">
+    <meta property="og:description" content="Calculate German tax brackets, health insurance, and net salary for remote employees and Freiberufler.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../index.css?v=2.5">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">Remo<span class="logo-highlight">tax</span></span>
+                <span class="logo-badge">germany</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../calculators/take-home-pay.html" class="nav-link">Take Home Pay</a>
+                <a href="../calculators/freelancer-tax.html" class="nav-link">Freelancer Tax</a>
+                <a href="../comparisons/spain-vs-portugal.html" class="nav-link">Comparisons</a>
+                <a href="../blog.html" class="nav-link">Tax Blog</a>
+                <a href="../faq.html" class="nav-link">FAQ</a>
+            </nav>
+            <div>
+                <a href="../index.html#calculator" class="btn-secondary">Global Calc ⚡</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="section-container" style="padding-top: 1.5rem; padding-bottom: 0;">
+        <nav style="font-size: 0.85rem; color: var(--text-muted);">
+            <a href="../index.html" style="color: var(--text-muted); text-decoration: none;">Home</a> &gt; 
+            <span>Tax Calculators</span> &gt; 
+            <span style="color: var(--text-main);">Germany</span>
+        </nav>
+    </div>
+
+    <section class="hero-container" style="padding-top: 1rem;">
+        <div class="hero-content">
+            <div class="pill-tag">
+                <span class="pill-dot"></span> Tax Year 2026 Statutory Engine
+            </div>
+            <h1 class="hero-title">Germany Tax <span class="gradient-text">Calculator 2026</span></h1>
+            <p class="hero-subtitle">Calculate your estimated German Einkommensteuer, Grundfreibetrag basic allowance (€11,784), statutory social security, and net salary.</p>
+        </div>
+    </section>
+
+    <main class="main-container" style="margin-top: 1rem;">
+        <div class="app-layout">
+            <div class="calculator-card glass-panel">
+                <div class="card-header">
+                    <h2>Germany Income Details</h2>
+                    <p>Enter your annual gross income in Euros (€).</p>
+                </div>
+
+                <div class="input-group">
+                    <div class="label-with-val">
+                        <label for="income-input">Annual Gross Income</label>
+                        <span class="active-val">€</span>
+                    </div>
+                    <input type="number" id="income-input" class="form-input" value="100000" min="0" max="1000000" step="2500">
+                    <input type="range" id="income-slider" class="range-slider" min="10000" max="300000" step="5000" value="100000">
+                </div>
+
+                <div class="input-group">
+                    <label>Filing Status (Splitting-Verfahren)</label>
+                    <select id="filing-status" class="form-select">
+                        <option value="single" selected>Single Filer (Grundfreibetrag €11,784)</option>
+                        <option value="married_joint">Married Joint (Splittingtabelle €23,568)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Worker Classification</label>
+                    <div class="radio-cards-group">
+                        <div class="radio-card active" data-type="employee">
+                            <input type="radio" name="worker-type" value="employee" checked>
+                            <span class="radio-title">💼 Employee / EOR</span>
+                            <span class="radio-desc">Standard payroll with full cover</span>
+                        </div>
+                        <div class="radio-card" data-type="contractor">
+                            <input type="radio" name="worker-type" value="contractor">
+                            <span class="radio-title">⚡ Freiberufler / B2B</span>
+                            <span class="radio-desc">Self-employed independent</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="toggle-group">
+                    <label class="switch">
+                        <input type="checkbox" id="special-regime-toggle" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <div class="toggle-text">
+                        <span class="toggle-title">Apply Basic Tax-Free Allowance (Grundfreibetrag)</span>
+                        <span class="toggle-subtitle">Deducts statutory non-taxable base before progressive brackets.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="results-card glass-panel">
+                <div class="net-banner">
+                    <span class="net-label">Estimated German Take-Home Pay</span>
+                    <div class="net-value" id="net-monthly-amount">€5,023</div>
+                    <div class="net-sub" id="net-annual-amount">Annual Net: €60,273 / year</div>
+                    <div class="badge badge-accent" id="effective-tax-badge">Effective Tax & Social Rate: 39.7%</div>
+                </div>
+
+                <div class="results-table">
+                    <div class="table-row">
+                        <span class="row-label">Gross Annual Income</span>
+                        <span class="row-value" id="val-gross">€100,000</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="row-label">Einkommensteuer (Income Tax)</span>
+                        <span class="row-value tax-color" id="val-tax">-€27,727</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="row-label">Sozialversicherung (Health & Pension)</span>
+                        <span class="row-value social-color" id="val-social">-€12,000</span>
+                    </div>
+                    <div class="table-row highlight-row">
+                        <span class="row-label">Annual Net Income</span>
+                        <span class="row-value net-color" id="val-net-annual">€60,273</span>
+                    </div>
+                    <div class="table-row highlight-row">
+                        <span class="row-label">Monthly Net Income</span>
+                        <span class="row-value net-color" id="val-net-monthly">€5,023</span>
+                    </div>
+                </div>
+
+                <div class="lifestyle-card" style="margin-top: 1rem; padding: 1.25rem; background: rgba(255,255,255,0.03); border: 1px solid var(--bg-card-border); border-radius: var(--radius-sm);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <span style="font-weight: 700; color: #fff;">Berlin / Munich Lifestyle</span>
+                        <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399;" id="lifestyle-tier">💎 Wealth Accumulator</span>
+                    </div>
+                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0;" id="lifestyle-desc">
+                        Average living costs in Berlin are €2,100/mo, leaving you with approximately €2,923/mo in net discretionary savings.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="section-container" style="max-width: 900px; margin: 3rem auto; line-height: 1.8; color: #d1d5db;">
+        <h2 style="color: #fff; font-size: 1.6rem; margin-bottom: 1rem;">Germany Tax & Social Security Architecture (2026)</h2>
+        <p>Germany features a comprehensive social safety net with progressive taxation starting at 14% and rising to 42% (or 45% for very high earners above €277,825). Employee payroll also includes statutory contributions for pension, public health insurance, long-term nursing care, and unemployment insurance.</p>
+
+        <h3 style="color: #fff; font-size: 1.3rem; margin-top: 1.5rem;">Official Government Sources</h3>
+        <ul style="margin-left: 1.5rem;">
+            <li><a href="https://bundesfinanzministerium.de" target="_blank" rel="noopener noreferrer" style="color: var(--primary);">Bundesministerium der Finanzen (BMF) — Federal Ministry of Finance</a></li>
+        </ul>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Last Verified: October 2026 | Tax Year: 2026</p>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">⚡ <span class="logo-text">Remo<span class="logo-highlight">tax</span></span></div>
+                <p>Global Remote Work Financial Intelligence Platform.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Calculators</h4>
+                    <a href="../calculators/take-home-pay.html">Take Home Pay</a>
+                    <a href="../calculators/freelancer-tax.html">Freelancer Tax</a>
+                    <a href="../comparisons/spain-vs-portugal.html">Spain vs Portugal</a>
+                </div>
+                <div class="link-group">
+                    <h4>Legal</h4>
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="../terms.html">Terms of Service</a>
+                    <a href="../adsense-disclosure.html">AdSense Disclosure</a>
+                    <a href="../faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Remotax. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../data/countries.js"></script>
+    <script src="../engine/taxEngine.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const incomeInput = document.getElementById('income-input');
+        const incomeSlider = document.getElementById('income-slider');
+        const filingStatusSelect = document.getElementById('filing-status');
+        const specialRegime = document.getElementById('special-regime-toggle');
+
+        function update() {
+            const gross = parseFloat(incomeInput.value) || 0;
+            const workerType = document.querySelector('input[name="worker-type"]:checked').value;
+            const filing = filingStatusSelect.value;
+            const useRegime = specialRegime.checked;
+
+            const res = RemotaxEngine.calculateTax({
+                grossIncome: gross,
+                countryCode: 'DE',
+                workerType: workerType,
+                filingStatus: filing,
+                useSpecialRegime: useRegime
+            });
+
+            document.getElementById('net-monthly-amount').textContent = `€${res.netMonthly.toLocaleString()}`;
+            document.getElementById('net-annual-amount').textContent = `Annual Net: €${res.netAnnual.toLocaleString()} / year`;
+            document.getElementById('effective-tax-badge').textContent = `Effective Tax & Social Rate: ${res.effectiveTaxRate}%`;
+
+            document.getElementById('val-gross').textContent = `€${res.grossIncome.toLocaleString()}`;
+            document.getElementById('val-tax').textContent = `-€${res.incomeTax.toLocaleString()}`;
+            document.getElementById('val-social').textContent = `-€${res.socialSecurity.toLocaleString()}`;
+            document.getElementById('val-net-annual').textContent = `€${res.netAnnual.toLocaleString()}`;
+            document.getElementById('val-net-monthly').textContent = `€${res.netMonthly.toLocaleString()}`;
+
+            document.getElementById('lifestyle-tier').textContent = res.tier;
+            document.getElementById('lifestyle-desc').textContent = 
+                `Average living costs in Berlin are €2,100/mo, leaving you with approximately €${res.netMonthlySavings.toLocaleString()}/mo in net discretionary savings.`;
+        }
+
+        incomeSlider.addEventListener('input', (e) => {
+            incomeInput.value = e.target.value;
+            update();
+        });
+
+        incomeInput.addEventListener('input', (e) => {
+            let v = parseFloat(e.target.value) || 0;
+            if (v > 1000000) v = 1000000;
+            incomeSlider.value = v;
+            update();
+        });
+
+        filingStatusSelect.addEventListener('change', update);
+        specialRegime.addEventListener('change', update);
+
+        document.querySelectorAll('.radio-card').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.radio-card').forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                card.querySelector('input').checked = true;
+                update();
+            });
+        });
+
+        update();
+    });
+    </script>
+</body>
+</html>
