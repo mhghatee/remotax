@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spain vs Portugal Tax Calculator 2026 — Compare Take-Home Pay | Remotax</title>
+    <meta name="description" content="Compare Spain (Beckham Law 24%) vs Portugal (D8 Nomad / NHR 20%) take-home pay, social security, and cost of living for remote workers and freelancers.">
+    <meta name="keywords" content="spain vs portugal tax calculator, beckham law vs nhr portugal, remote worker spain or portugal, digital nomad tax compare">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Spain vs Portugal Tax Calculator 2026 — Remotax">
+    <meta property="og:description" content="Side-by-side tax, salary, and savings comparison between Spain and Portugal.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../index.css?v=2.5">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Spain vs Portugal Tax Comparison Calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "description": "Compare take-home pay, income taxes, and social contributions between Spain and Portugal for remote workers.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">Remo<span class="logo-highlight">tax</span></span>
+                <span class="logo-badge">compare</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../calculators/take-home-pay.html" class="nav-link">Take Home Pay</a>
+                <a href="../calculators/freelancer-tax.html" class="nav-link">Freelancer Tax</a>
+                <a href="spain-vs-portugal.html" class="nav-link active">Spain vs Portugal</a>
+                <a href="../blog.html" class="nav-link">Tax Blog</a>
+            </nav>
+            <div>
+                <a href="../quiz.html" class="btn-secondary">Smart Quiz 🧩</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="section-container" style="padding-top: 1.5rem; padding-bottom: 0;">
+        <nav style="font-size: 0.85rem; color: var(--text-muted);">
+            <a href="../index.html" style="color: var(--text-muted); text-decoration: none;">Home</a> &gt; 
+            <a href="../destinations.html" style="color: var(--text-muted); text-decoration: none;">Comparisons</a> &gt; 
+            <span style="color: var(--text-main);">Spain vs Portugal</span>
+        </nav>
+    </div>
+
+    <section class="hero-container" style="padding-top: 1rem;">
+        <div class="hero-content">
+            <div class="pill-tag">
+                <span class="pill-dot"></span> Head-to-Head 2026 Analysis
+            </div>
+            <h1 class="hero-title">Spain vs Portugal <span class="gradient-text">Tax Calculator 2026</span></h1>
+            <p class="hero-subtitle">Compare Spain’s Beckham Law (24% Flat) vs Portugal’s D8 Nomad Incentive (20% Flat) to see which country leaves you with more money.</p>
+        </div>
+    </section>
+
+    <main class="main-container" style="margin-top: 1rem;">
+        <!-- Comparison Input Controls -->
+        <div class="glass-panel" style="padding: 1.75rem; border-radius: var(--radius-md); margin-bottom: 2rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+                <div>
+                    <label for="income-input" style="display: block; font-weight: 700; margin-bottom: 0.5rem; color: #fff;">Annual Gross Income (EUR €)</label>
+                    <input type="number" id="income-input" class="form-input" value="100000" min="10000" max="1000000" step="5000">
+                    <input type="range" id="income-slider" class="range-slider" min="30000" max="250000" step="5000" value="100000" style="margin-top: 0.5rem;">
+                </div>
+                <div>
+                    <label style="display: block; font-weight: 700; margin-bottom: 0.5rem; color: #fff;">Worker Type</label>
+                    <div style="display: flex; gap: 0.75rem;">
+                        <button type="button" class="btn-primary worker-toggle active" data-type="contractor" style="flex: 1;">B2B Contractor</button>
+                        <button type="button" class="btn-secondary worker-toggle" data-type="employee" style="flex: 1;">Employee / EOR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Annual Winner Highlight Banner (Section 19) -->
+        <div id="winner-banner" class="glass-panel" style="padding: 1.5rem; border-radius: var(--radius-md); border-left: 5px solid #10b981; margin-bottom: 2rem; background: rgba(16, 185, 129, 0.08);">
+            <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; color: #34d399; font-weight: 800;">Estimated Annual Financial Difference</div>
+            <div style="font-size: 1.35rem; font-weight: 800; color: #fff; margin-top: 0.35rem;" id="winner-headline">
+                Portugal could leave you approximately €1,100 more per year.
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 0;">
+                Calculation assumes Portugal's 20% flat tax incentive and Spain's Beckham Law 24% flat regime for remote talent.
+            </p>
+        </div>
+
+        <!-- Side-by-Side Comparison Table (Section 19) -->
+        <div class="glass-panel" style="padding: 1.5rem; border-radius: var(--radius-md); overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+                <thead>
+                    <tr style="border-bottom: 2px solid var(--bg-card-border); color: #fff;">
+                        <th style="padding: 1rem 0.75rem;">Metric</th>
+                        <th style="padding: 1rem 0.75rem; width: 35%; color: #60a5fa;">🇪🇸 Spain (Madrid)</th>
+                        <th style="padding: 1rem 0.75rem; width: 35%; color: #34d399;">🇵🇹 Portugal (Lisbon)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 0.85rem 0.75rem; color: var(--text-muted);">Gross Income</td>
+                        <td style="padding: 0.85rem 0.75rem; font-family: 'JetBrains Mono', monospace;" id="cell-gross-es">€100,000</td>
+                        <td style="padding: 0.85rem 0.75rem; font-family: 'JetBrains Mono', monospace;" id="cell-gross-pt">€100,000</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 0.85rem 0.75rem; color: var(--text-muted);">Income Tax</td>
+                        <td style="padding: 0.85rem 0.75rem; font-family: 'JetBrains Mono', monospace; color: var(--accent-tax);" id="cell-tax-es">-€24,000</td>
+                        <td style="padding: 0.85rem 0.75rem; font-family: 'JetBrains Mono', monospace; color: var(--accent-tax);" id="cell-tax-pt">-€20,000</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 0.85rem 0.75rem; color: var(--text-muted);">Social Security Contribution</td>
+                        <td style="padding: 0.85rem 0.75rem; font-family: 'JetBrains Mono', monospace; color: var(--accent-social);" id="cell-social-es">-€4,300</td>
+                        <td style="padding: 0.85rem 0.75rem; font-family: 'JetBrains Mono', monospace; color: var(--accent-social);" id="cell-social-pt">-€7,200</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 0.85rem 0.75rem; color: var(--text-muted);">Effective Tax & Social Rate</td>
+                        <td style="padding: 0.85rem 0.75rem; font-weight: 700;" id="cell-rate-es">28.3%</td>
+                        <td style="padding: 0.85rem 0.75rem; font-weight: 700;" id="cell-rate-pt">27.2%</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(99, 102, 241, 0.05);">
+                        <td style="padding: 1rem 0.75rem; font-weight: 700; color: #fff;">Annual Net Income</td>
+                        <td style="padding: 1rem 0.75rem; font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 1.1rem; color: #60a5fa;" id="cell-net-es">€71,700</td>
+                        <td style="padding: 1rem 0.75rem; font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 1.1rem; color: #34d399;" id="cell-net-pt">€72,800</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 0.85rem 0.75rem; color: var(--text-muted);">Monthly Net Pay</td>
+                        <td style="padding: 0.85rem 0.75rem; font-family: 'JetBrains Mono', monospace; font-weight: 700;" id="cell-month-es">€5,975</td>
+                        <td style="padding: 0.85rem 0.75rem; font-family: 'JetBrains Mono', monospace; font-weight: 700;" id="cell-month-pt">€6,067</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 0.85rem 0.75rem; color: var(--text-muted);">Estimated Monthly Living Cost</td>
+                        <td style="padding: 0.85rem 0.75rem;">€1,850 / mo (Madrid)</td>
+                        <td style="padding: 0.85rem 0.75rem;">€1,650 / mo (Lisbon)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 1rem 0.75rem; font-weight: 700; color: #fff;">Estimated Net Monthly Savings</td>
+                        <td style="padding: 1rem 0.75rem; font-family: 'JetBrains Mono', monospace; font-weight: 800; color: #34d399;" id="cell-save-es">€4,125 / mo</td>
+                        <td style="padding: 1rem 0.75rem; font-family: 'JetBrains Mono', monospace; font-weight: 800; color: #34d399;" id="cell-save-pt">€4,417 / mo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">⚡ <span class="logo-text">Remo<span class="logo-highlight">tax</span></span></div>
+                <p>Global Remote Work Financial Intelligence Platform.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <span class="link-group-title">Comparisons</span>
+                    <a href="spain-vs-portugal.html">Spain vs Portugal</a>
+                    <a href="../calculators/take-home-pay.html">Take Home Pay</a>
+                    <a href="../calculators/freelancer-tax.html">Freelancer Tax</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../data/countries.js"></script>
+    <script src="../engine/taxEngine.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const incomeInput = document.getElementById('income-input');
+        const incomeSlider = document.getElementById('income-slider');
+        let currentWorkerType = 'contractor';
+
+        function update() {
+            const gross = parseFloat(incomeInput.value) || 0;
+            const res = RemotaxEngine.compareCountries(gross, 'ES', 'PT', currentWorkerType);
+
+            document.getElementById('winner-headline').textContent = res.winnerText;
+
+            // Spain ES
+            document.getElementById('cell-gross-es').textContent = `€${res.countryA.grossIncome.toLocaleString()}`;
+            document.getElementById('cell-tax-es').textContent = `-€${res.countryA.incomeTax.toLocaleString()}`;
+            document.getElementById('cell-social-es').textContent = `-€${res.countryA.socialSecurity.toLocaleString()}`;
+            document.getElementById('cell-rate-es').textContent = `${res.countryA.effectiveTaxRate}%`;
+            document.getElementById('cell-net-es').textContent = `€${res.countryA.netAnnual.toLocaleString()}`;
+            document.getElementById('cell-month-es').textContent = `€${res.countryA.netMonthly.toLocaleString()}`;
+            document.getElementById('cell-save-es').textContent = `€${res.countryA.netMonthlySavings.toLocaleString()} / mo`;
+
+            // Portugal PT
+            document.getElementById('cell-gross-pt').textContent = `€${res.countryB.grossIncome.toLocaleString()}`;
+            document.getElementById('cell-tax-pt').textContent = `-€${res.countryB.incomeTax.toLocaleString()}`;
+            document.getElementById('cell-social-pt').textContent = `-€${res.countryB.socialSecurity.toLocaleString()}`;
+            document.getElementById('cell-rate-pt').textContent = `${res.countryB.effectiveTaxRate}%`;
+            document.getElementById('cell-net-pt').textContent = `€${res.countryB.netAnnual.toLocaleString()}`;
+            document.getElementById('cell-month-pt').textContent = `€${res.countryB.netMonthly.toLocaleString()}`;
+            document.getElementById('cell-save-pt').textContent = `€${res.countryB.netMonthlySavings.toLocaleString()} / mo`;
+        }
+
+        incomeSlider.addEventListener('input', (e) => {
+            incomeInput.value = e.target.value;
+            update();
+        });
+
+        incomeInput.addEventListener('input', (e) => {
+            incomeSlider.value = e.target.value;
+            update();
+        });
+
+        document.querySelectorAll('.worker-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.worker-toggle').forEach(b => {
+                    b.classList.remove('btn-primary', 'active');
+                    b.classList.add('btn-secondary');
+                });
+                btn.classList.remove('btn-secondary');
+                btn.classList.add('btn-primary', 'active');
+                currentWorkerType = btn.getAttribute('data-type');
+                update();
+            });
+        });
+
+        update();
+    });
+    </script>
+</body>
+</html>

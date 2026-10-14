@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /remotax/
+
+Sitemap: https://afrix.ir/remotax/sitemap.xml

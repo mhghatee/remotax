@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Home Pay Calculator 2026 — Estimate Your Net Salary | Remotax</title>
+    <meta name="description" content="Calculate your exact take-home pay, income tax, and social contributions for 2026 across Spain, Portugal, UAE, Germany, UK, USA, and 20+ countries.">
+    <meta name="keywords" content="take home pay calculator, net salary calculator 2026, salary after tax, gross to net pay, remote worker take home pay">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Take Home Pay Calculator 2026 — Remotax">
+    <meta property="og:description" content="High-precision net pay estimator for remote employees, contractors, and digital nomads.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../index.css?v=2.5">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Remotax Take Home Pay Calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "description": "Calculate exact take-home net salary, income taxes, and social security across top global destinations for remote workers.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">Remo<span class="logo-highlight">tax</span></span>
+                <span class="logo-badge">take-home</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="take-home-pay.html" class="nav-link active">Take Home Pay</a>
+                <a href="freelancer-tax.html" class="nav-link">Freelancer Tax</a>
+                <a href="remote-worker-tax.html" class="nav-link">Remote Tax</a>
+                <a href="../comparisons/spain-vs-portugal.html" class="nav-link">Comparisons</a>
+                <a href="../blog.html" class="nav-link">Tax Blog</a>
+            </nav>
+            <div>
+                <a href="../quiz.html" class="btn-secondary">Find Match 🧩</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="section-container" style="padding-top: 1.5rem; padding-bottom: 0;">
+        <nav style="font-size: 0.85rem; color: var(--text-muted);">
+            <a href="../index.html" style="color: var(--text-muted); text-decoration: none;">Home</a> &gt; 
+            <a href="../calculator.html" style="color: var(--text-muted); text-decoration: none;">Calculators</a> &gt; 
+            <span style="color: var(--text-main);">Take Home Pay Calculator</span>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-container" style="padding-top: 1rem;">
+        <div class="hero-content">
+            <div class="pill-tag">
+                <span class="pill-dot"></span> Tax Year 2026 Engine
+            </div>
+            <h1 class="hero-title">Take Home Pay <span class="gradient-text">Calculator 2026</span></h1>
+            <p class="hero-subtitle">Calculate your estimated income tax, social security deductions, and exact net take-home salary across top global destinations.</p>
+        </div>
+    </section>
+
+    <!-- Calculator Main Layout -->
+    <main class="main-container" style="margin-top: 1rem;">
+        <div class="app-layout">
+            <!-- Left Column: Inputs -->
+            <div class="calculator-card glass-panel">
+                <div class="card-header">
+                    <h2>Your Income & Destination</h2>
+                    <p>Enter your annual earnings and choose your country.</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="country-select">Country of Tax Residence</label>
+                    <select id="country-select" class="form-select">
+                        <option value="ES" selected>🇪🇸 Spain (Beckham Law vs Standard)</option>
+                        <option value="PT">🇵🇹 Portugal (D8 Nomad / NHR 2.0)</option>
+                        <option value="AE">🇦🇪 UAE / Dubai (0% Personal Tax)</option>
+                        <option value="DE">🇩🇪 Germany (Progressive & Social)</option>
+                        <option value="GB">🇬🇧 United Kingdom (PAYE & NI)</option>
+                        <option value="US">🇺🇸 United States (Federal & FICA)</option>
+                        <option value="CA">🇨🇦 Canada (Federal + Provincial)</option>
+                        <option value="NL">🇳🇱 Netherlands (30% Expat Ruling)</option>
+                        <option value="IT">🇮🇹 Italy (Lavoratori Impatriati 70%)</option>
+                        <option value="TH">🇹🇭 Thailand (DTV Visa 17% Cap)</option>
+                        <option value="SG">🇸🇬 Singapore (Territorial 0% Foreign)</option>
+                        <option value="CH">🇨🇭 Switzerland (Canton Tax ~18%)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <div class="label-with-val">
+                        <label for="income-input">Annual Gross Income</label>
+                        <span class="active-val" id="currency-prefix-symbol">$</span>
+                    </div>
+                    <div class="input-with-symbol">
+                        <input type="number" id="income-input" class="form-input" value="100000" min="0" max="1000000" step="1000">
+                    </div>
+                    <input type="range" id="income-slider" class="range-slider" min="10000" max="300000" step="2500" value="100000">
+                </div>
+
+                <div class="input-group">
+                    <label>Employment / Worker Type</label>
+                    <div class="radio-cards-group">
+                        <div class="radio-card active" data-type="employee">
+                            <input type="radio" name="worker-type" value="employee" checked>
+                            <span class="radio-title">💼 Employee</span>
+                            <span class="radio-desc">Employed by company / EOR</span>
+                        </div>
+                        <div class="radio-card" data-type="contractor">
+                            <input type="radio" name="worker-type" value="contractor">
+                            <span class="radio-title">⚡ B2B Contractor</span>
+                            <span class="radio-desc">Invoicing foreign clients</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="toggle-group" id="regime-group">
+                    <label class="switch">
+                        <input type="checkbox" id="special-regime-toggle" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <div class="toggle-text">
+                        <span class="toggle-title" id="regime-text">Apply Special Expat Tax Incentive</span>
+                        <span class="toggle-subtitle" id="regime-help">Calculates under preferential expat or nomad tax rules if eligible.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Results Hierarchy -->
+            <div class="results-card glass-panel">
+                <div class="net-banner">
+                    <span class="net-label">Your Estimated Take-Home Pay</span>
+                    <div class="net-value" id="net-monthly-amount">$6,075</div>
+                    <div class="net-sub" id="net-annual-amount">Annual Net: $72,900 / year</div>
+                    <div class="badge badge-accent" id="effective-tax-badge">Effective Tax & Social Rate: 27.1%</div>
+                </div>
+
+                <!-- Breakdown Visual Bar -->
+                <div class="visual-breakdown">
+                    <div class="breakdown-bar">
+                        <div class="bar-segment bar-net" id="bar-net" style="width: 72.9%;"></div>
+                        <div class="bar-segment bar-tax" id="bar-tax" style="width: 22.8%;"></div>
+                        <div class="bar-segment bar-social" id="bar-social" style="width: 4.3%;"></div>
+                    </div>
+                    <div class="bar-legend">
+                        <span class="legend-item"><span class="dot dot-net"></span> Net (<span id="pct-net">73%</span>)</span>
+                        <span class="legend-item"><span class="dot dot-tax"></span> Tax (<span id="pct-tax">23%</span>)</span>
+                        <span class="legend-item"><span class="dot dot-social"></span> Social (<span id="pct-social">4%</span>)</span>
+                    </div>
+                </div>
+
+                <!-- Detailed Rows Table -->
+                <div class="results-table">
+                    <div class="table-row">
+                        <span class="row-label">Gross Annual Income</span>
+                        <span class="row-value" id="val-gross">$100,000</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="row-label">Estimated Income Tax</span>
+                        <span class="row-value tax-color" id="val-tax">-$22,800</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="row-label">Social Security & Healthcare</span>
+                        <span class="row-value social-color" id="val-social">-$4,300</span>
+                    </div>
+                    <div class="table-row highlight-row">
+                        <span class="row-label">Annual Net Income</span>
+                        <span class="row-value net-color" id="val-net-annual">$72,900</span>
+                    </div>
+                    <div class="table-row highlight-row">
+                        <span class="row-label">Monthly Net Income</span>
+                        <span class="row-value net-color" id="val-net-monthly">$6,075</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="row-label">Weekly Net Take-Home</span>
+                        <span class="row-value" id="val-net-weekly">$1,402</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="row-label">Net Hourly Equivalent</span>
+                        <span class="row-value" id="val-net-hourly">$36.45 / hr</span>
+                    </div>
+                </div>
+
+                <!-- Purchasing Power & Savings Box -->
+                <div class="lifestyle-card" id="lifestyle-section" style="margin-top: 1rem; padding: 1.25rem; background: rgba(255,255,255,0.03); border: 1px solid var(--bg-card-border); border-radius: var(--radius-sm);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <span style="font-weight: 700; color: #fff;" id="lifestyle-title">Madrid Purchasing Power</span>
+                        <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399;" id="lifestyle-tier">💎 Wealth Accumulator</span>
+                    </div>
+                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.75rem;" id="lifestyle-desc">
+                        Estimated local living costs are $1,850/mo, leaving you with an estimated $4,225/mo in net discretionary savings.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Explanatory Content & Sources (Section 12, 14, 36) -->
+    <section class="section-container" style="max-width: 900px; margin: 3rem auto; line-height: 1.8; color: #d1d5db;">
+        <h2 style="color: #fff; font-size: 1.8rem; margin-bottom: 1rem;">How This Take-Home Pay Calculator Works</h2>
+        <p>
+            When calculating net take-home salary as an international remote worker or expat, simple online calculators often overlook social security caps, self-employment quotas, or special talent regimes. Remotax accounts for:
+        </p>
+        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li><strong>Statutory Tax Brackets:</strong> Progressive federal/state bands based on current 2026 legislation.</li>
+            <li><strong>Preferential Expat Schemes:</strong> Spain's Beckham Law, Portugal's D8 Nomad status, Dubai's 0% tax, and the Dutch 30% ruling.</li>
+            <li><strong>Social Contributions:</strong> Both employee payroll withholdings and contractor/self-employed mandatory social coverage.</li>
+        </ul>
+
+        <div style="background: rgba(99, 102, 241, 0.08); border-left: 4px solid var(--primary); padding: 1.25rem; margin: 2rem 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+                <strong>Disclaimer:</strong> Remotax provides estimates for informational and comparison purposes only. Tax liabilities vary depending on specific tax treaties, deductions, residency days, and personal circumstances. Always consult a licensed local tax advisor.
+            </p>
+        </div>
+
+        <!-- Related Calculators (Section 39) -->
+        <h3 style="color: #fff; font-size: 1.3rem; margin-top: 2rem;">Related Financial Calculators</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem;">
+            <a href="freelancer-tax.html" class="glass-panel" style="padding: 1rem; text-decoration: none; color: #fff; border-radius: var(--radius-sm); border: 1px solid var(--bg-card-border);">
+                <div style="font-weight: 700;">⚡ Freelancer Tax Calculator</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Calculate net pay after business expense deductions.</div>
+            </a>
+            <a href="remote-worker-tax.html" class="glass-panel" style="padding: 1rem; text-decoration: none; color: #fff; border-radius: var(--radius-sm); border: 1px solid var(--bg-card-border);">
+                <div style="font-weight: 700;">🌎 Remote Worker Tax</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Compare residency & 183-day rule implications.</div>
+            </a>
+            <a href="../comparisons/spain-vs-portugal.html" class="glass-panel" style="padding: 1rem; text-decoration: none; color: #fff; border-radius: var(--radius-sm); border: 1px solid var(--bg-card-border);">
+                <div style="font-weight: 700;">⚖️ Spain vs Portugal</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Direct head-to-head take-home pay comparison.</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">⚡ <span class="logo-text">Remo<span class="logo-highlight">tax</span></span></div>
+                <p>Global Remote Work Financial Intelligence Platform.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <span class="link-group-title">Calculators</span>
+                    <a href="take-home-pay.html">Take Home Pay</a>
+                    <a href="freelancer-tax.html">Freelancer Tax</a>
+                    <a href="remote-worker-tax.html">Remote Worker Tax</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts: Pure Data & Engine Layer -->
+    <script src="../data/countries.js"></script>
+    <script src="../engine/taxEngine.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const countrySelect = document.getElementById('country-select');
+        const incomeInput = document.getElementById('income-input');
+        const incomeSlider = document.getElementById('income-slider');
+        const specialRegime = document.getElementById('special-regime-toggle');
+        const regimeText = document.getElementById('regime-text');
+        const regimeHelp = document.getElementById('regime-help');
+
+        function update() {
+            const country = countrySelect.value;
+            const gross = parseFloat(incomeInput.value) || 0;
+            const workerType = document.querySelector('input[name="worker-type"]:checked').value;
+            const useRegime = specialRegime.checked;
+
+            const res = RemotaxEngine.calculateTax({
+                grossIncome: gross,
+                countryCode: country,
+                workerType: workerType,
+                useSpecialRegime: useRegime
+            });
+
+            document.getElementById('currency-prefix-symbol').textContent = res.symbol;
+            document.getElementById('net-monthly-amount').textContent = `${res.symbol}${res.netMonthly.toLocaleString()}`;
+            document.getElementById('net-annual-amount').textContent = `Annual Net: ${res.symbol}${res.netAnnual.toLocaleString()} / year`;
+            document.getElementById('effective-tax-badge').textContent = `Effective Tax & Social Rate: ${res.effectiveTaxRate}%`;
+
+            document.getElementById('val-gross').textContent = `${res.symbol}${res.grossIncome.toLocaleString()}`;
+            document.getElementById('val-tax').textContent = `-${res.symbol}${res.incomeTax.toLocaleString()}`;
+            document.getElementById('val-social').textContent = `-${res.symbol}${res.socialSecurity.toLocaleString()}`;
+            document.getElementById('val-net-annual').textContent = `${res.symbol}${res.netAnnual.toLocaleString()}`;
+            document.getElementById('val-net-monthly').textContent = `${res.symbol}${res.netMonthly.toLocaleString()}`;
+            document.getElementById('val-net-weekly').textContent = `${res.symbol}${res.netWeekly.toLocaleString()}`;
+            document.getElementById('val-net-hourly').textContent = `${res.symbol}${res.netHourly.toFixed(2)} / hr`;
+
+            // Percentage Bars
+            const netPct = gross > 0 ? (res.netAnnual / gross) * 100 : 0;
+            const taxPct = gross > 0 ? (res.incomeTax / gross) * 100 : 0;
+            const socPct = gross > 0 ? (res.socialSecurity / gross) * 100 : 0;
+
+            document.getElementById('bar-net').style.width = `${netPct}%`;
+            document.getElementById('bar-tax').style.width = `${taxPct}%`;
+            document.getElementById('bar-social').style.width = `${socPct}%`;
+
+            document.getElementById('pct-net').textContent = `${Math.round(netPct)}%`;
+            document.getElementById('pct-tax').textContent = `${Math.round(taxPct)}%`;
+            document.getElementById('pct-social').textContent = `${Math.round(socPct)}%`;
+
+            // Purchasing Power
+            document.getElementById('lifestyle-title').textContent = `${res.city} (${res.country}) Lifestyle`;
+            document.getElementById('lifestyle-tier').textContent = res.tier;
+            document.getElementById('lifestyle-desc').textContent = 
+                `Estimated local living costs in ${res.city} are ${res.symbol}${res.monthlyLivingCost.toLocaleString()}/mo, leaving you with an estimated ${res.symbol}${res.netMonthlySavings.toLocaleString()}/mo in net discretionary savings.`;
+        }
+
+        incomeSlider.addEventListener('input', (e) => {
+            incomeInput.value = e.target.value;
+            update();
+        });
+
+        incomeInput.addEventListener('input', (e) => {
+            let v = parseFloat(e.target.value) || 0;
+            if (v > 1000000) v = 1000000;
+            incomeSlider.value = v;
+            update();
+        });
+
+        countrySelect.addEventListener('change', () => {
+            const country = countrySelect.value;
+            const cData = RemotaxEngine.COUNTRIES[country];
+            if (cData && cData.regimes && cData.regimes[0]) {
+                regimeText.textContent = cData.regimes[0].name;
+                regimeHelp.textContent = cData.regimes[0].description;
+                document.getElementById('regime-group').style.display = 'flex';
+            } else {
+                document.getElementById('regime-group').style.display = 'none';
+            }
+            update();
+        });
+
+        specialRegime.addEventListener('change', update);
+
+        document.querySelectorAll('.radio-card').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.radio-card').forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                card.querySelector('input').checked = true;
+                update();
+            });
+        });
+
+        update();
+    });
+    </script>
+</body>
+</html>

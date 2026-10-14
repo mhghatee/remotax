@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Tax Calculator 2026 — Estimate Take-Home Pay & Expenses | Remotax</title>
+    <meta name="description" content="Calculate your net income, deductible business expenses, social security quotas, and effective tax rate as a freelancer or independent contractor in 2026.">
+    <meta name="keywords" content="freelancer tax calculator, contractor tax calculator 2026, self employed tax, business expense deductions, freelance net income">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Freelancer Tax Calculator 2026 — Remotax">
+    <meta property="og:description" content="Dedicated tax estimator for freelancers, autónomos, and 1099 contractors worldwide.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../index.css?v=2.5">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Remotax Freelancer Tax Calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "description": "Calculate net freelance income, deductible business expenses, and social security across top global destinations.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">Remo<span class="logo-highlight">tax</span></span>
+                <span class="logo-badge">freelancer</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="take-home-pay.html" class="nav-link">Take Home Pay</a>
+                <a href="freelancer-tax.html" class="nav-link active">Freelancer Tax</a>
+                <a href="remote-worker-tax.html" class="nav-link">Remote Tax</a>
+                <a href="../comparisons/spain-vs-portugal.html" class="nav-link">Comparisons</a>
+                <a href="../blog.html" class="nav-link">Tax Blog</a>
+            </nav>
+            <div>
+                <a href="../quiz.html" class="btn-secondary">Find Match 🧩</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="section-container" style="padding-top: 1.5rem; padding-bottom: 0;">
+        <nav style="font-size: 0.85rem; color: var(--text-muted);">
+            <a href="../index.html" style="color: var(--text-muted); text-decoration: none;">Home</a> &gt; 
+            <a href="../calculator.html" style="color: var(--text-muted); text-decoration: none;">Calculators</a> &gt; 
+            <span style="color: var(--text-main);">Freelancer Tax Calculator</span>
+        </nav>
+    </div>
+
+    <section class="hero-container" style="padding-top: 1rem;">
+        <div class="hero-content">
+            <div class="pill-tag">
+                <span class="pill-dot"></span> B2B & Freelance 2026 Engine
+            </div>
+            <h1 class="hero-title">Freelancer Tax <span class="gradient-text">Calculator 2026</span></h1>
+            <p class="hero-subtitle">Estimate your net profit, deductible business expenses, social security contributions, and recommended client hourly rate.</p>
+        </div>
+    </section>
+
+    <main class="main-container" style="margin-top: 1rem;">
+        <div class="app-layout">
+            <!-- Left Column: Inputs -->
+            <div class="calculator-card glass-panel">
+                <div class="card-header">
+                    <h2>Freelance Revenue & Expenses</h2>
+                    <p>Enter your annual client billings and business overheads.</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="country-select">Tax Residence / Base Country</label>
+                    <select id="country-select" class="form-select">
+                        <option value="ES" selected>🇪🇸 Spain (Autónomo + Beckham Option)</option>
+                        <option value="PT">🇵🇹 Portugal (Recibos Verdes / NHR 2.0)</option>
+                        <option value="AE">🇦🇪 UAE / Dubai (0% Personal Tax / Freezone)</option>
+                        <option value="DE">🇩🇪 Germany (Freiberufler / Gewerbe)</option>
+                        <option value="GB">🇬🇧 United Kingdom (Sole Trader / Class 4 NI)</option>
+                        <option value="US">🇺🇸 United States (1099 Self-Employed + FICA)</option>
+                        <option value="CA">🇨🇦 Canada (Sole Proprietor / CPP)</option>
+                        <option value="NL">🇳🇱 Netherlands (ZZP / Zvw)</option>
+                        <option value="IT">🇮🇹 Italy (Regime Forfettario / Impatriati)</option>
+                        <option value="TH">🇹🇭 Thailand (DTV Remote Contractor)</option>
+                        <option value="SG">🇸🇬 Singapore (Sole Proprietorship / 0% Foreign)</option>
+                        <option value="CH">🇨🇭 Switzerland (Sole Proprietor ~18%)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <div class="label-with-val">
+                        <label for="income-input">Annual Gross Billings (Revenue)</label>
+                        <span class="active-val" id="currency-prefix-symbol">$</span>
+                    </div>
+                    <input type="number" id="income-input" class="form-input" value="95000" min="0" max="1000000" step="1000">
+                    <input type="range" id="income-slider" class="range-slider" min="10000" max="300000" step="2500" value="95000">
+                </div>
+
+                <div class="input-group">
+                    <label for="expense-input">Annual Deductible Business Expenses</label>
+                    <input type="number" id="expense-input" class="form-input" value="8000" min="0" max="200000" step="500">
+                    <span style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-top: 0.35rem;">(e.g., Software, coworking, hardware, internet, travel, accounting)</span>
+                </div>
+
+                <div class="toggle-group" id="regime-group">
+                    <label class="switch">
+                        <input type="checkbox" id="special-regime-toggle" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <div class="toggle-text">
+                        <span class="toggle-title" id="regime-text">Apply Flat Expat / Talent Regime</span>
+                        <span class="toggle-subtitle" id="regime-help">Calculates under preferential freelance or startup talent regime.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Results -->
+            <div class="results-card glass-panel">
+                <div class="net-banner">
+                    <span class="net-label">Net Take-Home Freelance Profit</span>
+                    <div class="net-value" id="net-monthly-amount">$5,417</div>
+                    <div class="net-sub" id="net-annual-amount">Annual Net: $65,000 / year</div>
+                    <div class="badge badge-accent" id="effective-tax-badge">Effective Tax & Social Rate: 26.5%</div>
+                </div>
+
+                <div class="results-table">
+                    <div class="table-row">
+                        <span class="row-label">Gross Client Revenue</span>
+                        <span class="row-value" id="val-gross">$95,000</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="row-label">Deductible Business Expenses</span>
+                        <span class="row-value tax-color" id="val-expenses">-$8,000</span>
+                    </div>
+                    <div class="table-row highlight-row">
+                        <span class="row-label">Taxable Net Profit Base</span>
+                        <span class="row-value" id="val-taxable">$87,000</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="row-label">Estimated Income Tax</span>
+                        <span class="row-value tax-color" id="val-tax">-$20,880</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="row-label">Self-Employed Social Security</span>
+                        <span class="row-value social-color" id="val-social">-$4,300</span>
+                    </div>
+                    <div class="table-row highlight-row">
+                        <span class="row-label">Net Annual Discretionary Income</span>
+                        <span class="row-value net-color" id="val-net-annual">$61,820</span>
+                    </div>
+                    <div class="table-row highlight-row">
+                        <span class="row-label">Net Monthly Take-Home</span>
+                        <span class="row-value net-color" id="val-net-monthly">$5,152</span>
+                    </div>
+                </div>
+
+                <!-- Recommended Hourly Rate Recommendation Box -->
+                <div style="margin-top: 1.25rem; padding: 1.25rem; background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: var(--radius-sm);">
+                    <div style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary); font-weight: 700;">Target Hourly Rate Advisor</div>
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.4rem;">
+                        <span style="font-size: 1.4rem; font-weight: 800; color: #fff;" id="rec-hourly-rate">$65 - $80 / hr</span>
+                        <span style="font-size: 0.85rem; color: var(--text-muted);">Based on 1,440 billable hrs/yr</span>
+                    </div>
+                    <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 0;">
+                        To clear this net profit after taxes, overhead, and 4 weeks of unpaid vacation, quote clients at or above this hourly rate.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">⚡ <span class="logo-text">Remo<span class="logo-highlight">tax</span></span></div>
+                <p>Global Remote Work Financial Intelligence Platform.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <span class="link-group-title">Calculators</span>
+                    <a href="take-home-pay.html">Take Home Pay</a>
+                    <a href="freelancer-tax.html">Freelancer Tax</a>
+                    <a href="remote-worker-tax.html">Remote Worker Tax</a>
+                    <a href="../comparisons/spain-vs-portugal.html">Spain vs Portugal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../data/countries.js"></script>
+    <script src="../engine/taxEngine.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const countrySelect = document.getElementById('country-select');
+        const incomeInput = document.getElementById('income-input');
+        const incomeSlider = document.getElementById('income-slider');
+        const expenseInput = document.getElementById('expense-input');
+        const specialRegime = document.getElementById('special-regime-toggle');
+
+        function update() {
+            const country = countrySelect.value;
+            const gross = parseFloat(incomeInput.value) || 0;
+            const expenses = parseFloat(expenseInput.value) || 0;
+            const useRegime = specialRegime.checked;
+
+            const res = RemotaxEngine.calculateTax({
+                grossIncome: gross,
+                countryCode: country,
+                workerType: 'contractor',
+                businessExpenses: expenses,
+                useSpecialRegime: useRegime
+            });
+
+            document.getElementById('currency-prefix-symbol').textContent = res.symbol;
+            document.getElementById('net-monthly-amount').textContent = `${res.symbol}${res.netMonthly.toLocaleString()}`;
+            document.getElementById('net-annual-amount').textContent = `Annual Net: ${res.symbol}${res.netAnnual.toLocaleString()} / year`;
+            document.getElementById('effective-tax-badge').textContent = `Effective Tax & Social Rate: ${res.effectiveTaxRate}%`;
+
+            document.getElementById('val-gross').textContent = `${res.symbol}${res.grossIncome.toLocaleString()}`;
+            document.getElementById('val-expenses').textContent = `-${res.symbol}${res.businessExpenses.toLocaleString()}`;
+            document.getElementById('val-taxable').textContent = `${res.symbol}${res.taxableIncome.toLocaleString()}`;
+            document.getElementById('val-tax').textContent = `-${res.symbol}${res.incomeTax.toLocaleString()}`;
+            document.getElementById('val-social').textContent = `-${res.symbol}${res.socialSecurity.toLocaleString()}`;
+            document.getElementById('val-net-annual').textContent = `${res.symbol}${res.netAnnual.toLocaleString()}`;
+            document.getElementById('val-net-monthly').textContent = `${res.symbol}${res.netMonthly.toLocaleString()}`;
+
+            // Target hourly quote
+            const rateCalc = RemotaxEngine.calculateHourlyRate({
+                desiredAnnualNet: res.netAnnual,
+                annualExpenses: expenses,
+                estimatedTaxPct: res.effectiveTaxRate
+            });
+            document.getElementById('rec-hourly-rate').textContent = `${res.symbol}${rateCalc.minHourlyRate} - ${res.symbol}${rateCalc.recommendedHourlyRate} / hr`;
+        }
+
+        incomeSlider.addEventListener('input', (e) => {
+            incomeInput.value = e.target.value;
+            update();
+        });
+
+        incomeInput.addEventListener('input', (e) => {
+            let v = parseFloat(e.target.value) || 0;
+            if (v > 1000000) v = 1000000;
+            incomeSlider.value = v;
+            update();
+        });
+
+        expenseInput.addEventListener('input', update);
+        countrySelect.addEventListener('change', update);
+        specialRegime.addEventListener('change', update);
+
+        update();
+    });
+    </script>
+</body>
+</html>
