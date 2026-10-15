@@ -100,7 +100,7 @@
     --radius-pill: 9999px;
 
     /* --- Typography Families --- */
-    --font-sans: 'Inter Tight', 'Inter Tight Fallback', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+    --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     --font-mono: 'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace;
     --font-serif: 'Instrument Serif', 'Instrument Serif Fallback', Georgia, 'Times New Roman', serif;
 
