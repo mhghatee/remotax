@@ -346,8 +346,8 @@
 }
 
 @keyframes pulseDelta {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.04); box-shadow: 0 0 28px rgba(217, 119, 47, 0.8); }
+    0% { box-shadow: 0 0 16px rgba(217, 119, 47, 0.4); }
+    100% { box-shadow: 0 0 28px rgba(217, 119, 47, 0.8); }
 }
 
 /* --- 7. DESTINATIONS HERO: INTERACTIVE GLASS GLOBE DOT MAP --- */

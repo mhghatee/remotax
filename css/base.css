@@ -141,6 +141,9 @@ p:last-child {
     letter-spacing: -0.01em;
     color: var(--horizon-peach);
     padding: 0 0.15em;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: baseline;
 }
 
 /* Tabular figures for numbers */
