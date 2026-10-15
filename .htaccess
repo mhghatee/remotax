@@ -50,7 +50,7 @@ AddType application/manifest+json .webmanifest
         Header set Cache-Control "no-cache, must-revalidate, max-age=0"
         Header set Pragma "no-cache"
         Header set Expires "0"
-        # Dynamic page font preloads handled per-page via <head> <link rel="preload">font/woff2\"; crossorigin"
+        # Font preloads are handled per-page via <head> <link rel="preload">
     </FilesMatch>
 
     # ------------------------------------------------------------------

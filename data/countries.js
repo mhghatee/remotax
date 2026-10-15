@@ -12,6 +12,8 @@ const REMOTAX_COUNTRIES = {
         city: "Madrid",
         livingCost: 1850,
         supportsFilingStatus: true,
+        dataStatus: "verified",
+        verifiedOn: "2026-10-15",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 12450, rate: 0.19 },
@@ -22,10 +24,10 @@ const REMOTAX_COUNTRIES = {
             { limit: Infinity, rate: 0.47 }
         ],
         socialSecurity: {
-            employeeRate: 0.0635,
+            employeeRate: 0.0647,
             contractorRate: 0.08,
             freelancerMaxAnnual: 4300,
-            description: "Seguridad Social contribution with Cuota de Autónomos base"
+            description: "Seguridad Social: 6.47% employee rate (includes MEI); Cuota de Autónomos based on 15 income tramos (~€230–€590/mo; median benchmark ~€4,300/yr)"
         },
         regimes: [
             {
@@ -43,8 +45,8 @@ const REMOTAX_COUNTRIES = {
             jointDeduction: 3400
         },
         sources: [
-            { title: "Agencia Tributaria - IRPF Brackets 2026", url: "https://sede.agenciatributaria.gob.es", org: "Spanish Tax Agency" },
-            { title: "Seguridad Social - Bases y Tipos de Cotización", url: "https://seg-social.es", org: "Ministry of Inclusion and Social Security" }
+            { title: "Agencia Tributaria - IRPF Brackets 2026", url: "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-practicos/irpf-2024/capitulo-15-calculo-impuesto-determinacion-cuotas-integras/escala-general-gravamen/escala-general-impuesto.html", org: "Agencia Tributaria" },
+            { title: "Seguridad Social - Cotización Autónomos por Ingresos Reales", url: "https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/CotizacionRecaudacionTrabajadores/36537", org: "Ministerio de Inclusión, Seguridad Social y Migraciones" }
         ],
         lastUpdated: "October 2026"
     },
@@ -57,38 +59,41 @@ const REMOTAX_COUNTRIES = {
         city: "Lisbon",
         livingCost: 1650,
         supportsFilingStatus: false,
+        dataStatus: "verified",
+        verifiedOn: "2026-10-15",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
-            { limit: 7703, rate: 0.1325 },
-            { limit: 11623, rate: 0.18 },
-            { limit: 16472, rate: 0.23 },
-            { limit: 21321, rate: 0.26 },
-            { limit: 27146, rate: 0.327 },
-            { limit: 39791, rate: 0.37 },
-            { limit: 51997, rate: 0.435 },
-            { limit: 80000, rate: 0.45 },
+            { limit: 8342, rate: 0.125 },
+            { limit: 12587, rate: 0.157 },
+            { limit: 17838, rate: 0.212 },
+            { limit: 23089, rate: 0.241 },
+            { limit: 29397, rate: 0.311 },
+            { limit: 43090, rate: 0.349 },
+            { limit: 46566, rate: 0.431 },
+            { limit: 86634, rate: 0.446 },
             { limit: Infinity, rate: 0.48 }
         ],
         socialSecurity: {
             employeeRate: 0.11,
-            contractorRate: 0.15,
-            freelancerMaxAnnual: 7200,
-            description: "Segurança Social mandatory contributions"
+            contractorRate: 0.1498,
+            freelancerMaxAnnual: 16552,
+            description: "Segurança Social: 11% for employees; 21.4% on 70% relevant income base (effective 14.98%) for independent contractors, subject to 12 × IAS statutory monthly ceiling (~€16,552/yr)"
         },
         regimes: [
             {
                 id: "d8_incentive",
-                name: "NHR 2.0 / Scientific & Innovation Tax Incentive (20% Flat)",
-                description: "Fixed 20% personal income tax rate on eligible high-value remote and innovation earnings.",
-                eligibilityNote: "D8 visa grants residence. The 20% flat rate requires qualifying under the new Tax Incentive for Scientific Research and Innovation (IFICI).",
+                name: "IFICI / Scientific & Innovation Incentive (20% Flat Rate)",
+                description: "Fixed 20% IRS rate applies strictly to qualifying scientific research, higher education teaching, and certified R&D innovation activities (Art. 58.º-A EBF). NHR is closed to new applicants.",
+                eligibilityNote: "Requires certified qualifying activity in research or innovation under IFICI. D8 digital nomad visa provides residency only; standard remote work without certified innovation is taxed under standard progressive IRS (12.5% to 48%).",
                 cap: Infinity,
                 flatRate: 0.20
             }
         ],
-        deductions: { standardAllowance: 4104 },
+        deductions: { standardAllowance: 4587.09 },
         sources: [
-            { title: "Autoridade Tributária e Aduaneira - Tax Brackets", url: "https://portaldasfinancas.gov.pt", org: "Portuguese Tax Authority" },
-            { title: "Segurança Social Direta", url: "https://seg-social.pt", org: "Portuguese Social Security" }
+            { title: "Autoridade Tributária e Aduaneira - CIRS Artigo 68.º (Tax Brackets)", url: "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs68.aspx", org: "Autoridade Tributária e Aduaneira" },
+            { title: "Autoridade Tributária e Aduaneira - CIRS Artigo 25.º (Dedução Específica)", url: "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs25.aspx", org: "Autoridade Tributária e Aduaneira" },
+            { title: "Segurança Social - Trabalhadores Independentes", url: "https://www.seg-social.pt/trabalhadores-independentes", org: "Segurança Social" }
         ],
         lastUpdated: "October 2026"
     },
@@ -101,6 +106,8 @@ const REMOTAX_COUNTRIES = {
         city: "Dubai",
         livingCost: 2250,
         supportsFilingStatus: false,
+        dataStatus: "verified",
+        verifiedOn: "2026-10-15",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: Infinity, rate: 0.00 }
@@ -116,15 +123,15 @@ const REMOTAX_COUNTRIES = {
                 id: "zero_tax_haven",
                 name: "0% Personal Income Tax",
                 description: "0% UAE personal income tax under Dubai Virtual Working Program.",
-                eligibilityNote: "Applies to local UAE taxes only. Does not exempt remote workers from tax obligations in their country of citizenship (e.g. US citizens under FATCA) or home tax residency.",
+                eligibilityNote: "Personal wages and employment earnings are 0% tax. Natural persons with UAE business/freelance revenue exceeding AED 1,000,000/year may be subject to UAE Corporate Tax (9% on taxable profit > AED 375,000 under Cabinet Decision 49/2023). Home country tax duties (e.g. US FATCA) remain.",
                 cap: Infinity,
                 flatRate: 0.00
             }
         ],
         deductions: { standardAllowance: 0 },
         sources: [
-            { title: "Federal Tax Authority (FTA) UAE", url: "https://tax.gov.ae", org: "UAE Federal Tax Authority" },
-            { title: "Dubai Virtual Working Program", url: "https://visitdubai.com", org: "Department of Economy and Tourism" }
+            { title: "Federal Tax Authority (FTA) - Corporate Tax for Natural Persons", url: "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/corporate.tax.for.natural.persons.aspx", org: "UAE Federal Tax Authority" },
+            { title: "Ministry of Finance - Cabinet Decision No. 49 of 2023", url: "https://www.mof.gov.ae/en/legislation/pages/cabinet-decision-no-49-of-2023.aspx", org: "UAE Ministry of Finance" }
         ],
         lastUpdated: "October 2026"
     },
@@ -137,6 +144,7 @@ const REMOTAX_COUNTRIES = {
         city: "Berlin",
         livingCost: 2100,
         supportsFilingStatus: true,
+        dataStatus: "needs-review",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 17005, rate: 0.14 },
@@ -175,6 +183,7 @@ const REMOTAX_COUNTRIES = {
         city: "London",
         livingCost: 2850,
         supportsFilingStatus: false,
+        dataStatus: "needs-review",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 37700, rate: 0.20 },
@@ -211,6 +220,7 @@ const REMOTAX_COUNTRIES = {
         city: "Austin / New York",
         livingCost: 3200,
         supportsFilingStatus: true,
+        dataStatus: "needs-review",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 11600, rate: 0.10 },
@@ -260,6 +270,7 @@ const REMOTAX_COUNTRIES = {
         city: "Toronto",
         livingCost: 2400,
         supportsFilingStatus: false,
+        dataStatus: "needs-review",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 55867, rate: 0.20 },
@@ -297,6 +308,7 @@ const REMOTAX_COUNTRIES = {
         city: "Amsterdam",
         livingCost: 2600,
         supportsFilingStatus: false,
+        dataStatus: "needs-review",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 75518, rate: 0.3697 },
@@ -332,30 +344,35 @@ const REMOTAX_COUNTRIES = {
         city: "Rome / Milan",
         livingCost: 1750,
         supportsFilingStatus: false,
+        dataStatus: "verified",
+        verifiedOn: "2026-10-15",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 28000, rate: 0.23 },
-            { limit: 50000, rate: 0.35 },
+            { limit: 50000, rate: 0.33 },
             { limit: Infinity, rate: 0.43 }
         ],
         socialSecurity: {
             employeeRate: 0.0919,
             contractorRate: 0.12,
             freelancerMaxAnnual: 6000,
-            description: "INPS Gestione Separata & social contributions"
+            description: "INPS social contributions (9.19% employee; Gestione Separata for independent contractors). Social contributions are calculated on 100% of gross earnings and are NOT reduced by the Impatriati regime."
         },
         regimes: [
             {
                 id: "impatriati",
-                name: "Lavoratori Impatriati (50% - 70% Exemption)",
-                description: "Reduces taxable gross base by 50% to 70% for eligible relocating talent.",
-                eligibilityNote: "Requires moving tax residency to Italy and staying a minimum of 2 fiscal years.",
-                taxableMultiplier: 0.30
+                name: "Regime Impatriati 2024-2026 (50% Tax Exemption)",
+                description: "Exempts 50% of qualifying employment/self-employment income from IRPEF (taxable base multiplier 0.50), up to an annual gross cap of €600,000 for 5 tax years (D.Lgs. 209/2023, Art. 5).",
+                eligibilityNote: "Requires moving tax residency to Italy, 3 prior non-resident fiscal years, commitment to stay at least 4 years, and high-specialization qualification. Exemption increases to 60% (multiplier 0.40) if relocating with a minor child. Social contributions (INPS) remain payable on 100% of gross.",
+                taxableMultiplier: 0.50,
+                taxableMultiplierChild: 0.40,
+                cap: 600000
             }
         ],
         deductions: { standardAllowance: 0 },
         sources: [
-            { title: "Agenzia delle Entrate - Agevolazioni Impatriati", url: "https://agenziaentrate.gov.it", org: "Italian Revenue Agency" }
+            { title: "Agenzia delle Entrate - Agevolazioni lavoratori impatriati (D.Lgs. 209/2023)", url: "https://www.agenziaentrate.gov.it/portale/web/guest/agevolazioni-lavoratori-impatriati-che-trasferiscono-la-residenza-in-italia-dal-2024-cittadini", org: "Agenzia delle Entrate" },
+            { title: "Ministero dell'Economia e delle Finanze - Legge di Bilancio 2026", url: "https://www.mef.gov.it/focus/La-legge-di-bilancio-2026/", org: "Ministero dell'Economia e delle Finanze" }
         ],
         lastUpdated: "October 2026"
     },
@@ -368,6 +385,7 @@ const REMOTAX_COUNTRIES = {
         city: "Athens",
         livingCost: 1350,
         supportsFilingStatus: false,
+        dataStatus: "needs-review",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 10000, rate: 0.09 },
@@ -396,34 +414,54 @@ const REMOTAX_COUNTRIES = {
         country: "Thailand",
         countryCode: "TH",
         taxYear: 2026,
-        currency: "USD",
-        symbol: "$",
+        currency: "THB",
+        symbol: "฿",
         city: "Bangkok",
-        livingCost: 1100,
+        livingCost: 38500,
+        fxRateUSD: 35.0,
         supportsFilingStatus: false,
+        dataStatus: "verified",
+        verifiedOn: "2026-10-15",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
-            { limit: 150000, rate: 0.05 },
-            { limit: 300000, rate: 0.10 },
-            { limit: 500000, rate: 0.15 },
-            { limit: 750000, rate: 0.20 },
-            { limit: 1000000, rate: 0.25 },
-            { limit: 2000000, rate: 0.30 },
+            { limit: 150000, rate: 0.00 },
+            { limit: 300000, rate: 0.05 },
+            { limit: 500000, rate: 0.10 },
+            { limit: 750000, rate: 0.15 },
+            { limit: 1000000, rate: 0.20 },
+            { limit: 2000000, rate: 0.25 },
+            { limit: 5000000, rate: 0.30 },
             { limit: Infinity, rate: 0.35 }
         ],
-        socialSecurity: { employeeRate: 0, contractorRate: 0, freelancerMaxAnnual: 0, description: "Exempt for DTV remote workers" },
+        socialSecurity: {
+            employeeRate: 0.00,
+            contractorRate: 0.00,
+            freelancerMaxAnnual: 0,
+            description: "Zero statutory social security withholding for foreign remote workers and digital nomads"
+        },
         regimes: [
             {
-                id: "dtv_17",
-                name: "Destination Thailand Visa (DTV) Remote Worker Framework",
-                description: "Foreign-source remote income remitted in subsequent calendar years enjoys tax exemption; qualifying LTR regimes offer 17% flat tax cap.",
-                eligibilityNote: "Foreign income not remitted to Thailand in the same calendar year in which it was earned is not taxed under Thai domestic tax rules.",
-                flatRate: 0.17
+                id: "th_offshore_unremitted",
+                name: "Offshore Unremitted Income (0% Thai Tax)",
+                description: "Foreign-sourced income earned by a tax resident that is kept abroad and NOT remitted into Thailand is completely exempt from Thai Personal Income Tax (Por. 161/2566 & 162/2566).",
+                eligibilityNote: "Applies to foreign remote income kept offshore. If remitted to Thailand in any calendar year, income is taxed under standard progressive PIT (0%–35%). The DTV visa provides residency only with no special flat tax rate. Proposed 2025/2026 foreign income tax relief was not enacted; current law in force applies.",
+                flatRate: 0.00
+            },
+            {
+                id: "th_remitted_progressive",
+                name: "Remitted Foreign Income (Standard Progressive PIT)",
+                description: "Foreign-sourced earnings remitted into Thailand are subject to progressive PIT rates (0% to 35%) with statutory expense & personal allowances.",
+                eligibilityNote: "Applies to any foreign income remitted to Thailand within the tax year. Deductions: 50% employment expense deduction (capped at THB 100,000) + THB 60,000 personal allowance."
             }
         ],
-        deductions: { standardAllowance: 60000 },
+        deductions: {
+            standardAllowance: 60000,
+            employmentExpenseRate: 0.50,
+            employmentExpenseCap: 100000
+        },
         sources: [
-            { title: "Revenue Department Thailand - Personal Income Tax", url: "https://rd.go.th", org: "Thai Revenue Department" }
+            { title: "Revenue Department Thailand - Personal Income Tax Rates & Allowances", url: "https://www.rd.go.th/english/6045.html", org: "Thai Revenue Department" },
+            { title: "Revenue Department Thailand - Departmental Instruction Por. 161/2566 & 162/2566", url: "https://www.rd.go.th/english/37749.html", org: "Thai Revenue Department" }
         ],
         lastUpdated: "October 2026"
     },
@@ -436,6 +474,7 @@ const REMOTAX_COUNTRIES = {
         city: "Singapore",
         livingCost: 2900,
         supportsFilingStatus: false,
+        dataStatus: "needs-review",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 20000, rate: 0.0 },
@@ -473,6 +512,7 @@ const REMOTAX_COUNTRIES = {
         city: "Zurich",
         livingCost: 3600,
         supportsFilingStatus: false,
+        dataStatus: "needs-review",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: Infinity, rate: 0.18 }
@@ -502,6 +542,7 @@ const REMOTAX_COUNTRIES = {
         city: "Valletta",
         livingCost: 1550,
         supportsFilingStatus: false,
+        dataStatus: "needs-review",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 9100, rate: 0.0 },
@@ -532,6 +573,7 @@ const REMOTAX_COUNTRIES = {
         city: "Limassol",
         livingCost: 1600,
         supportsFilingStatus: false,
+        dataStatus: "needs-review",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 19500, rate: 0.0 },
@@ -563,6 +605,7 @@ const REMOTAX_COUNTRIES = {
         city: "Tallinn",
         livingCost: 1400,
         supportsFilingStatus: false,
+        dataStatus: "needs-review",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: Infinity, rate: 0.20 }
@@ -589,6 +632,7 @@ const REMOTAX_COUNTRIES = {
         city: "Sydney / Melbourne",
         livingCost: 2600,
         supportsFilingStatus: false,
+        dataStatus: "needs-review",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 45000, rate: 0.19 },

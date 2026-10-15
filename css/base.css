@@ -151,6 +151,7 @@ p:last-child {
 /* Tabular figures for numbers */
 .tabular-nums, .num, .figure, [data-num] {
     font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
     font-family: var(--font-mono);
 }
 

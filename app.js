@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         USD: '$',
         EUR: '€',
         GBP: '£',
-        CAD: '$'
+        CAD: '$',
+        THB: '฿'
     };
 
     // --- DOM Elements ---
@@ -196,6 +197,23 @@ document.addEventListener('DOMContentLoaded', () => {
         if (netAnnualAmount) netAnnualAmount.textContent = `Annual Net: ${formatCurrency(res.netAnnual)} / year`;
         if (effectiveTaxBadge) effectiveTaxBadge.textContent = `Effective Tax & Social Rate: ${res.effectiveTaxRate}%`;
 
+        // Render dataStatus badge (subtle note for "needs-review" countries)
+        const badgeContainer = effectiveTaxBadge ? effectiveTaxBadge.parentElement : null;
+        let reviewBadge = document.getElementById('data-status-review-badge');
+        if (res.dataStatus === 'needs-review') {
+            if (!reviewBadge && badgeContainer) {
+                reviewBadge = document.createElement('span');
+                reviewBadge.id = 'data-status-review-badge';
+                reviewBadge.className = 'badge-needs-review';
+                reviewBadge.textContent = 'Estimate – under review';
+                badgeContainer.appendChild(reviewBadge);
+            } else if (reviewBadge) {
+                reviewBadge.style.display = 'inline-flex';
+            }
+        } else if (reviewBadge) {
+            reviewBadge.style.display = 'none';
+        }
+
         // Render Visual Bars
         const netPct = gross > 0 ? Math.max(0, (res.netAnnual / gross) * 100) : 0;
         const taxPct = gross > 0 ? Math.max(0, (res.incomeTax / gross) * 100) : 0;
@@ -346,7 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Sync Currency
-            currentCurrencySymbol = config.symbol || '$';
+            currentCurrencySymbol = (config.countryCode === 'TH' ? '$' : (config.symbol || '$'));
             if (globalCurrency) globalCurrency.value = config.currency || 'USD';
             const prefixSymbol = document.getElementById('currency-prefix-symbol');
             if (prefixSymbol) prefixSymbol.textContent = currentCurrencySymbol;
@@ -356,9 +374,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const currencyCalcNote = document.getElementById('currency-calc-note');
             if (currencyCalcNote) {
-                currencyCalcNote.textContent = config.currency !== 'USD'
-                    ? `Modeled in ${config.country} local statutory currency (${config.currency} ${currentCurrencySymbol}) • Baseline USD equivalence.`
-                    : `Modeled in USD ($).`;
+                if (config.countryCode === 'TH') {
+                    currencyCalcNote.textContent = `Modeled in Thailand statutory currency (THB ฿ at static 35.0 ฿/USD) • Standard USD input.`;
+                } else {
+                    currencyCalcNote.textContent = config.currency !== 'USD'
+                        ? `Modeled in ${config.country} local statutory currency (${config.currency} ${config.symbol || currentCurrencySymbol}) • Baseline USD equivalence.`
+                        : `Modeled in USD ($).`;
+                }
             }
 
             // Filing status support

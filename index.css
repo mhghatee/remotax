@@ -171,6 +171,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    min-height: 48px;
 }
 
 .symbol-prefix {
@@ -318,8 +319,10 @@
     font-weight: 800;
     color: #ffffff;
     line-height: 1.1;
+    min-height: 1.15em;
     letter-spacing: -0.04em;
     font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
 }
 
 .output-hero-sub {
@@ -431,4 +434,20 @@
 .callout-box h4 {
     color: #ffffff;
     margin-bottom: 0.4rem;
+}
+
+.badge-needs-review {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.65rem;
+    background: rgba(244, 123, 32, 0.12);
+    border: 1px solid rgba(244, 123, 32, 0.35);
+    border-radius: var(--radius-pill);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #F8DFC0;
+    font-family: var(--font-mono);
+    margin-top: 0.5rem;
+    letter-spacing: 0.02em;
 }

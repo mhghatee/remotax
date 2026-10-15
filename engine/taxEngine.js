@@ -102,13 +102,14 @@
                     incomeTax = taxableIncome * countryData.regimes[0].flatRate;
                     activeRegimeNote = countryData.regimes[0].eligibilityNote || "";
                 } else {
-                    const taxablePT = Math.max(0, taxableIncome - (countryData.deductions.standardAllowance || 4104));
+                    const specificDeduction = countryData.deductions.standardAllowance || 4587.09;
+                    const taxablePT = Math.max(0, taxableIncome - specificDeduction);
                     incomeTax = calculateBrackets(taxablePT, countryData.taxBrackets);
                 }
                 if (workerType === 'employee') {
                     socialSecurity = gross * countryData.socialSecurity.employeeRate;
                 } else {
-                    socialSecurity = Math.min(gross * countryData.socialSecurity.contractorRate, countryData.socialSecurity.freelancerMaxAnnual);
+                    socialSecurity = Math.min(gross * countryData.socialSecurity.contractorRate, countryData.socialSecurity.freelancerMaxAnnual || 16552);
                 }
                 break;
 
@@ -189,14 +190,23 @@
                 break;
 
             case 'IT': // Italy
-                let taxableIT = (useRegime && countryData.regimes && countryData.regimes[0])
-                    ? taxableIncome * countryData.regimes[0].taxableMultiplier
-                    : taxableIncome;
-                incomeTax = calculateBrackets(taxableIT, countryData.taxBrackets);
-                socialSecurity = gross * (workerType === 'employee' ? countryData.socialSecurity.employeeRate : countryData.socialSecurity.contractorRate);
                 if (useRegime && countryData.regimes && countryData.regimes[0]) {
-                    activeRegimeNote = countryData.regimes[0].eligibilityNote || "";
+                    const r = countryData.regimes[0];
+                    const hasChild = !!(params.hasMinorChild || params.childVariant || params.withChild || params.hasChild);
+                    const multiplier = (hasChild && r.taxableMultiplierChild) ? r.taxableMultiplierChild : (r.taxableMultiplier || 0.50);
+                    const cap = r.cap || 600000;
+                    const exemptBase = Math.min(taxableIncome, cap);
+                    const excessBase = Math.max(0, taxableIncome - cap);
+                    const taxableIT = (exemptBase * multiplier) + excessBase;
+                    incomeTax = calculateBrackets(taxableIT, countryData.taxBrackets);
+                    activeRegimeNote = (hasChild ? "60% exemption applied (minor child dependent variant, D.Lgs. 209/2023). " : "50% exemption applied. ") + (r.eligibilityNote || "");
+                } else {
+                    incomeTax = calculateBrackets(taxableIncome, countryData.taxBrackets);
                 }
+                // Social security (INPS) is calculated on 100% of gross (unreduced by the Impatriati regime)
+                socialSecurity = workerType === 'employee'
+                    ? gross * countryData.socialSecurity.employeeRate
+                    : Math.min(gross * countryData.socialSecurity.contractorRate, countryData.socialSecurity.freelancerMaxAnnual || 6000);
                 break;
 
             case 'GR': // Greece
@@ -211,14 +221,31 @@
                 break;
 
             case 'TH': // Thailand
-                if (useRegime && countryData.regimes && countryData.regimes[0]) {
-                    incomeTax = taxableIncome * countryData.regimes[0].flatRate;
-                    activeRegimeNote = countryData.regimes[0].eligibilityNote || "";
-                } else {
-                    const taxableTH = Math.max(0, taxableIncome - (countryData.deductions.standardAllowance || 60000));
-                    incomeTax = calculateBrackets(taxableTH, countryData.taxBrackets);
+                {
+                    const fxRate = countryData.fxRateUSD || 35.0;
+                    const isUSD = params.incomeCurrency === 'USD' || (params.incomeCurrency !== 'THB' && params.isUSD !== false);
+                    const grossTHB = isUSD ? gross * fxRate : gross;
+                    const expensesTHB = isUSD ? expenses * fxRate : expenses;
+                    const taxableBaseTHB = Math.max(0, grossTHB - expensesTHB);
+
+                    let taxTHB = 0;
+                    if (useRegime && countryData.regimes && countryData.regimes[0] && params.remitted !== true) {
+                        // Scenario (a): Foreign-sourced income kept offshore -> 0% Thai PIT
+                        taxTHB = 0;
+                        activeRegimeNote = countryData.regimes[0].description + " " + countryData.regimes[0].eligibilityNote;
+                    } else {
+                        // Scenario (b): Remitted income -> standard progressive PIT (rd.go.th)
+                        // 50% employment expense deduction capped at 100,000 THB + 60,000 THB personal allowance
+                        const expenseDed = Math.min(grossTHB * (countryData.deductions.employmentExpenseRate || 0.50), countryData.deductions.employmentExpenseCap || 100000);
+                        const personalAllowance = countryData.deductions.standardAllowance || 60000;
+                        const netTaxableTHB = Math.max(0, taxableBaseTHB - expenseDed - personalAllowance);
+                        taxTHB = calculateBrackets(netTaxableTHB, countryData.taxBrackets);
+                        activeRegimeNote = "Taxed under progressive PIT on remitted foreign income (0%–35%) with 160,000 THB statutory deductions.";
+                    }
+
+                    incomeTax = isUSD ? (taxTHB / fxRate) : taxTHB;
+                    socialSecurity = 0;
                 }
-                socialSecurity = 0;
                 break;
 
             case 'SG': // Singapore
@@ -295,7 +322,11 @@
         const effectiveTaxRate = gross > 0 ? parseFloat(Math.min(100, Math.max(0, ((incomeTax + socialSecurity) / gross) * 100)).toFixed(1)) : 0.0;
 
         // Cost of Living & Purchasing Power
-        const monthlyLivingCost = countryData.livingCost || 1800;
+        const isUSDInputTH = countryCode === 'TH' && (params.incomeCurrency === 'USD' || (params.incomeCurrency !== 'THB' && params.isUSD !== false));
+        const fxRateTH = countryData.fxRateUSD || 35.0;
+        const monthlyLivingCost = isUSDInputTH 
+            ? Math.round((countryData.livingCost || 38500) / fxRateTH) 
+            : (countryData.livingCost || 1800);
         const netMonthlySavings = netMonthly - monthlyLivingCost;
 
         let tier = "✨ Solid Comfort";
@@ -310,13 +341,18 @@
         return {
             country: countryData.country,
             countryCode: countryData.countryCode,
-            currency: countryData.currency,
-            symbol: countryData.symbol,
+            currency: isUSDInputTH ? 'USD' : countryData.currency,
+            symbol: isUSDInputTH ? '$' : countryData.symbol,
+            localCurrency: countryData.currency,
+            localSymbol: countryData.symbol,
+            fxRateUSD: countryData.fxRateUSD || 1.0,
             city: countryData.city,
             taxYear: taxYear,
             workerType: workerType,
             filingStatus: filingStatus,
             supportsFilingStatus: !!countryData.supportsFilingStatus,
+            dataStatus: countryData.dataStatus || "needs-review",
+            verifiedOn: countryData.verifiedOn || null,
             grossIncome: Math.round(gross),
             businessExpenses: Math.round(expenses),
             taxableIncome: Math.round(taxableIncome),
