@@ -36,8 +36,8 @@
     </script>
     <meta property="og:image" content="https://afrix.ir/remotax/assets/brand/og-image.png">
     <meta name="twitter:image" content="https://afrix.ir/remotax/assets/brand/og-image.png">
-                <!-- Critical Font Preloads (Parallel to CSS, Chain Depth <= 2, Zero CLS) -->
-    <link rel="preload" href="../fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+                    <!-- Critical Font Preloads (Parallel to CSS, Chain Depth <= 2, Zero CLS) -->
+    <link rel="preload" href="../fonts/jetbrains-mono-latin-var.woff2" as="font" type="font/woff2" crossorigin>
     <!-- Anti-White-Flash & Master Liquid Glass Stylesheet -->
     <style>html{background:#070B0F;color-scheme:dark;}</style>
     <link rel="stylesheet" href="../css/remotax.min.css?v=4.3.0">
@@ -383,9 +383,11 @@
             });
         }
 
+        const parseClean = val => parseFloat(String(val || '').replace(/[^0-9.]/g, '')) || 0;
+
         function update() {
             const country = countrySelect.value || 'ES';
-            const gross = parseFloat(incomeInput.value) || 0;
+            const gross = parseClean(incomeInput.value);
             const workerType = document.querySelector('input[name="worker-type"]:checked')?.value || 'contractor';
             const useRegime = specialRegime ? specialRegime.checked : true;
 
@@ -446,12 +448,12 @@
         }
 
         incomeSlider.addEventListener('input', (e) => {
-            incomeInput.value = e.target.value;
+            incomeInput.value = parseInt(e.target.value, 10).toLocaleString('en-US');
             update();
         });
 
         incomeInput.addEventListener('input', (e) => {
-            let v = parseFloat(e.target.value) || 0;
+            let v = parseClean(e.target.value);
             if (v > 1000000) v = 1000000;
             incomeSlider.value = v;
             update();

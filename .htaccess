@@ -3,19 +3,21 @@
 # ======================================================================
 
 # ----------------------------------------------------------------------
+AddType application/manifest+json .webmanifest
+
 # 1. Output Compression (Gzip & Brotli)
 # ----------------------------------------------------------------------
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
     AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
     AddOutputFilterByType DEFLATE application/xml application/xhtml+xml application/rss+xml
-    AddOutputFilterByType DEFLATE image/svg+xml font/woff2 application/x-font-woff
+    AddOutputFilterByType DEFLATE image/svg+xml font/woff2 application/manifest+json application/x-font-woff application/manifest+json
 </IfModule>
 
 <IfModule mod_brotli.c>
     AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript
     AddOutputFilterByType BROTLI_COMPRESS application/javascript application/x-javascript application/json
-    AddOutputFilterByType BROTLI_COMPRESS image/svg+xml font/woff2
+    AddOutputFilterByType BROTLI_COMPRESS image/svg+xml font/woff2 application/manifest+json
 </IfModule>
 
 # ----------------------------------------------------------------------
@@ -48,7 +50,7 @@
         Header set Cache-Control "no-cache, must-revalidate, max-age=0"
         Header set Pragma "no-cache"
         Header set Expires "0"
-        Header add Link "</remotax/fonts/instrument-serif-italic.woff2>; rel=preload; as=font; type=\"font/woff2\"; crossorigin"
+        # Dynamic page font preloads handled per-page via <head> <link rel="preload">font/woff2\"; crossorigin"
     </FilesMatch>
 
     # ------------------------------------------------------------------
