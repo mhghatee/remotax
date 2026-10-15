@@ -100,9 +100,9 @@
     --radius-pill: 9999px;
 
     /* --- Typography Families --- */
-    --font-sans: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-    --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Monaco, Consolas, monospace;
-    --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Inter Tight', 'Inter Tight Fallback', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace;
+    --font-serif: 'Instrument Serif', 'Instrument Serif Fallback', Georgia, 'Times New Roman', serif;
 
     /* --- Micro-interactions & Spring Easings --- */
     --spring-bounce: cubic-bezier(0.2, 0.9, 0.3, 1.2);

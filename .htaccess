@@ -43,11 +43,13 @@
         Header set Cache-Control "public, max-age=31536000, immutable"
     </FilesMatch>
 
-    # Dynamic HTML: must-revalidate
+    # Dynamic HTML: must-revalidate + Early Hints / Link Preload Headers
     <FilesMatch "\.(html|htm)$">
         Header set Cache-Control "no-cache, must-revalidate, max-age=0"
         Header set Pragma "no-cache"
         Header set Expires "0"
+        Header add Link "</remotax/fonts/inter-tight-latin-var.woff2>; rel=preload; as=font; type=\"font/woff2\"; crossorigin"
+        Header add Link "</remotax/fonts/instrument-serif-italic.woff2>; rel=preload; as=font; type=\"font/woff2\"; crossorigin"
     </FilesMatch>
 
     # ------------------------------------------------------------------
