@@ -1,24 +1,78 @@
+# ======================================================================
+# REMOTAX — HIGH-PERFORMANCE PRODUCTION APACHE CONFIGURATION
+# ======================================================================
 
-# Prevent browser caching of dynamic assets
+# ----------------------------------------------------------------------
+# 1. Output Compression (Gzip & Brotli)
+# ----------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
+    AddOutputFilterByType DEFLATE application/xml application/xhtml+xml application/rss+xml
+    AddOutputFilterByType DEFLATE image/svg+xml font/woff2 application/x-font-woff
+</IfModule>
+
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript
+    AddOutputFilterByType BROTLI_COMPRESS application/javascript application/x-javascript application/json
+    AddOutputFilterByType BROTLI_COMPRESS image/svg+xml font/woff2
+</IfModule>
+
+# ----------------------------------------------------------------------
+# 2. Caching Policies (Static Assets vs Dynamic HTML)
+# ----------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType application/manifest+json "access plus 1 week"
+</IfModule>
+
 <IfModule mod_headers.c>
-    <FilesMatch "\.(html|htm|js|css|json)$">
-        Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    # Static Assets: 1 Year Cache with Immutable
+    <FilesMatch "\.(css|js|woff2|woff|ttf|svg|png|jpg|jpeg|avif|webp|ico)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # Dynamic HTML: must-revalidate
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "no-cache, must-revalidate, max-age=0"
         Header set Pragma "no-cache"
         Header set Expires "0"
     </FilesMatch>
+
+    # ------------------------------------------------------------------
+    # 3. Security Headers
+    # ------------------------------------------------------------------
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+    # Shared domain afrix.ir -> NO includeSubDomains, NO preload
+    Header set Strict-Transport-Security "max-age=31536000"
+    # Content-Security-Policy & Clickjacking protection
+    Header set Content-Security-Policy "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; img-src 'self' https: data: blob:; font-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; frame-ancestors 'self';"
 </IfModule>
 
-# Disable directory browsing
+# ----------------------------------------------------------------------
+# 4. Routing & Clean URLs
+# ----------------------------------------------------------------------
 Options -Indexes
-
-# Enable Rewrite Engine
 RewriteEngine On
 RewriteBase /remotax/
 
-# 1. Allow clean URLs (automatically append .html if file exists)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]
 
-# 3. Custom 404 Error Page
 ErrorDocument 404 /remotax/404.html

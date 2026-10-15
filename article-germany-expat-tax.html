@@ -21,11 +21,6 @@
     <meta property="og:url" content="https://afrix.ir/remotax/article-germany-expat-tax.html">
     
     <!-- Fonts & CSS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css?v=3.2.0">
-    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -46,8 +41,14 @@
     </script>
     <meta property="og:image" content="https://afrix.ir/remotax/assets/brand/og-image.png">
     <meta name="twitter:image" content="https://afrix.ir/remotax/assets/brand/og-image.png">
+    <link rel="preload" href="assets/fonts/inter-tight-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+        <!-- Anti-White-Flash & Master Liquid Glass Stylesheet -->
+    <style>html{background:#070B0F;color-scheme:dark;}</style>
+    <link rel="stylesheet" href="css/remotax.min.css?v=4.0.0">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
     <div class="article-reading-progress" id="reading-progress"></div>
     <div class="noise-overlay" aria-hidden="true"></div>
     <div class="horizon-ambiance" aria-hidden="true"><div class="horizon-sun" style="transform: translateX(-50%) translateY(30px);"></div></div>
@@ -56,7 +57,7 @@
     <!-- Unified Liquid Glass Navigation -->
     <header class="navbar-floating">
         <nav class="nav-pill">
-            <a href="index.html" class="nav-brand" aria-label="Remotax home">
+            <a href="index.html" class="nav-brand">
                 <div class="nav-brand-mark">
                     <img src="assets/brand/mark.svg" width="40" height="40" alt="" aria-hidden="true">
                 </div>
@@ -88,10 +89,10 @@
     </header>
 
     <!-- Mobile Drawer / Full-Screen Glass Sheet -->
-    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true">
+    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true" inert>
         <div class="mobile-drawer-sheet">
             <div class="mobile-drawer-header">
-                <a href="index.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none;" aria-label="Remotax home">
+                <a href="index.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none;" aria-label="Remotax">
                     <div class="nav-brand-mark" style="width: 28px; height: 28px; min-width: 28px; min-height: 28px;">
                         <img src="assets/brand/mark.svg" width="28" height="28" alt="" aria-hidden="true">
                     </div>
@@ -142,12 +143,12 @@
 
             <picture style="display: block; margin: 2rem 0;">
                 <source srcset="assets/germany-tax.avif" type="image/avif">
-                <img src="assets/germany-tax.jpg" alt="Germany Income Tax & Social Security Guide" class="glass-panel" style="width: 100%; height: auto; max-height: 440px; object-fit: cover; border-radius: var(--radius-xl);">
+                <img src="assets/germany-tax.jpg" alt="Germany Income Tax & Social Security Guide" width="1200" height="630" loading="lazy" class="glass-panel" style="width: 100%; height: auto; max-height: 440px; object-fit: cover; border-radius: var(--radius-xl);">
             </picture>
         </header>
 
         <!-- Two Column Editorial Layout -->
-        <div class="article-layout-grid">
+        <main id="main-content" class="article-layout-grid">
             <!-- Left Column: Sticky Glass TOC -->
             <aside class="article-sidebar">
                 <nav class="article-sticky-toc">
@@ -240,7 +241,7 @@
                 <h2 id="tax-deductions">Remote Worker Tax Deductions (Homeoffice-Pauschale)</h2>
                 <p>Germany allows remote workers to deduct €6 per day spent working from home up to a maximum of 210 calendar days per fiscal year (maximum €1,260 annually) without needing a dedicated separate study room. In addition, professional equipment (laptops, monitors, ergonomic desks) can be fully expensed in the year of purchase under digital asset depreciation rules.</p>
             </article>
-        </div>
+        </main>
     </div>
 
     <!-- Unified Liquid Glass Footer -->
@@ -248,7 +249,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand-col">
-                    <a href="index.html" class="nav-brand" style="padding: 0; text-decoration: none;" aria-label="Remotax home">
+                    <a href="index.html" class="nav-brand" style="padding: 0; text-decoration: none;">
                         <div class="nav-brand-mark" style="width: 32px; height: 32px; min-width: 32px; min-height: 32px;">
                             <img src="assets/brand/mark.svg" width="32" height="32" alt="" aria-hidden="true">
                         </div>
@@ -258,7 +259,7 @@
                     <p>Global Remote Work Financial Intelligence Platform. Precision cross-border tax, net pay, and relocation intelligence.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Calculators</h4>
+                    <div class="footer-heading">Calculators</div>
                     <ul class="footer-links-list">
                         <li><a href="calculators/take-home-pay.html">Take Home Pay</a></li>
                         <li><a href="calculators/freelancer-tax.html">Freelancer Tax</a></li>
@@ -268,7 +269,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Country Engines</h4>
+                    <div class="footer-heading">Country Engines</div>
                     <ul class="footer-links-list">
                         <li><a href="tax-calculator/spain.html">Spain Beckham Law</a></li>
                         <li><a href="tax-calculator/portugal.html">Portugal D8 & IFICI</a></li>
@@ -278,7 +279,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Transparency</h4>
+                    <div class="footer-heading">Transparency</div>
                     <ul class="footer-links-list">
                         <li><a href="faq.html">Tax Residency FAQ</a></li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
@@ -309,6 +310,6 @@
         });
     });
     </script>
-    <script src="js/nav.js?v=3.2.0"></script>
+    <script src="js/nav.min.js?v=4.0.0" defer></script>
 </body>
 </html>

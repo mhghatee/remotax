@@ -11,7 +11,8 @@
         const { REMOTAX_COUNTRIES } = require('../data/countries');
         module.exports = factory(REMOTAX_COUNTRIES);
     } else {
-        root.RemotaxEngine = factory(root.REMOTAX_COUNTRIES);
+        const countriesObj = root.REMOTAX_COUNTRIES || (typeof window !== 'undefined' ? window.REMOTAX_COUNTRIES : undefined) || (typeof REMOTAX_COUNTRIES !== 'undefined' ? REMOTAX_COUNTRIES : undefined);
+        root.RemotaxEngine = factory(countriesObj);
     }
 }(typeof self !== 'undefined' ? self : this, function (REMOTAX_COUNTRIES) {
     'use strict';
@@ -63,7 +64,10 @@
         const useRegime = params.useSpecialRegime !== false;
         const expenses = parseValidNumber(params.businessExpenses, 0);
 
-        const countryData = REMOTAX_COUNTRIES[countryCode] || REMOTAX_COUNTRIES.ES;
+        const countries = (typeof REMOTAX_COUNTRIES !== 'undefined' && REMOTAX_COUNTRIES) ||
+                          (typeof window !== 'undefined' && window.REMOTAX_COUNTRIES) ||
+                          (typeof globalThis !== 'undefined' && globalThis.REMOTAX_COUNTRIES) || {};
+        const countryData = countries[countryCode] || countries.ES || { taxYear: 2026, currency: 'EUR', symbol: '€', livingCost: 1800, taxBrackets: [], socialSecurity: {}, regimes: [], deductions: {} };
         const taxYear = params.taxYear || countryData.taxYear || 2026;
 
         let incomeTax = 0;

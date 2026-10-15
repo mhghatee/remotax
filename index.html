@@ -23,14 +23,6 @@
     <meta property="og:url" content="https://afrix.ir/remotax/">
     <meta name="twitter:card" content="summary_large_image">
     
-    <!-- Google Fonts: Inter Tight, JetBrains Mono, Instrument Serif -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Master Liquid Glass Stylesheet -->
-    <link rel="stylesheet" href="index.css?v=3.2.0">
-    
     <!-- Structured Data Schema for AdSense & SEO -->
     <script type="application/ld+json">
     {
@@ -50,8 +42,14 @@
     </script>
     <meta property="og:image" content="https://afrix.ir/remotax/assets/brand/og-image.png">
     <meta name="twitter:image" content="https://afrix.ir/remotax/assets/brand/og-image.png">
+    <link rel="preload" href="assets/fonts/inter-tight-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+        <!-- Anti-White-Flash & Master Liquid Glass Stylesheet -->
+    <style>html{background:#070B0F;color-scheme:dark;}</style>
+    <link rel="stylesheet" href="css/remotax.min.css?v=4.0.0">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
     <!-- Analog Film Grain Overlay -->
     <div class="noise-overlay" aria-hidden="true"></div>
 
@@ -64,7 +62,7 @@
     <!-- Unified Liquid Glass Navigation -->
     <header class="navbar-floating">
         <nav class="nav-pill">
-            <a href="index.html" class="nav-brand" aria-label="Remotax home">
+            <a href="index.html" class="nav-brand">
                 <div class="nav-brand-mark">
                     <img src="assets/brand/mark.svg" width="40" height="40" alt="" aria-hidden="true">
                 </div>
@@ -96,10 +94,10 @@
     </header>
 
     <!-- Mobile Drawer / Full-Screen Glass Sheet -->
-    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true">
+    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true" inert>
         <div class="mobile-drawer-sheet">
             <div class="mobile-drawer-header">
-                <a href="index.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none;" aria-label="Remotax home">
+                <a href="index.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none;" aria-label="Remotax">
                     <div class="nav-brand-mark" style="width: 28px; height: 28px; min-width: 28px; min-height: 28px;">
                         <img src="assets/brand/mark.svg" width="28" height="28" alt="" aria-hidden="true">
                     </div>
@@ -158,7 +156,7 @@
     </section>
 
     <!-- Main Liquid Glass Calculator Workspace -->
-    <main class="container" id="calculator" style="margin-top: -2rem;">
+    <main id="main-content" class="container" style="margin-top: -2rem;">
         <div class="app-layout">
             <!-- Left Column: Controls & Inputs -->
             <div class="calculator-card glass-panel glass-card-interactive">
@@ -215,23 +213,23 @@
                     <div class="form-group">
                         <label>Engagement Structure</label>
                         <div class="radio-cards-grid">
-                            <div class="radio-card active" data-type="contractor">
+                            <label class="radio-card active" for="emp-contractor" data-type="contractor">
                                 <input type="radio" name="emp-type" value="contractor" checked class="sr-only" id="emp-contractor">
-                                <h4>Contractor / B2B</h4>
+                                <span class="radio-card-title">Contractor / B2B</span>
                                 <p>Self-employed freelancer with expense deduction capability.</p>
-                            </div>
-                            <div class="radio-card" data-type="employee">
+                            </label>
+                            <label class="radio-card" for="emp-employee" data-type="employee">
                                 <input type="radio" name="emp-type" value="employee" class="sr-only" id="emp-employee">
-                                <h4>Employee (EOR)</h4>
+                                <span class="radio-card-title">Employee (EOR)</span>
                                 <p>Direct payroll with mandatory statutory social contributions.</p>
-                            </div>
+                            </label>
                         </div>
                     </div>
 
                     <!-- Special Regime Toggle (Country specific) -->
                     <div class="toggle-group" id="special-regime-group">
                         <label class="switch">
-                            <input type="checkbox" id="special-regime-toggle" checked>
+                            <input type="checkbox" id="special-regime-toggle" checked aria-label="Apply Special Expat Tax Regime">
                             <span class="slider-switch"></span>
                         </label>
                         <div>
@@ -310,7 +308,7 @@
                 <!-- Purchasing Power & Lifestyle Index -->
                 <div class="lifestyle-card">
                     <div class="lifestyle-header">
-                        <h4 id="lifestyle-city-title">Madrid (Spain) Lifestyle</h4>
+                        <h3 id="lifestyle-city-title" class="lifestyle-title">Madrid (Spain) Lifestyle</h3>
                         <span class="tier-badge" id="lifestyle-tier-badge">Wealth Accumulator</span>
                     </div>
                     <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;" id="lifestyle-insight-desc">
@@ -355,14 +353,15 @@
 
             <div style="overflow-x: auto;">
                 <table class="ranked-table">
+                    <caption class="sr-only">Statutory Country Tax and Take-Home Pay Rankings 2026</caption>
                     <thead>
                         <tr style="text-align: left; font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">
-                            <th style="padding: 0.75rem 1.25rem;">Jurisdiction & Framework</th>
-                            <th style="padding: 0.75rem 1.25rem;">Net Annual</th>
-                            <th style="padding: 0.75rem 1.25rem;">Net Monthly</th>
-                            <th style="padding: 0.75rem 1.25rem;">Effective Tax</th>
-                            <th style="padding: 0.75rem 1.25rem;">Est. Living Cost</th>
-                            <th style="padding: 0.75rem 1.25rem;">Discretionary Savings</th>
+                            <th scope="col" style="padding: 0.75rem 1.25rem;">Jurisdiction & Framework</th>
+                            <th scope="col" style="padding: 0.75rem 1.25rem;">Net Annual</th>
+                            <th scope="col" style="padding: 0.75rem 1.25rem;">Net Monthly</th>
+                            <th scope="col" style="padding: 0.75rem 1.25rem;">Effective Tax</th>
+                            <th scope="col" style="padding: 0.75rem 1.25rem;">Est. Living Cost</th>
+                            <th scope="col" style="padding: 0.75rem 1.25rem;">Discretionary Savings</th>
                         </tr>
                     </thead>
                     <tbody id="ranked-countries-tbody">
@@ -479,7 +478,7 @@
             </p>
 
             <div class="callout-box">
-                <h4>Statutory Tie-Breaker Rules & Double Tax Treaties (DTT)</h4>
+                        <div class="callout-title">Statutory Tie-Breaker Rules & Double Tax Treaties (DTT)</div>
                 <p style="font-size: 0.92rem; margin: 0;">
                     Under OECD Model Tax Conventions, if you qualify as a tax resident in two countries simultaneously, bilateral double tax treaties employ hierarchy tests: permanent home first, followed by center of vital interests (family, economic, and banking ties), nationality, and mutual agreement between tax authorities.
                 </p>
@@ -492,7 +491,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand-col">
-                    <a href="index.html" class="nav-brand" style="padding: 0; text-decoration: none;" aria-label="Remotax home">
+                    <a href="index.html" class="nav-brand" style="padding: 0; text-decoration: none;">
                         <div class="nav-brand-mark" style="width: 32px; height: 32px; min-width: 32px; min-height: 32px;">
                             <img src="assets/brand/mark.svg" width="32" height="32" alt="" aria-hidden="true">
                         </div>
@@ -507,7 +506,7 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4>Calculators</h4>
+                    <div class="footer-heading">Calculators</div>
                     <ul class="footer-links-list">
                         <li><a href="calculators/take-home-pay.html">Take Home Pay</a></li>
                         <li><a href="calculators/freelancer-tax.html">Freelancer Tax</a></li>
@@ -518,7 +517,7 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4>Country Engines</h4>
+                    <div class="footer-heading">Country Engines</div>
                     <ul class="footer-links-list">
                         <li><a href="tax-calculator/spain.html">Spain Beckham Law</a></li>
                         <li><a href="tax-calculator/portugal.html">Portugal D8 & IFICI</a></li>
@@ -529,7 +528,7 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4>Transparency & Legal</h4>
+                    <div class="footer-heading">Transparency & Legal</div>
                     <ul class="footer-links-list">
                         <li><a href="faq.html">Tax Residency FAQ</a></li>
                         <li><a href="destinations.html">Tax Havens Directory</a></li>
@@ -548,10 +547,10 @@
     </footer>
 
     <!-- Core Architecture: Data & Pure Engine -->
-    <script src="data/countries.js?v=3.2.0"></script>
-    <script src="engine/taxEngine.js?v=3.2.0"></script>
+    <script src="data/countries.min.js?v=4.0.0" defer></script>
+    <script src="engine/taxEngine.min.js?v=4.0.0" defer></script>
     <!-- Liquid Glass UI Controller -->
-    <script src="app.js?v=3.2.0"></script>
-    <script src="js/nav.js?v=3.2.0"></script>
+    <script src="app.min.js?v=4.0.0" defer></script>
+    <script src="js/nav.min.js?v=4.0.0" defer></script>
 </body>
 </html>

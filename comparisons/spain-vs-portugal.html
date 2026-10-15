@@ -22,15 +22,16 @@
     <meta property="og:url" content="https://afrix.ir/remotax/comparisons/spain-vs-portugal.html">
     
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="../index.css?v=3.2.0">
     <meta property="og:image" content="https://afrix.ir/remotax/assets/brand/og-image.png">
     <meta name="twitter:image" content="https://afrix.ir/remotax/assets/brand/og-image.png">
+    <link rel="preload" href="../assets/fonts/inter-tight-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+        <!-- Anti-White-Flash & Master Liquid Glass Stylesheet -->
+    <style>html{background:#070B0F;color-scheme:dark;}</style>
+    <link rel="stylesheet" href="../css/remotax.min.css?v=4.0.0">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
     <div class="noise-overlay" aria-hidden="true"></div>
     <div class="horizon-ambiance" aria-hidden="true"><div class="horizon-sun" style="transform: translateX(-50%) translateY(25px);"></div></div>
 
@@ -38,7 +39,7 @@
     <!-- Unified Liquid Glass Navigation -->
     <header class="navbar-floating">
         <nav class="nav-pill">
-            <a href="../index.html" class="nav-brand" aria-label="Remotax home">
+            <a href="../index.html" class="nav-brand">
                 <div class="nav-brand-mark">
                     <img src="../assets/brand/mark.svg" width="40" height="40" alt="" aria-hidden="true">
                 </div>
@@ -70,10 +71,10 @@
     </header>
 
     <!-- Mobile Drawer / Full-Screen Glass Sheet -->
-    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true">
+    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true" inert>
         <div class="mobile-drawer-sheet">
             <div class="mobile-drawer-header">
-                <a href="../index.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none;" aria-label="Remotax home">
+                <a href="../index.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none;" aria-label="Remotax">
                     <div class="nav-brand-mark" style="width: 28px; height: 28px; min-width: 28px; min-height: 28px;">
                         <img src="../assets/brand/mark.svg" width="28" height="28" alt="" aria-hidden="true">
                     </div>
@@ -112,14 +113,14 @@
             <div class="seam-split-container">
                 <div class="seam-panel-es">
                     <span class="country-code-badge" style="background: rgba(217, 119, 47, 0.2); color: var(--horizon-peach);">ES • SPAIN</span>
-                    <h3 style="margin-top: 0.5rem; font-size: 1.5rem;">Beckham Law Regime</h3>
+                    <h2 style="margin-top: 0.5rem; font-size: 1.5rem;">Beckham Law Regime</h2>
                     <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">24% flat income tax up to €600,000 for 6 years.</p>
                     <div class="tabular-nums" style="font-size: 2rem; font-weight: 800; color: #ffffff; margin-top: 1rem;" id="hero-net-es">€71,700 Net</div>
                     <span style="font-size: 0.8rem; color: var(--text-muted);">Cuota de Autónomos social contributions included</span>
                 </div>
                 <div class="seam-panel-pt">
                     <span class="country-code-badge" style="background: rgba(126, 224, 176, 0.2); color: var(--color-net);">PT • PORTUGAL</span>
-                    <h3 style="margin-top: 0.5rem; font-size: 1.5rem;">D8 & IFICI Framework</h3>
+                    <h2 style="margin-top: 0.5rem; font-size: 1.5rem;">D8 & IFICI Framework</h2>
                     <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">20% flat tax on eligible remote and innovation earnings.</p>
                     <div class="tabular-nums" style="font-size: 2rem; font-weight: 800; color: var(--color-net); margin-top: 1rem;" id="hero-net-pt">€72,800 Net</div>
                     <span style="font-size: 0.8rem; color: var(--text-muted);">Segurança Social mandatory quota base applied</span>
@@ -135,7 +136,7 @@
     </section>
 
     <!-- Comparison Controls & Head-to-Head Table -->
-    <main class="container" style="margin-top: 3rem;">
+    <main id="main-content" class="container" style="margin-top: 3rem;">
         <div class="glass-panel" style="padding: 2rem; border-radius: var(--radius-xl); margin-bottom: 2.5rem;">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
                 <div>
@@ -165,9 +166,9 @@
             <table style="width: 100%; border-collapse: collapse; text-align: left;">
                 <thead>
                     <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.12);">
-                        <th style="padding: 1rem 0.75rem; color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase;">Metric</th>
-                        <th style="padding: 1rem 0.75rem; color: var(--horizon-peach); font-size: 1rem; width: 35%;">Spain (Madrid)</th>
-                        <th style="padding: 1rem 0.75rem; color: var(--color-net); font-size: 1rem; width: 35%;">Portugal (Lisbon)</th>
+                        <th scope="col" style="padding: 1rem 0.75rem; color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase;">Metric</th>
+                        <th scope="col" style="padding: 1rem 0.75rem; color: var(--horizon-peach); font-size: 1rem; width: 35%;">Spain (Madrid)</th>
+                        <th scope="col" style="padding: 1rem 0.75rem; color: var(--color-net); font-size: 1rem; width: 35%;">Portugal (Lisbon)</th>
                     </tr>
                 </thead>
                 <tbody style="font-size: 0.95rem;">
@@ -216,7 +217,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand-col">
-                    <a href="../index.html" class="nav-brand" style="padding: 0; text-decoration: none;" aria-label="Remotax home">
+                    <a href="../index.html" class="nav-brand" style="padding: 0; text-decoration: none;">
                         <div class="nav-brand-mark" style="width: 32px; height: 32px; min-width: 32px; min-height: 32px;">
                             <img src="../assets/brand/mark.svg" width="32" height="32" alt="" aria-hidden="true">
                         </div>
@@ -226,7 +227,7 @@
                     <p>Global Remote Work Financial Intelligence Platform. Precision cross-border tax, net pay, and relocation intelligence.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Calculators</h4>
+                    <div class="footer-heading">Calculators</div>
                     <ul class="footer-links-list">
                         <li><a href="../calculators/take-home-pay.html">Take Home Pay</a></li>
                         <li><a href="../calculators/freelancer-tax.html">Freelancer Tax</a></li>
@@ -236,7 +237,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Country Engines</h4>
+                    <div class="footer-heading">Country Engines</div>
                     <ul class="footer-links-list">
                         <li><a href="../tax-calculator/spain.html">Spain Beckham Law</a></li>
                         <li><a href="../tax-calculator/portugal.html">Portugal D8 & IFICI</a></li>
@@ -246,7 +247,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Transparency</h4>
+                    <div class="footer-heading">Transparency</div>
                     <ul class="footer-links-list">
                         <li><a href="../faq.html">Tax Residency FAQ</a></li>
                         <li><a href="../privacy.html">Privacy Policy</a></li>
@@ -261,8 +262,8 @@
         </div>
     </footer>
 
-    <script src="../data/countries.js?v=3.2.0"></script>
-    <script src="../engine/taxEngine.js?v=3.2.0"></script>
+    <script src="../data/countries.min.js?v=4.0.0" defer></script>
+    <script src="../engine/taxEngine.min.js?v=4.0.0" defer></script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const incomeInput = document.getElementById('income-input');
@@ -332,6 +333,6 @@
         update();
     });
     </script>
-    <script src="../js/nav.js?v=3.2.0"></script>
+    <script src="../js/nav.min.js?v=4.0.0" defer></script>
 </body>
 </html>

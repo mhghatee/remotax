@@ -22,15 +22,16 @@
     <meta property="og:url" content="https://afrix.ir/remotax/destinations.html">
     
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="index.css?v=3.2.0">
     <meta property="og:image" content="https://afrix.ir/remotax/assets/brand/og-image.png">
     <meta name="twitter:image" content="https://afrix.ir/remotax/assets/brand/og-image.png">
+    <link rel="preload" href="assets/fonts/inter-tight-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+        <!-- Anti-White-Flash & Master Liquid Glass Stylesheet -->
+    <style>html{background:#070B0F;color-scheme:dark;}</style>
+    <link rel="stylesheet" href="css/remotax.min.css?v=4.0.0">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
     <div class="noise-overlay" aria-hidden="true"></div>
     <div class="horizon-ambiance" aria-hidden="true"><div class="horizon-sun" style="transform: translateX(-50%) translateY(30px);"></div></div>
 
@@ -38,7 +39,7 @@
     <!-- Unified Liquid Glass Navigation -->
     <header class="navbar-floating">
         <nav class="nav-pill">
-            <a href="index.html" class="nav-brand" aria-label="Remotax home">
+            <a href="index.html" class="nav-brand">
                 <div class="nav-brand-mark">
                     <img src="assets/brand/mark.svg" width="40" height="40" alt="" aria-hidden="true">
                 </div>
@@ -70,10 +71,10 @@
     </header>
 
     <!-- Mobile Drawer / Full-Screen Glass Sheet -->
-    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true">
+    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true" inert>
         <div class="mobile-drawer-sheet">
             <div class="mobile-drawer-header">
-                <a href="index.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none;" aria-label="Remotax home">
+                <a href="index.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none;" aria-label="Remotax">
                     <div class="nav-brand-mark" style="width: 28px; height: 28px; min-width: 28px; min-height: 28px;">
                         <img src="assets/brand/mark.svg" width="28" height="28" alt="" aria-hidden="true">
                     </div>
@@ -111,7 +112,7 @@
         <div class="destinations-hero-map glass-card-interactive" id="dot-map">
             <div style="position: absolute; top: 1.5rem; left: 2rem; text-align: left; z-index: 2;">
                 <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--horizon-peach); font-weight: 700;">Global Dot Map</span>
-                <h3 style="font-size: 1.3rem; color: #fff;">17 Statutory Tax Havens</h3>
+                <h2 style="font-size: 1.3rem; color: #fff;">17 Statutory Tax Havens</h2>
             </div>
 
             <!-- Interactive Country Nodes on Dot Map -->
@@ -140,7 +141,7 @@
     </section>
 
     <!-- Jurisdictions Grid -->
-    <main class="container" style="margin-top: 2rem;">
+    <main id="main-content" class="container" style="margin-top: 2rem;">
         <div class="grid-12">
             <!-- Spain -->
             <div class="glass-panel glass-card-interactive" style="grid-column: span 4; padding: 2rem;">
@@ -241,11 +242,11 @@
     </main>
 
     <!-- Interactive Country Drawer Modal -->
-    <div class="mobile-drawer" id="country-drawer" aria-hidden="true">
+    <div class="mobile-drawer" id="country-drawer" aria-hidden="true" inert role="dialog" aria-modal="true" aria-labelledby="drawer-country-name">
         <div class="mobile-drawer-sheet" style="max-width: 600px; margin: 0 auto;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
                 <h3 id="drawer-country-name">Jurisdiction Overview</h3>
-                <button type="button" class="btn-glass" onclick="document.getElementById('country-drawer').classList.remove('open')">Close</button>
+                <button type="button" class="btn-glass" onclick="closeCountryDrawer()">Close</button>
             </div>
             <p id="drawer-country-desc" style="font-size: 0.95rem; color: var(--text-body);"></p>
             <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
@@ -259,7 +260,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand-col">
-                    <a href="index.html" class="nav-brand" style="padding: 0; text-decoration: none;" aria-label="Remotax home">
+                    <a href="index.html" class="nav-brand" style="padding: 0; text-decoration: none;">
                         <div class="nav-brand-mark" style="width: 32px; height: 32px; min-width: 32px; min-height: 32px;">
                             <img src="assets/brand/mark.svg" width="32" height="32" alt="" aria-hidden="true">
                         </div>
@@ -269,7 +270,7 @@
                     <p>Global Remote Work Financial Intelligence Platform. Precision cross-border tax, net pay, and relocation intelligence.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Calculators</h4>
+                    <div class="footer-heading">Calculators</div>
                     <ul class="footer-links-list">
                         <li><a href="calculators/take-home-pay.html">Take Home Pay</a></li>
                         <li><a href="calculators/freelancer-tax.html">Freelancer Tax</a></li>
@@ -279,7 +280,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Country Engines</h4>
+                    <div class="footer-heading">Country Engines</div>
                     <ul class="footer-links-list">
                         <li><a href="tax-calculator/spain.html">Spain Beckham Law</a></li>
                         <li><a href="tax-calculator/portugal.html">Portugal D8 & IFICI</a></li>
@@ -289,7 +290,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Transparency</h4>
+                    <div class="footer-heading">Transparency</div>
                     <ul class="footer-links-list">
                         <li><a href="faq.html">Tax Residency FAQ</a></li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
@@ -304,8 +305,8 @@
         </div>
     </footer>
 
-    <script src="data/countries.js?v=3.2.0"></script>
-    <script src="engine/taxEngine.js?v=3.2.0"></script>
+    <script src="data/countries.min.js?v=4.0.0" defer></script>
+    <script src="engine/taxEngine.min.js?v=4.0.0" defer></script>
     <script>
     function openCountryDrawer(code) {
         if (!window.RemotaxEngine || !RemotaxEngine.COUNTRIES[code]) return;
@@ -314,7 +315,17 @@
         document.getElementById('drawer-country-desc').textContent = 
             `Statutory tax framework in ${c.country} (${c.city}). Living costs average approximately ${c.symbol}${c.livingCost}/month. ` + 
             (c.regimes && c.regimes[0] ? `Special regime: ${c.regimes[0].name} - ${c.regimes[0].description}` : 'Standard progressive income brackets.');
-        document.getElementById('country-drawer').classList.add('open');
+        const drawer = document.getElementById('country-drawer');
+        drawer.removeAttribute('inert');
+        drawer.setAttribute('aria-hidden', 'false');
+        drawer.classList.add('open');
+    }
+
+    function closeCountryDrawer() {
+        const drawer = document.getElementById('country-drawer');
+        drawer.classList.remove('open');
+        drawer.setAttribute('aria-hidden', 'true');
+        drawer.setAttribute('inert', '');
     }
 
     document.addEventListener('mousemove', (e) => {
@@ -325,6 +336,6 @@
         });
     });
     </script>
-    <script src="js/nav.js?v=3.2.0"></script>
+    <script src="js/nav.min.js?v=4.0.0" defer></script>
 </body>
 </html>

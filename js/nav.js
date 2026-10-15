@@ -26,6 +26,7 @@
             }
         }
         mobileDrawer.setAttribute('aria-hidden', 'true');
+        mobileDrawer.setAttribute('inert', '');
         mobileDrawer.setAttribute('role', 'dialog');
         mobileDrawer.setAttribute('aria-modal', 'true');
 
@@ -40,6 +41,7 @@
         function openDrawer() {
             lastActiveElement = document.activeElement;
             mobileDrawer.classList.add('open');
+            mobileDrawer.removeAttribute('inert');
             mobileDrawer.setAttribute('aria-hidden', 'false');
             if (mobileToggle) {
                 mobileToggle.setAttribute('aria-expanded', 'true');
@@ -60,6 +62,7 @@
         function closeDrawer() {
             mobileDrawer.classList.remove('open');
             mobileDrawer.setAttribute('aria-hidden', 'true');
+            mobileDrawer.setAttribute('inert', '');
             if (mobileToggle) {
                 mobileToggle.setAttribute('aria-expanded', 'false');
             }

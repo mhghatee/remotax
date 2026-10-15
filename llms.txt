@@ -1,0 +1,21 @@
+# Remotax — Global Remote Work Financial Intelligence Platform
+
+> High-precision cross-border tax, net take-home pay, and relocation intelligence platform for remote employees, contractors, freelancers, and digital nomads across 17+ statutory jurisdictions.
+
+## Core Calculators
+- [Take-Home Pay Calculator](https://afrix.ir/remotax/calculators/take-home-pay.html): Gross-to-net salary, statutory deductions, and tax brackets for 2026.
+- [Freelancer Tax Calculator](https://afrix.ir/remotax/calculators/freelancer-tax.html): Business expense write-offs and self-employed social security regimes.
+- [Remote Worker Tax Calculator](https://afrix.ir/remotax/calculators/remote-worker-tax.html): Multi-country statutory compliance and filing status breakdown.
+- [Remote Work Savings Calculator](https://afrix.ir/remotax/calculators/remote-work-savings.html): Cost of living, local rent, and discretionary savings analysis.
+
+## Country Tax Engines
+- [Spain Beckham Law (24% Flat)](https://afrix.ir/remotax/tax-calculator/spain.html): Special expat regime modeling up to €600,000.
+- [Portugal D8 & IFICI (20%)](https://afrix.ir/remotax/tax-calculator/portugal.html): Digital nomad visa and scientific innovation tax regime.
+- [Germany Einkommensteuer](https://afrix.ir/remotax/tax-calculator/germany.html): Progressive tax brackets, solidarity surcharge, and statutory health insurance.
+- [Dubai / UAE 0% Tax Haven](https://afrix.ir/remotax/tax-calculator/uae.html): Zero personal income tax and zero capital gains residency.
+- [UK PAYE & National Insurance](https://afrix.ir/remotax/tax-calculator/uk.html): Personal allowance taper and Class 1/4 National Insurance.
+
+## Head-to-Head Comparisons & Directories
+- [Spain vs Portugal](https://afrix.ir/remotax/comparisons/spain-vs-portugal.html): Beckham Law vs D8 IFICI financial tradeoff.
+- [Global Tax Havens Directory](https://afrix.ir/remotax/destinations.html): Interactive map and tax comparison of 17 statutory regimes.
+- [Relocation Readiness Quiz](https://afrix.ir/remotax/quiz.html): 5-step regime matching tool for remote professionals.

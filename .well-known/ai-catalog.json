@@ -1,0 +1,30 @@
+{
+  "specVersion": "1.0",
+  "entries": [
+    {
+      "identifier": "urn:air:remotax:calculator:tax-engine",
+      "displayName": "Remotax Tax & Take-Home Calculator",
+      "description": "Calculate statutory income tax, social security contributions, and net take-home pay for global remote workers across 17+ statutory jurisdictions.",
+      "url": "https://afrix.ir/remotax/calculator.html",
+      "type": "application/ai-catalog+json",
+      "representativeQueries": [
+        "calculate remote worker net salary",
+        "Spain Beckham law calculator",
+        "Dubai zero tax income calculation",
+        "Portugal D8 IFICI take home pay"
+      ]
+    },
+    {
+      "identifier": "urn:air:remotax:comparison:seam-engine",
+      "displayName": "Remotax Country Comparison Engine",
+      "description": "Head-to-head tax, net take-home pay, and purchasing power comparison between relocation jurisdictions for digital nomads and expats.",
+      "url": "https://afrix.ir/remotax/comparisons/spain-vs-portugal.html",
+      "type": "application/ai-catalog+json",
+      "representativeQueries": [
+        "Spain vs Portugal remote worker tax comparison",
+        "compare tax havens for remote contractors",
+        "best European country for remote worker tax"
+      ]
+    }
+  ]
+}

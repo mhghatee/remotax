@@ -611,6 +611,12 @@ const REMOTAX_COUNTRIES = {
     }
 };
 
+if (typeof window !== 'undefined') {
+    window.REMOTAX_COUNTRIES = REMOTAX_COUNTRIES;
+}
+if (typeof globalThis !== 'undefined') {
+    globalThis.REMOTAX_COUNTRIES = REMOTAX_COUNTRIES;
+}
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { REMOTAX_COUNTRIES };
 }

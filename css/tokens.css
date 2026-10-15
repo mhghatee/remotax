@@ -68,8 +68,8 @@
     /* --- Typography Colors --- */
     --text-primary: #ffffff;
     --text-body: #a8a29a;
-    --text-muted: #827c75;
-    --text-dim: #544f49;
+    --text-muted: #9e9890;
+    --text-dim: #6b655e;
 
     /* --- Liquid Glass Surfaces --- */
     --glass-bg-subtle: rgba(255, 255, 255, 0.035);
