@@ -1,0 +1,602 @@
+[
+  {
+    "country": "ES",
+    "worker": "employee",
+    "regime": "with",
+    "income": 50000,
+    "tax": 12000,
+    "social": 3175,
+    "net": 34825,
+    "rate": 30.3
+  },
+  {
+    "country": "ES",
+    "worker": "employee",
+    "regime": "with",
+    "income": 100000,
+    "tax": 24000,
+    "social": 6350,
+    "net": 69650,
+    "rate": 30.3
+  },
+  {
+    "country": "ES",
+    "worker": "employee",
+    "regime": "with",
+    "income": 150000,
+    "tax": 36000,
+    "social": 9525,
+    "net": 104475,
+    "rate": 30.3
+  },
+  {
+    "country": "ES",
+    "worker": "employee",
+    "regime": "without",
+    "income": 50000,
+    "tax": 12148,
+    "social": 3175,
+    "net": 34677,
+    "rate": 30.6
+  },
+  {
+    "country": "ES",
+    "worker": "employee",
+    "regime": "without",
+    "income": 100000,
+    "tax": 33404,
+    "social": 6350,
+    "net": 60246,
+    "rate": 39.8
+  },
+  {
+    "country": "ES",
+    "worker": "employee",
+    "regime": "without",
+    "income": 150000,
+    "tax": 55904,
+    "social": 9525,
+    "net": 84571,
+    "rate": 43.6
+  },
+  {
+    "country": "ES",
+    "worker": "contractor",
+    "regime": "with",
+    "income": 50000,
+    "tax": 12000,
+    "social": 4000,
+    "net": 34000,
+    "rate": 32
+  },
+  {
+    "country": "ES",
+    "worker": "contractor",
+    "regime": "with",
+    "income": 100000,
+    "tax": 24000,
+    "social": 4300,
+    "net": 71700,
+    "rate": 28.3
+  },
+  {
+    "country": "ES",
+    "worker": "contractor",
+    "regime": "with",
+    "income": 150000,
+    "tax": 36000,
+    "social": 4300,
+    "net": 109700,
+    "rate": 26.9
+  },
+  {
+    "country": "ES",
+    "worker": "contractor",
+    "regime": "without",
+    "income": 50000,
+    "tax": 12148,
+    "social": 4000,
+    "net": 33852,
+    "rate": 32.3
+  },
+  {
+    "country": "ES",
+    "worker": "contractor",
+    "regime": "without",
+    "income": 100000,
+    "tax": 33404,
+    "social": 4300,
+    "net": 62296,
+    "rate": 37.7
+  },
+  {
+    "country": "ES",
+    "worker": "contractor",
+    "regime": "without",
+    "income": 150000,
+    "tax": 55904,
+    "social": 4300,
+    "net": 89796,
+    "rate": 40.1
+  },
+  {
+    "country": "PT",
+    "worker": "employee",
+    "regime": "with",
+    "income": 50000,
+    "tax": 10000,
+    "social": 5500,
+    "net": 34500,
+    "rate": 31
+  },
+  {
+    "country": "PT",
+    "worker": "employee",
+    "regime": "with",
+    "income": 100000,
+    "tax": 20000,
+    "social": 11000,
+    "net": 69000,
+    "rate": 31
+  },
+  {
+    "country": "PT",
+    "worker": "employee",
+    "regime": "with",
+    "income": 150000,
+    "tax": 30000,
+    "social": 16500,
+    "net": 103500,
+    "rate": 31
+  },
+  {
+    "country": "PT",
+    "worker": "employee",
+    "regime": "without",
+    "income": 50000,
+    "tax": 13341,
+    "social": 5500,
+    "net": 31159,
+    "rate": 37.7
+  },
+  {
+    "country": "PT",
+    "worker": "employee",
+    "regime": "without",
+    "income": 100000,
+    "tax": 36227,
+    "social": 11000,
+    "net": 52773,
+    "rate": 47.2
+  },
+  {
+    "country": "PT",
+    "worker": "employee",
+    "regime": "without",
+    "income": 150000,
+    "tax": 60227,
+    "social": 16500,
+    "net": 73273,
+    "rate": 51.2
+  },
+  {
+    "country": "PT",
+    "worker": "contractor",
+    "regime": "with",
+    "income": 50000,
+    "tax": 10000,
+    "social": 7200,
+    "net": 32800,
+    "rate": 34.4
+  },
+  {
+    "country": "PT",
+    "worker": "contractor",
+    "regime": "with",
+    "income": 100000,
+    "tax": 20000,
+    "social": 7200,
+    "net": 72800,
+    "rate": 27.2
+  },
+  {
+    "country": "PT",
+    "worker": "contractor",
+    "regime": "with",
+    "income": 150000,
+    "tax": 30000,
+    "social": 7200,
+    "net": 112800,
+    "rate": 24.8
+  },
+  {
+    "country": "PT",
+    "worker": "contractor",
+    "regime": "without",
+    "income": 50000,
+    "tax": 13341,
+    "social": 7200,
+    "net": 29459,
+    "rate": 41.1
+  },
+  {
+    "country": "PT",
+    "worker": "contractor",
+    "regime": "without",
+    "income": 100000,
+    "tax": 36227,
+    "social": 7200,
+    "net": 56573,
+    "rate": 43.4
+  },
+  {
+    "country": "PT",
+    "worker": "contractor",
+    "regime": "without",
+    "income": 150000,
+    "tax": 60227,
+    "social": 7200,
+    "net": 82573,
+    "rate": 45
+  },
+  {
+    "country": "AE",
+    "worker": "employee",
+    "regime": "with",
+    "income": 50000,
+    "tax": 0,
+    "social": 0,
+    "net": 50000,
+    "rate": 0
+  },
+  {
+    "country": "AE",
+    "worker": "employee",
+    "regime": "with",
+    "income": 100000,
+    "tax": 0,
+    "social": 0,
+    "net": 100000,
+    "rate": 0
+  },
+  {
+    "country": "AE",
+    "worker": "employee",
+    "regime": "with",
+    "income": 150000,
+    "tax": 0,
+    "social": 0,
+    "net": 150000,
+    "rate": 0
+  },
+  {
+    "country": "AE",
+    "worker": "employee",
+    "regime": "without",
+    "income": 50000,
+    "tax": 0,
+    "social": 0,
+    "net": 50000,
+    "rate": 0
+  },
+  {
+    "country": "AE",
+    "worker": "employee",
+    "regime": "without",
+    "income": 100000,
+    "tax": 0,
+    "social": 0,
+    "net": 100000,
+    "rate": 0
+  },
+  {
+    "country": "AE",
+    "worker": "employee",
+    "regime": "without",
+    "income": 150000,
+    "tax": 0,
+    "social": 0,
+    "net": 150000,
+    "rate": 0
+  },
+  {
+    "country": "AE",
+    "worker": "contractor",
+    "regime": "with",
+    "income": 50000,
+    "tax": 0,
+    "social": 0,
+    "net": 50000,
+    "rate": 0
+  },
+  {
+    "country": "AE",
+    "worker": "contractor",
+    "regime": "with",
+    "income": 100000,
+    "tax": 0,
+    "social": 0,
+    "net": 100000,
+    "rate": 0
+  },
+  {
+    "country": "AE",
+    "worker": "contractor",
+    "regime": "with",
+    "income": 150000,
+    "tax": 0,
+    "social": 0,
+    "net": 150000,
+    "rate": 0
+  },
+  {
+    "country": "AE",
+    "worker": "contractor",
+    "regime": "without",
+    "income": 50000,
+    "tax": 0,
+    "social": 0,
+    "net": 50000,
+    "rate": 0
+  },
+  {
+    "country": "AE",
+    "worker": "contractor",
+    "regime": "without",
+    "income": 100000,
+    "tax": 0,
+    "social": 0,
+    "net": 100000,
+    "rate": 0
+  },
+  {
+    "country": "AE",
+    "worker": "contractor",
+    "regime": "without",
+    "income": 150000,
+    "tax": 0,
+    "social": 0,
+    "net": 150000,
+    "rate": 0
+  },
+  {
+    "country": "IT",
+    "worker": "employee",
+    "regime": "with",
+    "income": 50000,
+    "tax": 3450,
+    "social": 4595,
+    "net": 41955,
+    "rate": 16.1
+  },
+  {
+    "country": "IT",
+    "worker": "employee",
+    "regime": "with",
+    "income": 100000,
+    "tax": 7140,
+    "social": 9190,
+    "net": 83670,
+    "rate": 16.3
+  },
+  {
+    "country": "IT",
+    "worker": "employee",
+    "regime": "with",
+    "income": 150000,
+    "tax": 12390,
+    "social": 13785,
+    "net": 123825,
+    "rate": 17.4
+  },
+  {
+    "country": "IT",
+    "worker": "employee",
+    "regime": "without",
+    "income": 50000,
+    "tax": 14140,
+    "social": 4595,
+    "net": 31265,
+    "rate": 37.5
+  },
+  {
+    "country": "IT",
+    "worker": "employee",
+    "regime": "without",
+    "income": 100000,
+    "tax": 35640,
+    "social": 9190,
+    "net": 55170,
+    "rate": 44.8
+  },
+  {
+    "country": "IT",
+    "worker": "employee",
+    "regime": "without",
+    "income": 150000,
+    "tax": 57140,
+    "social": 13785,
+    "net": 79075,
+    "rate": 47.3
+  },
+  {
+    "country": "IT",
+    "worker": "contractor",
+    "regime": "with",
+    "income": 50000,
+    "tax": 3450,
+    "social": 6000,
+    "net": 40550,
+    "rate": 18.9
+  },
+  {
+    "country": "IT",
+    "worker": "contractor",
+    "regime": "with",
+    "income": 100000,
+    "tax": 7140,
+    "social": 12000,
+    "net": 80860,
+    "rate": 19.1
+  },
+  {
+    "country": "IT",
+    "worker": "contractor",
+    "regime": "with",
+    "income": 150000,
+    "tax": 12390,
+    "social": 18000,
+    "net": 119610,
+    "rate": 20.3
+  },
+  {
+    "country": "IT",
+    "worker": "contractor",
+    "regime": "without",
+    "income": 50000,
+    "tax": 14140,
+    "social": 6000,
+    "net": 29860,
+    "rate": 40.3
+  },
+  {
+    "country": "IT",
+    "worker": "contractor",
+    "regime": "without",
+    "income": 100000,
+    "tax": 35640,
+    "social": 12000,
+    "net": 52360,
+    "rate": 47.6
+  },
+  {
+    "country": "IT",
+    "worker": "contractor",
+    "regime": "without",
+    "income": 150000,
+    "tax": 57140,
+    "social": 18000,
+    "net": 74860,
+    "rate": 50.1
+  },
+  {
+    "country": "TH",
+    "worker": "employee",
+    "regime": "with",
+    "income": 50000,
+    "tax": 8500,
+    "social": 0,
+    "net": 41500,
+    "rate": 17
+  },
+  {
+    "country": "TH",
+    "worker": "employee",
+    "regime": "with",
+    "income": 100000,
+    "tax": 17000,
+    "social": 0,
+    "net": 83000,
+    "rate": 17
+  },
+  {
+    "country": "TH",
+    "worker": "employee",
+    "regime": "with",
+    "income": 150000,
+    "tax": 25500,
+    "social": 0,
+    "net": 124500,
+    "rate": 17
+  },
+  {
+    "country": "TH",
+    "worker": "employee",
+    "regime": "without",
+    "income": 50000,
+    "tax": 0,
+    "social": 0,
+    "net": 50000,
+    "rate": 0
+  },
+  {
+    "country": "TH",
+    "worker": "employee",
+    "regime": "without",
+    "income": 100000,
+    "tax": 2000,
+    "social": 0,
+    "net": 98000,
+    "rate": 2
+  },
+  {
+    "country": "TH",
+    "worker": "employee",
+    "regime": "without",
+    "income": 150000,
+    "tax": 4500,
+    "social": 0,
+    "net": 145500,
+    "rate": 3
+  },
+  {
+    "country": "TH",
+    "worker": "contractor",
+    "regime": "with",
+    "income": 50000,
+    "tax": 8500,
+    "social": 0,
+    "net": 41500,
+    "rate": 17
+  },
+  {
+    "country": "TH",
+    "worker": "contractor",
+    "regime": "with",
+    "income": 100000,
+    "tax": 17000,
+    "social": 0,
+    "net": 83000,
+    "rate": 17
+  },
+  {
+    "country": "TH",
+    "worker": "contractor",
+    "regime": "with",
+    "income": 150000,
+    "tax": 25500,
+    "social": 0,
+    "net": 124500,
+    "rate": 17
+  },
+  {
+    "country": "TH",
+    "worker": "contractor",
+    "regime": "without",
+    "income": 50000,
+    "tax": 0,
+    "social": 0,
+    "net": 50000,
+    "rate": 0
+  },
+  {
+    "country": "TH",
+    "worker": "contractor",
+    "regime": "without",
+    "income": 100000,
+    "tax": 2000,
+    "social": 0,
+    "net": 98000,
+    "rate": 2
+  },
+  {
+    "country": "TH",
+    "worker": "contractor",
+    "regime": "without",
+    "income": 150000,
+    "tax": 4500,
+    "social": 0,
+    "net": 145500,
+    "rate": 3
+  }
+]

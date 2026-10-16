@@ -133,7 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const c = countriesObj[code];
                 const opt = document.createElement('option');
                 opt.value = code;
-                const regimePreview = (c.regimes && c.regimes[0]) ? ` (${c.regimes[0].name.split('(')[0].trim()})` : '';
+                const regimePreview = (code === 'TH')
+                    ? ' (Remitted Progressive PIT)'
+                    : ((c.regimes && c.regimes[0]) ? ` (${c.regimes[0].name.split('(')[0].trim()})` : '');
                 opt.textContent = `${c.country}${regimePreview}`;
                 countrySelect.appendChild(opt);
             });
@@ -150,6 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const gross = sanitizeInput(incomeInput.value, 0);
         const country = (countrySelect.value || 'ES').toUpperCase();
         const useRegime = regimeToggle ? regimeToggle.checked : true;
+        const isOffshoreTH = country === 'TH' && useRegime;
         const empRadio = document.querySelector('input[name="emp-type"]:checked');
         const empType = empRadio ? empRadio.value : 'contractor';
         const filingStatus = filingStatusSelect ? filingStatusSelect.value : 'single';
@@ -161,7 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 countryCode: country,
                 workerType: empType,
                 filingStatus: filingStatus,
-                useSpecialRegime: useRegime
+                useSpecialRegime: country === 'TH' ? isOffshoreTH : useRegime,
+                isOffshoreUnremitted: isOffshoreTH
             });
         } else {
             // Fallback if engine is not yet loaded
@@ -212,6 +216,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else if (reviewBadge) {
             reviewBadge.style.display = 'none';
+        }
+
+        // Honest approximation / statutory model note
+        let modelNoteEl = document.getElementById('data-model-note');
+        if (!res.isVerified && res.modelNotes) {
+            if (!modelNoteEl && badgeContainer) {
+                modelNoteEl = document.createElement('div');
+                modelNoteEl.id = 'data-model-note';
+                modelNoteEl.className = 'data-model-note';
+                modelNoteEl.style.cssText = 'font-size: 0.78rem; color: var(--text-muted); margin-top: 0.35rem; line-height: 1.35;';
+                badgeContainer.appendChild(modelNoteEl);
+            }
+            if (modelNoteEl) {
+                modelNoteEl.textContent = res.modelNotes;
+                modelNoteEl.style.display = 'block';
+            }
+        } else if (modelNoteEl) {
+            modelNoteEl.style.display = 'none';
         }
 
         // Render Visual Bars
@@ -273,15 +295,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 grossIncome: gross,
                 countryCode: code,
                 workerType: empType,
-                useSpecialRegime: true
+                useSpecialRegime: code !== 'TH',
+                isOffshoreUnremitted: false
             });
             const cMeta = window.RemotaxEngine.COUNTRIES[code];
+            const regimeName = code === 'TH'
+                ? 'Remitted Progressive PIT'
+                : (cMeta.regimes && cMeta.regimes[0] ? cMeta.regimes[0].name.split('(')[0].trim() : 'Standard Progressive');
             return {
                 code,
                 country: cMeta.country,
                 city: cMeta.city,
                 symbol: cMeta.symbol,
-                regimeName: cMeta.regimes && cMeta.regimes[0] ? cMeta.regimes[0].name.split('(')[0].trim() : 'Standard Progressive',
+                regimeName: regimeName,
                 netAnnual: data.netAnnual,
                 netMonthly: data.netMonthly,
                 effectiveRate: data.effectiveTaxRate,
@@ -346,21 +372,31 @@ document.addEventListener('DOMContentLoaded', () => {
             : null;
 
         if (config) {
-            if (regimeText && config.regimes && config.regimes[0]) {
-                regimeText.textContent = config.regimes[0].name;
-            }
-            if (regimeHelp && config.regimes && config.regimes[0]) {
-                regimeHelp.textContent = config.regimes[0].description;
-            }
             if (regimeToggle) {
-                regimeToggle.checked = true;
+                if (countryKey === 'TH') {
+                    regimeToggle.checked = false; // Default: unchecked for Thailand offshore exemption
+                    if (regimeText) regimeText.textContent = "Income stays offshore and is never transferred or spent in Thailand";
+                    if (regimeHelp) regimeHelp.textContent = "Warning: Thai Revenue Department Instructions Por. 161/2566 & 162/2566 clarify that ATM withdrawals, card purchases in Thailand, and bank transfers into Thailand from foreign funds constitute assessable remittance subject to progressive PIT (0%–35%). The DTV visa confers residency only without a statutory zero-tax status for remitted funds.";
+                } else {
+                    regimeToggle.checked = true;
+                    if (regimeText && config.regimes && config.regimes[0]) {
+                        regimeText.textContent = config.regimes[0].name;
+                    }
+                    if (regimeHelp && config.regimes && config.regimes[0]) {
+                        regimeHelp.textContent = config.regimes[0].description;
+                    }
+                }
                 const regimeGroup = document.getElementById('special-regime-group');
                 if (regimeGroup) regimeGroup.style.display = config.regimes && config.regimes.length > 0 ? 'flex' : 'none';
             }
 
             if (insightTitle) insightTitle.textContent = `${config.country} 2026 Tax Framework`;
-            if (insightDesc && config.regimes && config.regimes[0]) {
-                insightDesc.textContent = config.regimes[0].description + " " + (config.regimes[0].eligibilityNote || "");
+            if (insightDesc) {
+                if (countryKey === 'TH') {
+                    insightDesc.textContent = config.modelNotes || "Thai progressive PIT on remitted income with statutory expense and personal deductions.";
+                } else if (config.regimes && config.regimes[0]) {
+                    insightDesc.textContent = config.regimes[0].description + " " + (config.regimes[0].eligibilityNote || "");
+                }
             }
 
             // Sync Currency

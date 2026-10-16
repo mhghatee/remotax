@@ -12,8 +12,11 @@ const REMOTAX_COUNTRIES = {
         city: "Madrid",
         livingCost: 1850,
         supportsFilingStatus: true,
+        taxTablesStatus: "verified",
+        socialSecurityStatus: "verified",
         dataStatus: "verified",
-        verifiedOn: "2026-10-15",
+        verifiedOn: "2026-10-16",
+        modelNotes: "IRPF statutory brackets 2026 (19% to 47%). Employees include €2,000 general deductible expenses (Art. 19.2.f LIRPF) and €5,550 standard personal allowance. Employee Social Security is 6.50% (including 0.15% MEI, Orden PJC/178/2025) capped at monthly base €5,105 (€61,260/yr; max €3,981.90/yr). Autónomos (contractors) are modeled strictly under the 15 income tramos of RDL 13/2022 & Orden PJC/178/2025 after 7% generic deductible expenses (cuotas €205.88 to €545.59/mo; max €6,547.08/yr). Beckham Law applies 24% flat rate up to €600,000 for qualifying applicants.",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 12450, rate: 0.19 },
@@ -24,10 +27,29 @@ const REMOTAX_COUNTRIES = {
             { limit: Infinity, rate: 0.47 }
         ],
         socialSecurity: {
-            employeeRate: 0.0647,
-            contractorRate: 0.08,
-            freelancerMaxAnnual: 4300,
-            description: "Seguridad Social: 6.47% employee rate (includes MEI); Cuota de Autónomos based on 15 income tramos (~€230–€590/mo; median benchmark ~€4,300/yr)"
+            employeeRate: 0.065,
+            employeeMaxAnnualBase: 61260,
+            employeeMaxAnnual: 3981.90,
+            contractorRate: "tramos",
+            contractorMaxAnnual: 6547.08,
+            description: "Seguridad Social 2026: 6.50% employee rate (includes 0.15% MEI, Orden PJC/178/2025) capped at €61,260/yr base (max €3,981.90/yr); Autónomos cuota evaluated across 15 statutory income tramos under RDL 13/2022 (€205.88 to €545.59/mo; max €6,547.08/yr).",
+            tramos: [
+                { minMonthlyNet: 0, maxMonthlyNet: 670, baseMin: 653.59, cuotaMinMonthly: 205.88 },
+                { minMonthlyNet: 670, maxMonthlyNet: 900, baseMin: 718.95, cuotaMinMonthly: 226.47 },
+                { minMonthlyNet: 900, maxMonthlyNet: 1166.70, baseMin: 849.67, cuotaMinMonthly: 267.65 },
+                { minMonthlyNet: 1166.70, maxMonthlyNet: 1300, baseMin: 950.98, cuotaMinMonthly: 299.56 },
+                { minMonthlyNet: 1300, maxMonthlyNet: 1500, baseMin: 960.78, cuotaMinMonthly: 302.65 },
+                { minMonthlyNet: 1500, maxMonthlyNet: 1700, baseMin: 960.78, cuotaMinMonthly: 302.65 },
+                { minMonthlyNet: 1700, maxMonthlyNet: 1850, baseMin: 1045.75, cuotaMinMonthly: 329.41 },
+                { minMonthlyNet: 1850, maxMonthlyNet: 2030, baseMin: 1062.09, cuotaMinMonthly: 334.56 },
+                { minMonthlyNet: 2030, maxMonthlyNet: 2330, baseMin: 1078.43, cuotaMinMonthly: 339.71 },
+                { minMonthlyNet: 2330, maxMonthlyNet: 2760, baseMin: 1111.11, cuotaMinMonthly: 350.00 },
+                { minMonthlyNet: 2760, maxMonthlyNet: 3190, baseMin: 1176.47, cuotaMinMonthly: 370.59 },
+                { minMonthlyNet: 3190, maxMonthlyNet: 3620, baseMin: 1241.83, cuotaMinMonthly: 391.18 },
+                { minMonthlyNet: 3620, maxMonthlyNet: 4050, baseMin: 1307.19, cuotaMinMonthly: 411.76 },
+                { minMonthlyNet: 4050, maxMonthlyNet: 6000, baseMin: 1454.25, cuotaMinMonthly: 458.09 },
+                { minMonthlyNet: 6000, maxMonthlyNet: Infinity, baseMin: 1732.03, cuotaMinMonthly: 545.59 }
+            ]
         },
         regimes: [
             {
@@ -42,11 +64,14 @@ const REMOTAX_COUNTRIES = {
         ],
         deductions: {
             standardAllowance: 5550,
-            jointDeduction: 3400
+            jointDeduction: 3400,
+            workExpenseAllowance: 2000
         },
         sources: [
-            { title: "Agencia Tributaria - IRPF Brackets 2026", url: "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-practicos/irpf-2024/capitulo-15-calculo-impuesto-determinacion-cuotas-integras/escala-general-gravamen/escala-general-impuesto.html", org: "Agencia Tributaria" },
-            { title: "Seguridad Social - Cotización Autónomos por Ingresos Reales", url: "https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/CotizacionRecaudacionTrabajadores/36537", org: "Ministerio de Inclusión, Seguridad Social y Migraciones" }
+            { title: "Agencia Tributaria - IRPF Escala General 2026", url: "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-practicos/irpf-2024/capitulo-15-calculo-impuesto-determinacion-cuotas-integras/escala-general-gravamen/escala-general-impuesto.html", org: "Agencia Tributaria" },
+            { title: "Boletín Oficial del Estado - Real Decreto-ley 13/2022 (Sistema Cotización Autónomos)", url: "https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482", org: "Gobierno de España" },
+            { title: "Boletín Oficial del Estado - Orden PJC/178/2025 (Bases y Tipos Cotización 2025/2026 y MEI)", url: "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-3512", org: "Ministerio de la Presidencia, Justicia y Relaciones con las Cortes" },
+            { title: "Seguridad Social - Cotización de Autónomos por Ingresos Reales", url: "https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/CotizacionRecaudacionTrabajadores/36537", org: "Ministerio de Inclusión, Seguridad Social y Migraciones" }
         ],
         lastUpdated: "October 2026"
     },
@@ -59,8 +84,11 @@ const REMOTAX_COUNTRIES = {
         city: "Lisbon",
         livingCost: 1650,
         supportsFilingStatus: false,
+        taxTablesStatus: "verified",
+        socialSecurityStatus: "verified",
         dataStatus: "verified",
-        verifiedOn: "2026-10-15",
+        verifiedOn: "2026-10-16",
+        modelNotes: "IRS progressive brackets 2026 (12.5% to 48%). For contractors, Category B Simplified Regime models the statutory 75% taxable income coefficient (Art. 31/151 CIRS). Social Security: uncapped 11% for employees; for contractors, 21.4% on 70% relevant income capped at 12 × IAS monthly base (€75,240 base, max €16,101.36/yr; 1st-year exemption available upon request but not modeled by default). IFICI/NHR 2.0 provides 20% flat rate strictly for certified R&D/scientific activities.",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 8342, rate: 0.125 },
@@ -75,9 +103,11 @@ const REMOTAX_COUNTRIES = {
         ],
         socialSecurity: {
             employeeRate: 0.11,
-            contractorRate: 0.1498,
-            freelancerMaxAnnual: 16552,
-            description: "Segurança Social: 11% for employees; 21.4% on 70% relevant income base (effective 14.98%) for independent contractors, subject to 12 × IAS statutory monthly ceiling (~€16,552/yr)"
+            contractorRate: 0.214,
+            contractorBaseMultiplier: 0.70,
+            contractorMaxAnnualBase: 75240,
+            freelancerMaxAnnual: 16101.36,
+            description: "Segurança Social: 11% uncapped for employees; 21.4% on 70% relevant income base for independent contractors, subject to 12 × IAS monthly statutory ceiling (€75,240 annual base, max €16,101.36/yr). First-year exemption not modeled by default."
         },
         regimes: [
             {
@@ -89,11 +119,12 @@ const REMOTAX_COUNTRIES = {
                 flatRate: 0.20
             }
         ],
-        deductions: { standardAllowance: 4587.09 },
+        deductions: { standardAllowance: 4587.09, categoryBCoefficient: 0.75 },
         sources: [
-            { title: "Autoridade Tributária e Aduaneira - CIRS Artigo 68.º (Tax Brackets)", url: "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs68.aspx", org: "Autoridade Tributária e Aduaneira" },
+            { title: "Autoridade Tributária e Aduaneira - CIRS Artigo 68.º (Escalões de IRS 2026)", url: "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs68.aspx", org: "Autoridade Tributária e Aduaneira" },
+            { title: "Autoridade Tributária e Aduaneira - CIRS Artigo 31.º (Regime Simplificado Categoria B)", url: "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs31.aspx", org: "Autoridade Tributária e Aduaneira" },
             { title: "Autoridade Tributária e Aduaneira - CIRS Artigo 25.º (Dedução Específica)", url: "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs25.aspx", org: "Autoridade Tributária e Aduaneira" },
-            { title: "Segurança Social - Trabalhadores Independentes", url: "https://www.seg-social.pt/trabalhadores-independentes", org: "Segurança Social" }
+            { title: "Segurança Social - Guia dos Trabalhadores Independentes & Base IAS", url: "https://www.seg-social.pt/trabalhadores-independentes", org: "Segurança Social" }
         ],
         lastUpdated: "October 2026"
     },
@@ -106,8 +137,11 @@ const REMOTAX_COUNTRIES = {
         city: "Dubai",
         livingCost: 2250,
         supportsFilingStatus: false,
+        taxTablesStatus: "verified",
+        socialSecurityStatus: "verified",
         dataStatus: "verified",
-        verifiedOn: "2026-10-15",
+        verifiedOn: "2026-10-16",
+        modelNotes: "0% Personal Income Tax and 0% Social Security withholding for expatriate remote workers and digital nomads under the Dubai Virtual Working Program. Natural persons with local commercial business revenue exceeding AED 1,000,000/yr are subject to Corporate Tax under Cabinet Decision No. 49/2023.",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: Infinity, rate: 0.00 }
@@ -144,7 +178,11 @@ const REMOTAX_COUNTRIES = {
         city: "Berlin",
         livingCost: 2100,
         supportsFilingStatus: true,
+        taxTablesStatus: "needs-review",
+        socialSecurityStatus: "approximation",
         dataStatus: "needs-review",
+        verifiedOn: null,
+        modelNotes: "Statutory brackets and social security contributions are preliminary estimates under review.",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 17005, rate: 0.14 },
@@ -183,7 +221,11 @@ const REMOTAX_COUNTRIES = {
         city: "London",
         livingCost: 2850,
         supportsFilingStatus: false,
+        taxTablesStatus: "needs-review",
+        socialSecurityStatus: "approximation",
         dataStatus: "needs-review",
+        verifiedOn: null,
+        modelNotes: "Statutory brackets and social security contributions are preliminary estimates under review.",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 37700, rate: 0.20 },
@@ -220,7 +262,11 @@ const REMOTAX_COUNTRIES = {
         city: "Austin / New York",
         livingCost: 3200,
         supportsFilingStatus: true,
+        taxTablesStatus: "needs-review",
+        socialSecurityStatus: "approximation",
         dataStatus: "needs-review",
+        verifiedOn: null,
+        modelNotes: "Statutory brackets and social security contributions are preliminary estimates under review.",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 11600, rate: 0.10 },
@@ -270,7 +316,11 @@ const REMOTAX_COUNTRIES = {
         city: "Toronto",
         livingCost: 2400,
         supportsFilingStatus: false,
+        taxTablesStatus: "needs-review",
+        socialSecurityStatus: "approximation",
         dataStatus: "needs-review",
+        verifiedOn: null,
+        modelNotes: "Statutory brackets and social security contributions are preliminary estimates under review.",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 55867, rate: 0.20 },
@@ -308,7 +358,11 @@ const REMOTAX_COUNTRIES = {
         city: "Amsterdam",
         livingCost: 2600,
         supportsFilingStatus: false,
+        taxTablesStatus: "needs-review",
+        socialSecurityStatus: "approximation",
         dataStatus: "needs-review",
+        verifiedOn: null,
+        modelNotes: "Statutory brackets and social security contributions are preliminary estimates under review.",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 75518, rate: 0.3697 },
@@ -344,8 +398,11 @@ const REMOTAX_COUNTRIES = {
         city: "Rome / Milan",
         livingCost: 1750,
         supportsFilingStatus: false,
+        taxTablesStatus: "verified",
+        socialSecurityStatus: "verified",
         dataStatus: "verified",
-        verifiedOn: "2026-10-15",
+        verifiedOn: "2026-10-16",
+        modelNotes: "National IRPEF 2026 brackets (23%/33%/43%) plus regional/municipal surcharges (addizionali regionale e comunale modeled at an average 2.50%). Social security (INPS) applied on 100% of gross (unreduced by Impatriati) up to the statutory 2026 massimale of €120,607 (Circolare INPS n. 26/2025: 9.19% employee; Circolare INPS n. 27/2025: 26.07% Gestione Separata for independent professionals without other cover). Regime Impatriati exempts 50% (60% with minor child) up to €600,000 cap.",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 28000, rate: 0.23 },
@@ -354,25 +411,30 @@ const REMOTAX_COUNTRIES = {
         ],
         socialSecurity: {
             employeeRate: 0.0919,
-            contractorRate: 0.12,
-            freelancerMaxAnnual: 6000,
-            description: "INPS social contributions (9.19% employee; Gestione Separata for independent contractors). Social contributions are calculated on 100% of gross earnings and are NOT reduced by the Impatriati regime."
+            employeeMaxAnnualBase: 120607,
+            employeeMaxAnnual: 11083.78,
+            contractorRate: 0.2607,
+            contractorMaxAnnualBase: 120607,
+            freelancerMaxAnnual: 31442.24,
+            description: "INPS social security contributions up to statutory 2026 massimale ceiling of €120,607 (Circolari INPS n. 26/2025 & 27/2025: 9.19% employee, max €11,083.78; 26.07% Gestione Separata for independent professionals, max €31,442.24). Contributions calculated on 100% of gross."
         },
         regimes: [
             {
                 id: "impatriati",
                 name: "Regime Impatriati 2024-2026 (50% Tax Exemption)",
                 description: "Exempts 50% of qualifying employment/self-employment income from IRPEF (taxable base multiplier 0.50), up to an annual gross cap of €600,000 for 5 tax years (D.Lgs. 209/2023, Art. 5).",
-                eligibilityNote: "Requires moving tax residency to Italy, 3 prior non-resident fiscal years, commitment to stay at least 4 years, and high-specialization qualification. Exemption increases to 60% (multiplier 0.40) if relocating with a minor child. Social contributions (INPS) remain payable on 100% of gross.",
+                eligibilityNote: "Requires moving tax residency to Italy, 3 prior non-resident fiscal years, commitment to stay at least 4 years, and high-specialization qualification. Exemption increases to 60% (multiplier 0.40) if relocating with a minor child. Social contributions (INPS) remain payable on 100% of gross up to €120,607 massimale.",
                 taxableMultiplier: 0.50,
                 taxableMultiplierChild: 0.40,
                 cap: 600000
             }
         ],
-        deductions: { standardAllowance: 0 },
+        deductions: { standardAllowance: 0, averageAddizionaliRate: 0.025 },
         sources: [
+            { title: "Ministero dell'Economia e delle Finanze - Legge di Bilancio 2026", url: "https://www.mef.gov.it/focus/La-legge-di-bilancio-2026/", org: "Ministero dell'Economia e delle Finanze" },
             { title: "Agenzia delle Entrate - Agevolazioni lavoratori impatriati (D.Lgs. 209/2023)", url: "https://www.agenziaentrate.gov.it/portale/web/guest/agevolazioni-lavoratori-impatriati-che-trasferiscono-la-residenza-in-italia-dal-2024-cittadini", org: "Agenzia delle Entrate" },
-            { title: "Ministero dell'Economia e delle Finanze - Legge di Bilancio 2026", url: "https://www.mef.gov.it/focus/La-legge-di-bilancio-2026/", org: "Ministero dell'Economia e delle Finanze" }
+            { title: "INPS - Circolare n. 26 del 29-01-2025 (Massimale contributivo ex art. 2 c. 18 L. 335/95 e aliquote)", url: "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2025.01.circolare-numero-26-del-29-01-2025.html", org: "Istituto Nazionale della Previdenza Sociale" },
+            { title: "INPS - Circolare n. 27 del 29-01-2025 (Aliquote e massimale Gestione Separata)", url: "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2025.01.circolare-numero-27-del-29-01-2025.html", org: "Istituto Nazionale della Previdenza Sociale" }
         ],
         lastUpdated: "October 2026"
     },
@@ -385,7 +447,11 @@ const REMOTAX_COUNTRIES = {
         city: "Athens",
         livingCost: 1350,
         supportsFilingStatus: false,
+        taxTablesStatus: "needs-review",
+        socialSecurityStatus: "approximation",
         dataStatus: "needs-review",
+        verifiedOn: null,
+        modelNotes: "Statutory brackets and social security contributions are preliminary estimates under review.",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 10000, rate: 0.09 },
@@ -420,8 +486,11 @@ const REMOTAX_COUNTRIES = {
         livingCost: 38500,
         fxRateUSD: 35.0,
         supportsFilingStatus: false,
+        taxTablesStatus: "verified",
+        socialSecurityStatus: "verified",
         dataStatus: "verified",
-        verifiedOn: "2026-10-15",
+        verifiedOn: "2026-10-16",
+        modelNotes: "Thai Revenue Code statutory progressive PIT (0% to 35%) with 160,000 THB statutory deductions (50% expense cap ฿100,000 + ฿60,000 personal allowance). Under Revenue Department Instructions Por. 161/2566 & 162/2566, all foreign income remitted into Thailand (including ATM withdrawals and local card spending) is assessable. The optional 0% offshore scenario applies only when funds remain strictly outside Thailand.",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 150000, rate: 0.00 },
@@ -442,16 +511,11 @@ const REMOTAX_COUNTRIES = {
         regimes: [
             {
                 id: "th_offshore_unremitted",
-                name: "Offshore Unremitted Income (0% Thai Tax)",
-                description: "Foreign-sourced income earned by a tax resident that is kept abroad and NOT remitted into Thailand is completely exempt from Thai Personal Income Tax (Por. 161/2566 & 162/2566).",
-                eligibilityNote: "Applies to foreign remote income kept offshore. If remitted to Thailand in any calendar year, income is taxed under standard progressive PIT (0%–35%). The DTV visa provides residency only with no special flat tax rate. Proposed 2025/2026 foreign income tax relief was not enacted; current law in force applies.",
-                flatRate: 0.00
-            },
-            {
-                id: "th_remitted_progressive",
-                name: "Remitted Foreign Income (Standard Progressive PIT)",
-                description: "Foreign-sourced earnings remitted into Thailand are subject to progressive PIT rates (0% to 35%) with statutory expense & personal allowances.",
-                eligibilityNote: "Applies to any foreign income remitted to Thailand within the tax year. Deductions: 50% employment expense deduction (capped at THB 100,000) + THB 60,000 personal allowance."
+                name: "Income stays offshore and is never transferred or spent in Thailand",
+                description: "Foreign-sourced earnings kept completely abroad in overseas bank accounts and never remitted, transferred, or spent in Thailand (0% Thai tax).",
+                eligibilityNote: "Warning: Thai Revenue Department Instructions Por. 161/2566 & 162/2566 clarify that ATM withdrawals, card purchases in Thailand, and bank transfers into Thailand from foreign funds constitute assessable remittance subject to progressive PIT (0%–35%). The DTV visa confers residency only without a statutory zero-tax status for remitted funds.",
+                flatRate: 0.00,
+                isOffshoreException: true
             }
         ],
         deductions: {
@@ -474,7 +538,11 @@ const REMOTAX_COUNTRIES = {
         city: "Singapore",
         livingCost: 2900,
         supportsFilingStatus: false,
+        taxTablesStatus: "needs-review",
+        socialSecurityStatus: "approximation",
         dataStatus: "needs-review",
+        verifiedOn: null,
+        modelNotes: "Statutory brackets and social security contributions are preliminary estimates under review.",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 20000, rate: 0.0 },
@@ -512,7 +580,11 @@ const REMOTAX_COUNTRIES = {
         city: "Zurich",
         livingCost: 3600,
         supportsFilingStatus: false,
+        taxTablesStatus: "needs-review",
+        socialSecurityStatus: "approximation",
         dataStatus: "needs-review",
+        verifiedOn: null,
+        modelNotes: "Statutory brackets and social security contributions are preliminary estimates under review.",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: Infinity, rate: 0.18 }
@@ -542,7 +614,11 @@ const REMOTAX_COUNTRIES = {
         city: "Valletta",
         livingCost: 1550,
         supportsFilingStatus: false,
+        taxTablesStatus: "needs-review",
+        socialSecurityStatus: "approximation",
         dataStatus: "needs-review",
+        verifiedOn: null,
+        modelNotes: "Statutory brackets and social security contributions are preliminary estimates under review.",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 9100, rate: 0.0 },
@@ -573,7 +649,11 @@ const REMOTAX_COUNTRIES = {
         city: "Limassol",
         livingCost: 1600,
         supportsFilingStatus: false,
+        taxTablesStatus: "needs-review",
+        socialSecurityStatus: "approximation",
         dataStatus: "needs-review",
+        verifiedOn: null,
+        modelNotes: "Statutory brackets and social security contributions are preliminary estimates under review.",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 19500, rate: 0.0 },
@@ -605,7 +685,11 @@ const REMOTAX_COUNTRIES = {
         city: "Tallinn",
         livingCost: 1400,
         supportsFilingStatus: false,
+        taxTablesStatus: "needs-review",
+        socialSecurityStatus: "approximation",
         dataStatus: "needs-review",
+        verifiedOn: null,
+        modelNotes: "Statutory brackets and social security contributions are preliminary estimates under review.",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: Infinity, rate: 0.20 }
@@ -632,7 +716,11 @@ const REMOTAX_COUNTRIES = {
         city: "Sydney / Melbourne",
         livingCost: 2600,
         supportsFilingStatus: false,
+        taxTablesStatus: "needs-review",
+        socialSecurityStatus: "approximation",
         dataStatus: "needs-review",
+        verifiedOn: null,
+        modelNotes: "Statutory brackets and social security contributions are preliminary estimates under review.",
         workerTypes: ["employee", "freelancer", "contractor"],
         taxBrackets: [
             { limit: 45000, rate: 0.19 },

@@ -68,11 +68,14 @@ AddType application/manifest+json .webmanifest
 </IfModule>
 
 # ----------------------------------------------------------------------
-# 4. Routing & Clean URLs
+# 4. Access Restrictions & Clean Routing
 # ----------------------------------------------------------------------
 Options -Indexes
 RewriteEngine On
 RewriteBase /remotax/
+
+# Block direct web access to tests, scratch, reports, and dev directories
+RewriteRule ^(tests|scratch|reports|node_modules|\.git)(/|$) - [F,L]
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f

@@ -51,6 +51,30 @@
     }
 
     /**
+     * Spain Autónomos Social Security: 15 Statutory Income Tramos (RDL 13/2022 & Orden PJC/178/2025)
+     * Evaluates monthly net return after 7% generic deductible expenses
+     */
+    function calculateSpainAutonomoSS(gross, expenses) {
+        const netAnnual = Math.max(0, (gross - expenses) * 0.93);
+        const netMonthly = netAnnual / 12;
+        if (netMonthly <= 670) return 205.88 * 12;
+        if (netMonthly <= 900) return 226.47 * 12;
+        if (netMonthly <= 1166.70) return 267.65 * 12;
+        if (netMonthly <= 1300) return 299.56 * 12;
+        if (netMonthly <= 1500) return 302.65 * 12;
+        if (netMonthly <= 1700) return 302.65 * 12;
+        if (netMonthly <= 1850) return 329.41 * 12;
+        if (netMonthly <= 2030) return 334.56 * 12;
+        if (netMonthly <= 2330) return 339.71 * 12;
+        if (netMonthly <= 2760) return 350.00 * 12;
+        if (netMonthly <= 3190) return 370.59 * 12;
+        if (netMonthly <= 3620) return 391.18 * 12;
+        if (netMonthly <= 4050) return 411.76 * 12;
+        if (netMonthly <= 6000) return 458.09 * 12;
+        return 545.59 * 12; // Tramo 15 (> 6,000 €/mo): €6,547.08/yr
+    }
+
+    /**
      * Core Tax & Take-Home Calculation Engine
      * @param {Object} params
      * @returns {Object} Full standardized financial breakdown
@@ -87,13 +111,16 @@
                     if (filingStatus === 'married_joint') {
                         baseDeduction += (countryData.deductions.jointDeduction || 3400);
                     }
-                    const taxableES = Math.max(0, taxableIncome - baseDeduction);
+                    const workExpAllowance = (workerType === 'employee') ? (countryData.deductions.workExpenseAllowance || 2000) : 0;
+                    const taxableES = Math.max(0, taxableIncome - baseDeduction - workExpAllowance);
                     incomeTax = calculateBrackets(taxableES, countryData.taxBrackets);
                 }
                 if (workerType === 'employee') {
-                    socialSecurity = gross * countryData.socialSecurity.employeeRate;
+                    const maxBaseES = countryData.socialSecurity.employeeMaxAnnualBase || 61260;
+                    const empRateES = countryData.socialSecurity.employeeRate || 0.065;
+                    socialSecurity = Math.min(gross, maxBaseES) * empRateES;
                 } else {
-                    socialSecurity = Math.min(gross * countryData.socialSecurity.contractorRate, countryData.socialSecurity.freelancerMaxAnnual);
+                    socialSecurity = calculateSpainAutonomoSS(gross, expenses);
                 }
                 break;
 
@@ -102,14 +129,24 @@
                     incomeTax = taxableIncome * countryData.regimes[0].flatRate;
                     activeRegimeNote = countryData.regimes[0].eligibilityNote || "";
                 } else {
-                    const specificDeduction = countryData.deductions.standardAllowance || 4587.09;
-                    const taxablePT = Math.max(0, taxableIncome - specificDeduction);
-                    incomeTax = calculateBrackets(taxablePT, countryData.taxBrackets);
+                    if (workerType === 'employee') {
+                        const specificDeduction = countryData.deductions.standardAllowance || 4587.09;
+                        const taxablePT = Math.max(0, taxableIncome - specificDeduction);
+                        incomeTax = calculateBrackets(taxablePT, countryData.taxBrackets);
+                    } else {
+                        // Category B Simplified Regime: 75% taxable coefficient (Art. 31/151 CIRS)
+                        const coeff = countryData.deductions.categoryBCoefficient || 0.75;
+                        const taxablePT = Math.max(0, taxableIncome * coeff);
+                        incomeTax = calculateBrackets(taxablePT, countryData.taxBrackets);
+                    }
                 }
                 if (workerType === 'employee') {
-                    socialSecurity = gross * countryData.socialSecurity.employeeRate;
+                    socialSecurity = gross * (countryData.socialSecurity.employeeRate || 0.11);
                 } else {
-                    socialSecurity = Math.min(gross * countryData.socialSecurity.contractorRate, countryData.socialSecurity.freelancerMaxAnnual || 16552);
+                    const relevantIncomePT = gross * (countryData.socialSecurity.contractorBaseMultiplier || 0.70);
+                    const maxBasePT = countryData.socialSecurity.contractorMaxAnnualBase || 75240;
+                    const contractorRatePT = countryData.socialSecurity.contractorRate || 0.214;
+                    socialSecurity = Math.min(relevantIncomePT, maxBasePT) * contractorRatePT;
                 }
                 break;
 
@@ -203,10 +240,15 @@
                 } else {
                     incomeTax = calculateBrackets(taxableIncome, countryData.taxBrackets);
                 }
-                // Social security (INPS) is calculated on 100% of gross (unreduced by the Impatriati regime)
-                socialSecurity = workerType === 'employee'
-                    ? gross * countryData.socialSecurity.employeeRate
-                    : Math.min(gross * countryData.socialSecurity.contractorRate, countryData.socialSecurity.freelancerMaxAnnual || 6000);
+                // Social security (INPS) is calculated on 100% of gross (unreduced by Impatriati) up to statutory massimale €120,607
+                {
+                    const inpsMassimale = countryData.socialSecurity.employeeMaxAnnualBase || 120607;
+                    const empRateIT = countryData.socialSecurity.employeeRate || 0.0919;
+                    const contractorRateIT = countryData.socialSecurity.contractorRate || 0.2607;
+                    socialSecurity = workerType === 'employee'
+                        ? Math.min(gross, inpsMassimale) * empRateIT
+                        : Math.min(gross, inpsMassimale) * contractorRateIT;
+                }
                 break;
 
             case 'GR': // Greece
@@ -229,18 +271,19 @@
                     const taxableBaseTHB = Math.max(0, grossTHB - expensesTHB);
 
                     let taxTHB = 0;
-                    if (useRegime && countryData.regimes && countryData.regimes[0] && params.remitted !== true) {
-                        // Scenario (a): Foreign-sourced income kept offshore -> 0% Thai PIT
+                    // Default = remitted income (progressive PIT).
+                    // 0% offshore scenario ONLY applies if explicitly requested:
+                    const isOffshoreExplicit = params.isOffshoreUnremitted === true || params.regimeId === 'th_offshore_unremitted' || (params.useSpecialRegime === true && params.forceOffshoreZero === true);
+
+                    if (isOffshoreExplicit) {
                         taxTHB = 0;
-                        activeRegimeNote = countryData.regimes[0].description + " " + countryData.regimes[0].eligibilityNote;
+                        activeRegimeNote = "Offshore non-remitted income scenario (0% Thai tax). Warning: ATM withdrawals, card purchases in Thailand, and bank transfers into Thailand constitute taxable remittance under Thai Revenue Department Instructions Por. 161/2566 & 162/2566.";
                     } else {
-                        // Scenario (b): Remitted income -> standard progressive PIT (rd.go.th)
-                        // 50% employment expense deduction capped at 100,000 THB + 60,000 THB personal allowance
                         const expenseDed = Math.min(grossTHB * (countryData.deductions.employmentExpenseRate || 0.50), countryData.deductions.employmentExpenseCap || 100000);
                         const personalAllowance = countryData.deductions.standardAllowance || 60000;
                         const netTaxableTHB = Math.max(0, taxableBaseTHB - expenseDed - personalAllowance);
                         taxTHB = calculateBrackets(netTaxableTHB, countryData.taxBrackets);
-                        activeRegimeNote = "Taxed under progressive PIT on remitted foreign income (0%–35%) with 160,000 THB statutory deductions.";
+                        activeRegimeNote = "Progressive PIT on remitted foreign income (0%–35%) with ฿160,000 statutory deductions (50% expense cap ฿100,000 + ฿60,000 personal allowance).";
                     }
 
                     incomeTax = isUSD ? (taxTHB / fxRate) : taxTHB;
@@ -351,7 +394,11 @@
             workerType: workerType,
             filingStatus: filingStatus,
             supportsFilingStatus: !!countryData.supportsFilingStatus,
+            taxTablesStatus: countryData.taxTablesStatus || "needs-review",
+            socialSecurityStatus: countryData.socialSecurityStatus || "approximation",
             dataStatus: countryData.dataStatus || "needs-review",
+            isVerified: (countryData.taxTablesStatus === 'verified' && countryData.socialSecurityStatus === 'verified'),
+            modelNotes: countryData.modelNotes || "",
             verifiedOn: countryData.verifiedOn || null,
             grossIncome: Math.round(gross),
             businessExpenses: Math.round(expenses),
@@ -370,7 +417,7 @@
             activeRegimeNote: activeRegimeNote,
             sources: countryData.sources || [],
             lastUpdated: countryData.lastUpdated || "October 2026",
-            calculationVersion: "2026.2"
+            calculationVersion: "2026.3"
         };
     }
 
@@ -378,8 +425,8 @@
      * Side-by-Side Comparison Engine (Sections 19, 22, 23)
      */
     function compareCountries(income, countryA, countryB, workerType, filingStatus) {
-        const resA = calculateTax({ grossIncome: income, countryCode: countryA, workerType: workerType, filingStatus: filingStatus, useSpecialRegime: true });
-        const resB = calculateTax({ grossIncome: income, countryCode: countryB, workerType: workerType, filingStatus: filingStatus, useSpecialRegime: true });
+        const resA = calculateTax({ grossIncome: income, countryCode: countryA, workerType: workerType, filingStatus: filingStatus, useSpecialRegime: countryA !== 'TH', isOffshoreUnremitted: false });
+        const resB = calculateTax({ grossIncome: income, countryCode: countryB, workerType: workerType, filingStatus: filingStatus, useSpecialRegime: countryB !== 'TH', isOffshoreUnremitted: false });
 
         const annualNetDiff = resB.netAnnual - resA.netAnnual;
         const monthlyNetDiff = resB.netMonthly - resA.netMonthly;

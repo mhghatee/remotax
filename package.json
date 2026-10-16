@@ -1,0 +1,13 @@
+{
+  "name": "remotax",
+  "version": "4.4.0",
+  "description": "Remotax - Global Remote Worker Tax & Take-Home Pay Engine",
+  "main": "engine/taxEngine.js",
+  "scripts": {
+    "build": "node build.js",
+    "test": "node tests/test_wave1_harness.js"
+  },
+  "author": "DeepMind Advanced Agentic Coding",
+  "license": "UNLICENSED",
+  "private": true
+}
