@@ -617,7 +617,7 @@ for (const p of activeSeoPages) {
   // 1. Social security
   if (/social security/i.test(verifiedPart)) {
     let codes = [];
-    if (p.pageType === 'country' || p.pageType === 'regime') codes = [p.countryCode];
+    if (p.pageType === 'country' || p.pageType === 'regime' || p.pageType === 'salary') codes = [p.countryCode];
     else if (p.pageType === 'comparison') codes = p.countryCodes || [];
     else codes = ['ES', 'PT', 'IT', 'AE', 'TH'];
 
@@ -807,7 +807,7 @@ if (!fs.existsSync(SITEMAP_INDEX_PATH)) {
   }
 
   // Check child sitemaps
-  const childSitemapFiles = ['sitemap-countries.xml', 'sitemap-regimes.xml', 'sitemap-comparisons.xml', 'sitemap-best.xml', 'sitemap-pages.xml'];
+  const childSitemapFiles = ['sitemap-countries.xml', 'sitemap-regimes.xml', 'sitemap-comparisons.xml', 'sitemap-best.xml', 'sitemap-salaries.xml', 'sitemap-pages.xml'];
   let totalSitemapUrls = 0;
   const allSitemapUrls = new Set();
 

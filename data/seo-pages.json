@@ -138,7 +138,10 @@
     "slug": "spain-vs-portugal",
     "pageType": "comparison",
     "path": "comparisons/spain-vs-portugal/",
-    "countryCodes": ["ES", "PT"],
+    "countryCodes": [
+      "ES",
+      "PT"
+    ],
     "primaryKeyword": "Spain vs Portugal Remote Worker Tax Comparison 2026",
     "secondaryKeywords": [
       "beckham law vs ifici",
@@ -151,7 +154,10 @@
     "slug": "spain-vs-uae",
     "pageType": "comparison",
     "path": "comparisons/spain-vs-uae/",
-    "countryCodes": ["ES", "AE"],
+    "countryCodes": [
+      "ES",
+      "AE"
+    ],
     "primaryKeyword": "Spain vs UAE Tax Comparison for Remote Workers 2026",
     "secondaryKeywords": [
       "spain beckham law vs dubai zero tax",
@@ -164,7 +170,10 @@
     "slug": "spain-vs-italy",
     "pageType": "comparison",
     "path": "comparisons/spain-vs-italy/",
-    "countryCodes": ["ES", "IT"],
+    "countryCodes": [
+      "ES",
+      "IT"
+    ],
     "primaryKeyword": "Spain vs Italy Remote Worker Tax Comparison 2026",
     "secondaryKeywords": [
       "beckham law vs regime impatriati",
@@ -177,7 +186,10 @@
     "slug": "spain-vs-thailand",
     "pageType": "comparison",
     "path": "comparisons/spain-vs-thailand/",
-    "countryCodes": ["ES", "TH"],
+    "countryCodes": [
+      "ES",
+      "TH"
+    ],
     "primaryKeyword": "Spain vs Thailand Remote Worker Tax Comparison 2026",
     "secondaryKeywords": [
       "spain nomad visa vs thailand dtv",
@@ -190,7 +202,10 @@
     "slug": "portugal-vs-uae",
     "pageType": "comparison",
     "path": "comparisons/portugal-vs-uae/",
-    "countryCodes": ["PT", "AE"],
+    "countryCodes": [
+      "PT",
+      "AE"
+    ],
     "primaryKeyword": "Portugal vs UAE Tax Comparison for Remote Workers 2026",
     "secondaryKeywords": [
       "portugal ifici vs dubai zero tax",
@@ -203,7 +218,10 @@
     "slug": "portugal-vs-italy",
     "pageType": "comparison",
     "path": "comparisons/portugal-vs-italy/",
-    "countryCodes": ["PT", "IT"],
+    "countryCodes": [
+      "PT",
+      "IT"
+    ],
     "primaryKeyword": "Portugal vs Italy Remote Worker Tax Comparison 2026",
     "secondaryKeywords": [
       "portugal ifici vs italy impatriati",
@@ -216,7 +234,10 @@
     "slug": "portugal-vs-thailand",
     "pageType": "comparison",
     "path": "comparisons/portugal-vs-thailand/",
-    "countryCodes": ["PT", "TH"],
+    "countryCodes": [
+      "PT",
+      "TH"
+    ],
     "primaryKeyword": "Portugal vs Thailand Remote Worker Tax Comparison 2026",
     "secondaryKeywords": [
       "portugal d8 vs thailand dtv",
@@ -229,7 +250,10 @@
     "slug": "uae-vs-italy",
     "pageType": "comparison",
     "path": "comparisons/uae-vs-italy/",
-    "countryCodes": ["AE", "IT"],
+    "countryCodes": [
+      "AE",
+      "IT"
+    ],
     "primaryKeyword": "UAE vs Italy Remote Worker Tax Comparison 2026",
     "secondaryKeywords": [
       "dubai zero tax vs italy impatriati",
@@ -242,7 +266,10 @@
     "slug": "uae-vs-thailand",
     "pageType": "comparison",
     "path": "comparisons/uae-vs-thailand/",
-    "countryCodes": ["AE", "TH"],
+    "countryCodes": [
+      "AE",
+      "TH"
+    ],
     "primaryKeyword": "UAE vs Thailand Remote Worker Tax Comparison 2026",
     "secondaryKeywords": [
       "dubai 0% tax vs thailand dtv",
@@ -255,7 +282,10 @@
     "slug": "italy-vs-thailand",
     "pageType": "comparison",
     "path": "comparisons/italy-vs-thailand/",
-    "countryCodes": ["IT", "TH"],
+    "countryCodes": [
+      "IT",
+      "TH"
+    ],
     "primaryKeyword": "Italy vs Thailand Remote Worker Tax Comparison 2026",
     "secondaryKeywords": [
       "italy impatriati vs thailand dtv",
@@ -312,6 +342,706 @@
       "statutory tax calculation rules",
       "cross-border remote worker data sources",
       "not tax advice notice"
+    ]
+  },
+  {
+    "slug": "spain-30000-eur",
+    "pageType": "salary",
+    "path": "salary/spain/30000-eur/",
+    "countryCode": "ES",
+    "grossEUR": 30000,
+    "primaryKeyword": "€30,000 Salary in Spain (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 30k in spain",
+      "30000 euro salary spain net",
+      "30k spain take home pay",
+      "spain net salary 30000"
+    ]
+  },
+  {
+    "slug": "spain-40000-eur",
+    "pageType": "salary",
+    "path": "salary/spain/40000-eur/",
+    "countryCode": "ES",
+    "grossEUR": 40000,
+    "primaryKeyword": "€40,000 Salary in Spain (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 40k in spain",
+      "40000 euro salary spain net",
+      "40k spain take home pay",
+      "spain net salary 40000"
+    ]
+  },
+  {
+    "slug": "spain-50000-eur",
+    "pageType": "salary",
+    "path": "salary/spain/50000-eur/",
+    "countryCode": "ES",
+    "grossEUR": 50000,
+    "primaryKeyword": "€50,000 Salary in Spain (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 50k in spain",
+      "50000 euro salary spain net",
+      "50k spain take home pay",
+      "spain net salary 50000"
+    ]
+  },
+  {
+    "slug": "spain-60000-eur",
+    "pageType": "salary",
+    "path": "salary/spain/60000-eur/",
+    "countryCode": "ES",
+    "grossEUR": 60000,
+    "primaryKeyword": "€60,000 Salary in Spain (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 60k in spain",
+      "60000 euro salary spain net",
+      "60k spain take home pay",
+      "spain net salary 60000"
+    ]
+  },
+  {
+    "slug": "spain-75000-eur",
+    "pageType": "salary",
+    "path": "salary/spain/75000-eur/",
+    "countryCode": "ES",
+    "grossEUR": 75000,
+    "primaryKeyword": "€75,000 Salary in Spain (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 75k in spain",
+      "75000 euro salary spain net",
+      "75k spain take home pay",
+      "spain net salary 75000"
+    ]
+  },
+  {
+    "slug": "spain-80000-eur",
+    "pageType": "salary",
+    "path": "salary/spain/80000-eur/",
+    "countryCode": "ES",
+    "grossEUR": 80000,
+    "primaryKeyword": "€80,000 Salary in Spain (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 80k in spain",
+      "80000 euro salary spain net",
+      "80k spain take home pay",
+      "spain net salary 80000"
+    ]
+  },
+  {
+    "slug": "spain-100000-eur",
+    "pageType": "salary",
+    "path": "salary/spain/100000-eur/",
+    "countryCode": "ES",
+    "grossEUR": 100000,
+    "primaryKeyword": "€100,000 Salary in Spain (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 100k in spain",
+      "100000 euro salary spain net",
+      "100k spain take home pay",
+      "spain net salary 100000"
+    ]
+  },
+  {
+    "slug": "spain-120000-eur",
+    "pageType": "salary",
+    "path": "salary/spain/120000-eur/",
+    "countryCode": "ES",
+    "grossEUR": 120000,
+    "primaryKeyword": "€120,000 Salary in Spain (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 120k in spain",
+      "120000 euro salary spain net",
+      "120k spain take home pay",
+      "spain net salary 120000"
+    ]
+  },
+  {
+    "slug": "spain-150000-eur",
+    "pageType": "salary",
+    "path": "salary/spain/150000-eur/",
+    "countryCode": "ES",
+    "grossEUR": 150000,
+    "primaryKeyword": "€150,000 Salary in Spain (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 150k in spain",
+      "150000 euro salary spain net",
+      "150k spain take home pay",
+      "spain net salary 150000"
+    ]
+  },
+  {
+    "slug": "spain-200000-eur",
+    "pageType": "salary",
+    "path": "salary/spain/200000-eur/",
+    "countryCode": "ES",
+    "grossEUR": 200000,
+    "primaryKeyword": "€200,000 Salary in Spain (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 200k in spain",
+      "200000 euro salary spain net",
+      "200k spain take home pay",
+      "spain net salary 200000"
+    ]
+  },
+  {
+    "slug": "portugal-30000-eur",
+    "pageType": "salary",
+    "path": "salary/portugal/30000-eur/",
+    "countryCode": "PT",
+    "grossEUR": 30000,
+    "primaryKeyword": "€30,000 Salary in Portugal (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 30k in portugal",
+      "30000 euro salary portugal net",
+      "30k portugal take home pay",
+      "portugal net salary 30000"
+    ]
+  },
+  {
+    "slug": "portugal-40000-eur",
+    "pageType": "salary",
+    "path": "salary/portugal/40000-eur/",
+    "countryCode": "PT",
+    "grossEUR": 40000,
+    "primaryKeyword": "€40,000 Salary in Portugal (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 40k in portugal",
+      "40000 euro salary portugal net",
+      "40k portugal take home pay",
+      "portugal net salary 40000"
+    ]
+  },
+  {
+    "slug": "portugal-50000-eur",
+    "pageType": "salary",
+    "path": "salary/portugal/50000-eur/",
+    "countryCode": "PT",
+    "grossEUR": 50000,
+    "primaryKeyword": "€50,000 Salary in Portugal (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 50k in portugal",
+      "50000 euro salary portugal net",
+      "50k portugal take home pay",
+      "portugal net salary 50000"
+    ]
+  },
+  {
+    "slug": "portugal-60000-eur",
+    "pageType": "salary",
+    "path": "salary/portugal/60000-eur/",
+    "countryCode": "PT",
+    "grossEUR": 60000,
+    "primaryKeyword": "€60,000 Salary in Portugal (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 60k in portugal",
+      "60000 euro salary portugal net",
+      "60k portugal take home pay",
+      "portugal net salary 60000"
+    ]
+  },
+  {
+    "slug": "portugal-75000-eur",
+    "pageType": "salary",
+    "path": "salary/portugal/75000-eur/",
+    "countryCode": "PT",
+    "grossEUR": 75000,
+    "primaryKeyword": "€75,000 Salary in Portugal (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 75k in portugal",
+      "75000 euro salary portugal net",
+      "75k portugal take home pay",
+      "portugal net salary 75000"
+    ]
+  },
+  {
+    "slug": "portugal-80000-eur",
+    "pageType": "salary",
+    "path": "salary/portugal/80000-eur/",
+    "countryCode": "PT",
+    "grossEUR": 80000,
+    "primaryKeyword": "€80,000 Salary in Portugal (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 80k in portugal",
+      "80000 euro salary portugal net",
+      "80k portugal take home pay",
+      "portugal net salary 80000"
+    ]
+  },
+  {
+    "slug": "portugal-100000-eur",
+    "pageType": "salary",
+    "path": "salary/portugal/100000-eur/",
+    "countryCode": "PT",
+    "grossEUR": 100000,
+    "primaryKeyword": "€100,000 Salary in Portugal (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 100k in portugal",
+      "100000 euro salary portugal net",
+      "100k portugal take home pay",
+      "portugal net salary 100000"
+    ]
+  },
+  {
+    "slug": "portugal-120000-eur",
+    "pageType": "salary",
+    "path": "salary/portugal/120000-eur/",
+    "countryCode": "PT",
+    "grossEUR": 120000,
+    "primaryKeyword": "€120,000 Salary in Portugal (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 120k in portugal",
+      "120000 euro salary portugal net",
+      "120k portugal take home pay",
+      "portugal net salary 120000"
+    ]
+  },
+  {
+    "slug": "portugal-150000-eur",
+    "pageType": "salary",
+    "path": "salary/portugal/150000-eur/",
+    "countryCode": "PT",
+    "grossEUR": 150000,
+    "primaryKeyword": "€150,000 Salary in Portugal (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 150k in portugal",
+      "150000 euro salary portugal net",
+      "150k portugal take home pay",
+      "portugal net salary 150000"
+    ]
+  },
+  {
+    "slug": "portugal-200000-eur",
+    "pageType": "salary",
+    "path": "salary/portugal/200000-eur/",
+    "countryCode": "PT",
+    "grossEUR": 200000,
+    "primaryKeyword": "€200,000 Salary in Portugal (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 200k in portugal",
+      "200000 euro salary portugal net",
+      "200k portugal take home pay",
+      "portugal net salary 200000"
+    ]
+  },
+  {
+    "slug": "uae-30000-eur",
+    "pageType": "salary",
+    "path": "salary/uae/30000-eur/",
+    "countryCode": "AE",
+    "grossEUR": 30000,
+    "primaryKeyword": "€30,000 Salary in United Arab Emirates (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 30k in united arab emirates",
+      "30000 euro salary united arab emirates net",
+      "30k uae take home pay",
+      "uae net salary 30000"
+    ]
+  },
+  {
+    "slug": "uae-40000-eur",
+    "pageType": "salary",
+    "path": "salary/uae/40000-eur/",
+    "countryCode": "AE",
+    "grossEUR": 40000,
+    "primaryKeyword": "€40,000 Salary in United Arab Emirates (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 40k in united arab emirates",
+      "40000 euro salary united arab emirates net",
+      "40k uae take home pay",
+      "uae net salary 40000"
+    ]
+  },
+  {
+    "slug": "uae-50000-eur",
+    "pageType": "salary",
+    "path": "salary/uae/50000-eur/",
+    "countryCode": "AE",
+    "grossEUR": 50000,
+    "primaryKeyword": "€50,000 Salary in United Arab Emirates (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 50k in united arab emirates",
+      "50000 euro salary united arab emirates net",
+      "50k uae take home pay",
+      "uae net salary 50000"
+    ]
+  },
+  {
+    "slug": "uae-60000-eur",
+    "pageType": "salary",
+    "path": "salary/uae/60000-eur/",
+    "countryCode": "AE",
+    "grossEUR": 60000,
+    "primaryKeyword": "€60,000 Salary in United Arab Emirates (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 60k in united arab emirates",
+      "60000 euro salary united arab emirates net",
+      "60k uae take home pay",
+      "uae net salary 60000"
+    ]
+  },
+  {
+    "slug": "uae-75000-eur",
+    "pageType": "salary",
+    "path": "salary/uae/75000-eur/",
+    "countryCode": "AE",
+    "grossEUR": 75000,
+    "primaryKeyword": "€75,000 Salary in United Arab Emirates (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 75k in united arab emirates",
+      "75000 euro salary united arab emirates net",
+      "75k uae take home pay",
+      "uae net salary 75000"
+    ]
+  },
+  {
+    "slug": "uae-80000-eur",
+    "pageType": "salary",
+    "path": "salary/uae/80000-eur/",
+    "countryCode": "AE",
+    "grossEUR": 80000,
+    "primaryKeyword": "€80,000 Salary in United Arab Emirates (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 80k in united arab emirates",
+      "80000 euro salary united arab emirates net",
+      "80k uae take home pay",
+      "uae net salary 80000"
+    ]
+  },
+  {
+    "slug": "uae-100000-eur",
+    "pageType": "salary",
+    "path": "salary/uae/100000-eur/",
+    "countryCode": "AE",
+    "grossEUR": 100000,
+    "primaryKeyword": "€100,000 Salary in United Arab Emirates (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 100k in united arab emirates",
+      "100000 euro salary united arab emirates net",
+      "100k uae take home pay",
+      "uae net salary 100000"
+    ]
+  },
+  {
+    "slug": "uae-120000-eur",
+    "pageType": "salary",
+    "path": "salary/uae/120000-eur/",
+    "countryCode": "AE",
+    "grossEUR": 120000,
+    "primaryKeyword": "€120,000 Salary in United Arab Emirates (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 120k in united arab emirates",
+      "120000 euro salary united arab emirates net",
+      "120k uae take home pay",
+      "uae net salary 120000"
+    ]
+  },
+  {
+    "slug": "uae-150000-eur",
+    "pageType": "salary",
+    "path": "salary/uae/150000-eur/",
+    "countryCode": "AE",
+    "grossEUR": 150000,
+    "primaryKeyword": "€150,000 Salary in United Arab Emirates (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 150k in united arab emirates",
+      "150000 euro salary united arab emirates net",
+      "150k uae take home pay",
+      "uae net salary 150000"
+    ]
+  },
+  {
+    "slug": "uae-200000-eur",
+    "pageType": "salary",
+    "path": "salary/uae/200000-eur/",
+    "countryCode": "AE",
+    "grossEUR": 200000,
+    "primaryKeyword": "€200,000 Salary in United Arab Emirates (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 200k in united arab emirates",
+      "200000 euro salary united arab emirates net",
+      "200k uae take home pay",
+      "uae net salary 200000"
+    ]
+  },
+  {
+    "slug": "italy-30000-eur",
+    "pageType": "salary",
+    "path": "salary/italy/30000-eur/",
+    "countryCode": "IT",
+    "grossEUR": 30000,
+    "primaryKeyword": "€30,000 Salary in Italy (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 30k in italy",
+      "30000 euro salary italy net",
+      "30k italy take home pay",
+      "italy net salary 30000"
+    ]
+  },
+  {
+    "slug": "italy-40000-eur",
+    "pageType": "salary",
+    "path": "salary/italy/40000-eur/",
+    "countryCode": "IT",
+    "grossEUR": 40000,
+    "primaryKeyword": "€40,000 Salary in Italy (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 40k in italy",
+      "40000 euro salary italy net",
+      "40k italy take home pay",
+      "italy net salary 40000"
+    ]
+  },
+  {
+    "slug": "italy-50000-eur",
+    "pageType": "salary",
+    "path": "salary/italy/50000-eur/",
+    "countryCode": "IT",
+    "grossEUR": 50000,
+    "primaryKeyword": "€50,000 Salary in Italy (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 50k in italy",
+      "50000 euro salary italy net",
+      "50k italy take home pay",
+      "italy net salary 50000"
+    ]
+  },
+  {
+    "slug": "italy-60000-eur",
+    "pageType": "salary",
+    "path": "salary/italy/60000-eur/",
+    "countryCode": "IT",
+    "grossEUR": 60000,
+    "primaryKeyword": "€60,000 Salary in Italy (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 60k in italy",
+      "60000 euro salary italy net",
+      "60k italy take home pay",
+      "italy net salary 60000"
+    ]
+  },
+  {
+    "slug": "italy-75000-eur",
+    "pageType": "salary",
+    "path": "salary/italy/75000-eur/",
+    "countryCode": "IT",
+    "grossEUR": 75000,
+    "primaryKeyword": "€75,000 Salary in Italy (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 75k in italy",
+      "75000 euro salary italy net",
+      "75k italy take home pay",
+      "italy net salary 75000"
+    ]
+  },
+  {
+    "slug": "italy-80000-eur",
+    "pageType": "salary",
+    "path": "salary/italy/80000-eur/",
+    "countryCode": "IT",
+    "grossEUR": 80000,
+    "primaryKeyword": "€80,000 Salary in Italy (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 80k in italy",
+      "80000 euro salary italy net",
+      "80k italy take home pay",
+      "italy net salary 80000"
+    ]
+  },
+  {
+    "slug": "italy-100000-eur",
+    "pageType": "salary",
+    "path": "salary/italy/100000-eur/",
+    "countryCode": "IT",
+    "grossEUR": 100000,
+    "primaryKeyword": "€100,000 Salary in Italy (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 100k in italy",
+      "100000 euro salary italy net",
+      "100k italy take home pay",
+      "italy net salary 100000"
+    ]
+  },
+  {
+    "slug": "italy-120000-eur",
+    "pageType": "salary",
+    "path": "salary/italy/120000-eur/",
+    "countryCode": "IT",
+    "grossEUR": 120000,
+    "primaryKeyword": "€120,000 Salary in Italy (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 120k in italy",
+      "120000 euro salary italy net",
+      "120k italy take home pay",
+      "italy net salary 120000"
+    ]
+  },
+  {
+    "slug": "italy-150000-eur",
+    "pageType": "salary",
+    "path": "salary/italy/150000-eur/",
+    "countryCode": "IT",
+    "grossEUR": 150000,
+    "primaryKeyword": "€150,000 Salary in Italy (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 150k in italy",
+      "150000 euro salary italy net",
+      "150k italy take home pay",
+      "italy net salary 150000"
+    ]
+  },
+  {
+    "slug": "italy-200000-eur",
+    "pageType": "salary",
+    "path": "salary/italy/200000-eur/",
+    "countryCode": "IT",
+    "grossEUR": 200000,
+    "primaryKeyword": "€200,000 Salary in Italy (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 200k in italy",
+      "200000 euro salary italy net",
+      "200k italy take home pay",
+      "italy net salary 200000"
+    ]
+  },
+  {
+    "slug": "thailand-30000-eur",
+    "pageType": "salary",
+    "path": "salary/thailand/30000-eur/",
+    "countryCode": "TH",
+    "grossEUR": 30000,
+    "primaryKeyword": "€30,000 Salary in Thailand (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 30k in thailand",
+      "30000 euro salary thailand net",
+      "30k thailand take home pay",
+      "thailand net salary 30000"
+    ]
+  },
+  {
+    "slug": "thailand-40000-eur",
+    "pageType": "salary",
+    "path": "salary/thailand/40000-eur/",
+    "countryCode": "TH",
+    "grossEUR": 40000,
+    "primaryKeyword": "€40,000 Salary in Thailand (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 40k in thailand",
+      "40000 euro salary thailand net",
+      "40k thailand take home pay",
+      "thailand net salary 40000"
+    ]
+  },
+  {
+    "slug": "thailand-50000-eur",
+    "pageType": "salary",
+    "path": "salary/thailand/50000-eur/",
+    "countryCode": "TH",
+    "grossEUR": 50000,
+    "primaryKeyword": "€50,000 Salary in Thailand (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 50k in thailand",
+      "50000 euro salary thailand net",
+      "50k thailand take home pay",
+      "thailand net salary 50000"
+    ]
+  },
+  {
+    "slug": "thailand-60000-eur",
+    "pageType": "salary",
+    "path": "salary/thailand/60000-eur/",
+    "countryCode": "TH",
+    "grossEUR": 60000,
+    "primaryKeyword": "€60,000 Salary in Thailand (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 60k in thailand",
+      "60000 euro salary thailand net",
+      "60k thailand take home pay",
+      "thailand net salary 60000"
+    ]
+  },
+  {
+    "slug": "thailand-75000-eur",
+    "pageType": "salary",
+    "path": "salary/thailand/75000-eur/",
+    "countryCode": "TH",
+    "grossEUR": 75000,
+    "primaryKeyword": "€75,000 Salary in Thailand (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 75k in thailand",
+      "75000 euro salary thailand net",
+      "75k thailand take home pay",
+      "thailand net salary 75000"
+    ]
+  },
+  {
+    "slug": "thailand-80000-eur",
+    "pageType": "salary",
+    "path": "salary/thailand/80000-eur/",
+    "countryCode": "TH",
+    "grossEUR": 80000,
+    "primaryKeyword": "€80,000 Salary in Thailand (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 80k in thailand",
+      "80000 euro salary thailand net",
+      "80k thailand take home pay",
+      "thailand net salary 80000"
+    ]
+  },
+  {
+    "slug": "thailand-100000-eur",
+    "pageType": "salary",
+    "path": "salary/thailand/100000-eur/",
+    "countryCode": "TH",
+    "grossEUR": 100000,
+    "primaryKeyword": "€100,000 Salary in Thailand (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 100k in thailand",
+      "100000 euro salary thailand net",
+      "100k thailand take home pay",
+      "thailand net salary 100000"
+    ]
+  },
+  {
+    "slug": "thailand-120000-eur",
+    "pageType": "salary",
+    "path": "salary/thailand/120000-eur/",
+    "countryCode": "TH",
+    "grossEUR": 120000,
+    "primaryKeyword": "€120,000 Salary in Thailand (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 120k in thailand",
+      "120000 euro salary thailand net",
+      "120k thailand take home pay",
+      "thailand net salary 120000"
+    ]
+  },
+  {
+    "slug": "thailand-150000-eur",
+    "pageType": "salary",
+    "path": "salary/thailand/150000-eur/",
+    "countryCode": "TH",
+    "grossEUR": 150000,
+    "primaryKeyword": "€150,000 Salary in Thailand (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 150k in thailand",
+      "150000 euro salary thailand net",
+      "150k thailand take home pay",
+      "thailand net salary 150000"
+    ]
+  },
+  {
+    "slug": "thailand-200000-eur",
+    "pageType": "salary",
+    "path": "salary/thailand/200000-eur/",
+    "countryCode": "TH",
+    "grossEUR": 200000,
+    "primaryKeyword": "€200,000 Salary in Thailand (2026 Net Pay)",
+    "secondaryKeywords": [
+      "tax on 200k in thailand",
+      "200000 euro salary thailand net",
+      "200k thailand take home pay",
+      "thailand net salary 200000"
     ]
   }
 ]
