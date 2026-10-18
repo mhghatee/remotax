@@ -1633,13 +1633,49 @@ const redirectsCsvContent = 'old_url,new_url\n' + redirectsList.map(r => `${r.ol
 fs.writeFileSync(REDIRECTS_CSV_PATH, redirectsCsvContent, 'utf8');
 console.log(`[UPDATED] redirects.csv (${redirectsList.length} mappings)`);
 
+// Existing Public Pages
+const existingPublicPages = [
+  { path: '', changefreq: 'daily', priority: '1.0' },
+  { path: 'calculator', changefreq: 'weekly', priority: '0.8' },
+  { path: 'calculators/take-home-pay', changefreq: 'weekly', priority: '0.9' },
+  { path: 'calculators/freelancer-tax', changefreq: 'weekly', priority: '0.9' },
+  { path: 'calculators/remote-worker-tax', changefreq: 'weekly', priority: '0.9' },
+  { path: 'calculators/remote-work-savings', changefreq: 'weekly', priority: '0.85' },
+  { path: 'benchmarks', changefreq: 'weekly', priority: '0.8' },
+  { path: 'destinations', changefreq: 'weekly', priority: '0.8' },
+  { path: 'quiz', changefreq: 'monthly', priority: '0.7' },
+  { path: 'blog', changefreq: 'weekly', priority: '0.8' },
+  { path: 'article-spain-beckham-law', changefreq: 'monthly', priority: '0.75' },
+  { path: 'article-dubai-zero-tax', changefreq: 'monthly', priority: '0.75' },
+  { path: 'article-portugal-d8-nhr', changefreq: 'monthly', priority: '0.75' },
+  { path: 'article-germany-expat-tax', changefreq: 'monthly', priority: '0.75' },
+  { path: 'article-thailand-dtv-visa', changefreq: 'monthly', priority: '0.75' },
+  { path: 'article-uk-income-tax', changefreq: 'monthly', priority: '0.75' },
+  { path: 'article-usa-expat-tax', changefreq: 'monthly', priority: '0.75' },
+  { path: 'article-netherlands-30-ruling', changefreq: 'monthly', priority: '0.75' },
+  { path: 'article-italy-impatriati-tax', changefreq: 'monthly', priority: '0.75' },
+  { path: 'article-singapore-territorial-tax', changefreq: 'monthly', priority: '0.75' },
+  { path: 'tax-calculator/spain', changefreq: 'weekly', priority: '0.9' },
+  { path: 'tax-calculator/portugal', changefreq: 'weekly', priority: '0.9' },
+  { path: 'tax-calculator/germany', changefreq: 'weekly', priority: '0.9' },
+  { path: 'tax-calculator/uae', changefreq: 'weekly', priority: '0.9' },
+  { path: 'tax-calculator/uk', changefreq: 'weekly', priority: '0.9' },
+  { path: 'faq', changefreq: 'monthly', priority: '0.7' },
+  { path: 'privacy', changefreq: 'monthly', priority: '0.5' },
+  { path: 'terms', changefreq: 'monthly', priority: '0.5' },
+  { path: 'adsense-disclosure', changefreq: 'monthly', priority: '0.5' }
+];
+
 // Generate Sitemaps
 const sitemaps = {
   'sitemap-countries.xml': activeSeoPages.filter(p => p.pageType === 'country'),
   'sitemap-regimes.xml': activeSeoPages.filter(p => p.pageType === 'regime'),
   'sitemap-comparisons.xml': activeSeoPages.filter(p => p.pageType === 'comparison'),
   'sitemap-best.xml': activeSeoPages.filter(p => p.pageType === 'ranking'),
-  'sitemap-pages.xml': activeSeoPages.filter(p => p.pageType === 'methodology')
+  'sitemap-pages.xml': [
+    ...existingPublicPages,
+    ...activeSeoPages.filter(p => p.pageType === 'methodology')
+  ]
 };
 
 const lastModDate = '2026-10-16';
@@ -1649,9 +1685,9 @@ for (const [smFile, pages] of Object.entries(sitemaps)) {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map(p => `    <url>
         <loc>${config.BASE_URL}${p.path}</loc>
-        <lastmod>${lastModDate}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>${p.pageType === 'country' ? '0.9' : '0.8'}</priority>
+        <lastmod>${p.lastmod || lastModDate}</lastmod>
+        <changefreq>${p.changefreq || 'weekly'}</changefreq>
+        <priority>${p.priority || (p.pageType === 'country' ? '0.9' : '0.8')}</priority>
     </url>`).join('\n')}
 </urlset>\n`;
   fs.writeFileSync(path.join(ROOT_DIR, smFile), smXml, 'utf8');

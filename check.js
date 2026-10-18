@@ -730,6 +730,144 @@ for (const p of activeSeoPages) {
   }
 }
 
+// Phase 12: Indexing, Robots & Sitemaps Gate
+console.log('--- Evaluating Phase 12: Indexing, Robots & Sitemaps Gate ---');
+const ROBOTS_TXT_PATH = path.join(ROOT_DIR, 'robots.txt');
+const SITEMAP_INDEX_PATH = path.join(ROOT_DIR, 'sitemap.xml');
+const HTACCESS_PATH = path.join(ROOT_DIR, '.htaccess');
+
+// 1. Robots.txt checks
+if (!fs.existsSync(ROBOTS_TXT_PATH)) {
+  console.error('[ROBOTS GATE] robots.txt is missing!');
+  totalErrors++;
+} else {
+  const robotsContent = fs.readFileSync(ROBOTS_TXT_PATH, 'utf8');
+  if (config.INDEXING) {
+    if (!robotsContent.includes('Allow: /')) {
+      console.error('[ROBOTS GATE] INDEXING=true but robots.txt does not contain "Allow: /"!');
+      totalErrors++;
+    }
+    if (robotsContent.includes('Disallow: /\n')) {
+      console.error('[ROBOTS GATE] INDEXING=true but robots.txt contains "Disallow: /" blocking root!');
+      totalErrors++;
+    }
+    const expectedSitemapLine = `Sitemap: ${config.BASE_URL}sitemap.xml`;
+    if (!robotsContent.includes(expectedSitemapLine)) {
+      console.error(`[ROBOTS GATE] robots.txt does not contain "${expectedSitemapLine}"!`);
+      totalErrors++;
+    }
+    console.log('[ROBOTS GATE] robots.txt correctly configured for live indexing.');
+  } else {
+    if (!robotsContent.includes('Disallow: /')) {
+      console.error('[ROBOTS GATE] INDEXING=false but robots.txt does not contain "Disallow: /"!');
+      totalErrors++;
+    }
+  }
+}
+
+// 2. Page-level meta robots & canonical checks
+for (const p of activeSeoPages) {
+  const filePath = path.join(ROOT_DIR, p.path, 'index.html');
+  const html = fs.readFileSync(filePath, 'utf8');
+  
+  if (config.INDEXING) {
+    if (html.includes('noindex')) {
+      console.error(`[INDEXING GATE] INDEXING=true but page ${p.path} contains "noindex"!`);
+      totalErrors++;
+    }
+    if (!html.includes('<meta name="robots" content="index,follow">')) {
+      console.error(`[INDEXING GATE] Page ${p.path} is missing "<meta name="robots" content="index,follow">"!`);
+      totalErrors++;
+    }
+  }
+
+  // Canonical tag check: must be absolute from BASE_URL
+  const expectedCanonical = `${config.BASE_URL}${p.path}`;
+  const canonicalRegex = new RegExp(`<link\\s+rel=["']canonical["']\\s+href=["']([^"']+)["']`, 'i');
+  const canonicalMatch = html.match(canonicalRegex);
+  if (!canonicalMatch) {
+    console.error(`[CANONICAL GATE] Page ${p.path} is missing canonical link tag!`);
+    totalErrors++;
+  } else if (canonicalMatch[1] !== expectedCanonical) {
+    console.error(`[CANONICAL GATE] Page ${p.path} canonical mismatch: expected "${expectedCanonical}", found "${canonicalMatch[1]}"!`);
+    totalErrors++;
+  }
+}
+console.log(`[INDEXING & CANONICAL GATE] Verified all ${activeSeoPages.length} active pages have valid absolute canonicals and clean robots tags.`);
+
+// 3. Sitemaps integrity checks
+if (!fs.existsSync(SITEMAP_INDEX_PATH)) {
+  console.error('[SITEMAP GATE] sitemap.xml is missing!');
+  totalErrors++;
+} else {
+  const sitemapIndexContent = fs.readFileSync(SITEMAP_INDEX_PATH, 'utf8');
+  if (!sitemapIndexContent.startsWith('<?xml') || !sitemapIndexContent.includes('<sitemapindex')) {
+    console.error('[SITEMAP GATE] sitemap.xml is not a valid sitemapindex document!');
+    totalErrors++;
+  }
+
+  // Check child sitemaps
+  const childSitemapFiles = ['sitemap-countries.xml', 'sitemap-regimes.xml', 'sitemap-comparisons.xml', 'sitemap-best.xml', 'sitemap-pages.xml'];
+  let totalSitemapUrls = 0;
+  const allSitemapUrls = new Set();
+
+  for (const csf of childSitemapFiles) {
+    const csfPath = path.join(ROOT_DIR, csf);
+    if (!fs.existsSync(csfPath)) {
+      console.error(`[SITEMAP GATE] Child sitemap ${csf} is missing!`);
+      totalErrors++;
+      continue;
+    }
+    const csfContent = fs.readFileSync(csfPath, 'utf8');
+    if (!csfContent.startsWith('<?xml') || !csfContent.includes('<urlset')) {
+      console.error(`[SITEMAP GATE] ${csf} is not a valid urlset document!`);
+      totalErrors++;
+      continue;
+    }
+
+    // Check deferred pages NOT in child sitemap
+    if (csfContent.includes('lowest-tax-countries-europe') || csfContent.includes('zero-tax-countries')) {
+      console.error(`[SITEMAP GATE] ${csf} contains deferred ranking page URLs!`);
+      totalErrors++;
+    }
+
+    const locMatches = [...csfContent.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
+    totalSitemapUrls += locMatches.length;
+    locMatches.forEach(u => allSitemapUrls.add(u));
+  }
+
+  // Ensure all 22 active pages are present in sitemaps
+  for (const p of activeSeoPages) {
+    const expectedUrl = `${config.BASE_URL}${p.path}`;
+    if (!allSitemapUrls.has(expectedUrl)) {
+      console.error(`[SITEMAP GATE] Active page URL missing from sitemaps: "${expectedUrl}"!`);
+      totalErrors++;
+    }
+  }
+
+  console.log(`[SITEMAP GATE] Sitemaps verified: ${childSitemapFiles.length} child sitemaps, ${totalSitemapUrls} total URLs (22 wave-1 pages + 29 existing public pages, 0 deferred pages).`);
+}
+
+// 4. htaccess Security & Rewrite Gate
+if (!fs.existsSync(HTACCESS_PATH)) {
+  console.error('[HTACCESS GATE] .htaccess is missing!');
+  totalErrors++;
+} else {
+  const ht = fs.readFileSync(HTACCESS_PATH, 'utf8');
+  const requiredProtected = ['tests', 'scratch', 'reports', 'review', 'content', 'templates', 'scripts'];
+  for (const dir of requiredProtected) {
+    if (!ht.includes(dir)) {
+      console.error(`[HTACCESS GATE] .htaccess missing protection rule for directory "${dir}"!`);
+      totalErrors++;
+    }
+  }
+  if (!ht.includes('RewriteRule ^comparisons/spain-vs-portugal\\.html$ comparisons/spain-vs-portugal/ [R=301,L]')) {
+    console.error('[HTACCESS GATE] .htaccess missing 301 redirect for legacy comparisons/spain-vs-portugal.html!');
+    totalErrors++;
+  }
+  console.log('[HTACCESS GATE] .htaccess protection and 301 rewrite rules verified.');
+}
+
 // Summary Report Table
 console.log('\n========================================================================================');
 console.log('                            WAVE-1 QUALITY GATES REPORT                                 ');
