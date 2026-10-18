@@ -136,6 +136,7 @@
 .calculator-card {
     padding: 2.25rem;
     border-radius: var(--radius-xl);
+    contain: layout style;
 }
 
 .card-header {

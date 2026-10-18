@@ -42,11 +42,9 @@
     </script>
     <meta property="og:image" content="https://afrix.ir/remotax/assets/brand/og-image.png">
     <meta name="twitter:image" content="https://afrix.ir/remotax/assets/brand/og-image.png">
-                        <!-- Critical Font Preloads (Parallel to CSS, Chain Depth <= 2, Zero CLS) -->
-    <link rel="preload" href="fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
     <!-- Anti-White-Flash & Master Liquid Glass Stylesheet -->
     <style>html{background:#070B0F;color-scheme:dark;}</style>
-    <link rel="stylesheet" href="css/remotax.min.css?v=4.4.0">
+    <link rel="stylesheet" href="css/remotax.min.css?v=4.5.0">
 </head>
 <body>
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
@@ -131,7 +129,7 @@
             </div>
             <h1>
                 Global Remote Work <br>
-                <span class="gradient-text">Financial Intelligence</span>
+                <span class="gradient-text">Financial Intelligence</span><br class="mobile-only-break">
                 <span class="serif-accent">Platform</span>
             </h1>
             <p style="max-width: 680px; margin: 1.25rem auto 2.5rem; font-size: 1.15rem; color: var(--text-body);">
@@ -173,7 +171,7 @@
                     <!-- Country Selector (Strictly Data-Driven from data/countries.js) -->
                     <div class="form-group">
                         <label for="country-select">Tax Jurisdiction</label>
-                        <select id="country-select" class="form-select">
+                        <select id="country-select" class="form-select" autocomplete="off">
                             <option value="ES" selected>Spain (EUR)</option>
                             <option value="PT">Portugal (EUR)</option>
                             <option value="AE">United Arab Emirates (USD)</option>
@@ -202,7 +200,7 @@
                         </div>
                         <div class="input-with-symbol">
                             <span class="symbol-prefix" id="currency-prefix-symbol">€</span>
-                            <input type="text" id="income-input" class="form-input" value="100,000" inputmode="decimal" placeholder="100,000">
+                            <input type="text" id="income-input" class="form-input" value="100,000" inputmode="decimal" placeholder="100,000" autocomplete="off">
                         </div>
                         <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.35rem;" id="currency-calc-note">
                             Modeled in Spain statutory currency (EUR €) • Baseline USD equivalence.
@@ -244,7 +242,7 @@
                     <!-- Filing Status (Single vs Married Joint) -->
                     <div class="form-group" style="margin-bottom: 0;">
                         <label for="filing-status">Filing Status</label>
-                        <select id="filing-status" class="form-select">
+                        <select id="filing-status" class="form-select" autocomplete="off">
                             <option value="single" selected>Single Taxpayer</option>
                             <option value="married_joint">Married Filing Jointly (Splitting)</option>
                         </select>

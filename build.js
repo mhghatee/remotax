@@ -121,23 +121,13 @@ function writeFileSafe(relPath, content) {
 
 // --- Step 1: Rebuild CSS ---
 console.log('1. Building CSS Bundles...');
-const FONTS_CSS = `/* --- Self-Hosted WOFF2 Fonts with Metric-Matched Fallback --- */
-@font-face {
-    font-family: 'Instrument Serif Fallback';
-    src: local('Georgia'), local('Times New Roman'), local('serif');
-    size-adjust: 75.2%;
-    ascent-override: 131.7%;
-    descent-override: 41.3%;
-    line-gap-override: 0%;
-}
-
+const FONTS_CSS = `/* --- System & Local Typography Stack (Zero-CLS, Instant Paint) --- */
 @font-face {
     font-family: 'Instrument Serif';
     font-style: normal;
     font-weight: 400;
     font-display: optional;
-    src: url('../fonts/instrument-serif-regular.woff2') format('woff2');
-    unicode-range: U+0020-007E, U+00A0-00FF, U+2013, U+2014, U+2019, U+2026;
+    src: local('Instrument Serif'), local('New York'), local('Georgia'), local('Times New Roman'), local('serif');
 }
 
 @font-face {
@@ -145,8 +135,7 @@ const FONTS_CSS = `/* --- Self-Hosted WOFF2 Fonts with Metric-Matched Fallback -
     font-style: italic;
     font-weight: 400;
     font-display: optional;
-    src: url('../fonts/instrument-serif-italic.woff2') format('woff2');
-    unicode-range: U+0020-007E, U+00A0-00FF, U+2013, U+2014, U+2019, U+2026;
+    src: local('Instrument Serif Italic'), local('Instrument Serif'), local('New York'), local('Georgia'), local('Times New Roman'), local('serif');
 }
 `;
 

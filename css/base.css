@@ -135,16 +135,16 @@ p:last-child {
     margin-bottom: 0;
 }
 
-/* Single Italic Serif Accent Word (Instrument Serif) */
+/* Single Italic Serif Accent Word (Native Zero-Shift Serif) */
 .serif-accent {
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 400;
     letter-spacing: -0.01em;
     color: var(--horizon-peach);
-    padding: 0 0.15em;
-    display: inline-block;
-    line-height: 1;
+    padding: 0 0.1em;
+    display: inline;
+    line-height: inherit;
     vertical-align: baseline;
 }
 

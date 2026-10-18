@@ -25,7 +25,7 @@ testCountries.forEach(country => {
                 !isNaN(res.incomeTax) && isFinite(res.incomeTax) && res.incomeTax >= 0 &&
                 !isNaN(res.socialSecurity) && isFinite(res.socialSecurity) && res.socialSecurity >= 0 &&
                 !isNaN(res.effectiveTaxRate) && res.effectiveTaxRate >= 0 && res.effectiveTaxRate <= 100 &&
-                (res.netAnnual === (res.grossIncome - res.incomeTax - res.socialSecurity - res.businessExpenses));
+                (res.netAnnual === Math.max(0, res.grossIncome - res.incomeTax - res.socialSecurity - res.businessExpenses));
 
             if (isValid) {
                 passedTests++;

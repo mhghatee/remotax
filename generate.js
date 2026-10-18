@@ -493,7 +493,7 @@ function renderLayout({ page, content, bodyHtml, rel, canonicalUrl }) {
     
     <!-- Anti-White-Flash & Master Liquid Glass Stylesheet -->
     <style>html{background:#070B0F;color-scheme:dark;}</style>
-    <link rel="stylesheet" href="${rel}css/remotax.min.css?v=4.4.0">
+    <link rel="stylesheet" href="${rel}css/remotax.min.css?v=4.5.0">
 </head>
 <body>
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
