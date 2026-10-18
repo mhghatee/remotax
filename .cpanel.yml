@@ -3,4 +3,7 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/silverio/public_html/remotax
     - /bin/cp -R * $DEPLOYPATH
-    - /bin/rm -rf $DEPLOYPATH/tests $DEPLOYPATH/scratch $DEPLOYPATH/reports $DEPLOYPATH/node_modules
+    - /bin/rm -rf $DEPLOYPATH/tests $DEPLOYPATH/scratch $DEPLOYPATH/reports $DEPLOYPATH/review $DEPLOYPATH/node_modules $DEPLOYPATH/content $DEPLOYPATH/templates $DEPLOYPATH/scripts
+    - /bin/rm -f $DEPLOYPATH/generate.js $DEPLOYPATH/check.js $DEPLOYPATH/build.js $DEPLOYPATH/verify_mobile.js $DEPLOYPATH/test_suite.js $DEPLOYPATH/generator.config.json $DEPLOYPATH/redirects.csv $DEPLOYPATH/*.zip $DEPLOYPATH/*.csv $DEPLOYPATH/*.md $DEPLOYPATH/.htaccess-domain-move $DEPLOYPATH/package.json $DEPLOYPATH/package-lock.json $DEPLOYPATH/.DS_Store $DEPLOYPATH/.gitignore
+
+

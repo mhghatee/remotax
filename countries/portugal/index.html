@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portugal Remote Worker Tax Calculator 2026 — 20% IFICI</title>
+    <meta name="description" content="Calculate 2026 Portugal net pay under standard IRS (12.5% to 48%) and 20% IFICI. Model employee vs recibos verdes, 12xIAS SS cap, and Lisbon costs.">
+    <meta name="keywords" content="portugal d8 visa tax, ifici tax portugal 2026, recibos verdes tax rates, portugal expat net salary">
+    <meta name="author" content="Remotax Editorial Team">
+    
+    <link rel="canonical" href="https://afrix.ir/remotax/countries/portugal/">
+    <meta name="robots" content="noindex,follow">
+    <meta name="googlebot" content="noindex,follow">
+    
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" href="../../assets/brand/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="../../assets/brand/favicon.ico">
+    <link rel="apple-touch-icon" href="../../assets/brand/apple-touch-icon.png">
+    <meta name="theme-color" content="#070B0F">
+    <link rel="manifest" href="../../manifest.webmanifest">
+    
+    <!-- Open Graph & Social Cards -->
+    <meta property="og:title" content="Portugal Remote Worker Tax Calculator 2026 — 20% IFICI">
+    <meta property="og:description" content="Calculate 2026 Portugal net pay under standard IRS (12.5% to 48%) and 20% IFICI. Model employee vs recibos verdes, 12xIAS SS cap, and Lisbon costs.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://afrix.ir/remotax/countries/portugal/">
+    <meta property="og:image" content="https://afrix.ir/remotax/assets/brand/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://afrix.ir/remotax/assets/brand/og-image.png">
+    
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://afrix.ir/remotax/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Countries",
+      "item": "https://afrix.ir/remotax/destinations.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Portugal",
+      "item": "https://afrix.ir/remotax/countries/portugal/"
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Remotax",
+  "url": "https://afrix.ir/remotax/",
+  "logo": "https://afrix.ir/remotax/assets/brand/mark.svg"
+}
+    </script>
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Remotax Portugal Remote Worker Tax Calculator 2026",
+  "url": "https://afrix.ir/remotax/countries/portugal/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Calculate 2026 Portugal net pay under standard IRS (12.5% to 48%) and 20% IFICI. Model employee vs recibos verdes, 12xIAS SS cap, and Lisbon costs."
+}
+    </script>
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the new IFICI regime and who qualifies in Portugal for 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The IFICI is Portugal's targeted tax incentive replacing the original NHR. It offers a 20% flat tax rate for 10 years on employment or freelance income derived from qualifying certified activities, including higher education research, certified technological innovation startups, and specialized R&D roles. General remote workers without certified tech/R&D roles are subject to standard progressive IRS rates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Portugal calculate taxes for remote contractors on recibos verdes in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under the simplified regime (Category B, Art. 31 CIRS), 75% of your gross professional service earnings is treated as taxable income, while the remaining portion is treated as a deemed business expense. Progressive IRS rates (12.5% to 48%) are then applied to this taxable base. Social security is assessed at 21.4% on 70% of gross earnings, capped at 12 times the IAS (€16,552.20 maximum per year based on IAS €537.13)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Portugal offer a social security exemption for new freelancers in their first year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Independent workers registering for professional activity with Portuguese Social Security for the first time are eligible for a 12-month exemption from mandatory social security contributions upon request. However, to maintain conservative statutory projections, our baseline calculator models standard recurring contributions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the minimum monthly income requirement for the Portugal D8 Digital Nomad Visa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Portugal D8 Digital Nomad Visa requires proof of average monthly income from foreign remote employment or independent contracts equal to at least four times the Portuguese national minimum wage (approximately €3,480 per month in 2026)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are foreign dividends and pensions tax-free under Portugal's current tax rules?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unlike the legacy NHR regime which provided zero or 10% taxation on foreign passive income, individuals entering Portugal without IFICI qualification are taxed at standard statutory rates: foreign dividends and interest are generally subject to a 28% flat withholding tax, and foreign pension income is taxed under progressive IRS schedules."
+      }
+    }
+  ]
+}
+    </script>
+
+    <!-- Critical Font Preload (Depth <= 2, Zero CLS) -->
+    <link rel="preload" href="../../fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Anti-White-Flash & Master Liquid Glass Stylesheet -->
+    <style>html{background:#070B0F;color-scheme:dark;}</style>
+    <link rel="stylesheet" href="../../css/remotax.min.css?v=4.4.0">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="horizon-ambiance" aria-hidden="true"><div class="horizon-sun" style="transform: translateX(-50%) translateY(25px);"></div></div>
+
+    <!-- Floating Glass Navbar -->
+    <header class="navbar-floating">
+        <nav class="nav-pill">
+            <a href="../../index.html" class="nav-brand">
+                <div class="nav-brand-mark">
+                    <img src="../../assets/brand/mark.svg" width="40" height="40" alt="" aria-hidden="true">
+                </div>
+                <span class="nav-brand-title"><span>Remo</span><span class="brand-tax">tax</span></span>
+                <span class="nav-brand-tag">2026</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="../../calculator.html" class="nav-link">Calculator</a></li>
+                <li><a href="../../calculators/take-home-pay.html" class="nav-link">Take Home</a></li>
+                <li><a href="../../calculators/freelancer-tax.html" class="nav-link">Freelancer</a></li>
+                <li><a href="../../comparisons/spain-vs-portugal/" class="nav-link">Comparisons</a></li>
+                <li><a href="../../destinations.html" class="nav-link">Destinations</a></li>
+                <li><a href="../../blog.html" class="nav-link">Blog</a></li>
+                <li><a href="../../faq.html" class="nav-link">FAQ</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="../../quiz.html" class="btn-primary nav-cta">Find Match</a>
+                <button type="button" class="nav-mobile-toggle" id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Drawer / Full-Screen Glass Sheet -->
+    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true" inert>
+        <div class="mobile-drawer-sheet">
+            <div class="mobile-drawer-header">
+                <a href="../../index.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none;" aria-label="Remotax">
+                    <div class="nav-brand-mark" style="width: 28px; height: 28px; min-width: 28px; min-height: 28px;">
+                        <img src="../../assets/brand/mark.svg" width="28" height="28" alt="" aria-hidden="true">
+                    </div>
+                    <span class="nav-brand-title" style="font-size: 1.05rem;"><span>Remo</span><span class="brand-tax">tax</span></span>
+                </a>
+                <button type="button" id="mobile-drawer-close" class="btn-glass mobile-drawer-close-btn" aria-label="Close navigation menu">Close</button>
+            </div>
+            <div class="mobile-nav-links">
+                <a href="../../calculator.html" class="mobile-nav-link"><span>Tax Calculator</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="../../calculators/take-home-pay.html" class="mobile-nav-link"><span>Take Home Pay</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="../../calculators/freelancer-tax.html" class="mobile-nav-link"><span>Freelancer Tax</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="../../comparisons/spain-vs-portugal/" class="mobile-nav-link"><span>Spain vs Portugal</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="../../destinations.html" class="mobile-nav-link"><span>Destinations Directory</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="../../blog.html" class="mobile-nav-link"><span>Tax Guides & Blog</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="../../faq.html" class="mobile-nav-link"><span>Tax Residency FAQ</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+            </div>
+            <div class="mobile-drawer-footer">
+                <a href="../../quiz.html" class="btn-primary" style="width: 100%; justify-content: center; text-decoration: none;">Take Tax Strategy Quiz</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main id="main-content" class="container">
+        
+        <nav class="breadcrumb-nav" aria-label="Breadcrumbs">
+            <a href="../../index.html">Home</a>
+            <span class="breadcrumb-sep">/</span><a href="https://afrix.ir/remotax/destinations.html">Countries</a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">Portugal</span>
+        </nav>
+        
+    <header class="article-hero-header" style="text-align: left; margin-top: 1.5rem; margin-bottom: 2.5rem;">
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
+            <span class="country-code-badge">PT</span>
+            <span class="footer-status-badge"><span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-net);"></span>Tax Year 2026 Statutory Rules</span>
+            <span class="footer-status-badge">Tax tables & residency days verified 2026-10-18 · social security & living costs: Remotax estimates</span>
+        </div>
+        <h1>Portugal Remote Worker Tax Calculator 2026</h1>
+        <p style="font-size: 1.15rem; color: var(--color-text-secondary); line-height: 1.7; max-width: 850px; margin-top: 1rem;">
+            At €100,000 gross income, a remote employee in Portugal takes home €54,589 net under standard progressive IRS (45.4% effective rate), or €69,000 net (31% effective rate) if qualifying for the 20% IFICI incentive. Remote contractors under Category B retain €60,012 net (40% effective rate). Employee social security is 11% uncapped, while contractor contributions cap at €16,552 annually.
+        </p>
+    </header>
+
+    <!-- Key Metrics Stat Callout Grid -->
+    <div class="stat-callout-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 3rem;">
+        <div class="stat-callout-card glass-card" style="padding: 1.25rem;">
+            <div class="stat-callout-label" style="font-size: 0.82rem; color: var(--color-text-secondary); text-transform: uppercase; font-family: var(--font-mono);">Effective Tax (€100k)</div>
+            <div class="stat-callout-num" style="font-size: 1.85rem; font-weight: 700; color: var(--color-net); margin-top: 0.35rem;">45.4%</div>
+            <div style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 0.25rem;">Standard Employee</div>
+        </div>
+        
+        <div class="stat-callout-card glass-card" style="padding: 1.25rem;">
+            <div class="stat-callout-label" style="font-size: 0.82rem; color: var(--color-text-secondary); text-transform: uppercase; font-family: var(--font-mono);">Special Regime Rate</div>
+            <div class="stat-callout-num" style="font-size: 1.85rem; font-weight: 700; color: var(--color-tax); margin-top: 0.35rem;">31%</div>
+            <div style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 0.25rem;">IFICI / Scientific &amp; Innovation Incentive</div>
+        </div>
+        <div class="stat-callout-card glass-card" style="padding: 1.25rem;">
+            <div class="stat-callout-label" style="font-size: 0.82rem; color: var(--color-text-secondary); text-transform: uppercase; font-family: var(--font-mono);">Employee SS Ceiling</div>
+            <div class="stat-callout-num" style="font-size: 1.85rem; font-weight: 700; color: #fff; margin-top: 0.35rem;">11% Uncapped</div>
+            <div style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 0.25rem;">Statutory Annual Cap</div>
+        </div>
+        <div class="stat-callout-card glass-card" style="padding: 1.25rem;">
+            <div class="stat-callout-label" style="font-size: 0.82rem; color: var(--color-text-secondary); text-transform: uppercase; font-family: var(--font-mono);">Living Cost (Lisbon)</div>
+            <div class="stat-callout-num" style="font-size: 1.85rem; font-weight: 700; color: #fff; margin-top: 0.35rem;">€1,750 / mo</div>
+            <div style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 0.25rem;">Baseline Single Expat</div>
+        </div>
+        <div class="stat-callout-card glass-card" style="padding: 1.25rem;">
+            <div class="stat-callout-label" style="font-size: 0.82rem; color: var(--color-text-secondary); text-transform: uppercase; font-family: var(--font-mono);">Disposable Leftover (€100k)</div>
+            <div class="stat-callout-num" style="font-size: 1.85rem; font-weight: 700; color: var(--color-net); margin-top: 0.35rem;">€2,799 / mo</div>
+            <div style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 0.25rem;">Net Savings Margin</div>
+        </div>
+    </div>
+
+    <!-- Embedded Interactive Calculator Widget -->
+    <section class="glass-panel" style="margin-bottom: 3.5rem; padding: 2.5rem 2rem;">
+        <h2>Interactive Portugal Tax Simulator</h2>
+        <p style="margin-top: 0.5rem; margin-bottom: 2rem;">Simulate real-time net take-home salary, income tax brackets, and social contributions for 2026.</p>
+        
+        <div class="app-layout" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div class="calculator-card glass-card" style="padding: 2rem;">
+                <form id="tax-form" onsubmit="return false;">
+                    <div class="form-group" style="margin-bottom: 1.25rem;">
+                        <label for="currency-select" style="display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">Input Currency</label>
+                        <select id="currency-select" class="form-select" style="width: 100%; padding: 0.75rem 1rem; border-radius: 8px; background: rgba(255,255,255,0.06); color: #fff; border: 1px solid rgba(255,255,255,0.15);">
+                            <option value="EUR" selected>EUR (€) - European Single Basis</option>
+                            <option value="USD">USD ($) - US Dollar</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.25rem;">
+                        <label for="country-select" style="display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">Tax Jurisdiction</label>
+                        <select id="country-select" class="form-select" style="width: 100%; padding: 0.75rem 1rem; border-radius: 8px; background: rgba(255,255,255,0.06); color: #fff; border: 1px solid rgba(255,255,255,0.15);">
+                            <option value="PT" selected>Portugal</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="income-input" id="income-label" style="display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">Annual Gross Compensation (EUR €)</label>
+                        <input type="number" id="income-input" class="form-input" value="100000" min="5000" max="1000000" step="5000" style="width: 100%; padding: 0.75rem 1rem; border-radius: 8px; background: rgba(255,255,255,0.06); color: #fff; border: 1px solid rgba(255,255,255,0.15);">
+                        <input type="range" id="income-slider" class="glass-slider" min="10000" max="300000" step="5000" value="100000" style="width: 100%; margin-top: 0.75rem;" aria-label="Annual income slider">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <span style="display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">Worker Classification</span>
+                        <div style="display: flex; gap: 0.75rem;">
+                            <label style="flex: 1; padding: 0.75rem; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="worker-type" value="employee" checked id="worker-employee"> <span>Employee</span>
+                            </label>
+                            <label style="flex: 1; padding: 0.75rem; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="worker-type" value="contractor" id="worker-contractor"> <span>Contractor</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label style="display: flex; align-items: center; gap: 0.65rem; cursor: pointer;">
+                            <input type="checkbox" id="regime-toggle" checked>
+                            <span style="font-size: 0.92rem; font-weight: 500;">Apply IFICI / Scientific &amp; Innovation Incentive (20% Flat Rate)</span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <div class="output-hero-card glass-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="font-size: 0.85rem; color: var(--color-text-secondary); text-transform: uppercase; font-family: var(--font-mono);">Estimated Monthly Take-Home</div>
+                    <div id="output-net-monthly" style="font-size: 3rem; font-weight: 800; color: var(--color-net); margin: 0.5rem 0;">€4,549</div>
+                    <div style="font-size: 0.95rem; color: var(--color-text-secondary);">Annual Net: <span id="output-net-annual" style="color: #fff; font-weight: 600;">€54,589</span></div>
+                </div>
+
+                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div>
+                        <div style="font-size: 0.8rem; color: var(--color-text-secondary);">Income Tax</div>
+                        <div id="output-tax-annual" style="font-size: 1.25rem; font-weight: 700; color: var(--color-tax);">€34,411</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.8rem; color: var(--color-text-secondary);">Social Security</div>
+                        <div id="output-ss-annual" style="font-size: 1.25rem; font-weight: 700; color: #fff;">€11,000</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.8rem; color: var(--color-text-secondary);">Effective Tax Rate</div>
+                        <div id="output-effective-rate" style="font-size: 1.25rem; font-weight: 700; color: var(--color-tax);">45.4%</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.8rem; color: var(--color-text-secondary);">Monthly Rent & Living</div>
+                        <div style="font-size: 1.25rem; font-weight: 700; color: #fff;">€1,750</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Build-Time Pre-Computed Salary Table -->
+    <section class="glass-panel" style="margin-bottom: 3.5rem; padding: 2.5rem 2rem;">
+        <h2>2026 Net Salary & Tax Breakdown Table</h2>
+        <p style="margin-top: 0.5rem; margin-bottom: 1.5rem;">
+            Static statutory benchmark across standard salary bands for Portugal. All calculations incorporate 2026 tax tables, standard allowances, and mandatory social security ceilings.
+        </p>
+
+        <div class="table-responsive" style="overflow-x: auto;">
+            <table class="data-table-glass" style="width: 100%; border-collapse: collapse; text-align: left;">
+                <thead>
+                    <tr>
+                        <th style="padding: 1rem;">Gross Salary</th>
+                        <th style="padding: 1rem;">Income Tax</th>
+                        <th style="padding: 1rem;">Social Security</th>
+                        <th style="padding: 1rem;">Net Annual</th>
+                        <th style="padding: 1rem;">Net Monthly</th>
+                        <th style="padding: 1rem;">Effective Rate</th>
+                        <th style="padding: 1rem;">Special Regime Net</th>
+                        <th style="padding: 1rem;">Monthly Savings Leftover</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                        <td style="padding: 1rem; font-weight: 700; font-family: var(--font-mono); color: #fff;">€30,000</td>
+                        <td style="padding: 1rem; color: var(--color-tax);">€4,811</td>
+                        <td style="padding: 1rem; color: var(--color-text-secondary);">€3,300</td>
+                        <td style="padding: 1rem; font-weight: 600; color: #fff;">€21,889</td>
+                        <td style="padding: 1rem; font-weight: 600; color: var(--color-net);">€1,824</td>
+                        <td style="padding: 1rem;"><span class="badge-effective-tax">27%</span></td>
+                        <td style="padding: 1rem; color: var(--color-tax); font-weight: 600;">€20,700</td>
+                        <td style="padding: 1rem; color: var(--color-net); font-weight: 600;">€74</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                        <td style="padding: 1rem; font-weight: 700; font-family: var(--font-mono); color: #fff;">€50,000</td>
+                        <td style="padding: 1rem; color: var(--color-tax);">€11,830</td>
+                        <td style="padding: 1rem; color: var(--color-text-secondary);">€5,500</td>
+                        <td style="padding: 1rem; font-weight: 600; color: #fff;">€32,670</td>
+                        <td style="padding: 1rem; font-weight: 600; color: var(--color-net);">€2,723</td>
+                        <td style="padding: 1rem;"><span class="badge-effective-tax">34.7%</span></td>
+                        <td style="padding: 1rem; color: var(--color-tax); font-weight: 600;">€34,500</td>
+                        <td style="padding: 1rem; color: var(--color-net); font-weight: 600;">€973</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                        <td style="padding: 1rem; font-weight: 700; font-family: var(--font-mono); color: #fff;">€75,000</td>
+                        <td style="padding: 1rem; color: var(--color-tax);">€22,962</td>
+                        <td style="padding: 1rem; color: var(--color-text-secondary);">€8,250</td>
+                        <td style="padding: 1rem; font-weight: 600; color: #fff;">€43,788</td>
+                        <td style="padding: 1rem; font-weight: 600; color: var(--color-net);">€3,649</td>
+                        <td style="padding: 1rem;"><span class="badge-effective-tax">41.6%</span></td>
+                        <td style="padding: 1rem; color: var(--color-tax); font-weight: 600;">€51,750</td>
+                        <td style="padding: 1rem; color: var(--color-net); font-weight: 600;">€1,899</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                        <td style="padding: 1rem; font-weight: 700; font-family: var(--font-mono); color: #fff;">€100,000</td>
+                        <td style="padding: 1rem; color: var(--color-tax);">€34,411</td>
+                        <td style="padding: 1rem; color: var(--color-text-secondary);">€11,000</td>
+                        <td style="padding: 1rem; font-weight: 600; color: #fff;">€54,589</td>
+                        <td style="padding: 1rem; font-weight: 600; color: var(--color-net);">€4,549</td>
+                        <td style="padding: 1rem;"><span class="badge-effective-tax">45.4%</span></td>
+                        <td style="padding: 1rem; color: var(--color-tax); font-weight: 600;">€69,000</td>
+                        <td style="padding: 1rem; color: var(--color-net); font-weight: 600;">€2,799</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                        <td style="padding: 1rem; font-weight: 700; font-family: var(--font-mono); color: #fff;">€125,000</td>
+                        <td style="padding: 1rem; color: var(--color-tax);">€46,411</td>
+                        <td style="padding: 1rem; color: var(--color-text-secondary);">€13,750</td>
+                        <td style="padding: 1rem; font-weight: 600; color: #fff;">€64,839</td>
+                        <td style="padding: 1rem; font-weight: 600; color: var(--color-net);">€5,403</td>
+                        <td style="padding: 1rem;"><span class="badge-effective-tax">48.1%</span></td>
+                        <td style="padding: 1rem; color: var(--color-tax); font-weight: 600;">€86,250</td>
+                        <td style="padding: 1rem; color: var(--color-net); font-weight: 600;">€3,653</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                        <td style="padding: 1rem; font-weight: 700; font-family: var(--font-mono); color: #fff;">€150,000</td>
+                        <td style="padding: 1rem; color: var(--color-tax);">€58,411</td>
+                        <td style="padding: 1rem; color: var(--color-text-secondary);">€16,500</td>
+                        <td style="padding: 1rem; font-weight: 600; color: #fff;">€75,089</td>
+                        <td style="padding: 1rem; font-weight: 600; color: var(--color-net);">€6,257</td>
+                        <td style="padding: 1rem;"><span class="badge-effective-tax">49.9%</span></td>
+                        <td style="padding: 1rem; color: var(--color-tax); font-weight: 600;">€103,500</td>
+                        <td style="padding: 1rem; color: var(--color-net); font-weight: 600;">€4,507</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                        <td style="padding: 1rem; font-weight: 700; font-family: var(--font-mono); color: #fff;">€200,000</td>
+                        <td style="padding: 1rem; color: var(--color-tax);">€82,411</td>
+                        <td style="padding: 1rem; color: var(--color-text-secondary);">€22,000</td>
+                        <td style="padding: 1rem; font-weight: 600; color: #fff;">€95,589</td>
+                        <td style="padding: 1rem; font-weight: 600; color: var(--color-net);">€7,966</td>
+                        <td style="padding: 1rem;"><span class="badge-effective-tax">52.2%</span></td>
+                        <td style="padding: 1rem; color: var(--color-tax); font-weight: 600;">€138,000</td>
+                        <td style="padding: 1rem; color: var(--color-net); font-weight: 600;">€6,216</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </section>
+
+    <!-- Detailed Statutory Analysis Sections -->
+    <section class="glass-panel" style="margin-bottom: 3.5rem; padding: 2.5rem 2rem;">
+        <h2>Statutory Tax System Overview (2026)</h2>
+        <p style="margin-top: 1rem; line-height: 1.75; color: var(--color-text-secondary);">The Portuguese tax authority (Autoridade Tributária e Aduaneira) assesses individual earnings under a 9-bracket progressive IRS schedule set forth in Article 68 of the CIRS. For the 2026 tax year, statutory rates begin at 12.5% on taxable income up to €8,342 and scale progressively to a top marginal bracket of 48% on income surpassing €86,634. Salaried employees (Category A) benefit from an automatic statutory specific deduction (dedução específica) under Article 25 of the CIRS, established at a baseline of €4,587.09 or the total amount of mandatory social security contributions paid if higher. For independent professionals (Category B) operating under the simplified regime (regime simplificado, Article 31 CIRS), taxable profit is calculated by applying a statutory coefficient of 75% to service income, granting an automatic deemed expense deduction without requiring individual expense receipts.</p>
+        
+        <h3 style="margin-top: 2rem;">Social Security & Mandatory Deductions</h3>
+        <p style="margin-top: 0.75rem; line-height: 1.75; color: var(--color-text-secondary);">For salaried remote workers employed through a local legal entity or Employer of Record (EOR), employee social security is levied at a flat statutory rate of 11% across total gross remuneration, with no statutory maximum earnings ceiling. Conversely, independent contractors registered under Category B contribute at a nominal rate of 21.4% applied to their relevant monthly base of 70% of gross earnings, establishing an effective contribution rate of 14.98% on gross billings. Critically for high-earning remote contractors, independent contributions are subject to a statutory monthly ceiling equal to 12 times the Social Support Index (Indexante dos Apoios Sociais - IAS). Based on the official 2026 IAS benchmark of €537.13 (Portaria n.º 480-A/2025/1), the maximum monthly assessment base is capped at €6,445.56 (€77,346.72 annual base), fixing the maximum statutory annual social security contribution for independent contractors at €16,552.20.</p>
+
+        <h3 style="margin-top: 2rem;">Special Expatriate Tax Regimes</h3>
+        <p style="margin-top: 0.75rem; line-height: 1.75; color: var(--color-text-secondary);">Following the sunset of the legacy Non-Habitual Resident (NHR) regime for new arrivals, Portugal introduced the IFICI regime (Artigo 58.º-A do Estatuto dos Benefícios Fiscais - EBF). IFICI grants a competitive 20% flat personal income tax rate for a duration of 10 consecutive tax years to qualifying professionals engaged in certified scientific research, high-tech engineering, certified startup ventures, and designated research and development initiatives. To qualify, applicants must establish Portuguese tax residency, must not have been tax resident in Portugal during any of the 5 preceding calendar years, and must exercise an eligible qualified economic activity validated by relevant government bodies.</p>
+
+        <h3 style="margin-top: 2rem;">Cost of Living & Purchasing Power in Lisbon</h3>
+        <p style="margin-top: 0.75rem; line-height: 1.75; color: var(--color-text-secondary);">In our empirical model, baseline living expenditures for a single remote professional in Lisbon are calculated at €1,750 per month, covering private apartment rental in central districts (such as Saldanha, Campo de Ourique, or Arroios), utilities, high-speed fiber internet, local transit, and groceries. Regional hubs such as Porto, Coimbra, and Braga offer reduced monthly baselines ranging from €1,250 to €1,450, while providing reliable digital infrastructure and expanding international communities.</p>
+    </section>
+
+    <!-- Exclusions and Model Limitations Box -->
+    <section class="glass-panel" style="margin-bottom: 3.5rem; padding: 2rem 2.25rem;">
+        <h2>What This Statutory Estimate Does Not Include</h2>
+        <div class="callout-box" style="margin-top: 1rem;">
+            <div class="callout-title">Documented Exclusions & Edge Cases (from modelNotes)</div>
+            <p style="font-size: 0.95rem; line-height: 1.7; margin: 0; color: #fff;">
+                This calculation engine models statutory baseline IRS schedules and the Category B simplified regime, but does not incorporate municipal property taxes (Imposto Municipal sobre Imóveis - IMI), the additional wealth surcharge on high-value domestic real estate (AIMI), or the solidarity surcharge applicable to taxable income exceeding €80,000. It also assumes contractors utilize the standard simplified regime; independent workers electing the organized accounting regime may deduct substantiated actual business expenses instead of the statutory deemed coefficient.
+            </p>
+        </div>
+    </section>
+
+    <!-- Statutory Sources & Regulatory Authority -->
+    <section class="glass-panel" style="margin-bottom: 3.5rem; padding: 2rem 2.25rem;">
+        <h2>Statutory Sources & Regulatory Authority</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+            
+            <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs68.aspx" target="_blank" rel="noopener noreferrer" class="glass-card" style="padding: 1.25rem; text-decoration: none; color: inherit; display: block; border-left: 3px solid var(--color-tax);">
+                <div style="font-size: 0.8rem; color: var(--color-tax); text-transform: uppercase; font-family: var(--font-mono);">Autoridade Tributária e Aduaneira</div>
+                <div style="font-weight: 600; font-size: 0.95rem; color: #fff; margin-top: 0.35rem;">Autoridade Tributária e Aduaneira - CIRS Artigo 68.º (Escalões de IRS 2026)</div>
+                <div style="font-size: 0.78rem; color: var(--color-text-secondary); margin-top: 0.5rem; display: flex; align-items: center; gap: 0.35rem;">
+                    <span>Visit official government document</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </div>
+            </a>
+            <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs31.aspx" target="_blank" rel="noopener noreferrer" class="glass-card" style="padding: 1.25rem; text-decoration: none; color: inherit; display: block; border-left: 3px solid var(--color-tax);">
+                <div style="font-size: 0.8rem; color: var(--color-tax); text-transform: uppercase; font-family: var(--font-mono);">Autoridade Tributária e Aduaneira</div>
+                <div style="font-weight: 600; font-size: 0.95rem; color: #fff; margin-top: 0.35rem;">Autoridade Tributária e Aduaneira - CIRS Artigo 31.º (Regime Simplificado Categoria B)</div>
+                <div style="font-size: 0.78rem; color: var(--color-text-secondary); margin-top: 0.5rem; display: flex; align-items: center; gap: 0.35rem;">
+                    <span>Visit official government document</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </div>
+            </a>
+            <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs25.aspx" target="_blank" rel="noopener noreferrer" class="glass-card" style="padding: 1.25rem; text-decoration: none; color: inherit; display: block; border-left: 3px solid var(--color-tax);">
+                <div style="font-size: 0.8rem; color: var(--color-tax); text-transform: uppercase; font-family: var(--font-mono);">Autoridade Tributária e Aduaneira</div>
+                <div style="font-weight: 600; font-size: 0.95rem; color: #fff; margin-top: 0.35rem;">Autoridade Tributária e Aduaneira - CIRS Artigo 25.º (Dedução Específica)</div>
+                <div style="font-size: 0.78rem; color: var(--color-text-secondary); margin-top: 0.5rem; display: flex; align-items: center; gap: 0.35rem;">
+                    <span>Visit official government document</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </div>
+            </a>
+            <a href="https://diariodarepublica.pt/dr/detalhe/portaria/480-a-2025-103328249" target="_blank" rel="noopener noreferrer" class="glass-card" style="padding: 1.25rem; text-decoration: none; color: inherit; display: block; border-left: 3px solid var(--color-tax);">
+                <div style="font-size: 0.8rem; color: var(--color-tax); text-transform: uppercase; font-family: var(--font-mono);">Ministérios das Finanças e do Trabalho, Solidariedade e Segurança Social</div>
+                <div style="font-weight: 600; font-size: 0.95rem; color: #fff; margin-top: 0.35rem;">Diário da República - Portaria n.º 480-A/2025/1 (Valor do IAS 2026)</div>
+                <div style="font-size: 0.78rem; color: var(--color-text-secondary); margin-top: 0.5rem; display: flex; align-items: center; gap: 0.35rem;">
+                    <span>Visit official government document</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </div>
+            </a>
+        </div>
+
+        
+        <div style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem;">
+            <div style="font-size: 0.82rem; font-weight: 600; color: #fbbf24; margin-bottom: 0.75rem; text-transform: uppercase; font-family: var(--font-mono);">Cost of Living Benchmark • Remotax Research</div>
+            <a href="../../methodology/#living-costs" class="glass-card" style="padding: 1.25rem; text-decoration: none; color: inherit; display: block; border-left: 3px solid #fbbf24;">
+                <div style="font-size: 0.8rem; color: #fbbf24; text-transform: uppercase; font-family: var(--font-mono);">Remotax Research</div>
+                <div style="font-weight: 600; font-size: 0.95rem; color: #fff; margin-top: 0.35rem;">Remotax Cost of Living Benchmark - Lisbon</div>
+                <div style="font-size: 0.78rem; color: var(--color-text-secondary); margin-top: 0.5rem; display: flex; align-items: center; gap: 0.35rem;">
+                    <span style="color: #fbbf24;">Remotax estimate (see methodology)</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Verified FAQs -->
+    <section class="glass-panel" style="margin-bottom: 3.5rem; padding: 2.5rem 2rem;">
+        <h2>Frequently Asked Questions: Portugal Taxes (2026)</h2>
+        <div class="faq-accordion" style="margin-top: 1.5rem;">
+            
+        <div class="faq-item glass-card" style="margin-bottom: 0.85rem; padding: 1.25rem 1.5rem;">
+            <div class="faq-question" style="font-weight: 600; font-size: 1.05rem; color: #fff; display: flex; align-items: center; justify-content: space-between;">
+                <span>What is the new IFICI regime and who qualifies in Portugal for 2026?</span>
+            </div>
+            <div class="faq-answer" style="margin-top: 0.75rem; color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.65;">
+                <p style="margin: 0;">The IFICI is Portugal&#39;s targeted tax incentive replacing the original NHR. It offers a 20% flat tax rate for 10 years on employment or freelance income derived from qualifying certified activities, including higher education research, certified technological innovation startups, and specialized R&amp;D roles. General remote workers without certified tech/R&amp;D roles are subject to standard progressive IRS rates.</p>
+            </div>
+        </div>
+        <div class="faq-item glass-card" style="margin-bottom: 0.85rem; padding: 1.25rem 1.5rem;">
+            <div class="faq-question" style="font-weight: 600; font-size: 1.05rem; color: #fff; display: flex; align-items: center; justify-content: space-between;">
+                <span>How does Portugal calculate taxes for remote contractors on recibos verdes in 2026?</span>
+            </div>
+            <div class="faq-answer" style="margin-top: 0.75rem; color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.65;">
+                <p style="margin: 0;">Under the simplified regime (Category B, Art. 31 CIRS), 75% of your gross professional service earnings is treated as taxable income, while the remaining portion is treated as a deemed business expense. Progressive IRS rates (12.5% to 48%) are then applied to this taxable base. Social security is assessed at 21.4% on 70% of gross earnings, capped at 12 times the IAS (€16,552.20 maximum per year based on IAS €537.13).</p>
+            </div>
+        </div>
+        <div class="faq-item glass-card" style="margin-bottom: 0.85rem; padding: 1.25rem 1.5rem;">
+            <div class="faq-question" style="font-weight: 600; font-size: 1.05rem; color: #fff; display: flex; align-items: center; justify-content: space-between;">
+                <span>Does Portugal offer a social security exemption for new freelancers in their first year?</span>
+            </div>
+            <div class="faq-answer" style="margin-top: 0.75rem; color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.65;">
+                <p style="margin: 0;">Yes. Independent workers registering for professional activity with Portuguese Social Security for the first time are eligible for a 12-month exemption from mandatory social security contributions upon request. However, to maintain conservative statutory projections, our baseline calculator models standard recurring contributions.</p>
+            </div>
+        </div>
+        <div class="faq-item glass-card" style="margin-bottom: 0.85rem; padding: 1.25rem 1.5rem;">
+            <div class="faq-question" style="font-weight: 600; font-size: 1.05rem; color: #fff; display: flex; align-items: center; justify-content: space-between;">
+                <span>What is the minimum monthly income requirement for the Portugal D8 Digital Nomad Visa?</span>
+            </div>
+            <div class="faq-answer" style="margin-top: 0.75rem; color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.65;">
+                <p style="margin: 0;">The Portugal D8 Digital Nomad Visa requires proof of average monthly income from foreign remote employment or independent contracts equal to at least four times the Portuguese national minimum wage (approximately €3,480 per month in 2026).</p>
+            </div>
+        </div>
+        <div class="faq-item glass-card" style="margin-bottom: 0.85rem; padding: 1.25rem 1.5rem;">
+            <div class="faq-question" style="font-weight: 600; font-size: 1.05rem; color: #fff; display: flex; align-items: center; justify-content: space-between;">
+                <span>Are foreign dividends and pensions tax-free under Portugal&#39;s current tax rules?</span>
+            </div>
+            <div class="faq-answer" style="margin-top: 0.75rem; color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.65;">
+                <p style="margin: 0;">Unlike the legacy NHR regime which provided zero or 10% taxation on foreign passive income, individuals entering Portugal without IFICI qualification are taxed at standard statutory rates: foreign dividends and interest are generally subject to a 28% flat withholding tax, and foreign pension income is taxed under progressive IRS schedules.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+        
+        <section class="glass-panel" style="margin-top: 3.5rem; padding: 2.25rem 2rem;">
+            <h2>Related Tax Regimes & Comparisons</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.25rem;">
+                
+                <a href="../../regimes/ifici-portugal/" class="glass-card" style="padding: 1.15rem 1.25rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: inherit; transition: border-color 0.2s ease;">
+                    <span style="font-weight: 500; font-size: 0.92rem; color: #fff;">Portugal Special Regime Guide</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color: var(--color-tax); min-width: 16px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <a href="../../comparisons/spain-vs-portugal/" class="glass-card" style="padding: 1.15rem 1.25rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: inherit; transition: border-color 0.2s ease;">
+                    <span style="font-weight: 500; font-size: 0.92rem; color: #fff;">Spain vs Portugal Remote Worker Tax Comparison 2026</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color: var(--color-tax); min-width: 16px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <a href="../../comparisons/portugal-vs-uae/" class="glass-card" style="padding: 1.15rem 1.25rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: inherit; transition: border-color 0.2s ease;">
+                    <span style="font-weight: 500; font-size: 0.92rem; color: #fff;">Portugal vs UAE Tax Comparison for Remote Workers 2026</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color: var(--color-tax); min-width: 16px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <a href="../../comparisons/portugal-vs-italy/" class="glass-card" style="padding: 1.15rem 1.25rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: inherit; transition: border-color 0.2s ease;">
+                    <span style="font-weight: 500; font-size: 0.92rem; color: #fff;">Portugal vs Italy Remote Worker Tax Comparison 2026</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color: var(--color-tax); min-width: 16px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <a href="../../comparisons/portugal-vs-thailand/" class="glass-card" style="padding: 1.15rem 1.25rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: inherit; transition: border-color 0.2s ease;">
+                    <span style="font-weight: 500; font-size: 0.92rem; color: #fff;">Portugal vs Thailand Remote Worker Tax Comparison 2026</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color: var(--color-tax); min-width: 16px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <a href="../../best/digital-nomad-taxes/" class="glass-card" style="padding: 1.15rem 1.25rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: inherit; transition: border-color 0.2s ease;">
+                    <span style="font-weight: 500; font-size: 0.92rem; color: #fff;">Best Digital Nomad Tax Countries 2026</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color: var(--color-tax); min-width: 16px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+            </div>
+        </section>
+        
+        <section class="glass-panel" style="margin-top: 2.5rem; padding: 1.75rem 2rem; border-left: 3px solid var(--color-tax);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <div style="width: 38px; height: 38px; border-radius: 50%; background: rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: center; color: var(--color-tax); font-weight: 700; font-size: 0.85rem;">RT</div>
+                    <div>
+                        <div style="font-weight: 600; font-size: 0.95rem; color: #fff;">Authored by Remotax Editorial Team</div>
+                        <div style="font-size: 0.82rem; color: var(--color-text-secondary);"><a href="../../methodology/" style="color: var(--color-tax); text-decoration: underline;">Review our Calculation Methodology</a> • Updated for Tax Year 2026</div>
+                    </div>
+                </div>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--color-text-secondary); margin-top: 1.25rem; margin-bottom: 0; line-height: 1.6;">
+                <strong>Statutory Notice & Disclaimer:</strong> Remotax is an independent financial technology intelligence platform. Calculations and simulations are for preliminary educational benchmarking only and do not constitute formal legal, accounting, or tax advice. Consult a certified cross-border tax specialist in your destination jurisdiction before executing international tax or relocation actions.
+            </p>
+        </section>
+    </main>
+
+    <!-- Unified Liquid Glass Footer -->
+    <footer class="footer-unified">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand-col">
+                    <a href="../../index.html" class="nav-brand" style="padding: 0; text-decoration: none;">
+                        <div class="nav-brand-mark" style="width: 32px; height: 32px; min-width: 32px; min-height: 32px;">
+                            <img src="../../assets/brand/mark.svg" width="32" height="32" alt="" aria-hidden="true">
+                        </div>
+                        <span class="nav-brand-title" style="font-size: 1.15rem;"><span>Remo</span><span class="brand-tax">tax</span></span>
+                        <span class="nav-brand-tag">2026</span>
+                    </a>
+                    <p>Global Remote Work Financial Intelligence Platform. Precision cross-border tax, net pay, and relocation intelligence.</p>
+                    <div class="footer-status-badge">
+                        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-net);"></span>
+                        Tax Year 2026 Statutory Engine
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <div class="footer-heading">Calculators</div>
+                    <ul class="footer-links-list">
+                        <li><a href="../../calculators/take-home-pay.html">Take Home Pay</a></li>
+                        <li><a href="../../calculators/freelancer-tax.html">Freelancer Tax</a></li>
+                        <li><a href="../../comparisons/spain-vs-portugal/">Spain vs Portugal</a></li>
+                        <li><a href="../../best/digital-nomad-taxes/">Best Nomad Taxes</a></li>
+                        <li><a href="../../comparisons/spain-vs-italy/">Spain vs Italy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <div class="footer-heading">Country Engines</div>
+                    <ul class="footer-links-list">
+                        <li><a href="../../countries/spain/">Spain Beckham Law</a></li>
+                        <li><a href="../../countries/portugal/">Portugal IFICI</a></li>
+                        <li><a href="../../countries/uae/">Dubai (UAE) 0% Income Tax</a></li>
+                        <li><a href="../../countries/italy/">Italy Regime Impatriati</a></li>
+                        <li><a href="../../countries/thailand/">Thailand DTV Visa</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <div class="footer-heading">Transparency & Legal</div>
+                    <ul class="footer-links-list">
+                        <li><a href="../../methodology/">Calculation Methodology</a></li>
+                        <li><a href="../../faq.html">Tax Residency FAQ</a></li>
+                        <li><a href="../../destinations.html">Destinations Directory</a></li>
+                        <li><a href="../../privacy.html">Privacy Policy</a></li>
+                        <li><a href="../../terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <div>© 2026 Remotax. All rights reserved. Global Remote Work Financial Intelligence Platform.</div>
+                <div style="font-family: var(--font-mono); font-size: 0.8rem;">Statutory Sources: AEAT • AT • FTA • MEF • INPS • RD Thailand</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core Architecture: Data & Pure Engine -->
+    <script src="../../data/countries.min.js?v=4.0.0" defer></script>
+    <script src="../../engine/taxEngine.min.js?v=4.0.0" defer></script>
+    <!-- Liquid Glass UI Controller -->
+    <script src="../../app.min.js?v=4.0.0" defer></script>
+    <script src="../../js/nav.min.js?v=4.0.0" defer></script>
+</body>
+</html>

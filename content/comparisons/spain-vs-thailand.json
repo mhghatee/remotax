@@ -1,0 +1,55 @@
+{
+  "reviewStatus": "draft",
+  "slug": "spain-vs-thailand",
+  "countryCodes": [
+    "ES",
+    "TH"
+  ],
+  "h1": "Spain vs Thailand Remote Worker Tax Comparison {{es.taxYear}}",
+  "metaTitle": "Spain vs Thailand Tax Comparison {{es.taxYear}} — DTV vs Beckham Law",
+  "metaDescription": "Spain vs Thailand tax comparison for remote workers {{es.taxYear}}. Compare Spain {{es.beckham.ratePercent}} Beckham Law vs Thai progressive PIT, Bangkok vs Madrid living costs, and net pay.",
+  "intro": "Comparing Spain with Thailand brings into sharp focus the choice between Western European civic infrastructure and Southeast Asian lifestyle affordability. Spain offers high-speed AVE rail networks, EU residency, and the {{es.beckham.ratePercent}} Beckham Law flat tax. Thailand delivers tropical coastlines, world-class culinary culture, 5-year Destination Thailand Visas (DTV), and living costs roughly half those of European capitals. However, Thailand's tax reforms under Revenue Department Instructions Por. 161/2566 and Por. 162/2566 have codified the fiscal framework: foreign remote workers spending 180+ days in Thailand are subject to progressive PIT ({{th.taxBrackets.rangePercent}}) on remitted funds, requiring careful comparative analysis.",
+  "regimeComparison": "Spain taxes Beckham Law beneficiaries at a flat {{es.beckham.rate}} rate up to {{es.beckham.capFormatted}} for {{es.beckham.regimeDurationYears}} years, with employee social security capped at {{es.ss.employeeCap}}, and autónomo contributions modeled on the minimum base at {{es.ss.autonomoCap}} (or up to {{es.autonomo.optionalMaxAnnualSSFormatted}} if selecting the maximum base). In Thailand, remitted income is subject to 8 progressive PIT brackets ranging from {{th.taxBrackets.bracket1RatePercent}} (up to {{th.taxBrackets.bracket1LimitFormatted}}) to {{th.taxBrackets.bracket8RatePercent}} (over ฿5,000,000). However, Thailand provides {{th.socialSecurity.ratePercent}} social security for foreign remote workers and offers a complete {{th.taxBrackets.minRatePercent}} offshore tax scenario if foreign earnings are kept entirely abroad and not spent or remitted into Thailand.",
+  "socialSecurityComparison": "Social security represents a clear divergence. Spain requires mandatory employee contributions up to {{es.ss.employeeCap}} annually, and self-employed autónomo contributions ranging from {{es.autonomo.minCuotaFormatted}} to {{es.autonomo.maxCuotaFormatted}} monthly (totaling {{es.ss.autonomoCap}} annually using the statutory minimum base, or up to {{es.autonomo.optionalMaxAnnualSSFormatted}} if electing the maximum base), which grants full reciprocal access to Spain's public healthcare and state pension system. Thailand assesses {{th.socialSecurity.ratePercent}} statutory social security on foreign remote workers and digital nomads. Remote workers in Thailand purchase private international health insurance, which provides premium care at internationally accredited hospitals at low out-of-pocket costs.",
+  "costOfLivingComparison": "Thailand's purchasing power advantage is substantial. Baseline monthly living expenses for a single remote worker in central Bangkok average {{th.livingCostFormatted}} ({{th.livingCostUSDFormatted}}), covering modern high-rise condominium leasing, daily dining, utility bills, and rapid transit. In Madrid, equivalent European living requires {{es.livingCostFormatted}} per month. In regional Thai nomad hubs like Chiang Mai, monthly expenses drop further, allowing remote professionals to save substantial portions of their net compensation.",
+  "winnerByProfile": [
+    {
+      "profile": "Early-to-Mid Career Remote Worker ($40k–$80k)",
+      "winner": "Thailand (DTV)",
+      "rationale": "Lower living expenses in Thailand save substantial funds annually compared to Spain, while Thai progressive tax brackets and 0% social security result in moderate effective tax on remitted living funds."
+    },
+    {
+      "profile": "Ultra-High Earner ($200k+) Seeking European Residency",
+      "winner": "Spain (Beckham Law)",
+      "rationale": "Spain's {{es.beckham.ratePercent}} flat rate on income up to {{es.beckham.capFormatted}} beats Thai top marginal rates ({{th.taxBrackets.bracket7RatePercent}}–{{th.taxBrackets.bracket8RatePercent}}) on high remitted earnings and provides a pathway to EU permanent residency."
+    },
+    {
+      "profile": "Nomadic Traveler (<180 days in country)",
+      "winner": "Thailand",
+      "rationale": "Spending under 180 days in Thailand maintains statutory non-resident status with {{th.taxBrackets.minRatePercent}} Thai tax liability on foreign income, backed by the 5-year multi-entry DTV visa."
+    },
+    {
+      "profile": "Family with School-Age Children",
+      "winner": "Spain",
+      "rationale": "Spain provides universal public education, child healthcare, and structured long-term EU integration that transient tourist visas cannot match."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How does Thailand's new remittance tax rule compare to Spain's Beckham Law?",
+      "a": "Spain's Beckham Law taxes employment income at a flat {{es.beckham.ratePercent}} regardless of where the money is spent or remitted. Thailand taxes remitted foreign income under progressive PIT ({{th.taxBrackets.rangePercent}}) only if you stay 180+ days; unremitted offshore funds remain {{th.taxBrackets.minRatePercent}} taxed in Thailand."
+    },
+    {
+      "q": "What is the monthly cost-of-living difference between Madrid and Bangkok?",
+      "a": "A single remote worker spends approximately {{es.livingCostFormatted}} per month in Madrid compared to approximately {{th.livingCostFormatted}} in Bangkok, giving Thailand a significant cost advantage."
+    },
+    {
+      "q": "How do visa costs compare between Spain and Thailand?",
+      "a": "Thailand's DTV visa costs {{th.dtv.consularFeeTHBFormatted}} for a 5-year multi-entry visa with {{th.dtv.assetRequirementTHBFormatted}} in savings. Spain's Digital Nomad Visa requires monthly income of approximately 200% of minimum wage."
+    },
+    {
+      "q": "Do I pay social security in Thailand as a remote contractor?",
+      "a": "No. Thailand levies {{th.socialSecurity.ratePercent}} social security on foreign remote workers and digital nomads, whereas Spain assesses monthly autónomo contributions using the minimum base across 15 tramos ({{es.autonomo.minCuotaFormatted}} to {{es.autonomo.maxCuotaFormatted}} monthly, totaling {{es.autonomo.maxAnnualSSFormatted}} annually in our baseline model), with higher optional bases up to {{es.autonomo.optionalMaxMonthlyCuotaFormatted}} monthly ({{es.autonomo.optionalMaxAnnualSSFormatted}} annually)."
+    }
+  ]
+}

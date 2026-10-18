@@ -1,0 +1,503 @@
+{
+  "description": "REMOTAX STATUTORY VERIFICATION RULES & CONTEXT KEYWORDS",
+  "version": "2.1.0",
+  "fields": [
+    {
+      "field": "ES.daysResidency",
+      "value": 183,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a9",
+      "contextKeywords": ["días", "permanezca", "artículo", "período", "residencia"],
+      "note": "Art 9.1.a LIRPF 183-day residence rule"
+    },
+    {
+      "field": "ES.livingCost",
+      "value": 1850,
+      "url": "/methodology/#living-costs",
+      "contextKeywords": ["remotax", "madrid", "estimate", "living cost", "monthly"],
+      "note": "Remotax modeled living cost estimate for a single remote worker in Madrid"
+    },
+    {
+      "field": "ES.taxBracket.0.limit",
+      "value": 12450,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a63",
+      "paired": { "limit": 12450, "rate": 0.19 },
+      "contextKeywords": ["base liquidable", "tipo", "euros", "cuota"],
+      "note": "Art 63 LIRPF bracket threshold €12,450"
+    },
+    {
+      "field": "ES.taxBracket.0.rate",
+      "value": 0.19,
+      "isPercent": true,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a63",
+      "paired": { "limit": 12450, "rate": 0.19 },
+      "contextKeywords": ["base liquidable", "tipo", "euros", "%"],
+      "note": "Art 63 LIRPF statutory rate 19%"
+    },
+    {
+      "field": "ES.taxBracket.1.limit",
+      "value": 20200,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a63",
+      "paired": { "limit": 20200, "rate": 0.24 },
+      "contextKeywords": ["base liquidable", "tipo", "euros", "cuota"],
+      "note": "Art 63 LIRPF bracket threshold €20,200"
+    },
+    {
+      "field": "ES.taxBracket.1.rate",
+      "value": 0.24,
+      "isPercent": true,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a63",
+      "paired": { "limit": 20200, "rate": 0.24 },
+      "contextKeywords": ["base liquidable", "tipo", "euros", "%"],
+      "note": "Art 63 LIRPF statutory rate 24%"
+    },
+    {
+      "field": "ES.taxBracket.2.limit",
+      "value": 35200,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a63",
+      "paired": { "limit": 35200, "rate": 0.30 },
+      "contextKeywords": ["base liquidable", "tipo", "euros", "cuota"],
+      "note": "Art 63 LIRPF bracket threshold €35,200"
+    },
+    {
+      "field": "ES.taxBracket.2.rate",
+      "value": 0.30,
+      "isPercent": true,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a63",
+      "paired": { "limit": 35200, "rate": 0.30 },
+      "contextKeywords": ["base liquidable", "tipo", "euros", "%", "cuota"],
+      "note": "Art 63 LIRPF statutory rate 30%"
+    },
+    {
+      "field": "ES.taxBracket.3.limit",
+      "value": 60000,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a63",
+      "paired": { "limit": 60000, "rate": 0.37 },
+      "contextKeywords": ["base liquidable", "tipo", "euros", "cuota"],
+      "note": "Art 63 LIRPF bracket threshold €60,000"
+    },
+    {
+      "field": "ES.taxBracket.3.rate",
+      "value": 0.37,
+      "isPercent": true,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a63",
+      "paired": { "limit": 60000, "rate": 0.37 },
+      "contextKeywords": ["base liquidable", "tipo", "euros", "%", "cuota"],
+      "note": "Art 63 LIRPF statutory rate 37%"
+    },
+    {
+      "field": "ES.taxBracket.4.limit",
+      "value": 300000,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a63",
+      "paired": { "limit": 300000, "rate": 0.45 },
+      "contextKeywords": ["base liquidable", "tipo", "euros", "cuota"],
+      "note": "Art 63 LIRPF bracket threshold €300,000"
+    },
+    {
+      "field": "ES.taxBracket.4.rate",
+      "value": 0.45,
+      "isPercent": true,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a63",
+      "paired": { "limit": 300000, "rate": 0.45 },
+      "contextKeywords": ["base liquidable", "tipo", "euros", "%", "cuota"],
+      "note": "Art 63 LIRPF statutory rate 45%"
+    },
+    {
+      "field": "ES.taxBracket.5.rate",
+      "value": 0.47,
+      "isPercent": true,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a63",
+      "contextKeywords": ["base liquidable", "tipo", "euros", "%", "resto"],
+      "note": "Art 63 LIRPF top statutory rate 47%"
+    },
+    {
+      "field": "ES.socialSecurity.employeeRate",
+      "value": 0.065,
+      "isPercent": true,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296",
+      "contextKeywords": ["tipo", "cotización", "por ciento", "%", "trabajadores"],
+      "note": "Orden PJC/297/2026 employee social security rate 6.50% (includes 0.15% MEI)"
+    },
+    {
+      "field": "ES.socialSecurity.employeeMaxMonthlyBase",
+      "value": 5101.20,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296",
+      "contextKeywords": ["base máxima", "cotización", "euros", "mensual"],
+      "note": "Art 3 Orden PJC/297/2026 max base €5,101.20/mo"
+    },
+    {
+      "field": "ES.socialSecurity.meiRate",
+      "value": 0.15,
+      "isPercent": true,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296",
+      "contextKeywords": ["equidad intergeneracional", "mei", "cotización", "por ciento", "%"],
+      "note": "Art 3 Orden PJC/297/2026 MEI rate 0.15%"
+    },
+    {
+      "field": "ES.socialSecurity.autonomoTablaReducidaTramo1Base",
+      "value": 653.59,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296#a18",
+      "contextKeywords": ["tabla reducida", "tramo 1", "base mínima", "cotización"],
+      "note": "Art 18 tabla reducida tramo 1 base min €653.59"
+    },
+    {
+      "field": "ES.socialSecurity.autonomoTablaGeneralTramo12Base",
+      "value": 1928.10,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296#a18",
+      "contextKeywords": ["tabla general", "tramo 12", "base mínima", "cotización"],
+      "note": "Art 18 tabla general tramo 12 base min €1,928.10"
+    },
+    {
+      "field": "ES.regimes.beckhamFlatRate",
+      "value": 0.24,
+      "isPercent": true,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a93",
+      "contextKeywords": ["tipo", "por ciento", "artículo 93", "tributarán", "escala"],
+      "note": "Art 93 LIRPF Beckham Law 24% flat rate"
+    },
+    {
+      "field": "ES.regimes.beckhamCap",
+      "value": 600000,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a93",
+      "contextKeywords": ["euros", "artículo 93", "hasta", "límite", "retribuciones"],
+      "note": "Art 93 LIRPF Beckham Law €600,000 threshold"
+    },
+    {
+      "field": "ES.deductions.standardAllowance",
+      "value": 5550,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a57",
+      "contextKeywords": ["mínimo del contribuyente", "euros", "anuales", "artículo 57"],
+      "note": "Art 57 LIRPF standard personal allowance €5,550"
+    },
+    {
+      "field": "ES.deductions.workExpenseAllowance",
+      "value": 2000,
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a19",
+      "contextKeywords": ["otros gastos", "euros", "rendimiento neto", "artículo 19"],
+      "note": "Art 19.2.f LIRPF general deductible expenses €2,000"
+    },
+    {
+      "field": "PT.daysResidency",
+      "value": 183,
+      "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs16.aspx",
+      "contextKeywords": ["dias", "permanecido", "ano", "território"],
+      "note": "Art 16.1.a CIRS 183-day residence rule"
+    },
+    {
+      "field": "PT.livingCost",
+      "value": 1750,
+      "url": "/methodology/#living-costs",
+      "contextKeywords": ["remotax", "lisbon", "estimate", "living cost", "monthly"],
+      "note": "Remotax modeled living cost estimate for a single remote worker in Lisbon"
+    },
+    {
+      "field": "PT.taxBracket.0.limit",
+      "value": 8342,
+      "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs68.aspx",
+      "paired": { "limit": 8342, "rate": 0.125 },
+      "contextKeywords": ["escalão", "taxa", "rendimento", "euros"],
+      "note": "Art 68 CIRS lowest bracket threshold €8,342"
+    },
+    {
+      "field": "PT.taxBracket.0.rate",
+      "value": 0.125,
+      "isPercent": true,
+      "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs68.aspx",
+      "paired": { "limit": 8342, "rate": 0.125 },
+      "contextKeywords": ["escalão", "taxa", "rendimento", "%"],
+      "note": "Art 68 CIRS lowest bracket rate 12.5%"
+    },
+    {
+      "field": "PT.taxBracket.top.rate",
+      "value": 0.48,
+      "isPercent": true,
+      "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs68.aspx",
+      "contextKeywords": ["taxa", "escalão", "rendimento", "%", "normal"],
+      "note": "Art 68 CIRS top statutory rate 48%"
+    },
+    {
+      "field": "PT.deductions.categoryBCoefficient",
+      "value": 0.75,
+      "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs31.aspx",
+      "contextKeywords": ["coeficiente", "rendimentos", "atividades", "artigo", "alínea"],
+      "note": "Art 31 CIRS Category B 75% taxable coefficient"
+    },
+    {
+      "field": "PT.deductions.standardAllowance",
+      "value": 4587.09,
+      "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs25.aspx",
+      "contextKeywords": ["dedução", "específica", "ias", "rendimento", "vezes"],
+      "note": "Art 25 CIRS specific deduction 8.54 x IAS = €4,587.09"
+    },
+    {
+      "field": "PT.socialSecurity.iasValue2026",
+      "value": 537.13,
+      "url": "https://diariodarepublica.pt/dr/detalhe/portaria/480-a-2025-103328249",
+      "contextKeywords": ["ias", "indexante", "apoios sociais", "portaria"],
+      "note": "Portaria 480-A/2025/1 IAS 2026 value €537.13"
+    },
+    {
+      "field": "PT.socialSecurity.employeeRate",
+      "value": 0.11,
+      "isPercent": true,
+      "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs16.aspx",
+      "contextKeywords": ["segurança social", "taxa", "trabalhadores"],
+      "note": "Segurança Social standard employee rate 11% (uncapped)"
+    },
+    {
+      "field": "PT.socialSecurity.contractorRate",
+      "value": 0.214,
+      "isPercent": true,
+      "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs31.aspx",
+      "contextKeywords": ["segurança social", "taxa", "trabalhadores independentes", "ias"],
+      "note": "Segurança Social independent contractor rate 21.4% on 70% relevant base (max 12x IAS)"
+    },
+    {
+      "field": "PT.regimes.d8FlatRate",
+      "value": 0.20,
+      "isPercent": true,
+      "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs68.aspx",
+      "contextKeywords": ["ifici", "taxa", "investimento", "%"],
+      "note": "IFICI / Scientific & Innovation Incentive 20% flat rate (Art. 58-A EBF)"
+    },
+    {
+      "field": "IT.daysResidency",
+      "value": 183,
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.del.presidente.della.repubblica:1986-12-22;917!art2",
+      "contextKeywords": ["giorni", "maggior parte del periodo", "residenza", "imposta"],
+      "note": "Art 2 comma 2 TUIR 183-day residency rule"
+    },
+    {
+      "field": "IT.livingCost",
+      "value": 1950,
+      "url": "/methodology/#living-costs",
+      "contextKeywords": ["remotax", "milan", "estimate", "living cost", "monthly"],
+      "note": "Remotax modeled living cost estimate for a single remote worker in Milan"
+    },
+    {
+      "field": "IT.taxBrackets.0.limit",
+      "value": 28000,
+      "url": "https://www.agenziaentrate.gov.it/portale/imposta-sul-reddito-delle-persone-fisiche-irpef-/aliquote-e-calcolo-dell-irpef",
+      "paired": { "limit": 28000, "rate": 0.23 },
+      "contextKeywords": ["scaglioni", "aliquote", "euro", "irpef", "fino a"],
+      "note": "Agenzia Entrate IRPEF first bracket threshold €28,000"
+    },
+    {
+      "field": "IT.taxBrackets.0.rate",
+      "value": 0.23,
+      "isPercent": true,
+      "url": "https://www.agenziaentrate.gov.it/portale/imposta-sul-reddito-delle-persone-fisiche-irpef-/aliquote-e-calcolo-dell-irpef",
+      "paired": { "limit": 28000, "rate": 0.23 },
+      "contextKeywords": ["scaglioni", "aliquote", "euro", "irpef", "%"],
+      "note": "Agenzia Entrate IRPEF first bracket rate 23%"
+    },
+    {
+      "field": "IT.taxBrackets.1.limit",
+      "value": 50000,
+      "url": "https://www.agenziaentrate.gov.it/portale/imposta-sul-reddito-delle-persone-fisiche-irpef-/aliquote-e-calcolo-dell-irpef",
+      "contextKeywords": ["scaglioni", "aliquote", "euro", "irpef", "fino a"],
+      "note": "Agenzia Entrate IRPEF second bracket threshold €50,000"
+    },
+    {
+      "field": "IT.taxBrackets.1.rate",
+      "value": 0.33,
+      "isPercent": true,
+      "url": "https://www.agenziaentrate.gov.it/portale/imposta-sul-reddito-delle-persone-fisiche-irpef-/aliquote-e-calcolo-dell-irpef",
+      "contextKeywords": ["bilancio", "2026", "imposta dovuta", "13.700", "aliquote"],
+      "note": "Agenzia Entrate IRPEF second bracket rate under Legge di Bilancio 2026"
+    },
+    {
+      "field": "IT.taxBrackets.2.rate",
+      "value": 0.43,
+      "isPercent": true,
+      "url": "https://www.agenziaentrate.gov.it/portale/imposta-sul-reddito-delle-persone-fisiche-irpef-/aliquote-e-calcolo-dell-irpef",
+      "contextKeywords": ["scaglioni", "aliquote", "oltre", "irpef", "%"],
+      "note": "Agenzia Entrate IRPEF top rate 43%"
+    },
+    {
+      "field": "IT.regimes.impatriatiExemption",
+      "value": 0.50,
+      "isPercent": true,
+      "url": "https://www.agenziaentrate.gov.it/portale/lavoratori-impatriati-209-2023/infogen-lavoratori-impatriati-209-2023-cittadini",
+      "contextKeywords": ["reddito", "ammontare", "impatriati", "%"],
+      "note": "Agenzia Entrate Impatriati 50% exemption"
+    },
+    {
+      "field": "IT.regimes.impatriatiCap",
+      "value": 600000,
+      "url": "https://www.agenziaentrate.gov.it/portale/lavoratori-impatriati-209-2023/infogen-lavoratori-impatriati-209-2023-cittadini",
+      "contextKeywords": ["limite", "annuo", "euro", "reddito"],
+      "note": "Agenzia Entrate Impatriati €600,000 cap"
+    },
+    {
+      "field": "IT.regimes.impatriatiChildExemption",
+      "value": 0.40,
+      "isPercent": true,
+      "url": "https://www.agenziaentrate.gov.it/portale/lavoratori-impatriati-209-2023/infogen-lavoratori-impatriati-209-2023-cittadini",
+      "contextKeywords": ["figli", "minorenni", "reddito", "ammontare", "%"],
+      "note": "Agenzia Entrate Impatriati 60% exemption (40% taxable base) with minor child"
+    },
+    {
+      "field": "IT.regimes.impatriatiStayYears",
+      "value": 4,
+      "url": "https://www.agenziaentrate.gov.it/portale/lavoratori-impatriati-209-2023/infogen-lavoratori-impatriati-209-2023-cittadini",
+      "contextKeywords": ["anni", "permanenza", "risiedere", "italia"],
+      "note": "Agenzia Entrate Impatriati 4 years minimum residence commitment"
+    },
+    {
+      "field": "IT.socialSecurity.employeeMaxAnnualBase",
+      "value": 122295,
+      "url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.02.circolare-numero-8-del-03-02-2026_15153.html",
+      "contextKeywords": ["massimale", "circolare", "inps"],
+      "note": "Circolare INPS 8/2026 massimale €122,295"
+    },
+    {
+      "field": "IT.socialSecurity.contractorRate",
+      "value": 0.2607,
+      "isPercent": true,
+      "url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.02.circolare-numero-8-del-03-02-2026_15153.html",
+      "contextKeywords": ["gestione separata", "aliquota", "inps", "%"],
+      "note": "Circolare INPS 8/2026 Gestione Separata 26.07%"
+    },
+    {
+      "field": "IT.socialSecurity.primaFascia",
+      "value": 56224,
+      "url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.01.circolare-numero-6-del-30-01-2026_15151.html",
+      "contextKeywords": ["prima fascia", "pensionabile", "inps"],
+      "note": "Circolare INPS 6/2026 prima fascia €56,224"
+    },
+    {
+      "field": "IT.socialSecurity.employeeRate",
+      "value": 0.0919,
+      "isPercent": true,
+      "url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.01.circolare-numero-6-del-30-01-2026_15151.html",
+      "contextKeywords": ["aliquota", "lavoratori", "inps", "%"],
+      "note": "Circolare INPS 6/2026 standard employee contribution rate 9.19%"
+    },
+    {
+      "field": "TH.daysResidency",
+      "value": 180,
+      "url": "https://www.rd.go.th/english/6045.html",
+      "contextKeywords": ["days", "tax year", "resident", "stays"],
+      "note": "Sec 41 para 3 Thai Revenue Code 180-day rule"
+    },
+    {
+      "field": "TH.livingCost",
+      "value": 38500,
+      "url": "/methodology/#living-costs",
+      "contextKeywords": ["remotax", "bangkok", "estimate", "living cost", "monthly"],
+      "note": "Remotax modeled living cost estimate for a single remote worker in Bangkok"
+    },
+    {
+      "field": "TH.taxBrackets.0.limit",
+      "value": 150000,
+      "url": "https://www.rd.go.th/english/6045.html",
+      "contextKeywords": ["taxable income", "tax rate", "baht", "exempt"],
+      "note": "Sec 48 Revenue Code ฿150,000 0% bracket floor"
+    },
+    {
+      "field": "TH.taxBrackets.0.rate",
+      "value": 0.00,
+      "isPercent": true,
+      "url": "https://www.rd.go.th/english/6045.html",
+      "contextKeywords": ["taxable income", "tax rate", "exempt", "%"],
+      "note": "Sec 48 Revenue Code 0% rate on first ฿150k"
+    },
+    {
+      "field": "TH.taxBrackets.1.limit",
+      "value": 300000,
+      "url": "https://www.rd.go.th/english/6045.html",
+      "paired": { "limit": 300000, "rate": 0.05 },
+      "contextKeywords": ["taxable income", "tax rate", "baht", "%"],
+      "note": "Sec 48 Revenue Code ฿300,000 second bracket"
+    },
+    {
+      "field": "TH.taxBrackets.1.rate",
+      "value": 0.05,
+      "isPercent": true,
+      "url": "https://www.rd.go.th/english/6045.html",
+      "paired": { "limit": 300000, "rate": 0.05 },
+      "contextKeywords": ["taxable income", "tax rate", "baht", "%"],
+      "note": "Sec 48 Revenue Code 5% bracket rate"
+    },
+    {
+      "field": "TH.deductions.employmentExpenseCap",
+      "value": 100000,
+      "url": "https://www.rd.go.th/english/6045.html",
+      "contextKeywords": ["employment", "deduction", "exceeding", "baht"],
+      "note": "Sec 42bis Revenue Code 50% expense max ฿100,000"
+    },
+    {
+      "field": "TH.deductions.standardAllowance",
+      "value": 60000,
+      "url": "https://www.rd.go.th/english/6045.html",
+      "contextKeywords": ["allowance", "taxpayer", "baht", "deduction"],
+      "note": "Sec 47 Revenue Code personal allowance ฿60,000"
+    },
+    {
+      "field": "TH.socialSecurity.employeeRate",
+      "value": 0.00,
+      "isPercent": true,
+      "url": "https://www.rd.go.th/english/6045.html",
+      "contextKeywords": ["tax", "social security", "withholding"],
+      "note": "Zero statutory social security withholding for foreign digital nomads"
+    },
+    {
+      "field": "AE.daysResidency",
+      "value": 183,
+      "url": "https://tax.gov.ae/en/services/issuance.of.tax.certificates.aspx",
+      "contextKeywords": ["days", "natural person", "period", "residence"],
+      "note": "Cabinet Res 85/2022 183-day tax residency rule"
+    },
+    {
+      "field": "AE.daysResidencyAlternative90",
+      "value": 90,
+      "url": "https://tax.gov.ae/en/services/issuance.of.tax.certificates.aspx",
+      "contextKeywords": ["days", "natural person", "period", "stay"],
+      "note": "Cabinet Res 85/2022 90-day alternative tax residency condition"
+    },
+    {
+      "field": "AE.livingCost",
+      "value": 2250,
+      "url": "/methodology/#living-costs",
+      "contextKeywords": ["remotax", "dubai", "estimate", "living cost", "monthly"],
+      "note": "Remotax modeled living cost estimate for a single remote worker in Dubai"
+    },
+    {
+      "field": "AE.taxBrackets.0.rate",
+      "value": 0.00,
+      "isPercent": true,
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/corporate.tax.for.natural.persons.aspx",
+      "contextKeywords": ["natural persons", "employment", "personal income tax", "wages"],
+      "note": "FTA Natural persons 0% PIT on employment wages"
+    },
+    {
+      "field": "AE.socialSecurity.employeeRate",
+      "value": 0.00,
+      "isPercent": true,
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/corporate.tax.for.natural.persons.aspx",
+      "contextKeywords": ["natural persons", "employment", "personal income tax"],
+      "note": "Zero statutory social security withholding for expatriates"
+    },
+    {
+      "field": "FX.rates.USD",
+      "value": 1.1253,
+      "url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+      "contextKeywords": ["usd", "us dollar", "reference", "rate"],
+      "note": "ECB Euro reference rate 1.1253 EUR/USD on 16 Oct 2026"
+    },
+    {
+      "field": "FX.rates.THB",
+      "value": 37.602,
+      "url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+      "contextKeywords": ["thb", "thai baht", "reference", "rate"],
+      "note": "ECB Euro reference rate 37.602 EUR/THB on 16 Oct 2026"
+    },
+    {
+      "field": "FX.rates.AED",
+      "value": 4.1327,
+      "url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+      "contextKeywords": ["usd", "reference", "rate", "euro"],
+      "note": "Statutory peg derived rate: 1.1253 * 3.6725 = 4.1327 EUR/AED"
+    }
+  ]
+}

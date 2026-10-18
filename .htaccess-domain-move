@@ -1,0 +1,7 @@
+# ======================================================================
+# REMOTAX DOMAIN MIGRATION 301 REDIRECT RULES (afrix.ir/remotax/* -> NEW_DOMAIN/*)
+# ======================================================================
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^(www\.)?afrix\.ir$ [NC]
+RewriteRule ^remotax/(.*)$ https://new-domain.com/$1 [R=301,L]

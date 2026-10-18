@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const countrySelect = document.getElementById('country-select');
     const incomeInput = document.getElementById('income-input');
     const incomeSlider = document.getElementById('income-slider');
-    const globalCurrency = document.getElementById('global-currency-select') || document.getElementById('global-currency');
-    const regimeToggle = document.getElementById('special-regime-toggle');
+    const globalCurrency = document.getElementById('currency-select') || document.getElementById('global-currency-select') || document.getElementById('global-currency');
+    const regimeToggle = document.getElementById('special-regime-toggle') || document.getElementById('regime-toggle');
     const regimeText = document.getElementById('regime-text');
     const regimeHelp = document.getElementById('regime-help');
     const filingStatusSelect = document.getElementById('filing-status');
@@ -123,6 +123,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const supportedKeys = Object.keys(countriesObj);
         const currentVal = countrySelect.value || 'ES';
 
+        // Do not overwrite options on dedicated single-country hub pages
+        if (countrySelect.options.length <= 1) return;
+
         // Check if we need to regenerate options
         const existingKeys = Array.from(countrySelect.options).map(o => o.value);
         const isDiscrepant = existingKeys.length !== supportedKeys.length || !supportedKeys.every(k => existingKeys.includes(k));
@@ -149,12 +152,21 @@ document.addEventListener('DOMContentLoaded', () => {
     function calculateTaxes() {
         if (!countrySelect || !incomeInput) return;
 
+        const currSelect = document.getElementById('currency-select') || document.getElementById('global-currency-select') || document.getElementById('global-currency');
+        const selectedCurrency = currSelect ? currSelect.value : 'EUR';
+        currentCurrencySymbol = CURRENCY_SYMBOLS[selectedCurrency] || (selectedCurrency === 'EUR' ? '€' : '$');
+
+        const incomeLabel = document.getElementById('income-label');
+        if (incomeLabel) {
+            incomeLabel.textContent = `Annual Gross Compensation (${selectedCurrency} ${currentCurrencySymbol})`;
+        }
+
         const gross = sanitizeInput(incomeInput.value, 0);
         const country = (countrySelect.value || 'ES').toUpperCase();
         const useRegime = regimeToggle ? regimeToggle.checked : true;
         const isOffshoreTH = country === 'TH' && useRegime;
-        const empRadio = document.querySelector('input[name="emp-type"]:checked');
-        const empType = empRadio ? empRadio.value : 'contractor';
+        const empRadio = document.querySelector('input[name="emp-type"]:checked') || document.querySelector('input[name="worker-type"]:checked');
+        const empType = empRadio ? empRadio.value : 'employee';
         const filingStatus = filingStatusSelect ? filingStatusSelect.value : 'single';
 
         let res;
@@ -165,7 +177,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 workerType: empType,
                 filingStatus: filingStatus,
                 useSpecialRegime: country === 'TH' ? isOffshoreTH : useRegime,
-                isOffshoreUnremitted: isOffshoreTH
+                isOffshoreUnremitted: isOffshoreTH,
+                currency: selectedCurrency
             });
         } else {
             // Fallback if engine is not yet loaded
@@ -193,6 +206,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (valSocial) valSocial.textContent = `-${formatCurrency(res.socialSecurity)}`;
         if (valNetAnnual) valNetAnnual.textContent = formatCurrency(res.netAnnual);
         if (valNetMonthly) valNetMonthly.textContent = formatCurrency(res.netMonthly);
+
+        const outNetMonthly = document.getElementById('output-net-monthly');
+        const outNetAnnual = document.getElementById('output-net-annual');
+        const outTaxAnnual = document.getElementById('output-tax-annual');
+        const outSSAnnual = document.getElementById('output-ss-annual');
+        const outEffRate = document.getElementById('output-effective-rate');
+
+        if (outNetMonthly) outNetMonthly.textContent = formatCurrency(res.netMonthly);
+        if (outNetAnnual) outNetAnnual.textContent = formatCurrency(res.netAnnual);
+        if (outTaxAnnual) outTaxAnnual.textContent = formatCurrency(res.incomeTax);
+        if (outSSAnnual) outSSAnnual.textContent = formatCurrency(res.socialSecurity);
+        if (outEffRate) outEffRate.textContent = `${res.effectiveTaxRate}%`;
 
         if (netMonthlyAmount) {
             animateValue(netMonthlyAmount, lastAnimatedMonthlyNet || res.netMonthly, res.netMonthly, 350);
@@ -490,7 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (globalCurrency) {
         globalCurrency.addEventListener('change', (e) => {
-            currentCurrencySymbol = CURRENCY_SYMBOLS[e.target.value] || '$';
+            currentCurrencySymbol = CURRENCY_SYMBOLS[e.target.value] || (e.target.value === 'EUR' ? '€' : '$');
             const prefixSymbol = document.getElementById('currency-prefix-symbol');
             if (prefixSymbol) prefixSymbol.textContent = currentCurrencySymbol;
             const rangeLabel = document.getElementById('income-range-label');
@@ -502,6 +527,10 @@ document.addEventListener('DOMContentLoaded', () => {
             calculateTaxes();
         });
     }
+
+    document.querySelectorAll('input[name="worker-type"]').forEach(r => {
+        r.addEventListener('change', calculateTaxes);
+    });
 
     if (countrySelect) {
         countrySelect.addEventListener('change', () => {

@@ -1,0 +1,30 @@
+{
+  "slug": "digital-nomad-taxes",
+  "reviewStatus": "draft",
+  "rankingId": "digital-nomad-taxes",
+  "h1": "Best Digital Nomad Tax Countries {{es.taxYear}} (Ranked by Net Pay)",
+  "metaTitle": "Best Digital Nomad Tax Countries {{es.taxYear}} — Ranked by Net Pay",
+  "metaDescription": "{{es.taxYear}} global digital nomad tax ranking. Compare top countries by net take-home pay, effective tax rates, social security caps, and living costs at €100k.",
+  "heroBadge": "Global Remote Work Tax Benchmark • {{es.taxYear}} Edition",
+  "intro": "For location-independent professionals, digital nomads, and remote software engineers, personal income tax and mandatory social security contributions represent the single largest variable determining long-term capital accumulation. However, evaluating the best digital nomad tax destinations requires moving beyond headline tax rates. A zero-tax headline can be eroded by high rental markets and private medical insurance costs, while a jurisdiction with moderate headline rates may offer generous deductible allowances, statutory social security caps, and affordable local living costs that yield superior net savings. In this definitive {{es.taxYear}} benchmark, Remotax ranks primary remote work destinations by net take-home pay, effective statutory tax rates, and disposable savings at standard benchmark salaries.",
+  "methodology": "Our ranking methodology evaluates statutory tax codes, official social security withholding regulations, and empirical living cost data for the {{es.taxYear}} tax year. For each jurisdiction, we model gross annual earnings of €100,000 (or equivalent in USD/local currency) for a single professional operating as both an employee and an independent contractor. Effective tax rates incorporate all mandatory statutory personal income taxes, standard employment deductions, and mandatory social security contributions. Thailand is modeled under the standard remitted scenario pursuant to Thai Revenue Department Instructions Por. 161/2566 & 162/2566, with the offshore 0% case documented as a distinct statutory exception. Net monthly disposable savings are calculated by subtracting baseline metropolitan living expenses from net monthly earnings.",
+  "analysis": "The {{es.taxYear}} ranking demonstrates that the United Arab Emirates remains the global leader in net salary retention, preserving 100% of gross earnings due to its {{ae.incomeTaxRatePercent}} personal income tax and {{ae.socialSecurityRatePercent}} social security framework. Thailand follows closely for professionals who maintain modest remittance or who keep earnings offshore, while providing the highest lifestyle purchasing power in the benchmark. In Europe, Spain's {{es.beckham.ratePercent}} Beckham Law provides the highest net take-home pay for general remote employees due to its strict {{es.ss.employeeCap}} social security ceiling. Italy's Regime Impatriati delivers substantial tax savings through its {{it.impatriati.exemptionPercent}} earned income exemption, but high INPS social security contributions for independent contractors (up to {{it.gs.cap}}) diminish its advantage for freelancers. Portugal's IFICI regime provides an attractive {{pt.ifici.ratePercent}} flat rate, but remains restricted to certified technology innovation roles.",
+  "faqs": [
+    {
+      "q": "Which country offers the highest take-home pay for digital nomads in 2026?",
+      "a": "The United Arab Emirates (Dubai) offers the highest net take-home pay, with {{ae.incomeTaxRatePercent}} personal income tax and {{ae.socialSecurityRatePercent}} social security withholding, allowing remote workers to retain 100% of gross salary."
+    },
+    {
+      "q": "What is the best country in Europe for remote worker taxes in 2026?",
+      "a": "For general remote employees earning above {{es.beckham.advantageThresholdFormatted}}, Spain under the Beckham Law offers the highest net pay due to its {{es.beckham.ratePercent}} flat tax rate and low social security cap ({{es.ss.employeeCap}}/yr). For certified tech R&D workers, Portugal's IFICI ({{pt.ifici.ratePercent}} flat tax) offers the lowest headline tax rate."
+    },
+    {
+      "q": "How does Thailand rank under its new remittance tax rules?",
+      "a": "Even under the remitted income tax framework of Por. 161/2566, Thailand ranks among the top destinations globally due to {{th.socialSecurity.ratePercent}} social security withholding, generous personal deductions, and extraordinarily low living costs."
+    },
+    {
+      "q": "Are social security contributions included in the Remotax ranking?",
+      "a": "Yes. Our rankings reflect true net take-home pay after deducting both statutory income tax and all mandatory employee or contractor social security contributions."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "uae",
+  "reviewStatus": "draft",
+  "h1": "UAE Remote Worker Tax & Salary Calculator 2026",
+  "metaTitle": "UAE Remote Worker Tax Calculator 2026 — Dubai 0% Net Pay",
+  "metaDescription": "Calculate 2026 UAE net pay with 0% personal tax and 0% social security. Model Dubai Virtual Working visa requirements, AED 1M corporate threshold, and costs.",
+  "heroBadge": "Tax Year 2026 Statutory Rules",
+  "intro": "At $100,000 gross income, a remote worker in the UAE retains {{ae.netPay100kFormatted}} net ({{ae.effectiveRate100k}} effective rate), benefiting from 0% statutory personal income tax and 0% mandatory social security withholding. For independent contractors, individual business revenue remains exempt from the UAE's 9% corporate tax up to {{ae.corporateTaxThresholdAEDFormatted}} under Cabinet Decision 49/2023.",
+  "taxSystemOverview": "Under federal decree and guidance issued by the UAE Federal Tax Authority (FTA), the UAE maintains a {{ae.incomeTaxRatePercent}} statutory personal income tax rate across all individual earning thresholds. There are no state, provincial, or municipal income taxes levied on individuals. While the UAE maintains a federal Corporate Tax regime (Federal Decree-Law No. 47 of 2022) with a standard statutory rate of {{ae.corporateTaxRatePercent}}, Cabinet Decision No. 49 of 2023 specifically established that natural persons conducting freelance or individual commercial activities are entirely exempt from corporate tax unless their total gross annual commercial turnover within the UAE exceeds {{ae.corporateTaxThresholdAEDFormatted}}.",
+  "socialSecurityAnalysis": "Payroll withholdings and mandatory social security contributions in the UAE are zero percent ({{ae.socialSecurityRatePercent}}) for all foreign expatriate workers and remote digital nomads. The national social security framework, administered by the General Pension and Social Security Authority (GPSSA), applies strictly to UAE and GCC citizens. Non-national remote workers face no statutory deductions for pension, unemployment, or disability insurances from their gross earnings. Instead, international professionals relocating to the UAE are responsible for funding their own private international health insurance policies and long-term retirement savings.",
+  "specialRegimeSummary": "Because the UAE statutory framework natively imposes 0% personal income tax and 0% social security, every eligible remote worker benefits from complete zero-tax treatment. The cornerstone legal pathway for location-independent workers is the Dubai Virtual Working Programme, a dedicated 1-year renewable residence permit administered by the General Directorate of Residency and Foreigners Affairs (GDRFA). The visa grants full residency status, the issuance of a formal Emirates ID card, the ability to open local bank accounts, lease property under the Ejari system, and sponsor immediate family members, all without requiring local employer sponsorship.",
+  "costOfLivingAnalysis": "While direct income taxation is non-existent, living expenses in Dubai require realistic financial budgeting. In our empirical benchmark, monthly baseline living expenditures for a single remote worker in Dubai are modeled at {{ae.livingCostFormatted}} (AED 8,260). This baseline accommodates private one-bedroom apartment leasing in prime residential districts such as Dubai Marina, Jumeirah Lake Towers (JLT), or Downtown Business Bay, alongside air conditioning and utility bills, broadband telecommunications, grocery shopping, and metro/ride-hailing transit. Frugal professionals residing in emerging districts like Dubai Silicon Oasis or Jumeirah Village Circle (JVC) can reduce expenditures to $1,600 monthly, while luxury lifestyles in Palm Jumeirah easily surpass $4,500 monthly.",
+  "whatEstimateExcludes": "This calculation models statutory 0% personal income tax and social security. It does not include indirect consumer taxes, specifically the UAE's 5.00% standard Value Added Tax (VAT) applied to domestic purchases and hospitality. It also excludes the municipal housing fee (charged at 5% of annual tenancy contract value, amortized monthly across DEWA utility invoices in Dubai), the mandatory private medical insurance policy required to maintain visa validity, and upfront visa application and medical clearance fees.",
+  "faqs": [
+    {
+      "q": "What are the exact eligibility criteria for Dubai's Virtual Working Programme in 2026?",
+      "a": "To obtain the 1-year Dubai Virtual Working residence visa, applicants must hold a valid passport with at least 6 months validity, valid international health insurance with UAE coverage, and proof of remote employment with a contract valid for one year (or proof of overseas company ownership). Applicants must document a minimum monthly income of USD $3,500 via the previous 3 months of official bank statements."
+    },
+    {
+      "q": "Do remote freelancers pay UAE corporate tax on their international clients?",
+      "a": "Under UAE Cabinet Decision No. 49 of 2023, independent contractors and freelancers operating as individual natural persons are exempt from UAE corporate tax unless their total gross business turnover surpasses {{ae.corporateTaxThresholdAEDFormatted}} in a calendar year. Salaried remote employees have zero corporate tax liability regardless of income."
+    },
+    {
+      "q": "Can I obtain a UAE Tax Residency Certificate (TRC) on the remote work visa?",
+      "a": "Yes. Foreign nationals holding a valid UAE residence visa who spend {{ae.daysResidency}} days or more in the country (or 90 days if possessing a permanent place of residence and commercial/personal interests) can apply to the Federal Tax Authority for an official Tax Residency Certificate (TRC) to establish definitive residency under bilateral double tax treaties."
+    },
+    {
+      "q": "Are there hidden taxes or municipal fees that remote workers must pay in Dubai?",
+      "a": "While there is no income tax, residents pay a 5% VAT on goods and dining, and tenants in Dubai pay a 5% municipal housing fee based on their annual rental lease, which is divided and billed monthly on the Dubai Electricity and Water Authority (DEWA) utility invoice."
+    },
+    {
+      "q": "How does the UAE peg its currency to the US Dollar?",
+      "a": "The UAE Dirham (AED) has been officially pegged to the United States Dollar at a fixed statutory rate of USD $1 = AED 3.6725 since 1997. This eliminates foreign exchange volatility for remote professionals compensated in USD."
+    }
+  ]
+}

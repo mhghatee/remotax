@@ -1,0 +1,30 @@
+{
+  "slug": "zero-tax-countries",
+  "reviewStatus": "draft",
+  "rankingId": "zero-tax-countries",
+  "h1": "0% Tax Countries for Remote Workers & Nomads {{ae.taxYear}}",
+  "metaTitle": "0% Tax Countries for Remote Workers {{ae.taxYear}} — Zero Tax Ranking",
+  "metaDescription": "{{ae.taxYear}} guide to 0% tax countries for digital nomads and remote workers. Compare Dubai 0% tax, territorial remittance rules, visa requirements, and net pay.",
+  "heroBadge": "Global Zero-Tax Analysis • {{ae.taxYear}} Edition",
+  "intro": "The pursuit of legitimate 0% personal taxation has led remote professionals, tech founders, and digital nomads to explore fiscal jurisdictions that either levy no personal income tax by statute or operate strictly territorial tax systems. Relocating to a true zero-tax jurisdiction enables professionals to preserve 100% of their gross earnings, accelerating savings, investment compounding, and business reinvestment. However, operating within a zero-tax framework requires strict adherence to statutory immigration rules, corporate tax thresholds, and international tax treaties to ensure that your home country does not retain continuing tax residency claims over your global income.",
+  "methodology": "Our {{ae.taxYear}} benchmark assesses zero-tax and low-friction jurisdictions on four statutory pillars: (1) statutory individual personal income tax rate on remote employment and professional service fees; (2) mandatory payroll social security withholdings for non-citizens; (3) the availability of structured, legal immigration residence permits for remote workers (such as Dubai's Virtual Working Programme or Thailand's Destination Thailand Visa); and (4) local corporate tax thresholds on natural person freelance turnover (such as the UAE's {{ae.corporateTaxThresholdAEDFormatted}} threshold under Cabinet Decision 49/2023).",
+  "analysis": "The United Arab Emirates (Dubai and Abu Dhabi) stands as the undisputed global gold standard for zero-tax remote work in {{ae.taxYear}}. The UAE imposes {{ae.incomeTaxRatePercent}} personal income tax, {{ae.socialSecurityRatePercent}} employee social security, and provides formal legal residence through the 1-year Virtual Working Programme and multi-year Golden Visas. For contractors, freelance revenue up to {{ae.corporateTaxThresholdAEDFormatted}} ({{ae.corporateTaxThresholdUSDFormatted}}) is completely exempt from the UAE's {{ae.corporateTaxRatePercent}} corporate tax. Thailand represents a powerful complementary option under its territorial framework: digital nomads spending under 180 days per calendar year pay {{th.taxBrackets.minRatePercent}} Thai tax on foreign income, while full-year residents can achieve {{th.taxBrackets.minRatePercent}} taxation on foreign income that remains offshore and is never remitted into Thailand.",
+  "faqs": [
+    {
+      "q": "How can remote workers legitimately pay 0% income tax in Dubai?",
+      "a": "By obtaining the Dubai Virtual Working Visa or Golden Visa and establishing legal residence in the UAE. The UAE statutory personal income tax rate is {{ae.incomeTaxRatePercent}}, and individual commercial revenue is exempt from corporate tax up to {{ae.corporateTaxThresholdAEDFormatted}} ({{ae.corporateTaxThresholdUSDFormatted}})."
+    },
+    {
+      "q": "Can you pay 0% tax in Thailand as a digital nomad in 2026?",
+      "a": "Yes, in two statutory scenarios: (1) if you spend fewer than 180 days in Thailand during a calendar year, you are a tax non-resident and pay {{th.taxBrackets.minRatePercent}} on foreign income; or (2) if you reside in Thailand for 180+ days, foreign income that is kept strictly offshore and never remitted or spent in Thailand is exempt from Thai PIT."
+    },
+    {
+      "q": "Do US citizens still have to pay tax if they move to a 0% tax country?",
+      "a": "Yes. The United States taxes its citizens on worldwide income regardless of where they live. However, US remote workers residing abroad can utilize the Foreign Earned Income Exclusion (FEIE) and the Foreign Housing Exclusion to legally minimize or eliminate US federal tax."
+    },
+    {
+      "q": "Do I need a Tax Residency Certificate (TRC) to prove zero tax status?",
+      "a": "Yes. In jurisdictions like the UAE, you can obtain a formal Tax Residency Certificate from the Federal Tax Authority after meeting physical presence thresholds ({{ae.taxResidencyDays}} days, or {{ae.taxResidencyTiesDays}} days with permanent home and vital interests) to prove tax residence under bilateral tax treaties."
+    }
+  ]
+}

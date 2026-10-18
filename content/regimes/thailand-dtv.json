@@ -1,0 +1,40 @@
+{
+  "slug": "thailand-dtv",
+  "reviewStatus": "draft",
+  "countryCode": "TH",
+  "regimeId": "th_offshore_unremitted",
+  "h1": "Thailand DTV Visa Tax Guide {{th.taxYear}} (Destination Thailand Visa)",
+  "metaTitle": "Thailand DTV Visa {{th.taxYear}} Tax Guide — Remittance & Net Pay",
+  "metaDescription": "Complete {{th.taxYear}} Thailand DTV visa tax guide. Learn how Por. 161/2566 impacts foreign remote income, 180-day tax residency rules, and the {{th.taxBrackets.minRatePercent}} offshore scenario.",
+  "heroBadge": "Destination Thailand Visa (DTV) • 5-Year Multi-Entry Framework",
+  "intro": "The Destination Thailand Visa (DTV), officially promulgated by the Ministry of Foreign Affairs, represents one of the most flexible long-stay immigration frameworks in Asia for international remote workers. The DTV grants a 5-year multi-entry visa permitting continuous stays of up to 180 days per entry, with the statutory option to extend each entry for an additional 180 days at local Thai Immigration bureaus for a modest official fee. While the immigration benefits are accessible, foreign professionals must understand the critical statutory intersection between the DTV and Thai personal tax law. Holding a DTV visa does not exempt you from Thai income tax; individuals spending 180 days or more in Thailand during any calendar year become statutory tax residents subject to the Thai Revenue Code.",
+  "eligibilityChecklist": [
+    "Financial asset verification: Documented proof of liquid funds, bank deposits, or investment assets equal to at least {{th.dtv.assetRequirementTHBFormatted}} (approximately USD {{th.dtv.assetRequirementUSDFormatted}} or EUR {{th.dtv.assetRequirementEURFormatted}}) at time of visa application.",
+    "Documented remote occupation: Official employment contract with a company located outside Thailand, an international corporate assignment letter, or a professional portfolio demonstrating active independent freelance contracts with foreign clients.",
+    "Valid passport: Minimum remaining passport validity of 6 months.",
+    "Non-Thai revenue source: Work must be performed entirely for entities or clients established outside the Kingdom of Thailand.",
+    "Consular processing: Application filed online through the official Thai E-Visa portal with a payment of the statutory {{th.dtv.consularFeeTHBFormatted}} consular visa fee."
+  ],
+  "whoItSuits": "The DTV visa is exceptionally well suited for digital nomads, online software engineers, creative freelancers, and location-independent entrepreneurs seeking a high standard of living, reliable high-speed fiber internet, and tropical lifestyle at a fraction of Western costs. For remote workers who structure their travel to spend under 180 days in Thailand per calendar year, the DTV provides complete legal non-resident status with {{th.taxBrackets.minRatePercent}} Thai tax liability. Even for residents staying 180+ days, Thailand's progressive PIT brackets (starting with a {{th.taxBrackets.bracket1RatePercent}} band up to {{th.taxBrackets.bracket1LimitFormatted}}, {{th.taxBrackets.bracket2RatePercent}} up to {{th.taxBrackets.bracket2LimitFormatted}}, and {{th.taxBrackets.bracket3RatePercent}} up to {{th.taxBrackets.bracket3LimitFormatted}}) combined with {{th.socialSecurity.ratePercent}} social security result in moderate effective tax rates.",
+  "whoItDoesNotSuit": "Remote workers who believe the DTV is a statutory zero-tax visa for permanent full-year residence are misinformed. If you stay 180 days or more in a calendar year and remit high earnings to fund your lifestyle, progressive PIT rates reaching {{th.taxBrackets.bracket7RatePercent}} and {{th.taxBrackets.bracket8RatePercent}} on high income brackets apply under Revenue Department Instructions Por. 161/2566 and 162/2566. Furthermore, professionals seeking a direct path to permanent residency or Thai citizenship cannot count DTV years toward permanent immigration milestones.",
+  "commonPitfalls": "The most dangerous misconception among digital nomads is assuming that using foreign credit cards or making ATM withdrawals from overseas bank accounts bypasses Thai tax. The Thai Revenue Department has explicitly clarified in Departmental Instruction Por. 161/2566 that any foreign funds brought into Thailand to settle local expenses—whether via international wire transfer, credit card transactions at local merchants, or ATM cash dispensing—legally constitute assessable remittance. Another frequent mistake is overstaying the 180-day single-entry limit without filing the required {{th.dtv.extensionFeeTHBFormatted}} official 180-day extension at immigration.",
+  "statutoryFramework": "Enacted pursuant to the Thai Immigration Act B.E. 2522 and Ministry of Foreign Affairs notifications. Tax residency and remittance liability are governed by Sections 41, 42, and 48 of the Thai Revenue Code and Revenue Department Instructions Por. 161/2566 and Por. 162/2566. The {{th.taxBrackets.minRatePercent}} offshore tax scenario applies only if foreign income remains permanently abroad and is never brought into Thailand.",
+  "faqs": [
+    {
+      "q": "Can I work for Thai local companies on a Destination Thailand Visa (DTV)?",
+      "a": "No. The DTV visa strictly prohibits taking local employment with Thai domestic entities or billing clients based in Thailand. All employment and contractual remuneration must originate from offshore entities."
+    },
+    {
+      "q": "How does the 180-day tax residency rule work in Thailand?",
+      "a": "If you spend 180 days or more in Thailand within a single calendar year (January 1 to December 31), you are legally deemed a Thai tax resident. As a tax resident, foreign income that you remit into Thailand during that year is subject to progressive Thai PIT ({{th.taxBrackets.rangePercent}})."
+    },
+    {
+      "q": "How can DTV holders legally pay 0% tax in Thailand?",
+      "a": "DTV holders can legally pay {{th.taxBrackets.minRatePercent}} tax in Thailand either by keeping their total annual physical stay under 180 days (retaining tax non-resident status) or by leaving their foreign earnings entirely in overseas bank accounts without remitting or spending those funds in Thailand."
+    },
+    {
+      "q": "How much does the DTV visa extension cost inside Thailand?",
+      "a": "A DTV visa holder can extend their 180-day initial stay once per entry for an additional 180 days at any local Thai Immigration Office for the standard statutory fee of {{th.dtv.extensionFeeTHBFormatted}}."
+    }
+  ]
+}

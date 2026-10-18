@@ -1,0 +1,55 @@
+{
+  "reviewStatus": "draft",
+  "slug": "portugal-vs-thailand",
+  "countryCodes": [
+    "PT",
+    "TH"
+  ],
+  "h1": "Portugal vs Thailand Remote Worker Tax Comparison {{es.taxYear}}",
+  "metaTitle": "Portugal vs Thailand Tax Comparison {{es.taxYear}} — D8 vs DTV Net Pay",
+  "metaDescription": "{{es.taxYear}} Portugal vs Thailand tax comparison. Compare Portugal IRS and IFICI vs Thailand progressive PIT and Por. 161/2566, living costs, and net pay.",
+  "intro": "Evaluating Portugal against Thailand contrasts Western European coastal living with a prominent Southeast Asian digital nomad destination. Portugal offers Atlantic coastlines, EU stability, structured immigration via the D8 Nomad Visa, and potential EU citizenship after {{pt.citizenshipYears}} years. Thailand counters with a tropical climate, the 5-year Destination Thailand Visa (DTV), and living costs roughly 40% to 50% below European baselines. However, tax compliance in Thailand now requires navigating Revenue Department Instructions Por. 161/2566 and Por. 162/2566 for remitted funds, requiring a thorough financial assessment against Portugal's progressive IRS.",
+  "regimeComparison": "Portugal taxes standard tax residents under progressive IRS brackets from {{pt.taxBrackets.bracketRangeLong}} (or {{pt.ifici.rate}} flat under IFICI for certified tech workers). Thailand taxes tax residents spending 180+ days on remitted foreign income under 8 progressive PIT brackets from {{th.taxBrackets.minRatePercent}} (up to {{th.taxBrackets.bracket1LimitFormatted}}) to {{th.taxBrackets.maxRatePercent}} (over ฿5,000,000). Crucially, Thailand allows a complete {{th.taxBrackets.minRatePercent}} offshore tax scenario if foreign earnings are kept entirely in overseas accounts and never remitted into Thailand.",
+  "socialSecurityComparison": "Social security is a decisive financial factor. Portugal requires salaried employees to pay {{pt.employee.rate}} uncapped social security, while contractors pay {{pt.contractor.rate}} on {{pt.contractor.baseMultiplierPercent}} of gross earnings up to the {{pt.contractor.iasMultiplier}}xIAS ceiling ({{pt.ss.contractorCap}} max). Thailand charges {{th.socialSecurity.ratePercent}} statutory social security on foreign remote workers and digital nomads. Thailand residents rely on private international health insurance, which provides excellent medical care at affordable premiums compared to European payroll withholdings.",
+  "costOfLivingComparison": "Living expenses heavily favor Thailand. Monthly baseline living expenditures in Bangkok are estimated at {{th.livingCostFormatted}} ({{th.livingCostUSDFormatted}}) for a single professional in a modern condominium with comprehensive amenities. Lisbon requires approximately {{pt.livingCostFormatted}} monthly. In Chiang Mai or Phuket, living costs drop further, delivering lifestyle purchasing power that allows remote workers to build substantial liquid savings.",
+  "winnerByProfile": [
+    {
+      "profile": "Location-Independent Freelancer ($40k–$80k)",
+      "winner": "Thailand (DTV)",
+      "rationale": "Zero social security and low living expenses allow freelancers to save substantially more annually than in Portugal under progressive IRS and recibos verdes social security."
+    },
+    {
+      "profile": "Long-Term EU Citizenship Seeker",
+      "winner": "Portugal (D8 Visa)",
+      "rationale": "Portugal provides a direct {{pt.citizenshipYears}}-year path to an EU passport, whereas Thailand's DTV visa is a non-immigrant visa with no citizenship or permanent residency rights."
+    },
+    {
+      "profile": "Certified Tech Specialist with Startup Role",
+      "winner": "Portugal (IFICI)",
+      "rationale": "The {{pt.ifici.ratePercent}} IFICI flat tax rate combined with European market access and EU residency creates strong long-term career value."
+    },
+    {
+      "profile": "Nomad Traveling Continuously (<180 days)",
+      "winner": "Thailand",
+      "rationale": "Spending under 180 days in Thailand guarantees legal non-resident status with {{th.taxBrackets.minRatePercent}} Thai tax liability under the 5-year DTV visa."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the monthly cost-of-living difference between Lisbon and Bangkok?",
+      "a": "A single remote worker spends approximately {{pt.livingCostFormatted}} per month in Lisbon compared to approximately {{th.livingCostFormatted}} in Bangkok, giving Thailand a notable cost advantage."
+    },
+    {
+      "q": "How do visa eligibility requirements compare between Portugal and Thailand?",
+      "a": "Portugal's D8 visa requires proof of recurring monthly income of approximately 4x minimum wage. Thailand's DTV visa requires proof of {{th.dtv.assetRequirementTHBFormatted}} ({{th.dtv.assetRequirementUSDFormatted}}) in liquid assets or savings and a remote work contract."
+    },
+    {
+      "q": "Do I have to pay social security in Thailand as a remote worker?",
+      "a": "No. Thailand levies {{th.socialSecurity.ratePercent}} statutory social security on foreign remote workers. Portugal levies {{pt.employee.ratePercent}} on employees and up to {{pt.ss.contractorCap}}/yr on independent contractors."
+    },
+    {
+      "q": "Can I obtain permanent residency on the Thailand DTV visa?",
+      "a": "No. The DTV visa is a 5-year multi-entry tourism and remote work visa that does not lead to permanent residency. Portugal's D8 visa leads to permanent residency and citizenship after {{pt.citizenshipYears}} years."
+    }
+  ]
+}

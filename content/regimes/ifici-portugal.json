@@ -1,0 +1,40 @@
+{
+  "slug": "ifici-portugal",
+  "reviewStatus": "draft",
+  "countryCode": "PT",
+  "regimeId": "d8_incentive",
+  "h1": "Portugal IFICI Tax Regime 2026 (NHR 2.0 Guide)",
+  "metaTitle": "Portugal IFICI Tax Regime 2026 — 20% Flat Rate Net Pay",
+  "metaDescription": "2026 Portugal IFICI guide (NHR 2.0). Compare 20% flat tax vs progressive IRS ({{pt.taxBrackets.bracketRange}}) at €50k, €100k, €150k. Eligibility checklist and rules.",
+  "heroBadge": "Incentivo Fiscal à Investigação Científica e Inovação • Art. 58-A EBF",
+  "intro": "The Tax Incentive for Scientific Research and Innovation (Incentivo Fiscal à Investigação Científica e Inovação - IFICI), widely referred to by international advisors as NHR 2.0, represents Portugal's restructured fiscal framework for high-value foreign professionals. Established under Article 58-A of the Estatuto dos Benefícios Fiscais (EBF) to replace the broad Non-Habitual Resident regime that expired for new entrants, IFICI provides a competitive {{pt.ifici.rate}} flat personal income tax (IRS) rate for a guaranteed period of {{pt.ifici.durationYears}} consecutive tax years. Designed to stimulate Portugal's knowledge economy, IFICI specifically targets highly skilled professionals, researchers, software architects, and founders participating in certified technological innovation ecosystems.",
+  "eligibilityChecklist": [
+    "Prior non-residency: Must not have been a tax resident in Portuguese territory during any of the 5 calendar years preceding relocation.",
+    "Certified innovation activity: Must perform teaching in higher education, scientific research, qualified jobs in certified startup entities (recognized under Startup Portugal / IAPMEI), or research and development roles certified by the National Innovation Agency (ANI).",
+    "Statutory tax residency: Must establish tax residency in Portugal by maintaining a habitual home or residing in the country for more than {{pt.daysResidency}} days in a 12-month period.",
+    "Ministerial registration: Must register the qualifying activity and receive validation from relevant government bodies prior to election with the Autoridade Tributária e Aduaneira.",
+    "Continuous compliance: Beneficiary must remain engaged in an eligible qualifying activity throughout each tax year to maintain the {{pt.ifici.ratePercent}} flat rate benefit."
+  ],
+  "whoItSuits": "The IFICI regime is exceptionally lucrative for senior software developers, AI engineers, biotechnology specialists, and executives employed by certified startups or innovation hubs earning above €50,000 annually. In Portugal's standard progressive IRS system, earnings above €39,791 face marginal rates of 37.00% to {{pt.taxBrackets.maxRate}}. Capping income tax at {{pt.ifici.ratePercent}} unlocks massive net salary retention for high-earning innovators throughout their {{pt.ifici.durationYears}}-year statutory entitlement.",
+  "whoItDoesNotSuit": "Traditional remote employees working for foreign corporate entities that lack Portuguese R&D or startup certification do not qualify for IFICI and must pay standard progressive IRS rates. Furthermore, early-career remote workers earning under €25,000 to €30,000 do not benefit, as baseline progressive brackets combined with the {{pt.deductions.standardAllowanceFormatted}} specific deduction generate effective tax rates below {{pt.ifici.ratePercent}}.",
+  "commonPitfalls": "The most pervasive misconception among digital nomads is assuming that securing a Portugal D8 Digital Nomad Visa automatically grants IFICI tax benefits. The D8 visa is strictly an immigration residence permit; IFICI tax status requires distinct statutory substantiation of employment by an eligible entity or certified innovation project. Another frequent pitfall is assuming foreign passive dividends or capital gains remain tax-free as under the legacy NHR; under IFICI, passive foreign income is generally taxed under standard statutory rules (e.g. 28% flat tax on foreign investment returns).",
+  "statutoryFramework": "Codified under Artigo 58.º-A of the Estatuto dos Benefícios Fiscais (EBF). The {{pt.ifici.ratePercent}} flat rate applies to net employment earnings (Category A) and professional service earnings (Category B) derived from certified eligible activities. Mandatory social security contributions continue to apply in full ({{pt.employee.ratePercent}} {{pt.employee.ssCeilingDescription}} for employees; {{pt.contractor.ratePercent}} on {{pt.contractor.baseMultiplierPercent}} of gross capped at {{pt.contractor.iasMultiplier}}xIAS for independent contractors, max {{pt.contractor.maxAnnualSSRoundedFormatted}} annually based on IAS {{pt.iasFormatted}}).",
+  "faqs": [
+    {
+      "q": "How does Portugal's IFICI regime differ from the old NHR regime?",
+      "a": "The legacy NHR regime applied broadly to any high-value profession with minimal sector auditing and offered 0% tax on many foreign passive income streams. IFICI focuses strictly on certified scientific research, certified tech startups, and R&D activities, maintaining the {{pt.ifici.ratePercent}} flat rate on earned income but removing broad exemptions on foreign passive dividends and pensions."
+    },
+    {
+      "q": "Can independent freelancers on recibos verdes qualify for IFICI in 2026?",
+      "a": "Yes, independent contractors (Category B) can qualify for the {{pt.ifici.ratePercent}} IFICI flat rate provided their contracts and professional services directly support certified R&D initiatives, accredited universities, or certified tech enterprises recognized by ANI or IAPMEI."
+    },
+    {
+      "q": "How long do IFICI tax benefits last in Portugal?",
+      "a": "Beneficiaries are entitled to the {{pt.ifici.ratePercent}} flat tax rate for {{pt.ifici.durationYears}} consecutive tax years starting from the year of registration as a Portuguese tax resident."
+    },
+    {
+      "q": "What happens if I leave an eligible startup and take a standard remote job?",
+      "a": "If you transition to an employer or activity that is not certified under IFICI guidelines, you forfeit the {{pt.ifici.ratePercent}} flat rate for that tax year and become subject to standard progressive IRS brackets ({{pt.taxBrackets.bracketRange}})."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "impatriati-italy",
+  "reviewStatus": "draft",
+  "countryCode": "IT",
+  "regimeId": "impatriati",
+  "h1": "Italy Regime Impatriati {{it.taxYear}} Guide & Tax Calculator",
+  "metaTitle": "Italy Regime Impatriati {{it.taxYear}} — 50% Exemption Net Pay",
+  "metaDescription": "Complete {{it.taxYear}} Italy Regime Impatriati tax guide. 50% exemption under D.Lgs. 209/2023, €600k cap, 4-year stay requirement, and INPS Gestione Separata analysis.",
+  "heroBadge": "Regime Lavoratori Impatriati • D.Lgs. 209/2023 Art. 5",
+  "intro": "The Italian Inbound Workers Tax Regime (Regime dei Lavoratori Impatriati), reformed under Article 5 of Legislative Decree No. 209/2023, is Italy's cornerstone statutory mechanism for attracting high-skilled international professionals, remote corporate specialists, and independent entrepreneurs. Beneficiaries who establish tax residence in Italy receive a direct {{it.impatriati.exemptionPercent}} statutory personal income tax exemption on qualifying employment and self-employment earnings, effectively slashing their national IRPEF liability by half. The exemption increases to {{it.impatriati.childExemptionPercent}} for workers who relocate with an accompanying minor child or who purchase a primary residential property in Italy. The regime applies to annual assessable earnings up to {{it.impatriati.capFormatted}} for a duration of {{it.impatriati.durationYears}} consecutive tax years, offering substantial net income retention for qualifying inbound talent.",
+  "eligibilityChecklist": [
+    "Prior non-residency: Must not have been a tax resident in Italy during the {{it.impatriati.priorNonResidencyYears}} tax years preceding the relocation.",
+    "Mandatory 4-year commitment: Must commit to maintaining continuous statutory tax residence in Italy for at least {{it.impatriati.minimumStayYears}} tax years (failing this triggers retroactive clawback of all tax benefits plus interest and penalties).",
+    "High qualification requirement: Must meet high qualification or specialization standards (possessing an advanced academic degree or recognized technical professional credentials).",
+    "Domestic activity performance: Work activity must be performed predominantly (greater than {{it.daysResidency}} days per year) within the territory of the Italian Republic.",
+    "Statutory earnings cap: The {{it.impatriati.exemptionPercent}} exemption applies to a maximum gross earnings threshold of {{it.impatriati.capFormatted}} per tax year; any income above {{it.impatriati.capFormatted}} is taxed under standard progressive IRPEF rates."
+  ],
+  "whoItSuits": "Regime Impatriati is extraordinarily compelling for international remote workers, software engineers, and consulting partners. Under Italy's {{it.taxYear}} three-bracket IRPEF structure ({{it.taxBrackets.bracket1RatePercent}}, {{it.taxBrackets.bracket2RatePercent}}, {{it.taxBrackets.bracket3RatePercent}}), high earners face a {{it.taxBrackets.bracket3RatePercent}} marginal rate on income above {{it.taxBrackets.bracket2LimitFormatted}}. Applying the {{it.impatriati.exemptionPercent}} exemption effectively halves the tax base, yielding substantial net pay gains across the {{it.impatriati.durationYears}}-year entitlement window.",
+  "whoItDoesNotSuit": "This regime is completely unsuitable for transient digital nomads planning to stay in Italy for only 1 or 2 years. The statutory legislation explicitly mandates a minimum {{it.impatriati.minimumStayYears}}-year tax residency period; departing before completing {{it.impatriati.minimumStayYears}} tax years revokes the benefit retroactively, forcing the taxpayer to repay all exempted taxes alongside administrative surcharges. Additionally, emerging earners gain modest absolute tax savings that may be outweighed by professional accounting and compliance fees.",
+  "commonPitfalls": "The most severe trap in the Italian system is confusing tax exemption with social security exemption. Crucially, the {{it.impatriati.exemptionPercent}} Impatriati exemption applies exclusively to personal income tax (IRPEF); it does NOT reduce mandatory INPS social security contributions! Independent contractors in Gestione Separata must still pay {{it.gestioneSeparata.ratePercent}} on their gross earnings up to the {{it.inps.massimaleFormatted}} massimale ceiling. Another critical pitfall is failing to register promptly with the resident population registry (Anagrafe della Popolazione Residente) upon establishing residence, which can delay statutory recognition.",
+  "statutoryFramework": "Enacted under Decreto Legislativo 27 dicembre 2023, n. 209 (Attuazione della riforma fiscale in materia di fiscalità internazionale), Art. 5. Administered by the Agenzia delle Entrate. Operates in conjunction with the consolidated 3-bracket IRPEF rates established in the Legge di Bilancio 2026.",
+  "faqs": [
+    {
+      "q": "What happens if I leave Italy before 4 years under Regime Impatriati?",
+      "a": "Under D.Lgs. 209/2023, the 4-year stay requirement is mandatory. If you transfer your tax residence outside Italy before the end of the fourth tax year, the Agenzia delle Entrate will issue a retroactive assessment clawing back all exempted taxes plus statutory interest and administrative penalties."
+    },
+    {
+      "q": "Does the 50% exemption apply to INPS social security contributions?",
+      "a": "No. The {{it.impatriati.exemptionPercent}} exemption applies strictly to IRPEF income tax. INPS social security contributions ({{it.employee.baseRatePercent}} for employees and {{it.gestioneSeparata.ratePercent}} for Gestione Separata contractors) are calculated on full gross earnings up to the statutory massimale ceiling ({{it.inps.massimaleFormatted}} under Circolari INPS 6/2026 & 8/2026)."
+    },
+    {
+      "q": "Can I qualify for the 60% exemption instead of 50% under Impatriati?",
+      "a": "Yes. The tax exemption increases from {{it.impatriati.exemptionPercent}} to {{it.impatriati.childExemptionPercent}} if you relocate to Italy with an accompanying minor child, or if you purchase a primary residential property in Italy within 12 months preceding or following the relocation."
+    },
+    {
+      "q": "Is foreign remote employment eligible for Italy's Regime Impatriati in 2026?",
+      "a": "Yes. Inbound remote employees working for foreign corporate employers and remote contractors providing cross-border services qualify, provided they perform their work primarily from within Italian territory and meet the professional qualification criteria."
+    }
+  ]
+}

@@ -51,8 +51,8 @@
     }
 
     /**
-     * Spain Autónomos Social Security: 15 Statutory Income Tramos (RDL 13/2022 & Orden PJC/178/2025)
-     * Evaluates monthly net return after 7% generic deductible expenses
+     * Spain Autónomos Social Security: 15 Statutory Income Tramos (RDL 13/2022 & Orden PJC/297/2026)
+     * Evaluates monthly net return after 7% generic deductible expenses (minimum base of each tramo)
      */
     function calculateSpainAutonomoSS(gross, expenses) {
         const netAnnual = Math.max(0, (gross - expenses) * 0.93);
@@ -63,15 +63,15 @@
         if (netMonthly <= 1300) return 299.56 * 12;
         if (netMonthly <= 1500) return 302.65 * 12;
         if (netMonthly <= 1700) return 302.65 * 12;
-        if (netMonthly <= 1850) return 329.41 * 12;
-        if (netMonthly <= 2030) return 334.56 * 12;
-        if (netMonthly <= 2330) return 339.71 * 12;
-        if (netMonthly <= 2760) return 350.00 * 12;
-        if (netMonthly <= 3190) return 370.59 * 12;
-        if (netMonthly <= 3620) return 391.18 * 12;
-        if (netMonthly <= 4050) return 411.76 * 12;
-        if (netMonthly <= 6000) return 458.09 * 12;
-        return 545.59 * 12; // Tramo 15 (> 6,000 €/mo): €6,547.08/yr
+        if (netMonthly <= 1850) return 360.29 * 12;
+        if (netMonthly <= 2030) return 380.88 * 12;
+        if (netMonthly <= 2330) return 401.47 * 12;
+        if (netMonthly <= 2760) return 427.21 * 12;
+        if (netMonthly <= 3190) return 452.94 * 12;
+        if (netMonthly <= 3620) return 478.68 * 12;
+        if (netMonthly <= 4050) return 504.41 * 12;
+        if (netMonthly <= 6000) return 545.59 * 12;
+        return 607.35 * 12; // Tramo 15 (> 6,000 €/mo): €7,288.20/yr
     }
 
     /**
@@ -99,6 +99,16 @@
         let taxableIncome = Math.max(0, gross - expenses);
         let activeRegimeNote = "";
 
+        // Determine calculation currency basis (cross-country benchmarks and tables default to EUR)
+        let calcCurrency = 'EUR';
+        if (params.currency) {
+            calcCurrency = String(params.currency).toUpperCase();
+        } else if (params.incomeCurrency) {
+            calcCurrency = String(params.incomeCurrency).toUpperCase();
+        } else if (params.isUSD === true) {
+            calcCurrency = 'USD';
+        }
+
         // --- Country-Specific Statutory Rules ---
         switch (countryCode) {
             case 'ES': // Spain
@@ -116,7 +126,7 @@
                     incomeTax = calculateBrackets(taxableES, countryData.taxBrackets);
                 }
                 if (workerType === 'employee') {
-                    const maxBaseES = countryData.socialSecurity.employeeMaxAnnualBase || 61260;
+                    const maxBaseES = countryData.socialSecurity.employeeMaxAnnualBase || 61214.40;
                     const empRateES = countryData.socialSecurity.employeeRate || 0.065;
                     socialSecurity = Math.min(gross, maxBaseES) * empRateES;
                 } else {
@@ -144,7 +154,7 @@
                     socialSecurity = gross * (countryData.socialSecurity.employeeRate || 0.11);
                 } else {
                     const relevantIncomePT = gross * (countryData.socialSecurity.contractorBaseMultiplier || 0.70);
-                    const maxBasePT = countryData.socialSecurity.contractorMaxAnnualBase || 75240;
+                    const maxBasePT = countryData.socialSecurity.contractorMaxAnnualBase || 77346.72;
                     const contractorRatePT = countryData.socialSecurity.contractorRate || 0.214;
                     socialSecurity = Math.min(relevantIncomePT, maxBasePT) * contractorRatePT;
                 }
@@ -240,14 +250,23 @@
                 } else {
                     incomeTax = calculateBrackets(taxableIncome, countryData.taxBrackets);
                 }
-                // Social security (INPS) is calculated on 100% of gross (unreduced by Impatriati) up to statutory massimale €120,607
+                // Social security (INPS) is calculated on 100% of gross (unreduced by Impatriati) up to statutory massimale €122,295
                 {
-                    const inpsMassimale = countryData.socialSecurity.employeeMaxAnnualBase || 120607;
-                    const empRateIT = countryData.socialSecurity.employeeRate || 0.0919;
+                    const inpsMassimale = countryData.socialSecurity.employeeMaxAnnualBase || 122295;
+                    const primaFascia = countryData.socialSecurity.primaFascia || 56224;
                     const contractorRateIT = countryData.socialSecurity.contractorRate || 0.2607;
-                    socialSecurity = workerType === 'employee'
-                        ? Math.min(gross, inpsMassimale) * empRateIT
-                        : Math.min(gross, inpsMassimale) * contractorRateIT;
+                    const cappedGross = Math.min(gross, inpsMassimale);
+                    if (workerType === 'employee') {
+                        if (cappedGross <= primaFascia) {
+                            socialSecurity = cappedGross * (countryData.socialSecurity.employeeRate || 0.0919);
+                        } else {
+                            const baseRate = countryData.socialSecurity.employeeRate || 0.0919;
+                            const excessRate = countryData.socialSecurity.employeeExcessRate || 0.1019;
+                            socialSecurity = (primaFascia * baseRate) + ((cappedGross - primaFascia) * excessRate);
+                        }
+                    } else {
+                        socialSecurity = cappedGross * contractorRateIT;
+                    }
                 }
                 break;
 
@@ -264,12 +283,21 @@
 
             case 'TH': // Thailand
                 {
-                    const fxRate = countryData.fxRateUSD || 35.0;
-                    const isUSD = params.incomeCurrency === 'USD' || (params.incomeCurrency !== 'THB' && params.isUSD !== false);
-                    const grossTHB = isUSD ? gross * fxRate : gross;
-                    const expensesTHB = isUSD ? expenses * fxRate : expenses;
-                    const taxableBaseTHB = Math.max(0, grossTHB - expensesTHB);
+                    const fxEurThb = countryData.fxRateEUR || 37.602;
+                    const fxUsdThb = countryData.fxRateUSD || 33.415;
 
+                    let grossTHB = gross;
+                    let expensesTHB = expenses;
+
+                    if (calcCurrency === 'EUR') {
+                        grossTHB = gross * fxEurThb;
+                        expensesTHB = expenses * fxEurThb;
+                    } else if (calcCurrency === 'USD') {
+                        grossTHB = gross * fxUsdThb;
+                        expensesTHB = expenses * fxUsdThb;
+                    }
+
+                    const taxableBaseTHB = Math.max(0, grossTHB - expensesTHB);
                     let taxTHB = 0;
                     // Default = remitted income (progressive PIT).
                     // 0% offshore scenario ONLY applies if explicitly requested:
@@ -286,7 +314,13 @@
                         activeRegimeNote = "Progressive PIT on remitted foreign income (0%–35%) with ฿160,000 statutory deductions (50% expense cap ฿100,000 + ฿60,000 personal allowance).";
                     }
 
-                    incomeTax = isUSD ? (taxTHB / fxRate) : taxTHB;
+                    if (calcCurrency === 'EUR') {
+                        incomeTax = taxTHB / fxEurThb;
+                    } else if (calcCurrency === 'USD') {
+                        incomeTax = taxTHB / fxUsdThb;
+                    } else {
+                        incomeTax = taxTHB;
+                    }
                     socialSecurity = 0;
                 }
                 break;
@@ -365,11 +399,24 @@
         const effectiveTaxRate = gross > 0 ? parseFloat(Math.min(100, Math.max(0, ((incomeTax + socialSecurity) / gross) * 100)).toFixed(1)) : 0.0;
 
         // Cost of Living & Purchasing Power
-        const isUSDInputTH = countryCode === 'TH' && (params.incomeCurrency === 'USD' || (params.incomeCurrency !== 'THB' && params.isUSD !== false));
-        const fxRateTH = countryData.fxRateUSD || 35.0;
-        const monthlyLivingCost = isUSDInputTH 
-            ? Math.round((countryData.livingCost || 38500) / fxRateTH) 
-            : (countryData.livingCost || 1800);
+        let displayCurrency = countryData.currency;
+        let displaySymbol = countryData.symbol;
+        let monthlyLivingCost = countryData.livingCost || 1800;
+
+        if (calcCurrency === 'EUR') {
+            displayCurrency = 'EUR';
+            displaySymbol = '€';
+            monthlyLivingCost = countryData.livingCostEUR || (countryCode === 'TH' ? Math.round(38500 / 37.602) : (countryCode === 'AE' ? 2000 : (countryData.livingCost || 1800)));
+        } else if (calcCurrency === 'USD') {
+            displayCurrency = 'USD';
+            displaySymbol = '$';
+            monthlyLivingCost = countryCode === 'TH' ? Math.round(38500 / 33.415) : (countryCode === 'AE' ? (countryData.livingCost || 2250) : Math.round((countryData.livingCost || 1800) * 1.1253));
+        } else if (calcCurrency === 'THB') {
+            displayCurrency = 'THB';
+            displaySymbol = '฿';
+            monthlyLivingCost = countryData.livingCost || 38500;
+        }
+
         const netMonthlySavings = netMonthly - monthlyLivingCost;
 
         let tier = "✨ Solid Comfort";
@@ -384,8 +431,9 @@
         return {
             country: countryData.country,
             countryCode: countryData.countryCode,
-            currency: isUSDInputTH ? 'USD' : countryData.currency,
-            symbol: isUSDInputTH ? '$' : countryData.symbol,
+            currency: displayCurrency,
+            symbol: displaySymbol,
+            calcCurrency: calcCurrency,
             localCurrency: countryData.currency,
             localSymbol: countryData.symbol,
             fxRateUSD: countryData.fxRateUSD || 1.0,
@@ -425,8 +473,8 @@
      * Side-by-Side Comparison Engine (Sections 19, 22, 23)
      */
     function compareCountries(income, countryA, countryB, workerType, filingStatus) {
-        const resA = calculateTax({ grossIncome: income, countryCode: countryA, workerType: workerType, filingStatus: filingStatus, useSpecialRegime: countryA !== 'TH', isOffshoreUnremitted: false });
-        const resB = calculateTax({ grossIncome: income, countryCode: countryB, workerType: workerType, filingStatus: filingStatus, useSpecialRegime: countryB !== 'TH', isOffshoreUnremitted: false });
+        const resA = calculateTax({ grossIncome: income, countryCode: countryA, workerType: workerType, filingStatus: filingStatus, useSpecialRegime: countryA !== 'TH', isOffshoreUnremitted: false, currency: 'EUR' });
+        const resB = calculateTax({ grossIncome: income, countryCode: countryB, workerType: workerType, filingStatus: filingStatus, useSpecialRegime: countryB !== 'TH', isOffshoreUnremitted: false, currency: 'EUR' });
 
         const annualNetDiff = resB.netAnnual - resA.netAnnual;
         const monthlyNetDiff = resB.netMonthly - resA.netMonthly;

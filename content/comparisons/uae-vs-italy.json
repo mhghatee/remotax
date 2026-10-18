@@ -1,0 +1,55 @@
+{
+  "reviewStatus": "draft",
+  "slug": "uae-vs-italy",
+  "countryCodes": [
+    "AE",
+    "IT"
+  ],
+  "h1": "UAE vs Italy Remote Worker Tax Comparison {{es.taxYear}}",
+  "metaTitle": "UAE vs Italy Tax Comparison {{es.taxYear}} — Dubai 0% vs Italy 50%",
+  "metaDescription": "UAE vs Italy tax comparison for remote workers {{es.taxYear}}. Compare Dubai {{ae.incomeTaxRatePercent}} tax vs Italy {{it.impatriati.exemptionPercent}} Regime Impatriati, INPS social security, and net salary differences.",
+  "intro": "Comparing the United Arab Emirates with Italy places total tax minimization against Mediterranean cultural heritage. The UAE—through Dubai's Virtual Working Programme—offers a complete {{ae.incomeTaxRatePercent}} statutory personal income tax rate, {{ae.socialSecurityRatePercent}} social security, and a booming international business ecosystem. Italy counters with its renowned historic cities, Mediterranean climate, and the reformed Regime Impatriati offering a {{it.impatriati.exemptionPercent}} personal tax exemption under Legislative Decree 209/2023. Deciding between Dubai and Rome or Milan requires analyzing the stark contrast between retaining 100% of gross earnings versus navigating Italy's progressive IRPEF, high INPS social security contributions, and strict {{it.impatriati.minimumStayYears}}-year residency lock-in rules.",
+  "regimeComparison": "The UAE imposes {{ae.incomeTaxRatePercent}} personal income tax and exempts natural persons from corporate tax up to {{ae.corporateTaxThresholdAEDFormatted}} in domestic turnover. Italy assesses income under three progressive IRPEF brackets ({{it.taxBrackets.bracket1RatePercent}}, {{it.taxBrackets.bracket2RatePercent}}, {{it.taxBrackets.bracket3RatePercent}}), with the Regime Impatriati cutting taxable income by {{it.impatriati.exemptionPercent}} ({{it.impatriati.childExemptionPercent}} with minor children or home purchase) up to {{it.impatriati.capFormatted}} for {{it.impatriati.durationYears}} tax years. However, Italy's regime strictly requires maintaining Italian tax residency for at least {{it.impatriati.minimumStayYears}} tax years; leaving early triggers full retroactive clawback with penalties. Dubai's remote visa carries zero lock-in obligations.",
+  "socialSecurityComparison": "Social security represents a massive financial divergence. The UAE charges {{ae.socialSecurityRatePercent}} social security on foreign remote workers. In Italy, salaried remote employees contribute up to the INPS massimale of {{it.inps.massimaleFormatted}} ({{it.ss.employeeCap}} max). Independent contractors in Italy face a {{it.gestioneSeparata.ratePercent}} Gestione Separata contribution up to the {{it.inps.massimaleFormatted}} ceiling, generating up to {{it.gs.cap}} in mandatory social contributions. Crucially, Italy's {{it.impatriati.exemptionPercent}} Impatriati exemption does NOT apply to INPS social security, creating heavy overhead for self-employed professionals in Italy.",
+  "costOfLivingComparison": "Living costs are higher in Dubai than in Rome, but comparable to Milan. Baseline monthly living expenses for a single remote professional in Dubai average {{ae.livingCostFormatted}}. In Rome, baseline expenditures average {{it.livingCostFormatted}} per month, while Milan baselines run higher. Rent represents the primary expense in Dubai, but the absence of income tax and social security easily offsets this for six-figure earners.",
+  "winnerByProfile": [
+    {
+      "profile": "High-Earning Independent Contractor ($100k+)",
+      "winner": "UAE (Dubai)",
+      "rationale": "Dubai saves up to {{it.gs.cap}} in Italian INPS social security alone, plus eliminates all income tax, netting tens of thousands more than Italy."
+    },
+    {
+      "profile": "Cultural Heritage & Lifestyle Seeker",
+      "winner": "Italy (Rome/Florence)",
+      "rationale": "Italy provides extensive historical heritage, walkable historic city centers, and established Mediterranean urban culture."
+    },
+    {
+      "profile": "Remote Worker Seeking Maximum Flexibility",
+      "winner": "UAE (Dubai)",
+      "rationale": "Dubai's {{ae.vwp.durationYears}}-year renewable visa carries no lock-in penalty. Italy's Impatriati regime locks you into a mandatory {{it.impatriati.minimumStayYears}}-year stay on pain of severe tax penalties."
+    },
+    {
+      "profile": "Corporate Remote Executive with Family",
+      "winner": "UAE (Dubai)",
+      "rationale": "Zero personal tax, exceptional civic safety, world-class international private schools, and zero social security deductions maximize family wealth accumulation."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How much more do you net in Dubai versus Italy at €100,000?",
+      "a": "At €100,000, an employee under Italy's {{it.impatriati.exemptionPercent}} Impatriati nets {{it.netPay100kImpatriatiEmployeeFormatted}} after IRPEF and INPS. In Dubai, you net the entire {{ae.netPay100kFormatted}}, giving you an immediate annual net pay advantage."
+    },
+    {
+      "q": "Does Italy's 50% Impatriati exemption apply to INPS social security?",
+      "a": "No. The {{it.impatriati.exemptionPercent}} Impatriati exemption applies exclusively to IRPEF income tax. INPS contributions (up to {{it.gs.cap}} for contractors) are calculated on full earnings up to the {{it.inps.massimaleFormatted}} ceiling."
+    },
+    {
+      "q": "What is the penalty for leaving Italy before 4 years?",
+      "a": "Leaving Italy before completing {{it.impatriati.minimumStayYears}} tax years revokes your Impatriati status retroactively, requiring you to pay all exempted taxes plus interest and administrative penalties."
+    },
+    {
+      "q": "What are the visa income requirements for Dubai vs Italy?",
+      "a": "Dubai's Virtual Working Programme requires verified income of USD {{ae.vwp.salaryRequirementUSDFormatted}} per month. Italy's Digital Nomad Visa requires minimum annual income of approximately €28,000."
+    }
+  ]
+}

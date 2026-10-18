@@ -1,0 +1,40 @@
+{
+  "slug": "beckham-law-spain",
+  "reviewStatus": "draft",
+  "countryCode": "ES",
+  "regimeId": "beckham_law",
+  "h1": "Spain Beckham Law 2026 Guide & Tax Calculator",
+  "metaTitle": "Spain Beckham Law 2026 Guide & Tax Calculator — 24% Rate",
+  "metaDescription": "2026 Spain Beckham Law guide. Compare 24% flat rate vs progressive IRPF at €50k, €100k, €150k. Eligibility checklist, digital nomad rules and traps.",
+  "heroBadge": "Special Expatriate Tax Regime • Art. 93 LIRPF",
+  "intro": "The Spanish Special Expatriate Regime, commonly referred to as the Beckham Law under Article 93 of the Ley del Impuesto sobre la Renta de las Personas Físicas (LIRPF), allows qualifying inbound professionals to be taxed as non-residents on Spanish-source employment income. Originally established under Real Decreto 687/2005 to attract executive personnel, the regime's scope was expanded under Spain's Startup Act (Ley 28/2022) to encompass international teleworkers, digital nomads, and qualified researchers moving to Spain who meet statutory non-residency criteria under Article 93 LIRPF. Beneficiaries are taxed at a flat rate of {{es.beckham.rate}} on gross employment earnings up to {{es.beckham.capFormatted}}, bypassing progressive IRPF rates ({{es.taxBrackets.minRatePercent}} to {{es.taxBrackets.maxRatePercent}}).",
+  "eligibilityChecklist": [
+    "Non-residency history: Must not have been a tax resident in Spain during the {{es.beckham.priorNonResidencyYears}} calendar years prior to relocation.",
+    "Valid qualifying purpose: Relocation must be driven by an employment contract with an employer, an international assignment letter, appointment as a company director, or approved remote activity under the Spanish Digital Nomad Visa.",
+    "Nomad contractor limit: If applying as a self-employed digital nomad contractor, no more than {{es.beckham.foreignInvoicingLimitPercent}} of total professional invoicing may originate from Spanish legal entities.",
+    "Exclusion of permanent establishments: Income cannot be derived through a permanent establishment located in Spain (other than qualifying nomad activities under the Startup Act).",
+    "Strict 6-month statutory deadline: Official application (Modelo 149) must be filed with the Agencia Tributaria within exactly {{es.beckham.applicationDeadlineMonths}} months from the date of registration with Spanish Social Security or initiation of qualifying activity."
+  ],
+  "whoItSuits": "The Beckham Law is uniquely advantageous for remote software engineers, tech leads, corporate executives, and specialized remote contractors earning above {{es.beckham.advantageThresholdFormatted}} annually. Because Spain's progressive IRPF marginal rates reach 37% at {{es.beckham.advantageThresholdFormatted}} and 45% between €60,000 and €300,000, high earners under the Beckham Law save tens of thousands of euros annually. Furthermore, it is exceptionally suited for individuals with substantial passive investment portfolios abroad (foreign stock dividends, offshore real estate rentals, capital gains), as non-Spanish source passive income is 100% exempt from Spanish taxation.",
+  "whoItDoesNotSuit": "Professionals earning under €50,000 per year do not benefit from electing the Beckham Law. Under standard progressive IRPF, an individual earning €35,000 to €45,000 benefits from standard personal allowances ({{es.deductions.standardAllowanceFormatted}}), general deductible expenses ({{es.deductions.workExpenseAllowanceFormatted}}), and lower initial tax brackets ({{es.taxBrackets.minRatePercent}} and 24%), resulting in an effective tax rate below {{es.beckham.ratePercent}}. Electing the flat {{es.beckham.ratePercent}} rate on gross earnings without personal allowances would actually increase total tax liability. Additionally, professionals holding substantial domestic Spanish assets or those planning to remain permanently beyond the 6-year window must prepare for eventual transition to standard IRPF.",
+  "commonPitfalls": "The most catastrophic pitfall is missing the immutable 6-month filing window. The Agencia Tributaria enforces the 6-month deadline from Social Security registration with zero administrative discretion; late submissions are automatically rejected with no right of appeal, binding the worker to standard progressive IRPF for their entire stay. A second common mistake is failing to document that less than {{es.beckham.foreignInvoicingLimitPercent}} of freelance revenue originates in Spain. A third trap involves wealth tax: while foreign assets are shielded, Spanish real estate and assets remain subject to Spanish Wealth Tax and the Temporary Solidarity Tax on Large Fortunes if values exceed statutory thresholds.",
+  "statutoryFramework": "Governed by Article 93 of Ley 35/2006 (LIRPF) and modified by Ley 28/2022 de Fomento del Ecosistema de las Empresas Emergentes (Startup Act). Beneficiaries maintain non-resident tax status for the calendar year of relocation plus the subsequent 5 consecutive tax years (total 6 tax years). Earnings up to {{es.beckham.capFormatted}} are taxed at {{es.beckham.rate}}; any excess above {{es.beckham.capFormatted}} is taxed at the top marginal rate of {{es.beckham.overflowRatePercent}}. Withholding is settled through annual Form 151 returns rather than standard resident Form 100.",
+  "faqs": [
+    {
+      "q": "How long does the Beckham Law tax benefit last in Spain?",
+      "a": "The regime lasts for the tax year in which you obtain tax residency in Spain plus the following 5 consecutive tax years, giving you a total of up to 6 years of the {{es.beckham.ratePercent}} flat tax rate."
+    },
+    {
+      "q": "What happens if my earnings exceed €600,000 under the Beckham Law?",
+      "a": "Earnings up to {{es.beckham.capFormatted}} are taxed at the flat {{es.beckham.ratePercent}} rate. Any portion of taxable income exceeding {{es.beckham.capFormatted}} in a single calendar year is taxed at the top statutory marginal rate of {{es.beckham.overflowRatePercent}}."
+    },
+    {
+      "q": "Do I have to declare my foreign assets (Modelo 720) under the Beckham Law?",
+      "a": "No. Because individuals under the Beckham Law are taxed under the Non-Resident Income Tax rules (IRNR), you are legally exempt from filing Modelo 720 (the informational declaration of assets held abroad)."
+    },
+    {
+      "q": "Can I lose the Beckham Law status if I change remote employers?",
+      "a": "Yes, unless you notify the tax authorities and ensure that your new employment contract or nomad activity fulfills all statutory Startup Act conditions within the prescribed procedural timelines."
+    }
+  ]
+}

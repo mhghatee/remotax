@@ -1,0 +1,36 @@
+{
+  "slug": "thailand",
+  "reviewStatus": "draft",
+  "h1": "Thailand Remote Worker Tax Calculator 2026",
+  "metaTitle": "Thailand Remote Worker Tax Calculator 2026 — DTV Net Pay",
+  "metaDescription": "Calculate 2026 Thailand net pay under progressive PIT & Por. 161/2566 rules. Model employee vs contractor, Bangkok living costs, and DTV visa requirements.",
+  "heroBadge": "Tax Year 2026 Statutory Rules",
+  "intro": "At €100,000 gross income remitted into Thailand, a remote professional retains {{th.netPay100kRemittedEURFormatted}} net ({{th.effectiveRate100kRemitted}} effective rate) under statutory progressive PIT (0%–35%) with {{th.deductions.totalDeductionsFormatted}} in standard allowances and 0% social security. Foreign income that remains strictly offshore and is never transferred or spent in Thailand incurs 0% Thai personal income tax under Revenue Department Instructions Por. 161/2566 & 162/2566.",
+  "taxSystemOverview": "The Thai Revenue Department assesses personal income tax (PIT) under an 8-tier progressive rate structure codified in the Thai Revenue Code. Statutory rates start with an initial {{th.taxBrackets.minRatePercent}} tax-free band on taxable income up to ฿150,000, ascending through 5.00% (up to ฿300,000), 10.00% (up to ฿500,000), 15.00% (up to ฿750,000), 20.00% (up to ฿1,000,000), 25.00% (up to ฿2,000,000), 30.00% (up to ฿5,000,000), and reaching a top marginal rate of {{th.taxBrackets.maxRatePercent}} on net assessable income exceeding ฿5,000,000. Salaried remote employees and contractors are entitled to standard statutory deductions, comprising a {{th.deductions.employmentExpenseRatePercent}} employment expense deduction capped at {{th.deductions.employmentExpenseCapFormatted}}, combined with a standard personal allowance of {{th.deductions.standardAllowanceFormatted}}, yielding a baseline deduction of {{th.deductions.totalDeductionsFormatted}} before progressive brackets apply.",
+  "socialSecurityAnalysis": "Foreign remote employees and digital nomad contractors working for overseas clients or offshore employers are not subject to mandatory Thai social security contributions. The statutory social security regime administered by the Social Security Office (SSO) applies exclusively to workers formally employed by locally registered Thai corporate entities. Consequently, non-Thai remote workers face {{th.socialSecurity.ratePercent}} statutory payroll withholding for social welfare, disability, or pension schemes. International professionals residing in Thailand are expected to procure comprehensive private medical insurance, which is also a mandatory condition for maintaining the DTV visa.",
+  "specialRegimeSummary": "Prior to 2024, Thailand operated a territorial remittance rule exempting foreign-sourced income if it was brought into Thailand in a subsequent calendar year. However, Thai Revenue Department Instructions Por. 161/2566 and Por. 162/2566 decisively eliminated this timing loophole. Any individual who resides in Thailand for {{th.daysResidency}} days or more in a calendar year and remits foreign-sourced income into Thailand during that same year is subject to statutory progressive PIT. Remittance includes international wire transfers into Thai bank accounts, ATM cash withdrawals from foreign cards, and point-of-sale credit card purchases executed in Thailand. The 0% offshore tax scenario applies strictly and exclusively to income that remains entirely offshore and is never transferred, withdrawn, or spent within the territory of Thailand.",
+  "costOfLivingAnalysis": "In our calculation benchmark, baseline living expenditures for a single professional in central Bangkok (such as Sukhumvit, Thonglor, or Sathorn) are established at {{th.livingCostFormatted}} per month (approximately {{th.livingCostUSDFormatted}}). This comprehensive budget comfortably covers a modern one-bedroom condominium in a serviced residential building with swimming pool and gym amenities, utility bills, fiber broadband, daily dining at diverse culinary venues, and public transit via the BTS and MRT systems.",
+  "whatEstimateExcludes": "This calculation models statutory progressive PIT under the remitted income framework and standard Revenue Code allowances. It excludes Thailand's 7.00% standard Value Added Tax (VAT) applied to domestic purchases, the municipal Land and Building Tax on real property, the one-time Destination Thailand Visa consular fee (฿10,000 for a 5-year multi-entry visa), and mandatory private international health insurance premiums.",
+  "faqs": [
+    {
+      "q": "What is the new Thai tax rule on foreign income (Por. 161/2566) for 2026?",
+      "a": "Revenue Department Instructions Por. 161/2566 and 162/2566 mandate that any tax resident (spending 180+ days in Thailand during a calendar year) who remits foreign-sourced income into Thailand is liable to Thai progressive PIT (0% to 35%) regardless of the tax year in which the income was originally earned. Remittance includes bank wires, local ATM withdrawals, and card spending."
+    },
+    {
+      "q": "Does the Destination Thailand Visa (DTV) grant automatic tax exemption?",
+      "a": "No. The DTV is an immigration visa that authorizes legal stay and remote work rights for up to 180 days per entry (extendable once to 360 days). It does not contain statutory tax exemption clauses. Tax liability is governed strictly by the Thai Revenue Code: if you stay 180+ days in a calendar year, you are a tax resident subject to PIT on remitted funds."
+    },
+    {
+      "q": "How can remote workers legitimately pay 0% tax in Thailand?",
+      "a": "Under statutory rules, foreign remote workers pay 0% tax in Thailand only if: (1) they spend fewer than 180 days in Thailand during the calendar year (classifying them as non-residents for tax purposes), or (2) their foreign-earned income remains completely in foreign accounts and is never remitted, transferred, or spent in Thailand."
+    },
+    {
+      "q": "What are the financial requirements for the 5-year Thailand DTV visa?",
+      "a": "Applicants for the Destination Thailand Visa must demonstrate proof of funds or financial assets of at least ฿500,000 (approximately USD $14,000) at the time of application, alongside an employment contract with a foreign company or a professional portfolio demonstrating freelance remote work."
+    },
+    {
+      "q": "Do remote workers pay social security in Thailand?",
+      "a": "No. Foreign digital nomads and remote contractors working for overseas clients have 0% statutory social security obligations in Thailand, as the SSO regime applies only to domestic Thai corporate employment."
+    }
+  ]
+}

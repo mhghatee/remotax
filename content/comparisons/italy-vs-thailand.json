@@ -1,0 +1,55 @@
+{
+  "reviewStatus": "draft",
+  "slug": "italy-vs-thailand",
+  "countryCodes": [
+    "IT",
+    "TH"
+  ],
+  "h1": "Italy vs Thailand Remote Worker Tax Comparison {{es.taxYear}}",
+  "metaTitle": "Italy vs Thailand Tax Comparison {{es.taxYear}} — Impatriati vs DTV",
+  "metaDescription": "{{es.taxYear}} Italy vs Thailand tax comparison. Compare Italy {{it.impatriati.exemptionPercent}} Impatriati vs Thailand progressive PIT & Por. 161/2566, living costs & net take-home pay.",
+  "intro": "Comparing Italy with Thailand pairs European classical architecture with Southeast Asian tropical geography. Italy provides historic renaissance cities, culinary traditions, and the revised Regime Impatriati offering a {{it.impatriati.exemptionPercent}} personal income tax exemption under Legislative Decree 209/2023. Thailand counters with established service networks, tropical island destinations, the 5-year Destination Thailand Visa (DTV), and living costs roughly 40% below Italian metropolitan centers. For remote professionals, deciding between the two requires weighing Italy's social security contributions and {{it.impatriati.minimumStayYears}}-year stay commitment against Thailand's progressive PIT on remitted income under Por. 161/2566.",
+  "regimeComparison": "Italy taxes income under three progressive IRPEF brackets ({{it.taxBrackets.bracket1RatePercent}}, {{it.taxBrackets.bracket2RatePercent}}, {{it.taxBrackets.bracket3RatePercent}}), with Regime Impatriati providing a {{it.impatriati.exemptionPercent}} exemption on qualifying income up to {{it.impatriati.capFormatted}} for {{it.impatriati.durationYears}} tax years ({{it.impatriati.childExemptionPercent}} with minor children or home purchase). Beneficiaries must commit to maintaining Italian tax residency for at least {{it.impatriati.minimumStayYears}} tax years. Thailand assesses remitted foreign income under 8 progressive PIT brackets ({{th.taxBrackets.rangePercent}}) for individuals staying 180+ days, with standard deductions totaling {{th.deductions.totalDeductionsFormatted}}. Thailand offers {{th.taxBrackets.minRatePercent}} tax if foreign funds remain entirely offshore.",
+  "socialSecurityComparison": "Social security represents a massive financial divide. Italy levies social security on salaried employees capped at {{it.ss.employeeCap}}, and {{it.gestioneSeparata.ratePercent}} on independent contractors in Gestione Separata capped at {{it.gs.cap}} annually. Italy's Impatriati exemption does NOT reduce INPS social security. Thailand charges {{th.socialSecurity.ratePercent}} statutory social security on foreign remote workers and digital nomads, allowing workers to retain substantial capital by purchasing private medical insurance instead of paying heavy payroll taxes.",
+  "costOfLivingComparison": "Living costs heavily favor Thailand. Baseline monthly living expenditures in Bangkok average {{th.livingCostFormatted}} ({{th.livingCostUSDFormatted}}) for a single professional in a serviced luxury condominium. In Rome, baseline expenditures average {{it.livingCostFormatted}} per month, while Milan baselines run higher. In regional destinations like Chiang Mai, living costs drop further, providing exceptional purchasing power compared to Italian regional hubs.",
+  "winnerByProfile": [
+    {
+      "profile": "Remote Independent Contractor",
+      "winner": "Thailand",
+      "rationale": "Zero social security in Thailand saves up to {{it.gs.cap}} annually compared to Italy's Gestione Separata, and Thai living costs are significantly lower."
+    },
+    {
+      "profile": "Salaried Remote Professional with Family",
+      "winner": "Italy (Impatriati)",
+      "rationale": "Italy's {{it.impatriati.childExemptionPercent}} exemption for families with children lowers effective IRPEF, accompanied by European public education and healthcare."
+    },
+    {
+      "profile": "Nomad Planning a 1-2 Year Stay",
+      "winner": "Thailand (DTV)",
+      "rationale": "Thailand's DTV visa carries no minimum stay penalty, whereas departing Italy before {{it.impatriati.minimumStayYears}} years triggers full clawback of all Impatriati tax benefits."
+    },
+    {
+      "profile": "Cultural Heritage & Fine Dining Seeker",
+      "winner": "Italy",
+      "rationale": "Italy offers extensive cultural history, national art museums, and European pedestrian city design."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the social security difference between Italy and Thailand for contractors?",
+      "a": "Independent contractors in Italy pay up to {{it.gs.capDecimals}} annually in INPS Gestione Separata contributions ({{it.gestioneSeparata.ratePercent}} up to {{it.inps.massimaleFormatted}}). Thailand charges {{th.socialSecurity.ratePercent}} statutory social security on foreign remote workers."
+    },
+    {
+      "q": "What is the penalty for leaving Italy before 4 years under Impatriati?",
+      "a": "Departing Italy before {{it.impatriati.minimumStayYears}} tax years revokes your Impatriati status retroactively, requiring you to repay all exempted taxes plus interest and penalties. Thailand has no minimum stay penalty."
+    },
+    {
+      "q": "What is the monthly cost-of-living difference between Rome and Bangkok?",
+      "a": "A single remote worker spends approximately {{it.livingCostFormatted}} per month in Rome compared to approximately {{th.livingCostFormatted}} ({{th.livingCostUSDFormatted}}) in Bangkok, giving Thailand a significant cost advantage."
+    },
+    {
+      "q": "How do visa validity periods compare between Italy and Thailand?",
+      "a": "Italy's Digital Nomad Visa is issued for 1 year (renewable). Thailand's DTV visa is issued for 5 years with 180 days per entry (extendable once to 360 days per entry)."
+    }
+  ]
+}

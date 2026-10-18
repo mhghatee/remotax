@@ -1,0 +1,55 @@
+{
+  "reviewStatus": "draft",
+  "slug": "portugal-vs-italy",
+  "countryCodes": [
+    "PT",
+    "IT"
+  ],
+  "h1": "Portugal vs Italy Remote Worker Tax Comparison {{es.taxYear}}",
+  "metaTitle": "Portugal vs Italy Tax Comparison {{es.taxYear}} — IFICI vs Impatriati",
+  "metaDescription": "Portugal vs Italy tax comparison for remote workers {{es.taxYear}}. Compare Portugal IFICI ({{pt.ifici.ratePercent}}) vs Italy Impatriati ({{it.impatriati.exemptionPercent}} exemption), social security caps, and net pay.",
+  "intro": "Portugal and Italy represent two of Southern Europe's primary destinations, blending Mediterranean culture, international resident communities, and targeted tax incentives. Portugal features its D8 Digital Nomad Visa and the IFICI {{pt.ifici.ratePercent}} flat tax for innovation workers. Italy counters with its Digital Nomad Visa and the revised Regime Impatriati ({{it.impatriati.exemptionPercent}} tax exemption under D.Lgs. 209/2023), supported by a revised 3-bracket IRPEF structure. Evaluating these two nations requires dissecting how progressive tax rates interact with special regime qualification rules, mandatory social security ceilings, and long-term residency lock-in mandates.",
+  "regimeComparison": "Portugal's IFICI regime (Art. 58-A EBF) provides a {{pt.ifici.rate}} flat rate on qualifying employment and freelance income for {{pt.ifici.durationYears}} consecutive years, but restricts eligibility to certified tech startups, scientific research, and academic innovation. Italy's Regime Impatriati (Art. 5 D.Lgs. 209/2023) offers a {{it.impatriati.exemptionPercent}} exemption on assessable income up to {{it.impatriati.capFormatted}} for {{it.impatriati.durationYears}} tax years ({{it.impatriati.childExemptionPercent}} with minor children or property purchase), covering a broader spectrum of high-skilled remote roles. However, Italy legally requires beneficiaries to maintain Italian tax residency for at least {{it.impatriati.minimumStayYears}} tax years, whereas Portugal has no minimum stay penalty.",
+  "socialSecurityComparison": "Social security differences significantly sway the outcome. For remote employees, Portugal levies {{pt.employee.rate}} completely uncapped, meaning high earners face substantial deductions. Italy levies employee contributions capped at the INPS massimale of {{it.inps.massimaleFormatted}} ({{it.ss.employeeCap}} maximum annual contribution). For independent contractors, Portugal taxes at {{pt.contractor.rate}} on {{pt.contractor.baseMultiplierPercent}} of gross earnings capped at {{pt.contractor.iasMultiplier}}xIAS ({{pt.ss.contractorCap}} maximum). In Italy, freelance contractors in Gestione Separata face a steep {{it.gestioneSeparata.ratePercent}} rate up to the {{it.inps.massimaleFormatted}} ceiling, generating up to {{it.gs.cap}} in annual contributions.",
+  "costOfLivingComparison": "Living costs between Lisbon and Rome are comparable, with Portugal maintaining a slight edge. Monthly baseline living expenditures in Lisbon are estimated at {{pt.livingCostFormatted}} for a single remote worker, while Rome requires approximately {{it.livingCostFormatted}}. However, Milan is noticeably more expensive than Lisbon, with monthly baselines exceeding €2,100. In secondary cities, Portugal's Porto and Coimbra compare closely with Italian regional centers.",
+  "winnerByProfile": [
+    {
+      "profile": "Certified Tech Founder or AI Specialist",
+      "winner": "Portugal (IFICI)",
+      "rationale": "Portugal's {{pt.ifici.ratePercent}} flat tax lasts for {{pt.ifici.durationYears}} years (double Italy's {{it.impatriati.durationYears}}-year window) with no clawback risk if you relocate after a few years."
+    },
+    {
+      "profile": "Corporate Remote Employee with Family",
+      "winner": "Italy (Impatriati)",
+      "rationale": "Italy's {{it.impatriati.childExemptionPercent}} exemption for families with minor children lowers effective IRPEF, beating Portugal's progressive IRS."
+    },
+    {
+      "profile": "Independent Freelance Contractor",
+      "winner": "Portugal (Recibos Verdes)",
+      "rationale": "Portugal caps contractor social security at {{pt.ss.contractorCap}}/yr, whereas Italian contractors face up to {{it.gs.cap}}/yr in INPS Gestione Separata contributions."
+    },
+    {
+      "profile": "Nomad Planning a 2-Year Stay",
+      "winner": "Portugal",
+      "rationale": "Italy's mandatory {{it.impatriati.minimumStayYears}}-year stay commitment triggers retroactive clawback of all tax savings if you depart early. Portugal imposes no stay penalty."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Which regime lasts longer: Portugal's IFICI or Italy's Impatriati?",
+      "a": "Portugal's IFICI regime lasts for {{pt.ifici.durationYears}} consecutive tax years, whereas Italy's Regime Impatriati lasts for {{it.impatriati.durationYears}} tax years."
+    },
+    {
+      "q": "What is the penalty for leaving Italy before 4 years under Impatriati?",
+      "a": "If you leave Italy before completing {{it.impatriati.minimumStayYears}} tax years, the Agenzia delle Entrate revokes your Impatriati status retroactively, requiring you to repay all saved taxes plus statutory interest and administrative surcharges."
+    },
+    {
+      "q": "How do employee social security contributions compare between Portugal and Italy?",
+      "a": "Portugal charges {{pt.employee.ratePercent}} uncapped employee social security. Italy charges employee social security capped at the INPS massimale ({{it.inps.massimaleFormatted}}), capping annual employee contributions at {{it.ss.employeeCap}}."
+    },
+    {
+      "q": "Can general remote workers easily qualify for Portugal's IFICI?",
+      "a": "No. Portugal's IFICI is restricted to certified scientific research and certified tech startups. General remote workers without certified roles pay standard progressive IRS ({{pt.taxBrackets.bracketRange}})."
+    }
+  ]
+}

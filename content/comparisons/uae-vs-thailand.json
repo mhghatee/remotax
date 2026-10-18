@@ -1,0 +1,55 @@
+{
+  "reviewStatus": "draft",
+  "slug": "uae-vs-thailand",
+  "countryCodes": [
+    "AE",
+    "TH"
+  ],
+  "h1": "UAE vs Thailand Remote Worker Tax Comparison {{es.taxYear}}",
+  "metaTitle": "UAE vs Thailand Tax Comparison {{es.taxYear}} — Dubai 0% vs DTV Visa",
+  "metaDescription": "{{es.taxYear}} UAE vs Thailand remote worker tax comparison. Compare Dubai {{ae.incomeTaxRatePercent}} tax vs Thailand progressive PIT & Por. 161/2566, living costs, and net pay.",
+  "intro": "Comparing the United Arab Emirates with Thailand contrasts the Middle East's 0% personal tax jurisdiction with a major Southeast Asian remote work destination. Dubai offers {{ae.incomeTaxRatePercent}} personal income tax, {{ae.socialSecurityRatePercent}} social security, international banking, and an established urban infrastructure. Thailand counters with tropical geography, the 5-year Destination Thailand Visa (DTV), and living costs roughly 50% lower than Dubai. For international remote workers, the choice revolves around whether Thailand's lower living costs outweigh Dubai's statutory zero-tax status, zero remittance taxation, and US Dollar-pegged currency.",
+  "regimeComparison": "The UAE provides a statutory {{ae.incomeTaxRatePercent}} personal income tax rate across all income levels without remittance rules or time limits. Thailand taxes tax residents spending 180+ days under progressive PIT brackets ({{th.taxBrackets.rangePercent}}) on foreign income remitted into the country under Revenue Department Instructions Por. 161/2566 and Por. 162/2566. Thailand offers {{th.taxBrackets.minRatePercent}} tax strictly on income kept offshore that is never transferred or spent in Thailand.",
+  "socialSecurityComparison": "Both jurisdictions feature {{ae.socialSecurityRatePercent}} mandatory statutory social security for foreign remote workers and digital nomads. In both Dubai and Bangkok, international professionals rely on private healthcare systems. Thailand's private medical infrastructure offers quality care at competitive rates compared to private medical procedures in Dubai.",
+  "costOfLivingComparison": "Living costs represent Thailand's primary financial strength. Baseline monthly living expenditures in central Bangkok average {{th.livingCostFormatted}} ({{th.livingCostUSDFormatted}}), covering condominium rental, dining, utilities, and transit. In Dubai, equivalent baseline living expenditures average {{ae.livingCostFormatted}} per month. In regional Thai nomad hubs like Chiang Mai, monthly expenses drop further, giving Thailand a significant cost advantage over Dubai.",
+  "winnerByProfile": [
+    {
+      "profile": "Ultra-High Earner ($150k+) Seeking Zero Tax Scrutiny",
+      "winner": "UAE (Dubai)",
+      "rationale": "Absolute {{ae.incomeTaxRatePercent}} personal tax with zero remittance reporting, global banking access, and USD-pegged currency provide high statutory tax predictability."
+    },
+    {
+      "profile": "Budget Nomad Maximizing Savings ($35k–$75k)",
+      "winner": "Thailand (DTV)",
+      "rationale": "Saving substantial sums monthly on living costs in Thailand generates capital accumulation that outweighs modest Thai tax brackets."
+    },
+    {
+      "profile": "USD-Compensated Tech Professional",
+      "winner": "UAE (Dubai)",
+      "rationale": "Fixed USD-AED currency peg eliminates FX risk, and Dubai's location offers equidistant flight access to Europe, Asia, and Africa."
+    },
+    {
+      "profile": "Wellness & Outdoor Lifestyle Nomad",
+      "winner": "Thailand",
+      "rationale": "Thailand provides tropical beaches, wellness culture, and diverse outdoor activities that contrast with Dubai's intense summer climate."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How does Thailand's remittance tax compare to Dubai's zero tax?",
+      "a": "Dubai charges {{ae.incomeTaxRatePercent}} personal income tax regardless of where funds are earned or spent. Thailand taxes remitted foreign income under progressive PIT ({{th.taxBrackets.rangePercent}}) if you stay 180+ days; unremitted offshore funds remain untaxed."
+    },
+    {
+      "q": "What is the monthly living cost difference between Dubai and Bangkok?",
+      "a": "A single remote professional spends approximately {{ae.livingCostFormatted}} per month in Dubai compared to approximately {{th.livingCostFormatted}} ({{th.livingCostUSDFormatted}}) in Bangkok, making Thailand over 50% cheaper."
+    },
+    {
+      "q": "How do visa costs and duration compare between Dubai and Thailand?",
+      "a": "Dubai's Virtual Working Visa is valid for {{ae.vwp.durationYears}} year and costs ~{{ae.vwp.applicationFeeUSDFormatted}} with a {{ae.vwp.salaryRequirementUSDFormatted}} monthly income requirement. Thailand's DTV visa is valid for 5 years (180 days per entry) and costs {{th.dtv.consularFeeTHBFormatted}} with {{th.dtv.assetRequirementTHBFormatted}} in savings."
+    },
+    {
+      "q": "Do either Dubai or Thailand charge social security on remote workers?",
+      "a": "No. Both Dubai and Thailand levy {{ae.socialSecurityRatePercent}} statutory social security on foreign remote workers and digital nomads."
+    }
+  ]
+}

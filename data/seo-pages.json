@@ -1,0 +1,317 @@
+[
+  {
+    "slug": "spain",
+    "pageType": "country",
+    "path": "countries/spain/",
+    "countryCode": "ES",
+    "primaryKeyword": "Spain Remote Worker Tax Calculator 2026",
+    "secondaryKeywords": [
+      "spain digital nomad tax",
+      "autonomo tax rates 2026",
+      "spain remote employee net salary",
+      "spain beckham law tax"
+    ]
+  },
+  {
+    "slug": "portugal",
+    "pageType": "country",
+    "path": "countries/portugal/",
+    "countryCode": "PT",
+    "primaryKeyword": "Portugal Remote Worker Tax Calculator 2026",
+    "secondaryKeywords": [
+      "portugal d8 visa tax",
+      "ifici tax portugal 2026",
+      "recibos verdes tax rates",
+      "portugal expat net salary"
+    ]
+  },
+  {
+    "slug": "uae",
+    "pageType": "country",
+    "path": "countries/uae/",
+    "countryCode": "AE",
+    "primaryKeyword": "UAE Remote Worker Tax & Salary Calculator 2026",
+    "secondaryKeywords": [
+      "dubai zero tax remote work",
+      "uae virtual work visa tax",
+      "dubai remote contractor net pay",
+      "uae cost of living"
+    ]
+  },
+  {
+    "slug": "italy",
+    "pageType": "country",
+    "path": "countries/italy/",
+    "countryCode": "IT",
+    "primaryKeyword": "Italy Remote Worker Tax Calculator 2026",
+    "secondaryKeywords": [
+      "italy impatriati regime 2026",
+      "gestione separata inps contractor",
+      "italy digital nomad visa tax",
+      "italy expat net salary"
+    ]
+  },
+  {
+    "slug": "thailand",
+    "pageType": "country",
+    "path": "countries/thailand/",
+    "countryCode": "TH",
+    "primaryKeyword": "Thailand Remote Worker Tax Calculator 2026",
+    "secondaryKeywords": [
+      "thailand dtv visa tax",
+      "thailand remote work tax 2026",
+      "por 161 2566 remittance rule",
+      "bangkok digital nomad net pay"
+    ]
+  },
+  {
+    "slug": "beckham-law-spain",
+    "pageType": "regime",
+    "path": "regimes/beckham-law-spain/",
+    "countryCode": "ES",
+    "regimeId": "beckham_law",
+    "primaryKeyword": "Spain Beckham Law 2026 Guide & Tax Calculator",
+    "secondaryKeywords": [
+      "beckham law 24% flat rate",
+      "special expatriate regime spain",
+      "beckham law eligibility digital nomad",
+      "beckham law vs general irpf"
+    ]
+  },
+  {
+    "slug": "ifici-portugal",
+    "pageType": "regime",
+    "path": "regimes/ifici-portugal/",
+    "countryCode": "PT",
+    "regimeId": "d8_incentive",
+    "primaryKeyword": "Portugal IFICI Tax Regime 2026 (NHR 2.0 Guide)",
+    "secondaryKeywords": [
+      "ifici 20% flat tax",
+      "incentivo fiscal investigacao cientifica",
+      "portugal tech expat tax regime",
+      "nhr replacement 2026"
+    ]
+  },
+  {
+    "slug": "dubai-virtual-working-programme",
+    "pageType": "regime",
+    "path": "regimes/dubai-virtual-working-programme/",
+    "countryCode": "AE",
+    "regimeId": "zero_tax_haven",
+    "primaryKeyword": "Dubai Virtual Working Programme 2026 Tax Guide",
+    "secondaryKeywords": [
+      "dubai 1-year remote work visa",
+      "uae zero income tax nomad",
+      "dubai virtual working residence",
+      "uae corporate tax freelancer threshold"
+    ]
+  },
+  {
+    "slug": "thailand-dtv",
+    "pageType": "regime",
+    "path": "regimes/thailand-dtv/",
+    "countryCode": "TH",
+    "regimeId": "th_offshore_unremitted",
+    "primaryKeyword": "Thailand DTV Visa Tax Guide 2026 (Destination Thailand Visa)",
+    "secondaryKeywords": [
+      "thailand dtv tax liability",
+      "destination thailand visa tax rules",
+      "por 161 2566 thailand dtv",
+      "thailand remitted income pit"
+    ]
+  },
+  {
+    "slug": "impatriati-italy",
+    "pageType": "regime",
+    "path": "regimes/impatriati-italy/",
+    "countryCode": "IT",
+    "regimeId": "impatriati",
+    "primaryKeyword": "Italy Regime Impatriati 2026 Guide & Tax Calculator",
+    "secondaryKeywords": [
+      "impatriati 50% exemption",
+      "italy expat tax relief 2026",
+      "decreto legislativo 209 2023",
+      "impatriati eligibility remote workers"
+    ]
+  },
+  {
+    "slug": "spain-vs-portugal",
+    "pageType": "comparison",
+    "path": "comparisons/spain-vs-portugal/",
+    "countryCodes": ["ES", "PT"],
+    "primaryKeyword": "Spain vs Portugal Remote Worker Tax Comparison 2026",
+    "secondaryKeywords": [
+      "beckham law vs ifici",
+      "spain vs portugal digital nomad",
+      "autonomo vs recibos verdes",
+      "madrid vs lisbon cost of living"
+    ]
+  },
+  {
+    "slug": "spain-vs-uae",
+    "pageType": "comparison",
+    "path": "comparisons/spain-vs-uae/",
+    "countryCodes": ["ES", "AE"],
+    "primaryKeyword": "Spain vs UAE Tax Comparison for Remote Workers 2026",
+    "secondaryKeywords": [
+      "spain beckham law vs dubai zero tax",
+      "madrid vs dubai remote salary",
+      "spain vs uae net pay",
+      "dubai 0% vs spain 24%"
+    ]
+  },
+  {
+    "slug": "spain-vs-italy",
+    "pageType": "comparison",
+    "path": "comparisons/spain-vs-italy/",
+    "countryCodes": ["ES", "IT"],
+    "primaryKeyword": "Spain vs Italy Remote Worker Tax Comparison 2026",
+    "secondaryKeywords": [
+      "beckham law vs regime impatriati",
+      "spain autonomo vs italy gestione separata",
+      "madrid vs rome net salary",
+      "spain vs italy digital nomad tax"
+    ]
+  },
+  {
+    "slug": "spain-vs-thailand",
+    "pageType": "comparison",
+    "path": "comparisons/spain-vs-thailand/",
+    "countryCodes": ["ES", "TH"],
+    "primaryKeyword": "Spain vs Thailand Remote Worker Tax Comparison 2026",
+    "secondaryKeywords": [
+      "spain nomad visa vs thailand dtv",
+      "spain vs thailand cost of living",
+      "madrid vs bangkok net pay",
+      "spain 24% vs thailand pit"
+    ]
+  },
+  {
+    "slug": "portugal-vs-uae",
+    "pageType": "comparison",
+    "path": "comparisons/portugal-vs-uae/",
+    "countryCodes": ["PT", "AE"],
+    "primaryKeyword": "Portugal vs UAE Tax Comparison for Remote Workers 2026",
+    "secondaryKeywords": [
+      "portugal ifici vs dubai zero tax",
+      "lisbon vs dubai living cost",
+      "portugal vs uae digital nomad",
+      "portugal d8 vs uae virtual work"
+    ]
+  },
+  {
+    "slug": "portugal-vs-italy",
+    "pageType": "comparison",
+    "path": "comparisons/portugal-vs-italy/",
+    "countryCodes": ["PT", "IT"],
+    "primaryKeyword": "Portugal vs Italy Remote Worker Tax Comparison 2026",
+    "secondaryKeywords": [
+      "portugal ifici vs italy impatriati",
+      "lisbon vs rome expat tax",
+      "portugal vs italy social security",
+      "southern europe expat tax comparison"
+    ]
+  },
+  {
+    "slug": "portugal-vs-thailand",
+    "pageType": "comparison",
+    "path": "comparisons/portugal-vs-thailand/",
+    "countryCodes": ["PT", "TH"],
+    "primaryKeyword": "Portugal vs Thailand Remote Worker Tax Comparison 2026",
+    "secondaryKeywords": [
+      "portugal d8 vs thailand dtv",
+      "lisbon vs bangkok purchasing power",
+      "portugal vs thailand nomad tax",
+      "ifici vs thailand pit remittance"
+    ]
+  },
+  {
+    "slug": "uae-vs-italy",
+    "pageType": "comparison",
+    "path": "comparisons/uae-vs-italy/",
+    "countryCodes": ["AE", "IT"],
+    "primaryKeyword": "UAE vs Italy Remote Worker Tax Comparison 2026",
+    "secondaryKeywords": [
+      "dubai zero tax vs italy impatriati",
+      "dubai vs milan net income",
+      "uae vs italy social contributions",
+      "dubai vs italy expat cost"
+    ]
+  },
+  {
+    "slug": "uae-vs-thailand",
+    "pageType": "comparison",
+    "path": "comparisons/uae-vs-thailand/",
+    "countryCodes": ["AE", "TH"],
+    "primaryKeyword": "UAE vs Thailand Remote Worker Tax Comparison 2026",
+    "secondaryKeywords": [
+      "dubai 0% tax vs thailand dtv",
+      "dubai vs bangkok cost of living",
+      "middle east vs southeast asia nomad tax",
+      "uae vs thailand digital nomad"
+    ]
+  },
+  {
+    "slug": "italy-vs-thailand",
+    "pageType": "comparison",
+    "path": "comparisons/italy-vs-thailand/",
+    "countryCodes": ["IT", "TH"],
+    "primaryKeyword": "Italy vs Thailand Remote Worker Tax Comparison 2026",
+    "secondaryKeywords": [
+      "italy impatriati vs thailand dtv",
+      "rome vs bangkok expat cost",
+      "italy inps vs thailand zero ss",
+      "italy vs thailand remote worker tax"
+    ]
+  },
+  {
+    "slug": "digital-nomad-taxes",
+    "pageType": "ranking",
+    "path": "best/digital-nomad-taxes/",
+    "primaryKeyword": "Best Digital Nomad Tax Countries 2026 (Ranked by Net Pay)",
+    "secondaryKeywords": [
+      "lowest tax countries for nomads",
+      "digital nomad tax ranking 2026",
+      "nomad net income benchmark",
+      "top remote worker tax regimes"
+    ]
+  },
+  {
+    "slug": "lowest-tax-countries-europe",
+    "pageType": "ranking",
+    "path": "best/lowest-tax-countries-europe/",
+    "status": "deferred-wave-2",
+    "primaryKeyword": "Lowest Tax Countries in Europe for Remote Workers 2026",
+    "secondaryKeywords": [
+      "europe low tax regimes",
+      "best european country for remote worker tax",
+      "spain vs portugal vs italy tax",
+      "european digital nomad tax ranking"
+    ]
+  },
+  {
+    "slug": "zero-tax-countries",
+    "pageType": "ranking",
+    "path": "best/zero-tax-countries/",
+    "status": "deferred-wave-2",
+    "primaryKeyword": "0% Tax Countries for Remote Workers & Nomads 2026",
+    "secondaryKeywords": [
+      "zero income tax countries",
+      "dubai zero tax nomad",
+      "territorial tax countries 2026",
+      "no income tax remote workers"
+    ]
+  },
+  {
+    "slug": "methodology",
+    "pageType": "methodology",
+    "path": "methodology/",
+    "primaryKeyword": "Remotax Tax & Calculation Methodology 2026",
+    "secondaryKeywords": [
+      "remotax methodology",
+      "statutory tax calculation rules",
+      "cross-border remote worker data sources",
+      "not tax advice notice"
+    ]
+  }
+]

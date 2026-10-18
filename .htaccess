@@ -74,8 +74,30 @@ Options -Indexes
 RewriteEngine On
 RewriteBase /remotax/
 
-# Block direct web access to tests, scratch, reports, and dev directories
-RewriteRule ^(tests|scratch|reports|node_modules|\.git)(/|$) - [F,L]
+# --- REMOTAX WAVE 1 301 REDIRECTS START ---
+# 301 Redirect legacy comparisons HTML to clean directory URL
+RewriteRule ^comparisons/spain-vs-portugal\.html$ comparisons/spain-vs-portugal/ [R=301,L]
+
+# 301 Redirect reverse comparison pairs to canonical pair URLs
+RewriteRule ^comparisons/portugal-vs-spain/?$ comparisons/spain-vs-portugal/ [R=301,L]
+RewriteRule ^comparisons/uae-vs-spain/?$ comparisons/spain-vs-uae/ [R=301,L]
+RewriteRule ^comparisons/italy-vs-spain/?$ comparisons/spain-vs-italy/ [R=301,L]
+RewriteRule ^comparisons/thailand-vs-spain/?$ comparisons/spain-vs-thailand/ [R=301,L]
+RewriteRule ^comparisons/uae-vs-portugal/?$ comparisons/portugal-vs-uae/ [R=301,L]
+RewriteRule ^comparisons/italy-vs-portugal/?$ comparisons/portugal-vs-italy/ [R=301,L]
+RewriteRule ^comparisons/thailand-vs-portugal/?$ comparisons/portugal-vs-thailand/ [R=301,L]
+RewriteRule ^comparisons/italy-vs-uae/?$ comparisons/uae-vs-italy/ [R=301,L]
+RewriteRule ^comparisons/thailand-vs-uae/?$ comparisons/uae-vs-thailand/ [R=301,L]
+RewriteRule ^comparisons/thailand-vs-italy/?$ comparisons/italy-vs-thailand/ [R=301,L]
+# --- REMOTAX WAVE 1 301 REDIRECTS END ---
+
+# Block direct web access to tests, scratch, reports, review, content, templates, scripts and dev files
+RewriteRule ^(tests|scratch|reports|review|node_modules|content|templates|scripts|\.git)(/|$) - [F,L]
+RewriteRule ^(\.cpanel\.yml|\.env|package\.json|package-lock\.json|generate\.js|check\.js|build\.js|verify_mobile\.js|test_suite\.js|generator\.config\.json|redirects\.csv|.*\.zip|.*\.md|.*\.csv)$ - [F,L]
+
+<FilesMatch "(^\..*|package\.json|package-lock\.json|generate\.js|check\.js|build\.js|verify_mobile\.js|test_suite\.js|generator\.config\.json|redirects\.csv|\.zip|\.md|\.csv)$">
+    Require all denied
+</FilesMatch>
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f

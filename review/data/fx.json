@@ -1,0 +1,17 @@
+{
+  "base": "EUR",
+  "date": "2026-10-16",
+  "source": "European Central Bank (ECB) Euro Foreign Exchange Reference Rates",
+  "sourceUrl": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+  "fetchedAt": "2026-10-17T15:47:20.000Z",
+  "rates": {
+    "USD": 1.1253,
+    "THB": 37.602,
+    "AED": 4.13266425
+  },
+  "notes": {
+    "USD": "European Central Bank official reference rate (1 EUR = 1.1253 USD) as of 16 October 2026",
+    "THB": "European Central Bank official reference rate (1 EUR = 37.602 THB) as of 16 October 2026",
+    "AED": "Statutory peg: UAE Dirham pegged to USD at 3.6725 AED/USD; EUR/AED = 1.1253 * 3.6725 = 4.13266425"
+  }
+}

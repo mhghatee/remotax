@@ -1,0 +1,40 @@
+{
+  "slug": "dubai-virtual-working-programme",
+  "reviewStatus": "draft",
+  "countryCode": "AE",
+  "regimeId": "zero_tax_haven",
+  "h1": "Dubai Virtual Working Programme 2026 Tax Guide",
+  "metaTitle": "Dubai Virtual Working Visa 2026 — 0% Tax Guide & Salary",
+  "metaDescription": "Complete 2026 Dubai Virtual Working Programme guide. 0% personal tax, $3,500 monthly income threshold, AED 1M corporate exemption, and net pay analysis.",
+  "heroBadge": "1-Year Renewable Remote Work Residence Permit • GDRFA Dubai",
+  "intro": "The Dubai Virtual Working Programme is the UAE's dedicated statutory residence framework for location-independent knowledge workers, digital entrepreneurs, and remote corporate employees. Administered by the General Directorate of Residency and Foreigners Affairs (GDRFA) and Dubai Department of Economy and Tourism (DET), the program allows foreign nationals to live in Dubai while continuing to work remotely for offshore companies or overseas clients. Beneficiaries enjoy the UAE's statutory {{ae.incomeTaxRatePercent}} personal income tax rate, {{ae.socialSecurityRatePercent}} employee social security withholding, full legal resident status, Emirates ID issuance, and local banking integration, all without requiring local employer sponsorship or corporate incorporation.",
+  "eligibilityChecklist": [
+    "Valid passport: Minimum remaining passport validity of 6 months at time of application.",
+    "Verified remote employment or ownership: Employment contract from an employer located outside the UAE with minimum 1-year validity, or proof of ownership of a company based abroad for at least 1 year.",
+    "Statutory salary threshold: Minimum monthly compensation of USD $3,500 (or currency equivalent) documented via official payslips and the preceding 3 months of bank statements.",
+    "Comprehensive health insurance: Valid health insurance policy with coverage throughout the UAE for the entire 1-year residency term.",
+    "Annual renewal compliance: Re-verification of income thresholds and health insurance upon annual visa renewal."
+  ],
+  "whoItSuits": "This regime is uniquely attractive for remote tech professionals, software architects, finance executives, and agency founders earning between $50,000 and $500,000+ per year who face 40% to 55% marginal income tax rates in Western Europe or North America. By relocating to Dubai, remote workers legally convert their gross salary into 100% net earnings while benefiting from the UAE Dirham's statutory peg to the US Dollar (USD $1 = AED 3.6725), extensive direct air travel connectivity via DXB airport, and documented low municipal crime indices.",
+  "whoItDoesNotSuit": "Workers earning under the statutory $3,500 monthly baseline (€3,200) do not meet immigration eligibility. Furthermore, professionals who intend to sell services predominantly to domestic UAE businesses face strict commercial regulations and potential corporate tax liabilities if domestic business turnover exceeds {{ae.corporateTaxThresholdAEDFormatted}}. Finally, workers seeking subsidized public social safety nets or low-cost communal living may find Dubai's high-standard private healthcare and real estate markets financially demanding.",
+  "commonPitfalls": "The most significant pitfall for independent contractors is failing to track domestic UAE commercial revenue. Under UAE Cabinet Decision No. 49 of 2023, while natural persons are generally exempt from UAE Corporate Tax on foreign remote earnings, individual commercial turnover within the UAE exceeding {{ae.corporateTaxThresholdAEDFormatted}} in a calendar year triggers mandatory Corporate Tax registration and a {{ae.corporateTaxRatePercent}} tax on profits above {{ae.corporateTaxProfitThresholdAEDFormatted}}. Another frequent mistake is neglecting home-country tax exit procedures; US citizens remain subject to US citizenship-based taxation (FEIE/FTC rules), and European citizens must formally sever fiscal ties to prevent home-country tax claims.",
+  "statutoryFramework": "Governed by Dubai Executive Council directives, Federal Decree-Law No. 29 of 2021 regarding Entry and Residence of Foreigners, and UAE Cabinet Decision No. 49 of 2023 regarding Corporate Tax applicability for Natural Persons. Grants 1-year renewable legal residency with 0% personal income tax and 0% mandatory social security.",
+  "faqs": [
+    {
+      "q": "Can I open a local UAE bank account on the Virtual Working Visa?",
+      "a": "Yes. Upon arrival and completion of the medical fitness test, you are issued an official Emirates ID card. With the Emirates ID and residential Ejari lease, you can open personal accounts at major UAE banks including Emirates NBD, ADCB, and Mashreq."
+    },
+    {
+      "q": "Can I bring my family with me on Dubai's remote work visa?",
+      "a": "Yes. Beneficiaries of the Virtual Working Programme can sponsor their spouse and dependent children for 1-year residence permits under their personal file, subject to standard family sponsorship criteria."
+    },
+    {
+      "q": "Do I have to live in Dubai continuously to keep the visa active?",
+      "a": "Standard UAE residency rules require entering the UAE at least once every 180 days to maintain residency validity. However, to qualify for a UAE Tax Residency Certificate (TRC), you must spend at least {{ae.daysResidency}} days in the UAE (or 90 days with permanent dwelling and vital interests)."
+    },
+    {
+      "q": "Is the $3,500 monthly income requirement gross or net?",
+      "a": "Dubai immigration authorities evaluate net banked income shown on your official monthly bank statements; your deposited earnings must consistently equal or exceed USD $3,500 per month."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "methodology",
+  "reviewStatus": "draft",
+  "h1": "Remotax Tax & Calculation Methodology {{es.taxYear}}",
+  "metaTitle": "Remotax Calculation Methodology {{es.taxYear}} — Statutory Tax Engine",
+  "metaDescription": "How Remotax calculates {{es.taxYear}} cross-border tax, net salary, and social security. Statutory sources, 183-day rules, assumptions & disclaimer.",
+  "heroBadge": "Statutory Financial Modeling Framework • Tax Year {{es.taxYear}}",
+  "byline": "Remotax Editorial Team",
+  "intro": "The Remotax financial intelligence platform is designed to provide location-independent remote employees, freelancers, digital nomads, and global mobility teams with transparent, mathematically rigorous cross-border tax and net pay projections. Unlike generic tax estimators that rely on simplified flat averages or outdated brackets, the Remotax engine models complete statutory tax codes, official income tax brackets, mandatory national social security contributions, earnings ceilings, and targeted expatriate regimes for the {{es.taxYear}} tax year. This document details our data verification protocol, core calculation algorithms, modeling assumptions, and statutory limitations.",
+  "statutoryVerificationProtocol": "Every tax table, bracket threshold, standard deduction, and social security rate utilized in Remotax is sourced directly from official government tax authorities and statutory legislative gazettes. Our wave-1 jurisdiction tables are verified against official publications including the Agencia Tributaria and Boletín Oficial del Estado in Spain, the Autoridade Tributária e Aduaneira in Portugal, the Federal Tax Authority and Ministry of Finance in the United Arab Emirates, the Agenzia delle Entrate and INPS in Italy, and the Thai Revenue Department in Thailand. Each country model carries explicit data integrity fields: taxTablesStatus, socialSecurityStatus, verifiedOn timestamp, and direct deep-link citations to official documentation.",
+  "calculationRules": "Our calculation engine implements strict statutory computational rules. For salaried employees, gross income is adjusted for mandatory statutory deductions (such as Spain's {{es.deductions.workExpenseAllowanceFormatted}} employment expense allowance and Portugal's {{pt.deductions.standardAllowanceFormatted}} specific deduction) before progressive personal income tax brackets are applied. Employee social security contributions are computed according to official statutory rates and capped at national statutory maximum contribution bases (such as Spain's {{es.employee.maxAnnualBaseFormatted}} annual ceiling and Italy's {{it.inps.massimaleFormatted}} INPS massimale). For independent contractors, the engine models real-income contribution tramos (Spain's {{es.autonomo.tramoCount}} tramos under RDL 13/2022), simplified regime expense coefficients (Portugal's {{pt.deductions.categoryBCoefficientPercent}} taxable coefficient under Art. 31 CIRS with {{pt.contractor.iasMultiplier}}xIAS ceiling), or dedicated separate schemes (Italy's {{it.gestioneSeparata.ratePercent}} Gestione Separata). In Thailand, our baseline calculation strictly defaults to the remitted income progressive PIT scenario pursuant to Departmental Instructions Por. 161/2566 and Por. 162/2566, presenting the offshore {{th.taxBrackets.minRatePercent}} unremitted case strictly as a labelled optional exception.",
+  "livingCostBenchmarking": "To deliver realistic disposable income projections, Remotax benchmarks baseline monthly living expenses for a single professional residing in primary metropolitan hubs (Madrid, Lisbon, Dubai, Rome, and Bangkok). Baseline budgets encompass private one-bedroom apartment leasing in central districts, utilities (electricity, water, air conditioning or heating), high-speed telecommunications, grocery shopping, local transit, and basic dining. Disposable net savings are derived by subtracting monthly living costs in EUR from calculated net monthly take-home pay.",
+  "fxBenchmarkProtocol": "To maintain mathematical consistency across international comparisons and purchasing power calculations, Remotax normalizes cross-border living costs and salary tiers to EUR using dated benchmark exchange rates as of {{fx.date}} (sourced from European Central Bank reference fixings and statutory pegs). The dated benchmark rates are: EUR/USD = {{fx.rates.usd}} (establishing US Dollar conversion), EUR/THB = {{fx.rates.thb}} (establishing Bangkok baseline living cost of ฿38,500 = €1,024 monthly), and EUR/AED = {{fx.rates.aed}} (reflecting the statutory peg of 3.6725 AED/USD; establishing Dubai baseline living cost of AED 8,250 = €1,996 monthly).",
+  "disclaimer": "Remotax is an independent financial technology simulation platform created for informational, educational, and preliminary planning purposes only. The simulations, tax calculations, net pay estimates, and comparison models presented across this platform do not constitute legal, tax, accounting, or investment advice. Cross-border tax residency is subject to individual circumstances, permanent establishment risks, bilateral double taxation treaties, and evolving administrative guidance. Users are strongly advised to consult certified cross-border tax advisors or qualified immigration legal counsel in their relevant jurisdictions before executing international relocation or tax structuring decisions.",
+  "faqs": [
+    {
+      "q": "How frequently is tax and social security data updated on Remotax?",
+      "a": "Our statutory models are reviewed and updated continuously against official government budget laws and circulars. Each jurisdiction page clearly displays its last-verified date and direct links to official statutory sources."
+    },
+    {
+      "q": "What foreign exchange rates and valuation dates are used for cross-border comparisons?",
+      "a": "Our calculation engine uses official European Central Bank reference exchange rates dated {{fx.date}}: 1 EUR = {{fx.rates.usd}} USD, 1 EUR = {{fx.rates.thb}} THB, and 1 EUR = {{fx.rates.aed}} AED (statutory peg of 3.6725 AED/USD). In Thailand, ฿38,500 converts to €1,024 monthly. In Dubai, AED 8,250 converts to €1,996 monthly."
+    },
+    {
+      "q": "Why does Remotax separate employee and contractor calculations?",
+      "a": "Because statutory social security and allowable business expense rules diverge fundamentally between corporate employment and independent freelancing in almost every jurisdiction worldwide."
+    },
+    {
+      "q": "Can Remotax be cited for formal tax filing?",
+      "a": "No. Remotax provides forward-looking simulations and benchmarks. Official tax returns must be prepared using certified local tax software or by licensed tax advisors."
+    }
+  ]
+}

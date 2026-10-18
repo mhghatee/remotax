@@ -1,0 +1,30 @@
+{
+  "slug": "lowest-tax-countries-europe",
+  "reviewStatus": "draft",
+  "rankingId": "lowest-tax-countries-europe",
+  "h1": "Lowest Tax Countries in Europe for Remote Workers {{es.taxYear}}",
+  "metaTitle": "Lowest Tax Countries in Europe {{es.taxYear}} — Remote Worker Ranking",
+  "metaDescription": "{{es.taxYear}} European low-tax ranking for remote workers. Compare Spain Beckham Law ({{es.beckham.ratePercent}}), Portugal IFICI ({{pt.ifici.ratePercent}}), and Italy Impatriati ({{it.impatriati.exemptionPercent}} exemption) at €100k net.",
+  "heroBadge": "European Expatriate Tax Benchmark • {{es.taxYear}} Edition",
+  "intro": "Europe is undergoing a dynamic fiscal competition to attract international digital talent, remote tech specialists, and multinational executives. While Western European statutory tax rates can exceed 50% on top income brackets, Southern European nations have established specialized inbound expatriate regimes that reduce effective tax liabilities. For remote workers planning a European relocation in {{es.taxYear}}, the key to maximizing take-home pay lies in understanding how special regimes like Spain's Beckham Law, Portugal's IFICI (NHR 2.0), and Italy's Regime Impatriati interact with mandatory national social security contributions.",
+  "methodology": "This ranking evaluates European destinations based on statutory tax legislation codified for the {{es.taxYear}} fiscal year. Calculations reflect a standardized benchmark gross salary of €100,000 for a single remote professional, modeled under both salaried employment and independent contractor classifications. Calculations include all mandatory statutory income taxes, standard deductions, and employee or freelance social security contributions up to national statutory ceilings (such as Spain's {{es.employee.maxAnnualBaseFormatted}} base máxima and Italy's {{it.inps.massimaleFormatted}} massimale contributivo). Net monthly disposable income is derived by deducting verified baseline living expenses for the capital city.",
+  "analysis": "Within Southern Europe's low-tax regimes, Spain takes the top position for independent contractors and general corporate employees. Spain's {{es.beckham.rate}} Beckham Law flat rate combines with an exceptionally low employee social security cap ({{es.employee.maxAnnualSSFormatted}}) and contractor autónomo ceiling ({{es.autonomo.maxAnnualSSFormatted}}), ensuring high net capital retention. Italy follows closely for salaried employees through its {{it.impatriati.exemptionPercent}} Impatriati exemption, but falls behind for independent contractors due to its {{it.gestioneSeparata.ratePercent}} Gestione Separata social security contribution (up to {{it.gestioneSeparata.maxAnnualSSFormatted}}). Portugal offers the lowest headline flat rate ({{pt.ifici.rate}} under IFICI), but its benefits are restricted to certified innovation and startup activities, and employee social security is {{pt.employee.rate}} completely uncapped.",
+  "faqs": [
+    {
+      "q": "Which European country has the lowest income tax for digital nomads in 2026?",
+      "a": "Among major European destinations with dedicated nomad visas, Portugal's IFICI offers the lowest headline rate at {{pt.ifici.ratePercent}} for certified tech workers, while Spain's Beckham Law offers a flat {{es.beckham.ratePercent}} rate accessible to general remote employees."
+    },
+    {
+      "q": "Why is Spain often better than Italy for remote freelance contractors?",
+      "a": "Spain caps contractor social security at {{es.autonomo.maxAnnualSSRoundedFormatted}} annually under its {{es.autonomo.tramoCount}}-tramo autónomo scale. Italy charges {{it.gestioneSeparata.ratePercent}} in INPS Gestione Separata up to {{it.inps.massimaleFormatted}} (costing up to {{it.gestioneSeparata.maxAnnualSSRoundedFormatted}} annually), because the Impatriati tax exemption does not apply to social security."
+    },
+    {
+      "q": "Does Portugal still offer the 0% NHR tax regime for new arrivals?",
+      "a": "No. The original NHR regime closed to new applicants at the end of 2023. It has been replaced by the IFICI regime, which levies a {{pt.ifici.ratePercent}} flat tax on earned income from certified innovation sectors."
+    },
+    {
+      "q": "Can European citizens use the Beckham Law and Regime Impatriati?",
+      "a": "Yes. Both Spain's Beckham Law and Italy's Regime Impatriati are fully accessible to EU/EEA citizens relocating their tax residence, provided they meet the prior non-residency requirements."
+    }
+  ]
+}

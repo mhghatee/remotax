@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "spain",
+    "type": "hub",
+    "mode": "mobile",
+    "perf": 97,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 66,
+    "cls": 0,
+    "fcp": "1.2\u00a0s",
+    "lcp": "2.3\u00a0s"
+  },
+  {
+    "slug": "spain",
+    "type": "hub",
+    "mode": "desktop",
+    "perf": 100,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 66,
+    "cls": 0,
+    "fcp": "0.3\u00a0s",
+    "lcp": "0.5\u00a0s"
+  },
+  {
+    "slug": "beckham-law-spain",
+    "type": "regime",
+    "mode": "mobile",
+    "perf": 99,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 66,
+    "cls": 0,
+    "fcp": "1.1\u00a0s",
+    "lcp": "2.1\u00a0s"
+  },
+  {
+    "slug": "beckham-law-spain",
+    "type": "regime",
+    "mode": "desktop",
+    "perf": 100,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 66,
+    "cls": 0,
+    "fcp": "0.3\u00a0s",
+    "lcp": "0.4\u00a0s"
+  },
+  {
+    "slug": "spain-vs-portugal",
+    "type": "comparison",
+    "mode": "mobile",
+    "perf": 99,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 66,
+    "cls": 0,
+    "fcp": "1.1\u00a0s",
+    "lcp": "2.1\u00a0s"
+  },
+  {
+    "slug": "spain-vs-portugal",
+    "type": "comparison",
+    "mode": "desktop",
+    "perf": 100,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 66,
+    "cls": 0,
+    "fcp": "0.3\u00a0s",
+    "lcp": "0.5\u00a0s"
+  }
+]

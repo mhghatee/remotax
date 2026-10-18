@@ -1,0 +1,92 @@
+[
+  {
+    "page": "Country Hub",
+    "device": "Mobile",
+    "file": "country_spain_mobile.json",
+    "perf": 98,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 66
+  },
+  {
+    "page": "Country Hub",
+    "device": "Desktop",
+    "file": "country_spain_desktop.json",
+    "perf": 100,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 66
+  },
+  {
+    "page": "Regime",
+    "device": "Mobile",
+    "file": "regime_beckham_mobile.json",
+    "perf": 99,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 66
+  },
+  {
+    "page": "Regime",
+    "device": "Desktop",
+    "file": "regime_beckham_desktop.json",
+    "perf": 100,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 66
+  },
+  {
+    "page": "Comparison",
+    "device": "Mobile",
+    "file": "comparison_spain_portugal_mobile.json",
+    "perf": 98,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 66
+  },
+  {
+    "page": "Comparison",
+    "device": "Desktop",
+    "file": "comparison_spain_portugal_desktop.json",
+    "perf": 100,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 66
+  },
+  {
+    "page": "Ranking",
+    "device": "Mobile",
+    "file": "ranking_nomad_taxes_mobile.json",
+    "perf": 99,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 66
+  },
+  {
+    "page": "Ranking",
+    "device": "Desktop",
+    "file": "ranking_nomad_taxes_desktop.json",
+    "perf": 100,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 66
+  },
+  {
+    "page": "Methodology",
+    "device": "Mobile",
+    "file": "methodology_mobile.json",
+    "perf": 99,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 66
+  },
+  {
+    "page": "Methodology",
+    "device": "Desktop",
+    "file": "methodology_desktop.json",
+    "perf": 100,
+    "a11y": 100,
+    "bp": 100,
+    "seo": 66
+  }
+]

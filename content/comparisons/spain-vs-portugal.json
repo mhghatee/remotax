@@ -1,0 +1,55 @@
+{
+  "reviewStatus": "draft",
+  "slug": "spain-vs-portugal",
+  "countryCodes": [
+    "ES",
+    "PT"
+  ],
+  "h1": "Spain vs Portugal Remote Worker Tax Comparison {{es.taxYear}}",
+  "metaTitle": "Spain vs Portugal Tax Comparison {{es.taxYear}} — Beckham vs IFICI",
+  "metaDescription": "Head-to-head {{es.taxYear}} tax comparison: Spain Beckham Law ({{es.beckham.ratePercent}}) vs Portugal IFICI ({{pt.ifici.ratePercent}}). Compare employee net pay, autónomo vs recibos verdes, and living costs.",
+  "intro": "Spain and Portugal represent two of the primary destinations in Southern Europe for international remote workers, software engineers, and digital nomads evaluating statutory tax frameworks and net compensation. Spain and Portugal both offer dedicated immigration frameworks—the Spanish Digital Nomad Visa and the Portuguese D8 Visa—tailored to location-independent professionals. However, when evaluating bottom-line financial retention, the two neighboring jurisdictions diverge sharply in tax bracket structures, special regime qualifications, and social security calculations. While Spain offers the Beckham Law with a flat {{es.beckham.ratePercent}} rate up to {{es.beckham.capFormatted}}, Portugal has transitioned from its legacy NHR regime to the narrower IFICI framework. Furthermore, social security treatment for independent contractors differs fundamentally between Spain's {{es.autonomo.tramoCount}} income-bracket tramos and Portugal's {{pt.contractor.iasMultiplier}}xIAS ceiling.",
+  "regimeComparison": "Spain's Beckham Law (Article 93 LIRPF, amended by Ley 28/2022) provides a {{es.beckham.rate}} flat personal tax rate on employment and telework income up to {{es.beckham.capFormatted}} for up to {{es.beckham.regimeDurationYears}} tax years. Eligibility requires not having been a Spanish tax resident in the prior 5 tax years, moving under an employment contract, telework agreement, or Spanish Digital Nomad Visa, and earning employment-classified income. In contrast, Portugal's IFICI regime (Art. 58-A EBF) offers a {{pt.ifici.rate}} flat rate for {{pt.ifici.durationYears}} years, but strictly restricts eligibility to certified scientific researchers, university faculty, and employees of certified technology startups validated by government innovation agencies. General remote workers relocating to Portugal without certified startup roles are subject to standard progressive IRS schedules spanning {{pt.taxBrackets.bracketRangeLong}}.",
+  "socialSecurityComparison": "Social security rules present a major financial differentiator. In Spain, remote salaried employees contribute {{es.employee.rate}} (including the {{es.employee.meiRatePercent}} MEI) capped strictly at a monthly contribution base of {{es.employee.maxMonthlyBaseFormatted}}, meaning maximum annual employee social security cannot exceed {{es.employee.maxAnnualSSFormatted}}. In Portugal, employee social security is {{pt.employee.rate}} completely uncapped, creating higher deductions for high earners. For self-employed contractors, Spain models the minimum base across {{es.autonomo.tramoCount}} statutory tramos ({{es.autonomo.minCuotaFormatted}} to {{es.autonomo.maxCuotaFormatted}} monthly, totaling {{es.autonomo.maxAnnualSSFormatted}} annually), while an autónomo choosing the maximum base pays up to {{es.autonomo.optionalMaxMonthlyCuotaFormatted}} monthly ({{es.autonomo.optionalMaxAnnualSSFormatted}} annually). In Portugal, independent workers contribute {{pt.contractor.rate}} on {{pt.contractor.baseMultiplierPercent}} of gross earnings (effective {{pt.contractor.effectiveSSRatePercent}}), capped at {{pt.contractor.iasMultiplier}} times the monthly IAS ({{pt.contractor.maxAnnualBaseFormatted}} annual base), resulting in a maximum annual social security contribution of {{pt.contractor.maxAnnualSSFormatted}}.",
+  "costOfLivingComparison": "Living costs modestly favor Portugal, although the gap has narrowed due to housing inflation in Lisbon. Baseline monthly living expenditures in Madrid are estimated at {{es.livingCostFormatted}} for a single remote worker, including central apartment rent, utilities, food, and transport. Lisbon requires approximately {{pt.livingCostFormatted}} monthly. When comparing secondary coastal cities, Portugal's Silver Coast and Porto offer living costs around €1,300 to €1,450, while Spanish destinations like Valencia, Alicante, or Málaga offer comparable ranges with high-speed rail connectivity.",
+  "winnerByProfile": [
+    {
+      "profile": "High-Earning Remote Employee (€100k+)",
+      "winner": "Spain (Beckham Law)",
+      "rationale": "Spain's {{es.beckham.ratePercent}} Beckham Law applies to qualifying remote employees and teleworkers meeting 5-year non-residency rules, with employee social security capped at {{es.ss.employeeCap}}/yr, whereas Portugal's IFICI is strictly restricted to accredited innovation sectors and standard employee social security is {{pt.employee.ratePercent}} uncapped."
+    },
+    {
+      "profile": "Certified Tech R&D Specialist",
+      "winner": "Portugal (IFICI)",
+      "rationale": "If qualified under Portugal's IFICI criteria, the {{pt.ifici.ratePercent}} flat tax rate beats Spain's {{es.beckham.ratePercent}} flat rate and provides a longer {{pt.ifici.durationYears}}-year benefit window compared to Spain's {{es.beckham.regimeDurationYears}}-year period."
+    },
+    {
+      "profile": "Independent Freelance Contractor",
+      "winner": "Spain (Autónomo)",
+      "rationale": "Spanish autónomo social security evaluates the minimum base of the 15-tramo scale ({{es.autonomo.minCuotaFormatted}} to {{es.autonomo.maxCuotaFormatted}} monthly, totaling {{es.ss.autonomoCap}} annually in the model, or up to {{es.autonomo.optionalMaxAnnualSSFormatted}} if selecting the maximum base), whereas Portuguese independent contractors contribute 21.4% on 70% of gross up to {{pt.ss.contractorCap}} annually."
+    },
+    {
+      "profile": "Budget-Conscious Digital Nomad",
+      "winner": "Portugal (Regional Hubs)",
+      "rationale": "Lower baseline cost of living in Portuguese regional cities and simpler initial freelance administrative setup provide higher initial savings for emerging professionals."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Is it easier to qualify for Spain's Beckham Law or Portugal's IFICI?",
+      "a": "Neither regime is automatic. Under Article 93 LIRPF and Ley 28/2022, Spain's Beckham Law requires that the applicant was not a Spanish tax resident in the prior 5 tax years, that relocation is motivated by an employment contract, foreign telework agreement (Digital Nomad Visa), or qualifying directorship, and caps the flat 24% rate at €600,000. Portugal's IFICI (Art. 58-A EBF) offers a 20% flat rate for 10 years but restricts eligibility strictly to certified tech startups, scientific research, and university faculty. While Spain does not mandate employment in an accredited startup, both regimes enforce strict statutory prerequisites."
+    },
+    {
+      "q": "Which country has lower social security for remote contractors?",
+      "a": "Spain offers lower maximum social security for high-earning contractors: under the {{es.autonomo.tramoCount}}-tramo system, annual contributions cap at {{es.autonomo.maxAnnualSSFormatted}}, whereas Portugal's independent contractor ceiling is {{pt.contractor.maxAnnualSSFormatted}}."
+    },
+    {
+      "q": "How do Madrid and Lisbon compare in monthly living expenses?",
+      "a": "Madrid baseline living expenses average {{es.livingCostFormatted}} per month for a single professional, while Lisbon averages approximately {{pt.livingCostFormatted}} per month, giving Portugal a modest cost advantage."
+    },
+    {
+      "q": "Which country offers a faster path to permanent residency or citizenship?",
+      "a": "Portugal offers eligibility for citizenship after {{pt.citizenshipYears}} years of legal residence with basic language proficiency. Spain generally requires 10 years of legal residence for citizenship, though nationals of Ibero-American countries qualify after just 2 years."
+    }
+  ]
+}

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remotax Calculation Methodology 2026 — Statutory Tax Engine</title>
+    <meta name="description" content="How Remotax calculates 2026 cross-border tax, net salary, and social security. Statutory sources, 183-day rules, assumptions &amp; disclaimer.">
+    <meta name="keywords" content="remotax methodology, statutory tax calculation rules, cross-border remote worker data sources, not tax advice notice">
+    <meta name="author" content="Remotax Editorial Team">
+    
+    <link rel="canonical" href="https://afrix.ir/remotax/methodology/">
+    <meta name="robots" content="noindex,follow">
+    <meta name="googlebot" content="noindex,follow">
+    
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="../assets/brand/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/brand/apple-touch-icon.png">
+    <meta name="theme-color" content="#070B0F">
+    <link rel="manifest" href="../manifest.webmanifest">
+    
+    <!-- Open Graph & Social Cards -->
+    <meta property="og:title" content="Remotax Calculation Methodology 2026 — Statutory Tax Engine">
+    <meta property="og:description" content="How Remotax calculates 2026 cross-border tax, net salary, and social security. Statutory sources, 183-day rules, assumptions &amp; disclaimer.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://afrix.ir/remotax/methodology/">
+    <meta property="og:image" content="https://afrix.ir/remotax/assets/brand/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://afrix.ir/remotax/assets/brand/og-image.png">
+    
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://afrix.ir/remotax/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Methodology",
+      "item": "https://afrix.ir/remotax/methodology/"
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Remotax",
+  "url": "https://afrix.ir/remotax/",
+  "logo": "https://afrix.ir/remotax/assets/brand/mark.svg"
+}
+    </script>
+    
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How frequently is tax and social security data updated on Remotax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our statutory models are reviewed and updated continuously against official government budget laws and circulars. Each jurisdiction page clearly displays its last-verified date and direct links to official statutory sources."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What foreign exchange rates and valuation dates are used for cross-border comparisons?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our calculation engine uses official European Central Bank reference exchange rates dated 2026-10-16: 1 EUR = 1.1253 USD, 1 EUR = 37.602 THB, and 1 EUR = 4.1327 AED (statutory peg of 3.6725 AED/USD). In Thailand, ฿38,500 converts to €1,024 monthly. In Dubai, AED 8,250 converts to €1,996 monthly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does Remotax separate employee and contractor calculations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because statutory social security and allowable business expense rules diverge fundamentally between corporate employment and independent freelancing in almost every jurisdiction worldwide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Remotax be cited for formal tax filing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Remotax provides forward-looking simulations and benchmarks. Official tax returns must be prepared using certified local tax software or by licensed tax advisors."
+      }
+    }
+  ]
+}
+    </script>
+
+    <!-- Critical Font Preload (Depth <= 2, Zero CLS) -->
+    <link rel="preload" href="../fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Anti-White-Flash & Master Liquid Glass Stylesheet -->
+    <style>html{background:#070B0F;color-scheme:dark;}</style>
+    <link rel="stylesheet" href="../css/remotax.min.css?v=4.4.0">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="horizon-ambiance" aria-hidden="true"><div class="horizon-sun" style="transform: translateX(-50%) translateY(25px);"></div></div>
+
+    <!-- Floating Glass Navbar -->
+    <header class="navbar-floating">
+        <nav class="nav-pill">
+            <a href="../index.html" class="nav-brand">
+                <div class="nav-brand-mark">
+                    <img src="../assets/brand/mark.svg" width="40" height="40" alt="" aria-hidden="true">
+                </div>
+                <span class="nav-brand-title"><span>Remo</span><span class="brand-tax">tax</span></span>
+                <span class="nav-brand-tag">2026</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="../calculator.html" class="nav-link">Calculator</a></li>
+                <li><a href="../calculators/take-home-pay.html" class="nav-link">Take Home</a></li>
+                <li><a href="../calculators/freelancer-tax.html" class="nav-link">Freelancer</a></li>
+                <li><a href="../comparisons/spain-vs-portugal/" class="nav-link">Comparisons</a></li>
+                <li><a href="../destinations.html" class="nav-link">Destinations</a></li>
+                <li><a href="../blog.html" class="nav-link">Blog</a></li>
+                <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="../quiz.html" class="btn-primary nav-cta">Find Match</a>
+                <button type="button" class="nav-mobile-toggle" id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Drawer / Full-Screen Glass Sheet -->
+    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true" inert>
+        <div class="mobile-drawer-sheet">
+            <div class="mobile-drawer-header">
+                <a href="../index.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none;" aria-label="Remotax">
+                    <div class="nav-brand-mark" style="width: 28px; height: 28px; min-width: 28px; min-height: 28px;">
+                        <img src="../assets/brand/mark.svg" width="28" height="28" alt="" aria-hidden="true">
+                    </div>
+                    <span class="nav-brand-title" style="font-size: 1.05rem;"><span>Remo</span><span class="brand-tax">tax</span></span>
+                </a>
+                <button type="button" id="mobile-drawer-close" class="btn-glass mobile-drawer-close-btn" aria-label="Close navigation menu">Close</button>
+            </div>
+            <div class="mobile-nav-links">
+                <a href="../calculator.html" class="mobile-nav-link"><span>Tax Calculator</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="../calculators/take-home-pay.html" class="mobile-nav-link"><span>Take Home Pay</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="../calculators/freelancer-tax.html" class="mobile-nav-link"><span>Freelancer Tax</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="../comparisons/spain-vs-portugal/" class="mobile-nav-link"><span>Spain vs Portugal</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="../destinations.html" class="mobile-nav-link"><span>Destinations Directory</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="../blog.html" class="mobile-nav-link"><span>Tax Guides & Blog</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="../faq.html" class="mobile-nav-link"><span>Tax Residency FAQ</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+            </div>
+            <div class="mobile-drawer-footer">
+                <a href="../quiz.html" class="btn-primary" style="width: 100%; justify-content: center; text-decoration: none;">Take Tax Strategy Quiz</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main id="main-content" class="container">
+        
+        <nav class="breadcrumb-nav" aria-label="Breadcrumbs">
+            <a href="../index.html">Home</a>
+            
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">Methodology</span>
+        </nav>
+        
+    <header class="article-hero-header" style="text-align: left; margin-top: 1.5rem; margin-bottom: 2.5rem;">
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
+            <span class="country-code-badge">STANDARDS</span>
+            <span class="footer-status-badge"><span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-net);"></span>Statutory Financial Modeling Framework • Tax Year 2026</span>
+            <span class="footer-status-badge">Tax tables verified 2026-10-18 · Social security & living costs: Remotax estimates</span>
+        </div>
+        <h1>Remotax Tax &amp; Calculation Methodology 2026</h1>
+        <p style="font-size: 1.15rem; color: var(--color-text-secondary); line-height: 1.7; max-width: 850px; margin-top: 1rem;">
+            The Remotax financial intelligence platform is designed to provide location-independent remote employees, freelancers, digital nomads, and global mobility teams with transparent, mathematically rigorous cross-border tax and net pay projections. Unlike generic tax estimators that rely on simplified flat averages or outdated brackets, the Remotax engine models complete statutory tax codes, official income tax brackets, mandatory national social security contributions, earnings ceilings, and targeted expatriate regimes for the 2026 tax year. This document details our data verification protocol, core calculation algorithms, modeling assumptions, and statutory limitations.
+        </p>
+    </header>
+
+    <section class="glass-panel" style="margin-bottom: 3.5rem; padding: 2.5rem 2rem;">
+        <h2>Data Verification & Statutory Sources Protocol</h2>
+        <p style="margin-top: 1rem; line-height: 1.75; color: var(--color-text-secondary);">Every tax table, bracket threshold, standard deduction, and social security rate utilized in Remotax is sourced directly from official government tax authorities and statutory legislative gazettes. Our wave-1 jurisdiction tables are verified against official publications including the Agencia Tributaria and Boletín Oficial del Estado in Spain, the Autoridade Tributária e Aduaneira in Portugal, the Federal Tax Authority and Ministry of Finance in the United Arab Emirates, the Agenzia delle Entrate and INPS in Italy, and the Thai Revenue Department in Thailand. Each country model carries explicit data integrity fields: taxTablesStatus, socialSecurityStatus, verifiedOn timestamp, and direct deep-link citations to official documentation.</p>
+
+        <h3 style="margin-top: 2rem;">Core Calculation Engine & Statutory Algorithms</h3>
+        <p style="margin-top: 0.75rem; line-height: 1.75; color: var(--color-text-secondary);">Our calculation engine implements strict statutory computational rules. For salaried employees, gross income is adjusted for mandatory statutory deductions (such as Spain&#39;s €2,000 employment expense allowance and Portugal&#39;s €4,587.09 specific deduction) before progressive personal income tax brackets are applied. Employee social security contributions are computed according to official statutory rates and capped at national statutory maximum contribution bases (such as Spain&#39;s €61,214.40 annual ceiling and Italy&#39;s €122,295 INPS massimale). For independent contractors, the engine models real-income contribution tramos (Spain&#39;s 15 tramos under RDL 13/2022), simplified regime expense coefficients (Portugal&#39;s 75% taxable coefficient under Art. 31 CIRS with 12xIAS ceiling), or dedicated separate schemes (Italy&#39;s 26.07% Gestione Separata). In Thailand, our baseline calculation strictly defaults to the remitted income progressive PIT scenario pursuant to Departmental Instructions Por. 161/2566 and Por. 162/2566, presenting the offshore 0% unremitted case strictly as a labelled optional exception.</p>
+
+        <div id="living-costs" style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08);">
+            <h3>Cost of Living & Purchasing Power Benchmarks</h3>
+            <p style="margin-top: 0.75rem; line-height: 1.75; color: var(--color-text-secondary);">To deliver realistic disposable income projections, Remotax benchmarks baseline monthly living expenses for a single professional residing in primary metropolitan hubs (Madrid, Lisbon, Dubai, Rome, and Bangkok). Baseline budgets encompass private one-bedroom apartment leasing in central districts, utilities (electricity, water, air conditioning or heating), high-speed telecommunications, grocery shopping, local transit, and basic dining. Disposable net savings are derived by subtracting monthly living costs in EUR from calculated net monthly take-home pay.</p>
+
+            <div class="callout-box" style="margin-top: 1.25rem; border-color: rgba(245, 158, 11, 0.4);">
+                <div class="callout-title" style="color: #fbbf24;">Remotax Living Cost Benchmark Specifications & Worker Assumptions</div>
+                <p style="font-size: 0.92rem; line-height: 1.65; margin: 0.5rem 0; color: #fff;">
+                    Every living-cost figure published on Remotax is an independent research benchmark modeled for a single expatriate or remote professional, and kept visually distinct from statutory tax figures. The Remotax model establishes the following baseline parameters:
+                </p>
+                <ul style="margin: 0.5rem 0 0 1.25rem; font-size: 0.88rem; line-height: 1.65; color: var(--color-text-secondary);">
+                    <li><strong>Worker Profile:</strong> Single individual remote knowledge worker without children or dependents.</li>
+                    <li><strong>Housing Accommodation:</strong> Private, furnished 1-bedroom apartment in a prime or safe, expat-friendly residential neighborhood of the benchmark city (Madrid Centro/Salamanca, Lisbon Parque das Nações/Saldanha, Milan Porta Nuova/Navigli, Dubai Marina/Downtown, Bangkok Sukhumvit).</li>
+                    <li><strong>Utilities & Telecommunications:</strong> Electricity, water, central heating/air-conditioning, and uncapped high-speed fiber internet (&gt;= 300 Mbps).</li>
+                    <li><strong>Monthly Sustenance & Transit:</strong> Monthly grocery basket, 1–2 restaurant meals weekly, municipal transit pass, and basic fitness/coworking access.</li>
+                    <li><strong>Dated Baseline:</strong> October 2026 benchmark data converted using official European Central Bank reference exchange rates as of October 16, 2026.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Dated Benchmark Foreign Exchange (FX) Protocol</h3>
+        <p style="margin-top: 0.75rem; line-height: 1.75; color: var(--color-text-secondary);">To maintain mathematical consistency across international comparisons and purchasing power calculations, Remotax normalizes cross-border living costs and salary tiers to EUR using dated benchmark exchange rates as of 2026-10-16 (sourced from European Central Bank reference fixings and statutory pegs). The dated benchmark rates are: EUR/USD = 1.1253 (establishing US Dollar conversion), EUR/THB = 37.602 (establishing Bangkok baseline living cost of ฿38,500 = €1,024 monthly), and EUR/AED = 4.1327 (reflecting the statutory peg of 3.6725 AED/USD; establishing Dubai baseline living cost of AED 8,250 = €1,996 monthly).</p>
+        <div class="table-responsive" style="overflow-x: auto; margin-top: 1.25rem;">
+            <table class="data-table-glass" style="width: 100%; border-collapse: collapse; text-align: left;">
+                <thead>
+                    <tr>
+                        <th style="padding: 0.85rem 1rem;">Currency Pair</th>
+                        <th style="padding: 0.85rem 1rem;">Benchmark Rate</th>
+                        <th style="padding: 0.85rem 1rem;">Effective Date</th>
+                        <th style="padding: 0.85rem 1rem;">Statutory Reference Source</th>
+                        <th style="padding: 0.85rem 1rem;">Standard Living Cost Equivalent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                        <td style="padding: 0.85rem 1rem; font-weight: 700; color: #fff;">EUR / USD</td>
+                        <td style="padding: 0.85rem 1rem; font-family: var(--font-mono); color: var(--color-net);">1.1253</td>
+                        <td style="padding: 0.85rem 1rem; color: var(--color-text-secondary);">2026-10-16</td>
+                        <td style="padding: 0.85rem 1rem; color: var(--color-text-secondary);">European Central Bank official reference rate (1 EUR = 1.1253 USD) as of 16 October 2026</td>
+                        <td style="padding: 0.85rem 1rem; color: #fff;">$2,250 / mo = €1,999 / mo</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                        <td style="padding: 0.85rem 1rem; font-weight: 700; color: #fff;">EUR / THB</td>
+                        <td style="padding: 0.85rem 1rem; font-family: var(--font-mono); color: var(--color-net);">37.602</td>
+                        <td style="padding: 0.85rem 1rem; color: var(--color-text-secondary);">2026-10-16</td>
+                        <td style="padding: 0.85rem 1rem; color: var(--color-text-secondary);">European Central Bank official reference rate (1 EUR = 37.602 THB) as of 16 October 2026</td>
+                        <td style="padding: 0.85rem 1rem; color: #fff;">฿38,500 / mo = €1,024 / mo</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                        <td style="padding: 0.85rem 1rem; font-weight: 700; color: #fff;">EUR / AED</td>
+                        <td style="padding: 0.85rem 1rem; font-family: var(--font-mono); color: var(--color-net);">4.1327</td>
+                        <td style="padding: 0.85rem 1rem; color: var(--color-text-secondary);">2026-10-16</td>
+                        <td style="padding: 0.85rem 1rem; color: var(--color-text-secondary);">Statutory peg: UAE Dirham pegged to USD at 3.6725 AED/USD; EUR/AED = 1.1253 * 3.6725 = 4.13266425</td>
+                        <td style="padding: 0.85rem 1rem; color: #fff;">AED 8,250 / mo = €1,996 / mo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="glass-panel" style="margin-bottom: 3.5rem; padding: 2rem 2.25rem;">
+        <h2>Statutory Limitations & 'Not Tax Advice' Disclosure</h2>
+        <div class="callout-box" style="margin-top: 1rem;">
+            <div class="callout-title">Important Legal Notice</div>
+            <p style="font-size: 0.95rem; line-height: 1.7; margin: 0; color: #fff;">
+                Remotax is an independent financial technology simulation platform created for informational, educational, and preliminary planning purposes only. The simulations, tax calculations, net pay estimates, and comparison models presented across this platform do not constitute legal, tax, accounting, or investment advice. Cross-border tax residency is subject to individual circumstances, permanent establishment risks, bilateral double taxation treaties, and evolving administrative guidance. Users are strongly advised to consult certified cross-border tax advisors or qualified immigration legal counsel in their relevant jurisdictions before executing international relocation or tax structuring decisions.
+            </p>
+        </div>
+    </section>
+
+    <section class="glass-panel" style="margin-bottom: 3.5rem; padding: 2.5rem 2rem;">
+        <h2>Frequently Asked Questions: Methodology & Standards</h2>
+        <div class="faq-accordion" style="margin-top: 1.5rem;">
+            
+        <div class="faq-item glass-card" style="margin-bottom: 0.85rem; padding: 1.25rem 1.5rem;">
+            <div class="faq-question" style="font-weight: 600; font-size: 1.05rem; color: #fff;">
+                <span>How frequently is tax and social security data updated on Remotax?</span>
+            </div>
+            <div class="faq-answer" style="margin-top: 0.75rem; color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.65;">
+                <p style="margin: 0;">Our statutory models are reviewed and updated continuously against official government budget laws and circulars. Each jurisdiction page clearly displays its last-verified date and direct links to official statutory sources.</p>
+            </div>
+        </div>
+        <div class="faq-item glass-card" style="margin-bottom: 0.85rem; padding: 1.25rem 1.5rem;">
+            <div class="faq-question" style="font-weight: 600; font-size: 1.05rem; color: #fff;">
+                <span>What foreign exchange rates and valuation dates are used for cross-border comparisons?</span>
+            </div>
+            <div class="faq-answer" style="margin-top: 0.75rem; color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.65;">
+                <p style="margin: 0;">Our calculation engine uses official European Central Bank reference exchange rates dated 2026-10-16: 1 EUR = 1.1253 USD, 1 EUR = 37.602 THB, and 1 EUR = 4.1327 AED (statutory peg of 3.6725 AED/USD). In Thailand, ฿38,500 converts to €1,024 monthly. In Dubai, AED 8,250 converts to €1,996 monthly.</p>
+            </div>
+        </div>
+        <div class="faq-item glass-card" style="margin-bottom: 0.85rem; padding: 1.25rem 1.5rem;">
+            <div class="faq-question" style="font-weight: 600; font-size: 1.05rem; color: #fff;">
+                <span>Why does Remotax separate employee and contractor calculations?</span>
+            </div>
+            <div class="faq-answer" style="margin-top: 0.75rem; color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.65;">
+                <p style="margin: 0;">Because statutory social security and allowable business expense rules diverge fundamentally between corporate employment and independent freelancing in almost every jurisdiction worldwide.</p>
+            </div>
+        </div>
+        <div class="faq-item glass-card" style="margin-bottom: 0.85rem; padding: 1.25rem 1.5rem;">
+            <div class="faq-question" style="font-weight: 600; font-size: 1.05rem; color: #fff;">
+                <span>Can Remotax be cited for formal tax filing?</span>
+            </div>
+            <div class="faq-answer" style="margin-top: 0.75rem; color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.65;">
+                <p style="margin: 0;">No. Remotax provides forward-looking simulations and benchmarks. Official tax returns must be prepared using certified local tax software or by licensed tax advisors.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+        
+        <section class="glass-panel" style="margin-top: 3.5rem; padding: 2.25rem 2rem;">
+            <h2>Related Tax Regimes & Comparisons</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.25rem;">
+                
+                <a href="../countries/spain/" class="glass-card" style="padding: 1.15rem 1.25rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: inherit; transition: border-color 0.2s ease;">
+                    <span style="font-weight: 500; font-size: 0.92rem; color: #fff;">Spain Tax Calculator</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color: var(--color-tax); min-width: 16px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <a href="../countries/portugal/" class="glass-card" style="padding: 1.15rem 1.25rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: inherit; transition: border-color 0.2s ease;">
+                    <span style="font-weight: 500; font-size: 0.92rem; color: #fff;">Portugal Tax Calculator</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color: var(--color-tax); min-width: 16px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <a href="../countries/uae/" class="glass-card" style="padding: 1.15rem 1.25rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: inherit; transition: border-color 0.2s ease;">
+                    <span style="font-weight: 500; font-size: 0.92rem; color: #fff;">United Arab Emirates Tax Calculator</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color: var(--color-tax); min-width: 16px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <a href="../countries/italy/" class="glass-card" style="padding: 1.15rem 1.25rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: inherit; transition: border-color 0.2s ease;">
+                    <span style="font-weight: 500; font-size: 0.92rem; color: #fff;">Italy Tax Calculator</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color: var(--color-tax); min-width: 16px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <a href="../countries/thailand/" class="glass-card" style="padding: 1.15rem 1.25rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: inherit; transition: border-color 0.2s ease;">
+                    <span style="font-weight: 500; font-size: 0.92rem; color: #fff;">Thailand Tax Calculator</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color: var(--color-tax); min-width: 16px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <a href="../best/digital-nomad-taxes/" class="glass-card" style="padding: 1.15rem 1.25rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: inherit; transition: border-color 0.2s ease;">
+                    <span style="font-weight: 500; font-size: 0.92rem; color: #fff;">Best Digital Nomad Tax Countries 2026</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color: var(--color-tax); min-width: 16px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+            </div>
+        </section>
+        
+        <section class="glass-panel" style="margin-top: 2.5rem; padding: 1.75rem 2rem; border-left: 3px solid var(--color-tax);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <div style="width: 38px; height: 38px; border-radius: 50%; background: rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: center; color: var(--color-tax); font-weight: 700; font-size: 0.85rem;">RT</div>
+                    <div>
+                        <div style="font-weight: 600; font-size: 0.95rem; color: #fff;">Authored by Remotax Editorial Team</div>
+                        <div style="font-size: 0.82rem; color: var(--color-text-secondary);"><a href="../methodology/" style="color: var(--color-tax); text-decoration: underline;">Review our Calculation Methodology</a> • Updated for Tax Year 2026</div>
+                    </div>
+                </div>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--color-text-secondary); margin-top: 1.25rem; margin-bottom: 0; line-height: 1.6;">
+                <strong>Statutory Notice & Disclaimer:</strong> Remotax is an independent financial technology intelligence platform. Calculations and simulations are for preliminary educational benchmarking only and do not constitute formal legal, accounting, or tax advice. Consult a certified cross-border tax specialist in your destination jurisdiction before executing international tax or relocation actions.
+            </p>
+        </section>
+    </main>
+
+    <!-- Unified Liquid Glass Footer -->
+    <footer class="footer-unified">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand-col">
+                    <a href="../index.html" class="nav-brand" style="padding: 0; text-decoration: none;">
+                        <div class="nav-brand-mark" style="width: 32px; height: 32px; min-width: 32px; min-height: 32px;">
+                            <img src="../assets/brand/mark.svg" width="32" height="32" alt="" aria-hidden="true">
+                        </div>
+                        <span class="nav-brand-title" style="font-size: 1.15rem;"><span>Remo</span><span class="brand-tax">tax</span></span>
+                        <span class="nav-brand-tag">2026</span>
+                    </a>
+                    <p>Global Remote Work Financial Intelligence Platform. Precision cross-border tax, net pay, and relocation intelligence.</p>
+                    <div class="footer-status-badge">
+                        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-net);"></span>
+                        Tax Year 2026 Statutory Engine
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <div class="footer-heading">Calculators</div>
+                    <ul class="footer-links-list">
+                        <li><a href="../calculators/take-home-pay.html">Take Home Pay</a></li>
+                        <li><a href="../calculators/freelancer-tax.html">Freelancer Tax</a></li>
+                        <li><a href="../comparisons/spain-vs-portugal/">Spain vs Portugal</a></li>
+                        <li><a href="../best/digital-nomad-taxes/">Best Nomad Taxes</a></li>
+                        <li><a href="../comparisons/spain-vs-italy/">Spain vs Italy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <div class="footer-heading">Country Engines</div>
+                    <ul class="footer-links-list">
+                        <li><a href="../countries/spain/">Spain Beckham Law</a></li>
+                        <li><a href="../countries/portugal/">Portugal IFICI</a></li>
+                        <li><a href="../countries/uae/">Dubai (UAE) 0% Income Tax</a></li>
+                        <li><a href="../countries/italy/">Italy Regime Impatriati</a></li>
+                        <li><a href="../countries/thailand/">Thailand DTV Visa</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <div class="footer-heading">Transparency & Legal</div>
+                    <ul class="footer-links-list">
+                        <li><a href="../methodology/">Calculation Methodology</a></li>
+                        <li><a href="../faq.html">Tax Residency FAQ</a></li>
+                        <li><a href="../destinations.html">Destinations Directory</a></li>
+                        <li><a href="../privacy.html">Privacy Policy</a></li>
+                        <li><a href="../terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <div>© 2026 Remotax. All rights reserved. Global Remote Work Financial Intelligence Platform.</div>
+                <div style="font-family: var(--font-mono); font-size: 0.8rem;">Statutory Sources: AEAT • AT • FTA • MEF • INPS • RD Thailand</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core Architecture: Data & Pure Engine -->
+    <script src="../data/countries.min.js?v=4.0.0" defer></script>
+    <script src="../engine/taxEngine.min.js?v=4.0.0" defer></script>
+    <!-- Liquid Glass UI Controller -->
+    <script src="../app.min.js?v=4.0.0" defer></script>
+    <script src="../js/nav.min.js?v=4.0.0" defer></script>
+</body>
+</html>

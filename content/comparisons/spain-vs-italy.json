@@ -1,0 +1,55 @@
+{
+  "reviewStatus": "draft",
+  "slug": "spain-vs-italy",
+  "countryCodes": [
+    "ES",
+    "IT"
+  ],
+  "h1": "Spain vs Italy Remote Worker Tax Comparison {{es.taxYear}}",
+  "metaTitle": "Spain vs Italy Tax Comparison {{es.taxYear}} — Beckham vs Impatriati",
+  "metaDescription": "Spain vs Italy tax comparison for remote workers {{es.taxYear}}. Compare {{es.beckham.ratePercent}} Beckham Law vs {{it.impatriati.exemptionPercent}} Regime Impatriati, INPS vs autónomo caps, and net take-home pay.",
+  "intro": "Southern Europe's two primary economies, Spain and Italy, offer lifestyle appeal, cultural heritage, and competing fiscal regimes tailored to inbound knowledge workers. Spain features its Beckham Law ({{es.beckham.ratePercent}} flat tax) under Article 93 LIRPF and an international telework visa framework. Italy counters with its revised Regime Impatriati under Legislative Decree 209/2023, offering a {{it.impatriati.exemptionPercent}} statutory exemption on assessable income, alongside the Italian Digital Nomad Visa. Deciding between the two nations involves analyzing contrasting tax brackets (Spain's 6-bracket progressive scale vs Italy's revised 3-bracket IRPEF), mandatory social security ceilings, and critical lock-in clauses such as Italy's mandatory {{it.impatriati.minimumStayYears}}-year residency requirement.",
+  "regimeComparison": "Spain's Beckham Law imposes a flat {{es.beckham.rate}} tax on employment income up to {{es.beckham.capFormatted}} for {{es.beckham.regimeDurationYears}} tax years without requiring a minimum future residency commitment. Italy's Regime Impatriati exempts {{it.impatriati.exemptionPercent}} of qualifying income from national IRPEF (increasing to {{it.impatriati.childExemptionPercent}} if moving with minor children or buying a primary residence) up to {{it.impatriati.capFormatted}} for {{it.impatriati.durationYears}} tax years. Under Italy's {{it.taxYear}} three-bracket IRPEF ({{it.taxBrackets.bracket1RatePercent}}, {{it.taxBrackets.bracket2RatePercent}}, {{it.taxBrackets.bracket3RatePercent}}), halving the tax base results in effective income tax rates that can be nominally lower than Spain's {{es.beckham.ratePercent}} flat rate at moderate salary levels.",
+  "socialSecurityComparison": "Social security represents Spain's substantial financial advantage. For remote employees, Spain's {{es.employee.rate}} contribution is capped at {{es.employee.maxAnnualSSFormatted}} annually, whereas Italy's employee contribution applies up to the INPS massimale of {{it.inps.massimaleFormatted}}, generating up to {{it.employee.maxAnnualSSFormatted}} in employee contributions. For independent contractors, the difference is significant: Spanish autónomos evaluate the minimum base across {{es.autonomo.tramoCount}} tramos ({{es.autonomo.minCuotaFormatted}} to {{es.autonomo.maxCuotaFormatted}} monthly, totaling {{es.autonomo.maxAnnualSSFormatted}} annually in our model, or up to {{es.autonomo.optionalMaxAnnualSSFormatted}} if selecting the maximum base). In Italy, freelance contractors in Gestione Separata must contribute {{it.gestioneSeparata.ratePercent}} on full income up to the {{it.inps.massimaleFormatted}} ceiling—generating up to {{it.gestioneSeparata.maxAnnualSSFormatted}} in mandatory social security, because Italy's Impatriati exemption does NOT apply to INPS contributions.",
+  "costOfLivingComparison": "Living costs between the two capitals are closely matched, with regional variations dictating value. Baseline monthly living costs for a single remote professional in Madrid average {{es.livingCostFormatted}}, while Rome averages {{it.livingCostFormatted}}. However, Milan is noticeably more expensive, with monthly baselines exceeding €2,100. On the secondary market, Italian southern cities offer lower rents than Spanish equivalents with rich historical communities.",
+  "winnerByProfile": [
+    {
+      "profile": "Remote Independent Contractor",
+      "winner": "Spain",
+      "rationale": "Spain models contractor social security at {{es.ss.autonomoCap}}/yr using the statutory minimum base (up to {{es.autonomo.optionalMaxAnnualSSFormatted}} on the maximum base), whereas Italy levies {{it.gestioneSeparata.ratePercent}} Gestione Separata up to {{it.gs.cap}}/yr with zero Impatriati exemption on social contributions."
+    },
+    {
+      "profile": "High-Salaried Remote Employee with Family",
+      "winner": "Italy (Impatriati)",
+      "rationale": "Italy's {{it.impatriati.childExemptionPercent}} exemption for workers moving with minor children yields superior net pay for salaried employees whose employer covers employer contributions."
+    },
+    {
+      "profile": "Nomad Planning a 1-2 Year Stay",
+      "winner": "Spain",
+      "rationale": "Italy requires a legally binding {{it.impatriati.minimumStayYears}}-year stay commitment; leaving early triggers full retroactive clawback with penalties. Spain's Beckham Law carries no minimum stay penalty."
+    },
+    {
+      "profile": "Budget Nomad in Southern Regions",
+      "winner": "Italy (Mezzogiorno)",
+      "rationale": "Southern Italy provides lower rental baselines and accessible living costs alongside rich historical communities."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Why is Spain safer than Italy for short-term remote workers?",
+      "a": "Italy's Regime Impatriati legally requires maintaining tax residency for at least {{it.impatriati.minimumStayYears}} continuous tax years; departing earlier results in retroactive revocation and repayment of all tax benefits plus interest. Spain's Beckham Law has no minimum lock-in period."
+    },
+    {
+      "q": "Does Italy's 50% Impatriati exemption reduce INPS social security?",
+      "a": "No. The {{it.impatriati.exemptionPercent}} exemption applies solely to personal income tax (IRPEF). INPS social security ({{it.gestioneSeparata.ratePercent}} for Gestione Separata contractors) is calculated on 100% of gross earnings up to the {{it.inps.massimaleFormatted}} massimale."
+    },
+    {
+      "q": "Which country has lower taxes on a high remote employee salary?",
+      "a": "In Spain under the Beckham Law, tax is {{es.beckham.ratePercent}} plus {{es.ss.employeeCap}} SS cap. In Italy under Impatriati ({{it.impatriati.exemptionPercent}} exemption), taxable base is halved, but INPS employee contributions reach up to {{it.ss.employeeCap}}."
+    },
+    {
+      "q": "How do visa procedures compare between Spain and Italy?",
+      "a": "Both countries offer Digital Nomad Visas with similar income thresholds, but Spain's application processing via UGE-CE is widely considered faster and more centralized than Italy's decentralized consular workflow."
+    }
+  ]
+}

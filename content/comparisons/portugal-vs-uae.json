@@ -1,0 +1,55 @@
+{
+  "reviewStatus": "draft",
+  "slug": "portugal-vs-uae",
+  "countryCodes": [
+    "PT",
+    "AE"
+  ],
+  "h1": "Portugal vs UAE Tax Comparison for Remote Workers {{es.taxYear}}",
+  "metaTitle": "Portugal vs UAE Tax Comparison {{es.taxYear}} — IFICI vs Dubai 0% Tax",
+  "metaDescription": "{{es.taxYear}} Portugal vs UAE tax comparison. Compare Portugal IFICI {{pt.ifici.ratePercent}} vs Dubai {{ae.incomeTaxRatePercent}} tax, social security differences, and living costs.",
+  "intro": "Comparing Portugal with the United Arab Emirates highlights two diametrically opposed strategies for remote work living. Portugal, located on Europe's Atlantic coast, offers historic charm, temperate oceanic weather, EU citizenship accessibility, and the targeted IFICI {{pt.ifici.ratePercent}} tax regime. The UAE, anchored by Dubai, offers an aggressive {{ae.incomeTaxRatePercent}} statutory personal tax framework, {{ae.socialSecurityRatePercent}} social security, ultra-modern luxury infrastructure, and seamless immigration via the Dubai Virtual Working Programme. For international remote workers, the choice centers on whether Portugal's lifestyle and EU passport pathway justify paying European income taxes and social security compared to complete tax elimination in Dubai.",
+  "regimeComparison": "Portugal assesses tax residents under progressive IRS brackets from {{pt.taxBrackets.bracketRangeLong}}, or under the specialized IFICI regime at a {{pt.ifici.rate}} flat rate for {{pt.ifici.durationYears}} years (strictly for certified innovation sectors). In contrast, the UAE statutory personal income tax rate is {{ae.incomeTaxRatePercent}} across all earning levels without sector restrictions. For contractors, Dubai provides a 0% corporate tax safe harbor on commercial turnover up to {{ae.corporateTaxThresholdAEDFormatted}} ({{ae.corporateTaxThresholdUSDFormatted}}), with foreign remote salaries completely exempt.",
+  "socialSecurityComparison": "Social security represents an immense financial wedge. Portugal levies {{pt.employee.rate}} employee social security with no statutory maximum ceiling, meaning high earners face substantial deductions. Independent contractors in Portugal contribute {{pt.contractor.rate}} on {{pt.contractor.baseMultiplierPercent}} of gross earnings capped at {{pt.contractor.iasMultiplier}}xIAS ({{pt.ss.contractorCap}} annually). In Dubai, foreign remote workers pay {{ae.socialSecurityRatePercent}} statutory social security. While Dubai residents fund private health insurance, this is a fraction of Portuguese social security charges on higher salaries.",
+  "costOfLivingComparison": "Living costs heavily favor Portugal. Monthly baseline living expenditures in Lisbon average {{pt.livingCostFormatted}} for a single remote worker, while Dubai averages {{ae.livingCostFormatted}}. Central apartment rentals in Lisbon are lower than in Dubai's popular expatriate areas (Dubai Marina, Downtown). However, for remote earners making over $80,000 annually, Dubai's 0% tax savings outpace the higher living expenses.",
+  "winnerByProfile": [
+    {
+      "profile": "High-Earning Software Engineer ($120k+)",
+      "winner": "UAE (Dubai)",
+      "rationale": "Zero personal tax and zero social security in Dubai yield substantial net cash annually compared to Portugal's standard IRS plus uncapped social security."
+    },
+    {
+      "profile": "Certified R&D Specialist Seeking EU Citizenship",
+      "winner": "Portugal (IFICI)",
+      "rationale": "Portugal offers the {{pt.ifici.ratePercent}} IFICI rate for {{pt.ifici.durationYears}} years and grants eligibility for EU citizenship after just {{pt.citizenshipYears}} years of legal residence."
+    },
+    {
+      "profile": "Remote Freelancer / Contractor ($60k–$90k)",
+      "winner": "UAE (Dubai)",
+      "rationale": "Avoids Portugal's Category B social security ({{pt.ss.contractorCap}} cap) and progressive IRS, retaining contractor billings under Dubai's {{ae.corporateTaxThresholdAEDFormatted}} corporate exemption."
+    },
+    {
+      "profile": "Ocean & Nature Lifestyle Seeker",
+      "winner": "Portugal",
+      "rationale": "Portugal provides Atlantic surf beaches, temperate weather, and historic walkable neighborhoods that contrast with Dubai's desert climate."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How much more do you keep in Dubai versus Portugal at €100,000?",
+      "a": "At €100,000 gross salary, a standard employee in Portugal nets {{pt.netPay100kStdEmployeeFormatted}} after progressive IRS and {{pt.employee.ratePercent}} social security. In Dubai, you retain {{ae.netPay100kFormatted}}, yielding substantial additional net pay."
+    },
+    {
+      "q": "What are the visa income requirements for Portugal D8 vs Dubai Virtual Working?",
+      "a": "Portugal's D8 Digital Nomad Visa requires minimum monthly income of approximately 4x minimum wage, while Dubai's Virtual Working Programme requires verified income of USD {{ae.vwp.salaryRequirementUSDFormatted}} per month."
+    },
+    {
+      "q": "Can I get an EU passport through the Dubai remote work visa?",
+      "a": "No. The UAE does not offer a path to citizenship for remote workers. Portugal provides a clear statutory path to EU citizenship after {{pt.citizenshipYears}} years of legal residence."
+    },
+    {
+      "q": "Does Portugal have a social security ceiling for remote employees?",
+      "a": "No. Portugal's {{pt.employee.ratePercent}} employee social security contribution has no statutory ceiling, whereas contractor contributions are capped at {{pt.contractor.iasMultiplier}} times the monthly IAS ({{pt.contractor.maxAnnualSSFormatted}} maximum in {{es.taxYear}})."
+    }
+  ]
+}
