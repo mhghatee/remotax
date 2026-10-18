@@ -845,7 +845,7 @@ if (!fs.existsSync(SITEMAP_INDEX_PATH)) {
     }
   }
 
-  console.log(`[SITEMAP GATE] Sitemaps verified: ${childSitemapFiles.length} child sitemaps, ${totalSitemapUrls} total URLs (22 wave-1 pages + 29 existing public pages, 0 deferred pages).`);
+  console.log(`[SITEMAP GATE] Sitemaps verified: ${childSitemapFiles.length} child sitemaps, ${totalSitemapUrls} total URLs (${activeSeoPages.length} active pages + ${totalSitemapUrls - activeSeoPages.length} public utility/legacy pages, 0 deferred pages).`);
 }
 
 // 4. htaccess Security & Rewrite Gate
@@ -864,6 +864,22 @@ if (!fs.existsSync(HTACCESS_PATH)) {
   if (!ht.includes('RewriteRule ^comparisons/spain-vs-portugal\\.html$ comparisons/spain-vs-portugal/ [R=301,L]')) {
     console.error('[HTACCESS GATE] .htaccess missing 301 redirect for legacy comparisons/spain-vs-portugal.html!');
     totalErrors++;
+  }
+  const expectedRedirects = [
+    'RewriteRule ^tax-calculator/spain',
+    'RewriteRule ^tax-calculator/portugal',
+    'RewriteRule ^tax-calculator/uae',
+    'RewriteRule ^article-spain-beckham-law',
+    'RewriteRule ^article-portugal-d8-nhr',
+    'RewriteRule ^article-dubai-zero-tax',
+    'RewriteRule ^article-italy-impatriati-tax',
+    'RewriteRule ^article-thailand-dtv-visa'
+  ];
+  for (const exp of expectedRedirects) {
+    if (!ht.includes(exp)) {
+      console.error(`[HTACCESS GATE] .htaccess missing 301 redirect: ${exp}!`);
+      totalErrors++;
+    }
   }
   console.log('[HTACCESS GATE] .htaccess protection and 301 rewrite rules verified.');
 }

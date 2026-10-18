@@ -78,6 +78,18 @@ RewriteBase /remotax/
 # 301 Redirect legacy comparisons HTML to clean directory URL
 RewriteRule ^comparisons/spain-vs-portugal\.html$ comparisons/spain-vs-portugal/ [R=301,L]
 
+# 301 Redirect legacy country calculators to modern country hubs
+RewriteRule ^tax-calculator/spain(?:\.html)?$ countries/spain/ [R=301,L]
+RewriteRule ^tax-calculator/portugal(?:\.html)?$ countries/portugal/ [R=301,L]
+RewriteRule ^tax-calculator/uae(?:\.html)?$ countries/uae/ [R=301,L]
+
+# 301 Redirect legacy regime articles to modern regime hubs
+RewriteRule ^article-spain-beckham-law(?:\.html)?$ regimes/beckham-law-spain/ [R=301,L]
+RewriteRule ^article-portugal-d8-nhr(?:\.html)?$ regimes/ifici-portugal/ [R=301,L]
+RewriteRule ^article-dubai-zero-tax(?:\.html)?$ regimes/dubai-virtual-working-programme/ [R=301,L]
+RewriteRule ^article-italy-impatriati-tax(?:\.html)?$ regimes/impatriati-italy/ [R=301,L]
+RewriteRule ^article-thailand-dtv-visa(?:\.html)?$ regimes/thailand-dtv/ [R=301,L]
+
 # 301 Redirect reverse comparison pairs to canonical pair URLs
 RewriteRule ^comparisons/portugal-vs-spain/?$ comparisons/spain-vs-portugal/ [R=301,L]
 RewriteRule ^comparisons/uae-vs-spain/?$ comparisons/spain-vs-uae/ [R=301,L]

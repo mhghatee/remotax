@@ -2011,9 +2011,24 @@ function renderSalaryPage({ page, country, grossEUR, rel, allPages }) {
 // ----------------------------------------------------------------------
 // GENERATION ENGINE MAIN EXECUTION
 // ----------------------------------------------------------------------
-let generatedPagesCount = 0;
 const redirectsList = [
-  { oldPath: 'comparisons/spain-vs-portugal.html', newPath: 'comparisons/spain-vs-portugal/' }
+  { oldPath: 'comparisons/spain-vs-portugal.html', newPath: 'comparisons/spain-vs-portugal/' },
+  { oldPath: 'tax-calculator/spain.html', newPath: 'countries/spain/' },
+  { oldPath: 'tax-calculator/spain', newPath: 'countries/spain/' },
+  { oldPath: 'tax-calculator/portugal.html', newPath: 'countries/portugal/' },
+  { oldPath: 'tax-calculator/portugal', newPath: 'countries/portugal/' },
+  { oldPath: 'tax-calculator/uae.html', newPath: 'countries/uae/' },
+  { oldPath: 'tax-calculator/uae', newPath: 'countries/uae/' },
+  { oldPath: 'article-spain-beckham-law.html', newPath: 'regimes/beckham-law-spain/' },
+  { oldPath: 'article-spain-beckham-law', newPath: 'regimes/beckham-law-spain/' },
+  { oldPath: 'article-portugal-d8-nhr.html', newPath: 'regimes/ifici-portugal/' },
+  { oldPath: 'article-portugal-d8-nhr', newPath: 'regimes/ifici-portugal/' },
+  { oldPath: 'article-dubai-zero-tax.html', newPath: 'regimes/dubai-virtual-working-programme/' },
+  { oldPath: 'article-dubai-zero-tax', newPath: 'regimes/dubai-virtual-working-programme/' },
+  { oldPath: 'article-italy-impatriati-tax.html', newPath: 'regimes/impatriati-italy/' },
+  { oldPath: 'article-italy-impatriati-tax', newPath: 'regimes/impatriati-italy/' },
+  { oldPath: 'article-thailand-dtv-visa.html', newPath: 'regimes/thailand-dtv/' },
+  { oldPath: 'article-thailand-dtv-visa', newPath: 'regimes/thailand-dtv/' }
 ];
 
 const reversePairs = [
@@ -2035,6 +2050,8 @@ reversePairs.forEach(([rev, canon]) => {
     newPath: `comparisons/${canon}/`
   });
 });
+
+let generatedPagesCount = 0;
 
 // Process Each Page
 activeSeoPages.forEach(page => {
@@ -2125,20 +2142,12 @@ const existingPublicPages = [
   { path: 'destinations', changefreq: 'weekly', priority: '0.8' },
   { path: 'quiz', changefreq: 'monthly', priority: '0.7' },
   { path: 'blog', changefreq: 'weekly', priority: '0.8' },
-  { path: 'article-spain-beckham-law', changefreq: 'monthly', priority: '0.75' },
-  { path: 'article-dubai-zero-tax', changefreq: 'monthly', priority: '0.75' },
-  { path: 'article-portugal-d8-nhr', changefreq: 'monthly', priority: '0.75' },
   { path: 'article-germany-expat-tax', changefreq: 'monthly', priority: '0.75' },
-  { path: 'article-thailand-dtv-visa', changefreq: 'monthly', priority: '0.75' },
   { path: 'article-uk-income-tax', changefreq: 'monthly', priority: '0.75' },
   { path: 'article-usa-expat-tax', changefreq: 'monthly', priority: '0.75' },
   { path: 'article-netherlands-30-ruling', changefreq: 'monthly', priority: '0.75' },
-  { path: 'article-italy-impatriati-tax', changefreq: 'monthly', priority: '0.75' },
   { path: 'article-singapore-territorial-tax', changefreq: 'monthly', priority: '0.75' },
-  { path: 'tax-calculator/spain', changefreq: 'weekly', priority: '0.9' },
-  { path: 'tax-calculator/portugal', changefreq: 'weekly', priority: '0.9' },
   { path: 'tax-calculator/germany', changefreq: 'weekly', priority: '0.9' },
-  { path: 'tax-calculator/uae', changefreq: 'weekly', priority: '0.9' },
   { path: 'tax-calculator/uk', changefreq: 'weekly', priority: '0.9' },
   { path: 'faq', changefreq: 'monthly', priority: '0.7' },
   { path: 'privacy', changefreq: 'monthly', priority: '0.5' },
@@ -2204,6 +2213,16 @@ const redirectMarkerEnd = '# --- REMOTAX WAVE 1 301 REDIRECTS END ---';
 let wave1HtaccessRules = `${redirectMarkerStart}\n`;
 wave1HtaccessRules += `# 301 Redirect legacy comparisons HTML to clean directory URL\n`;
 wave1HtaccessRules += `RewriteRule ^comparisons/spain-vs-portugal\\.html$ comparisons/spain-vs-portugal/ [R=301,L]\n\n`;
+wave1HtaccessRules += `# 301 Redirect legacy country calculators to modern country hubs\n`;
+wave1HtaccessRules += `RewriteRule ^tax-calculator/spain(?:\\.html)?$ countries/spain/ [R=301,L]\n`;
+wave1HtaccessRules += `RewriteRule ^tax-calculator/portugal(?:\\.html)?$ countries/portugal/ [R=301,L]\n`;
+wave1HtaccessRules += `RewriteRule ^tax-calculator/uae(?:\\.html)?$ countries/uae/ [R=301,L]\n\n`;
+wave1HtaccessRules += `# 301 Redirect legacy regime articles to modern regime hubs\n`;
+wave1HtaccessRules += `RewriteRule ^article-spain-beckham-law(?:\\.html)?$ regimes/beckham-law-spain/ [R=301,L]\n`;
+wave1HtaccessRules += `RewriteRule ^article-portugal-d8-nhr(?:\\.html)?$ regimes/ifici-portugal/ [R=301,L]\n`;
+wave1HtaccessRules += `RewriteRule ^article-dubai-zero-tax(?:\\.html)?$ regimes/dubai-virtual-working-programme/ [R=301,L]\n`;
+wave1HtaccessRules += `RewriteRule ^article-italy-impatriati-tax(?:\\.html)?$ regimes/impatriati-italy/ [R=301,L]\n`;
+wave1HtaccessRules += `RewriteRule ^article-thailand-dtv-visa(?:\\.html)?$ regimes/thailand-dtv/ [R=301,L]\n\n`;
 wave1HtaccessRules += `# 301 Redirect reverse comparison pairs to canonical pair URLs\n`;
 reversePairs.forEach(([rev, canon]) => {
   wave1HtaccessRules += `RewriteRule ^comparisons/${rev}/?$ comparisons/${canon}/ [R=301,L]\n`;
