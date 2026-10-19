@@ -163,8 +163,8 @@
             </aside>
 
             <!-- Right Column: Article Content -->
-            <article class="article-content glass-panel" style="padding: 2.75rem 2.5rem;">
-                <p>The United Kingdom maintains a transparent HMRC framework for PAYE employees and self-employed contractors. Understanding how the <strong>Personal Allowance</strong> (£12,570), progressive income tax bands, and <strong>National Insurance (NI)</strong> interact is vital for remote professionals based across London, Manchester, Edinburgh, or Bristol.</p>
+            <article class="article-content glass-panel" style="padding: 2.75rem 2.5rem; line-height: 1.7; color: var(--text-body);">
+                <p>The United Kingdom maintains a sophisticated, transparent tax framework administered by HM Revenue & Customs (HMRC). For international remote employees, engineering contractors, and distributed professionals residing across London, Manchester, Edinburgh, or Bristol, navigating the interaction between the <strong>Personal Allowance</strong> (£12,570), progressive PAYE tax brackets, <strong>National Insurance (NI)</strong>, and cross-border residence rules is essential to optimize net take-home salary.</p>
 
                 <!-- Stat Callout Cards -->
                 <div class="stat-callout-grid">
@@ -173,7 +173,7 @@
                         <div class="stat-callout-label">Tax-Free Personal Allowance</div>
                     </div>
                     <div class="stat-callout-card">
-                        <div class="stat-callout-num" style="color: var(--color-tax);">60% Trap</div>
+                        <div class="stat-callout-num" style="color: var(--color-tax);">62% Trap</div>
                         <div class="stat-callout-label">Effective Marginal Band (£100k–£125k)</div>
                     </div>
                     <div class="stat-callout-card">
@@ -182,46 +182,53 @@
                     </div>
                 </div>
 
-                <h2 id="uk-tax-framework">HMRC Framework for Remote Workers</h2>
-                <p>Remote workers based in the UK generally operate under one of three arrangements:</p>
+                <h2 id="uk-tax-framework">1. UK Statutory Residence Test (SRT) for Remote Expats</h2>
+                <p>Tax residency in the UK is determined by the statutory rules of the <strong>Statutory Residence Test (SRT)</strong>, codified in Schedule 45 of the Finance Act 2013. The test evaluates your physical presence and connection to the UK through three sequential tiers:</p>
                 <ul>
-                    <li><strong>Direct UK Payroll (PAYE):</strong> Employed by a UK registered entity or Employer of Record (EOR) with PAYE tax and Class 1 National Insurance deducted at source.</li>
-                    <li><strong>Sole Trader / Outside IR35 Contractor:</strong> Invoicing foreign or domestic clients via Self Assessment, paying Class 4 National Insurance.</li>
-                    <li><strong>Personal Service Company (PSC):</strong> Taking a combination of low salary and company dividends, subject to Corporation Tax and Dividend Tax.</li>
+                    <li><strong>Automatic Overseas Tests:</strong> You are automatically treated as non-resident if you spend fewer than 16 days in the UK during the tax year (or fewer than 46 days if you were non-resident in the previous three tax years), or if you work full-time overseas (averaging at least 35 hours per week) with fewer than 91 days spent in the UK.</li>
+                    <li><strong>Automatic UK Tests:</strong> You are automatically treated as UK tax resident if you spend 183 or more days in the UK during the tax year, or if your only home is in the UK for at least 91 consecutive days.</li>
+                    <li><strong>Sufficient Ties Test:</strong> If neither automatic test applies, residency is determined by combining the number of days spent in the UK with "tie factors": family tie (spouse/minor children in the UK), accommodation tie (available dwelling), work tie (working 40+ days in the UK), 90-day tie (spending 90+ days in the UK in either of the previous two tax years), and country tie (spending more days in the UK than any other single country).</li>
                 </ul>
 
-                <h2 id="paye-brackets">UK Income Tax Bands (2026)</h2>
+                <h2 id="paye-brackets">2. UK Income Tax Bands & Personal Allowance (2026)</h2>
+                <p>For England, Wales, and Northern Ireland, HMRC levies income tax under discrete progressive tranches on non-savings and non-dividend income:</p>
                 <table class="data-table-glass">
                     <thead>
                         <tr>
                             <th>Band</th>
                             <th>Taxable Income Range</th>
-                            <th>Tax Rate</th>
+                            <th>Statutory Tax Rate</th>
+                            <th>Maximum Band Tax</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>Personal Allowance</strong></td>
                             <td class="tabular-nums">Up to £12,570</td>
-                            <td class="tabular-nums" style="color: var(--color-net);">0%</td>
+                            <td class="tabular-nums" style="color: var(--color-net);">0.0%</td>
+                            <td class="tabular-nums">£0</td>
                         </tr>
                         <tr>
                             <td><strong>Basic Rate</strong></td>
                             <td class="tabular-nums">£12,571 to £50,270</td>
-                            <td class="tabular-nums">20%</td>
+                            <td class="tabular-nums">20.0%</td>
+                            <td class="tabular-nums">£7,540</td>
                         </tr>
                         <tr>
                             <td><strong>Higher Rate</strong></td>
                             <td class="tabular-nums">£50,271 to £125,140</td>
-                            <td class="tabular-nums">40%</td>
+                            <td class="tabular-nums">40.0%</td>
+                            <td class="tabular-nums">£29,948</td>
                         </tr>
                         <tr>
                             <td><strong>Additional Rate</strong></td>
                             <td class="tabular-nums">Over £125,140</td>
-                            <td class="tabular-nums" style="color: var(--color-tax);">45%</td>
+                            <td class="tabular-nums" style="color: var(--color-tax);">45.0%</td>
+                            <td class="tabular-nums">Uncapped</td>
                         </tr>
                     </tbody>
                 </table>
+                <p>Note: Scotland operates an autonomous devolved six-band income tax structure with rates ranging from 19% (Starter Rate) to 48% (Top Rate over £125,140). National Insurance contributions remain uniform across all four home nations.</p>
 
                 <!-- Interactive CTA Card -->
                 <div class="article-callout" style="text-align: center; margin: 2.5rem 0; padding: 2rem;">
@@ -232,14 +239,51 @@
                     <a href="tax-calculator/uk.html" class="btn-primary">Open UK Tax Calculator</a>
                 </div>
 
-                <h2 id="marginal-tax-trap">The Infamous 60% Marginal Tax Trap (£100,000 to £125,140)</h2>
-                <p>When your adjusted net income exceeds £100,000, your £12,570 Personal Allowance is reduced by £1 for every £2 earned above £100,000, reaching zero at £125,140. This means for every £100 earned in this band, £40 goes to higher-rate income tax, and £20 is added from the loss of allowance, which combined with 2% National Insurance creates an effective <strong>62% marginal tax deduction</strong>.</p>
+                <h2 id="marginal-tax-trap">3. The Infamous 60% Marginal Tax Trap (£100,000 to £125,140)</h2>
+                <p>Under Section 35 of the Income Tax Act 2007, an individual's £12,570 Personal Allowance is reduced by £1 for every £2 of adjusted net income earned above £100,000. By £125,140, the entire Personal Allowance is completely wiped out.</p>
+                <p>The punitive math operates as follows:</p>
+                <ul>
+                    <li>Standard Higher Rate tax on every £100 earned in this band absorbs <strong>£40</strong>.</li>
+                    <li>The £50 reduction in Personal Allowance causes £50 of previously tax-free income to be taxed at 40%, absorbing an extra <strong>£20</strong>.</li>
+                    <li>Combined with the 2.0% employee National Insurance rate above the UEL, every additional £100 earned yields only £38 net—an effective marginal tax rate of <strong>62.0%</strong>.</li>
+                </ul>
 
-                <h2 id="national-insurance">National Insurance Contributions (NICs)</h2>
-                <p>Under recent reforms, the employee Class 1 National Insurance contribution rate on earnings between the Primary Threshold (£12,570/yr) and Upper Earnings Limit (£50,270/yr) is <strong>8%</strong>, dropping to <strong>2%</strong> on earnings exceeding £50,270.</p>
+                <h2 id="national-insurance">4. National Insurance Contributions (NICs) & Reform Architecture</h2>
+                <p>National Insurance is levied alongside income tax to fund state retirement pensions and the National Health Service (NHS):</p>
+                <ul>
+                    <li><strong>Class 1 Employee Contributions:</strong> Paid at 8.0% on weekly earnings between the Primary Threshold (£242/week or £12,570/yr) and the Upper Earnings Limit (£967/week or £50,270/yr), and 2.0% on earnings above £50,270.</li>
+                    <li><strong>Class 1 Employer Contributions:</strong> UK employers pay a mandatory secondary contribution of 13.8% on all earnings above the Secondary Threshold (£175/week or £9,100/yr), with no upper ceiling.</li>
+                    <li><strong>Class 4 Self-Employed Contributions:</strong> Sole traders pay 6.0% on profits between £12,570 and £50,270, and 2.0% on profits above £50,270.</li>
+                </ul>
 
-                <h2 id="salary-sacrifice">Bypassing the Trap with Pension Salary Sacrifice</h2>
-                <p>The most effective statutory mechanism to eliminate the 60% tax trap is salary sacrifice into an approved SIPP (Self-Invested Personal Pension) or workplace pension. By sacrificing earnings above £100,000 directly into retirement accounts, you retain 100% of your Personal Allowance while sheltering wealth from income tax and National Insurance.</p>
+                <h2 id="salary-sacrifice">5. Pension Salary Sacrifice & The New FIG Regime</h2>
+                <p>To legally bypass the 60% tax trap, UK taxpayers routinely use <strong>salary sacrifice</strong> arrangements. Contributing gross salary directly into an employer pension scheme or a registered SIPP (Self-Invested Personal Pension) reduces adjusted net income below £100,000, recovering the full £12,570 Personal Allowance while capturing 60% effective tax relief.</p>
+                <p>Furthermore, following the historic abolition of the Non-Domiciled (Non-Dom) remittance-basis system, the UK introduced the <strong>4-year Foreign Income and Gains (FIG)</strong> regime. Qualifying individuals relocating to the UK who have been non-UK residents for the prior 10 consecutive tax years can bring foreign-sourced employment earnings and investment gains into the UK completely free of UK tax for four years.</p>
+
+                <!-- UK Expat FAQs -->
+                <div style="border-top: 1px solid var(--glass-border-base); padding-top: 2rem; margin-top: 2.5rem;">
+                    <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 1.25rem;">Frequently Asked Questions: UK Expat Taxes</h3>
+                    <div class="faq-accordion">
+                        <details class="faq-item" open>
+                            <summary class="faq-question">What is the deadline for UK Self Assessment filing?</summary>
+                            <div class="faq-answer">
+                                <p>Online Self Assessment returns and payment of any balancing tax liability (plus first payment on account for the next year) must be submitted by January 31 following the end of the tax year (which runs from April 6 to April 5).</p>
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary class="faq-question">What are Payments on Account in the UK?</summary>
+                            <div class="faq-answer">
+                                <p>If your Self Assessment tax bill exceeds £1,000 and less than 80% was deducted at source, HMRC requires two advance payments on account towards next year's bill (due January 31 and July 31), each equal to 50% of the previous year's tax liability.</p>
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary class="faq-question">How does IR35 impact foreign remote contractors working for UK companies?</summary>
+                            <div class="faq-answer">
+                                <p>If a remote contractor is not tax resident in the UK and performs 100% of their work physically outside the UK, IR35 off-payroll working rules generally do not apply to payments made to their foreign company, and no UK PAYE withholding is required.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
             </article>
         </main>
     </div>
