@@ -6,7 +6,7 @@
     "TH"
   ],
   "h1": "UAE vs Thailand Remote Worker Tax Comparison {{es.taxYear}}",
-  "metaTitle": "UAE vs Thailand Tax Comparison {{es.taxYear}} — Dubai 0% vs DTV Visa",
+  "metaTitle": "UAE vs Thailand Tax Comparison 2026 | Remotax",
   "metaDescription": "{{es.taxYear}} UAE vs Thailand remote worker tax comparison. Compare Dubai {{ae.incomeTaxRatePercent}} tax vs Thailand progressive PIT & Por. 161/2566, living costs, and net pay.",
   "intro": "Comparing the United Arab Emirates with Thailand contrasts the Middle East's 0% personal tax jurisdiction with a major Southeast Asian remote work destination. Dubai offers {{ae.incomeTaxRatePercent}} personal income tax, {{ae.socialSecurityRatePercent}} social security, international banking, and an established urban infrastructure. Thailand counters with tropical geography, the 5-year Destination Thailand Visa (DTV), and living costs roughly 50% lower than Dubai. For international remote workers, the choice revolves around whether Thailand's lower living costs outweigh Dubai's statutory zero-tax status, zero remittance taxation, and US Dollar-pegged currency.",
   "regimeComparison": "The UAE provides a statutory {{ae.incomeTaxRatePercent}} personal income tax rate across all income levels without remittance rules or time limits. Thailand taxes tax residents spending 180+ days under progressive PIT brackets ({{th.taxBrackets.rangePercent}}) on foreign income remitted into the country under Revenue Department Instructions Por. 161/2566 and Por. 162/2566. Thailand offers {{th.taxBrackets.minRatePercent}} tax strictly on income kept offshore that is never transferred or spent in Thailand.",

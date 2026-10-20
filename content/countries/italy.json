@@ -2,7 +2,7 @@
   "slug": "italy",
   "reviewStatus": "draft",
   "h1": "Italy Remote Worker Tax Calculator 2026",
-  "metaTitle": "Italy Remote Worker Tax Calculator 2026 — 50% Impatriati",
+  "metaTitle": "Italy Remote Worker Tax Calculator 2026 | Remotax",
   "metaDescription": "Calculate 2026 Italy net pay under 3-bracket IRPEF and 50% Regime Impatriati. Model employee vs Gestione Separata, INPS massimale, and Rome living costs.",
   "heroBadge": "Tax Year 2026 Statutory Rules",
   "intro": "At €100,000 gross income, a remote employee in Italy retains {{it.netPay100kStdEmployeeFormatted}} net under standard IRPEF ({{it.effectiveRate100kStdEmployee}} effective rate), or {{it.netPay100kImpatriatiEmployeeFormatted}} net ({{it.effectiveRate100kImpatriatiEmployee}} effective rate) under the 50% Regime Impatriati. Independent contractors take home {{it.netPay100kStdContractorFormatted}} ({{it.effectiveRate100kStdContractor}} effective rate) or {{it.netPay100kImpatriatiContractorFormatted}} with Impatriati ({{it.effectiveRate100kImpatriatiContractor}} effective rate). Social security contributions are capped at Italy's statutory massimale of {{it.inps.massimaleFormatted}}.",

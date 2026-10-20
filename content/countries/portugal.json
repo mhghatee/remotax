@@ -2,7 +2,7 @@
   "slug": "portugal",
   "reviewStatus": "draft",
   "h1": "Portugal Remote Worker Tax Calculator 2026",
-  "metaTitle": "Portugal Remote Worker Tax Calculator 2026 — 20% IFICI",
+  "metaTitle": "Portugal Remote Worker Tax 2026 Calculator | Remotax",
   "metaDescription": "Calculate 2026 Portugal net pay under standard IRS ({{pt.taxBrackets.bracketRange}}) and 20% IFICI. Model employee vs recibos verdes, 12xIAS SS cap, and Lisbon costs.",
   "heroBadge": "Tax Year 2026 Statutory Rules",
   "intro": "At €100,000 gross income, a remote employee in Portugal takes home {{pt.netPay100kStdEmployeeFormatted}} net under standard progressive IRS ({{pt.effectiveRate100kStdEmployee}} effective rate), or {{pt.netPay100kIficiEmployeeFormatted}} net ({{pt.effectiveRate100kIficiEmployee}} effective rate) if qualifying for the 20% IFICI incentive. Remote contractors under Category B retain {{pt.netPay100kStdContractorFormatted}} net ({{pt.effectiveRate100kStdContractor}} effective rate). Employee social security is 11% uncapped, while contractor contributions cap at {{pt.contractor.maxAnnualSSRoundedFormatted}} annually.",

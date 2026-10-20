@@ -4,7 +4,7 @@
   "countryCode": "IT",
   "regimeId": "impatriati",
   "h1": "Italy Regime Impatriati {{it.taxYear}} Guide & Tax Calculator",
-  "metaTitle": "Italy Regime Impatriati {{it.taxYear}} — 50% Exemption Net Pay",
+  "metaTitle": "Italy Regime Impatriati 2026 Expat Guide | Remotax",
   "metaDescription": "Complete {{it.taxYear}} Italy Regime Impatriati tax guide. 50% exemption under D.Lgs. 209/2023, €600k cap, 4-year stay requirement, and INPS Gestione Separata analysis.",
   "heroBadge": "Regime Lavoratori Impatriati • D.Lgs. 209/2023 Art. 5",
   "intro": "The Italian Inbound Workers Tax Regime (Regime dei Lavoratori Impatriati), reformed under Article 5 of Legislative Decree No. 209/2023, is Italy's cornerstone statutory mechanism for attracting high-skilled international professionals, remote corporate specialists, and independent entrepreneurs. Beneficiaries who establish tax residence in Italy receive a direct {{it.impatriati.exemptionPercent}} statutory personal income tax exemption on qualifying employment and self-employment earnings, effectively slashing their national IRPEF liability by half. The exemption increases to {{it.impatriati.childExemptionPercent}} for workers who relocate with an accompanying minor child or who purchase a primary residential property in Italy. The regime applies to annual assessable earnings up to {{it.impatriati.capFormatted}} for a duration of {{it.impatriati.durationYears}} consecutive tax years, offering substantial net income retention for qualifying inbound talent.",

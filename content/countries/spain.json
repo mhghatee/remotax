@@ -2,7 +2,7 @@
   "slug": "spain",
   "reviewStatus": "draft",
   "h1": "Spain Remote Worker Tax Calculator 2026",
-  "metaTitle": "Spain Remote Worker Tax Calculator 2026 — 24% Beckham Law",
+  "metaTitle": "Spain Remote Worker Tax Calculator 2026 | Remotax",
   "metaDescription": "Calculate 2026 Spain net pay under standard IRPF and 24% Beckham Law. Compare employee vs autónomo rates, {{es.employee.maxAnnualBaseFormatted}} SS cap, and Madrid living costs.",
   "heroBadge": "Tax Year 2026 Statutory Rules",
   "intro": "At €100,000 gross income, a remote employee in Spain retains {{es.netPay100kStdEmployeeFormatted}} net under standard IRPF ({{es.effectiveRate100kStdEmployee}} effective rate), or {{es.netPay100kBeckhamEmployeeFormatted}} net ({{es.effectiveRate100kBeckhamEmployee}} effective rate) under the 24% Beckham Law. Remote contractors take home {{es.netPay100kStdContractorFormatted}} ({{es.effectiveRate100kStdContractor}} effective rate). Employee social security contributions cap at {{es.employee.maxAnnualSSRoundedFormatted}} annually. Self-employed autónomo contributions evaluate the statutory minimum base across 15 income tramos ({{es.autonomo.minCuotaFormatted}} to {{es.autonomo.maxCuotaFormatted}} monthly, totaling {{es.autonomo.maxAnnualSSRoundedFormatted}} annually in our model), while an autónomo electing the maximum contribution base pays up to {{es.autonomo.optionalMaxMonthlyCuotaFormatted}} monthly ({{es.autonomo.optionalMaxAnnualSSFormatted}} annually).",

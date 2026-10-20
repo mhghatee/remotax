@@ -617,7 +617,7 @@ for (const p of activeSeoPages) {
   // 1. Social security
   if (/social security/i.test(verifiedPart)) {
     let codes = [];
-    if (p.pageType === 'country' || p.pageType === 'regime' || p.pageType === 'salary') codes = [p.countryCode];
+    if (p.pageType === 'country' || p.pageType === 'regime' || p.pageType === 'salary' || (p.pageType === 'salary-hub' && p.countryCode)) codes = [p.countryCode];
     else if (p.pageType === 'comparison') codes = p.countryCodes || [];
     else codes = ['ES', 'PT', 'IT', 'AE', 'TH'];
 

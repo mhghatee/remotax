@@ -2,7 +2,7 @@
   "slug": "uae",
   "reviewStatus": "draft",
   "h1": "UAE Remote Worker Tax & Salary Calculator 2026",
-  "metaTitle": "UAE Remote Worker Tax Calculator 2026 — Dubai 0% Net Pay",
+  "metaTitle": "UAE Dubai Remote Worker Tax Calculator 2026 | Remotax",
   "metaDescription": "Calculate 2026 UAE net pay with 0% personal tax and 0% social security. Model Dubai Virtual Working visa requirements, AED 1M corporate threshold, and costs.",
   "heroBadge": "Tax Year 2026 Statutory Rules",
   "intro": "At $100,000 gross income, a remote worker in the UAE retains {{ae.netPay100kFormatted}} net ({{ae.effectiveRate100k}} effective rate), benefiting from 0% statutory personal income tax and 0% mandatory social security withholding. For independent contractors, individual business revenue remains exempt from the UAE's 9% corporate tax up to {{ae.corporateTaxThresholdAEDFormatted}} under Cabinet Decision 49/2023.",

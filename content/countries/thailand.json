@@ -2,7 +2,7 @@
   "slug": "thailand",
   "reviewStatus": "draft",
   "h1": "Thailand Remote Worker Tax Calculator 2026",
-  "metaTitle": "Thailand Remote Worker Tax Calculator 2026 — DTV Net Pay",
+  "metaTitle": "Thailand Remote Worker Tax Calculator 2026 | Remotax",
   "metaDescription": "Calculate 2026 Thailand net pay under progressive PIT & Por. 161/2566 rules. Model employee vs contractor, Bangkok living costs, and DTV visa requirements.",
   "heroBadge": "Tax Year 2026 Statutory Rules",
   "intro": "At €100,000 gross income remitted into Thailand, a remote professional retains {{th.netPay100kRemittedEURFormatted}} net ({{th.effectiveRate100kRemitted}} effective rate) under statutory progressive PIT (0%–35%) with {{th.deductions.totalDeductionsFormatted}} in standard allowances and 0% social security. Foreign income that remains strictly offshore and is never transferred or spent in Thailand incurs 0% Thai personal income tax under Revenue Department Instructions Por. 161/2566 & 162/2566.",

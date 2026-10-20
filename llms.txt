@@ -1,21 +1,48 @@
 # Remotax — Global Remote Work Financial Intelligence Platform
 
-> High-precision cross-border tax, net take-home pay, and relocation intelligence platform for remote employees, contractors, freelancers, and digital nomads across 17+ statutory jurisdictions.
+> Precision cross-border statutory tax calculations, net take-home pay, and relocation intelligence for remote employees, contractors, and digital nomads across sovereign jurisdictions for tax year 2026.
 
-## Core Calculators
-- [Take-Home Pay Calculator](https://afrix.ir/remotax/calculators/take-home-pay.html): Gross-to-net salary, statutory deductions, and tax brackets for 2026.
-- [Freelancer Tax Calculator](https://afrix.ir/remotax/calculators/freelancer-tax.html): Business expense write-offs and self-employed social security regimes.
-- [Remote Worker Tax Calculator](https://afrix.ir/remotax/calculators/remote-worker-tax.html): Multi-country statutory compliance and filing status breakdown.
-- [Remote Work Savings Calculator](https://afrix.ir/remotax/calculators/remote-work-savings.html): Cost of living, local rent, and discretionary savings analysis.
+## Modern Statutory Country Hubs
+- [Spain Remote Worker Tax Calculator 2026](https://afrix.ir/remotax/countries/spain/): Official 2026 Spanish IRPF progressive rates, 24% Beckham Law flat rate, and €61,214.40 social security base máxima.
+- [Portugal Remote Worker Tax Calculator 2026](https://afrix.ir/remotax/countries/portugal/): Official 2026 Portuguese IRS progressive scale, 20% IFICI regime, and Category B simplified self-employed regime.
+- [UAE Dubai Remote Worker Tax Calculator 2026](https://afrix.ir/remotax/countries/uae/): Official 0% federal personal income tax, Virtual Working Programme, and AED exchange parity.
+- [Italy Remote Worker Tax Calculator 2026](https://afrix.ir/remotax/countries/italy/): Official 2026 Italian IRPEF progressive brackets, 50% Impatriati exemption (D.Lgs. 209/2023), and INPS massimale ceiling.
+- [Thailand Remote Worker Tax Calculator 2026](https://afrix.ir/remotax/countries/thailand/): Official progressive PIT, 5-year Destination Thailand Visa (DTV), and territorial remittance framework under Por. 161/2566.
 
-## Country Tax Engines
-- [Spain Beckham Law (24% Flat)](https://afrix.ir/remotax/tax-calculator/spain.html): Special expat regime modeling up to €600,000.
-- [Portugal D8 & IFICI (20%)](https://afrix.ir/remotax/tax-calculator/portugal.html): Digital nomad visa and scientific innovation tax regime.
-- [Germany Einkommensteuer](https://afrix.ir/remotax/tax-calculator/germany.html): Progressive tax brackets, solidarity surcharge, and statutory health insurance.
-- [Dubai / UAE 0% Tax Haven](https://afrix.ir/remotax/tax-calculator/uae.html): Zero personal income tax and zero capital gains residency.
-- [UK PAYE & National Insurance](https://afrix.ir/remotax/tax-calculator/uk.html): Personal allowance taper and Class 1/4 National Insurance.
+## Special Expatriate Tax Regimes
+- [Spain Beckham Law 2026 Statutory Guide](https://afrix.ir/remotax/regimes/beckham-law-spain/): Ley 28/2022 24% flat tax for inbound remote workers up to €600,000.
+- [Portugal IFICI Innovation Tax Regime 2026](https://afrix.ir/remotax/regimes/ifici-portugal/): Art. 58-A EBF 20% flat tax for qualifying international talent.
+- [Dubai Virtual Working Programme 2026](https://afrix.ir/remotax/regimes/dubai-virtual-working-programme/): 1-year renewable zero-tax remote residency.
+- [Italy Impatriati Expat Tax Regime 2026](https://afrix.ir/remotax/regimes/impatriati-italy/): D.Lgs. 209/2023 50% taxable income exemption up to €600,000.
+- [Thailand Destination Thailand Visa (DTV) 2026](https://afrix.ir/remotax/regimes/thailand-dtv/): 5-year multi-entry digital nomad visa with 180-day stay periods.
 
-## Head-to-Head Comparisons & Directories
-- [Spain vs Portugal](https://afrix.ir/remotax/comparisons/spain-vs-portugal.html): Beckham Law vs D8 IFICI financial tradeoff.
-- [Global Tax Havens Directory](https://afrix.ir/remotax/destinations.html): Interactive map and tax comparison of 17 statutory regimes.
-- [Relocation Readiness Quiz](https://afrix.ir/remotax/quiz.html): 5-step regime matching tool for remote professionals.
+## Canonical Cross-Border Relocation Comparisons
+- [Spain vs Portugal Tax Comparison 2026](https://afrix.ir/remotax/comparisons/spain-vs-portugal/): Beckham Law vs IFICI side-by-side net pay analysis.
+- [Spain vs UAE Tax Comparison 2026](https://afrix.ir/remotax/comparisons/spain-vs-uae/): European lifestyle vs zero-tax sovereign retention.
+- [Spain vs Italy Tax Comparison 2026](https://afrix.ir/remotax/comparisons/spain-vs-italy/): Beckham Law 24% flat rate vs Impatriati 50% exemption.
+- [Spain vs Thailand Tax Comparison 2026](https://afrix.ir/remotax/comparisons/spain-vs-thailand/): Mediterranean base vs Southeast Asian digital nomad hub.
+- [Portugal vs UAE Tax Comparison 2026](https://afrix.ir/remotax/comparisons/portugal-vs-uae/): 20% IFICI vs 0% Dubai tax comparison.
+- [Portugal vs Italy Tax Comparison 2026](https://afrix.ir/remotax/comparisons/portugal-vs-italy/): Southern European tax incentive head-to-head.
+- [Portugal vs Thailand Tax Comparison 2026](https://afrix.ir/remotax/comparisons/portugal-vs-thailand/): D8 vs DTV visa and lifestyle comparison.
+- [UAE vs Italy Tax Comparison 2026](https://afrix.ir/remotax/comparisons/uae-vs-italy/): Gulf 0% tax vs Italian cultural hub with 50% exemption.
+- [UAE vs Thailand Tax Comparison 2026](https://afrix.ir/remotax/comparisons/uae-vs-thailand/): Global financial centers vs tropical low-cost remote hubs.
+- [Italy vs Thailand Tax Comparison 2026](https://afrix.ir/remotax/comparisons/italy-vs-thailand/): European specialist incentives vs Asian nomad lifestyle.
+
+## 2026 Statutory Salary Directories & Hubs
+- [Global Remote Salary Tax Directory 2026](https://afrix.ir/remotax/salary/): Master directory of 50 pre-calculated gross-to-net salary reports.
+- [Spain Salary Tax Calculator Hub](https://afrix.ir/remotax/salary/spain/): 10 statutory compensation tiers from €30,000 to €200,000.
+- [Portugal Salary Tax Calculator Hub](https://afrix.ir/remotax/salary/portugal/): 10 statutory compensation tiers under IFICI and standard IRS.
+- [UAE Dubai Salary Tax Calculator Hub](https://afrix.ir/remotax/salary/uae/): 10 statutory compensation tiers with AED conversions.
+- [Italy Salary Tax Calculator Hub](https://afrix.ir/remotax/salary/italy/): 10 statutory compensation tiers under Impatriati and INPS caps.
+- [Thailand Salary Tax Calculator Hub](https://afrix.ir/remotax/salary/thailand/): 10 statutory compensation tiers with THB conversions.
+
+## Rankings & Methodologies
+- [Best Digital Nomad Tax Countries 2026](https://afrix.ir/remotax/best/digital-nomad-taxes/): Statutory net retention ranking for remote professionals.
+- [Statutory Calculation Methodology](https://afrix.ir/remotax/methodology/): Single source of truth, tax formulas, and evidence audit trails.
+- [Global Remote Salary Benchmarks](https://afrix.ir/remotax/benchmarks.html): Interactive visual Dataset comparing real net take-home pay.
+
+## Interactive Financial Calculators
+- [Take-Home Pay Calculator](https://afrix.ir/remotax/calculators/take-home-pay.html): Interactive gross-to-net simulation engine.
+- [Freelancer Tax Calculator](https://afrix.ir/remotax/calculators/freelancer-tax.html): Deductions, self-employed social security, and business expenses.
+- [Remote Worker Tax Calculator](https://afrix.ir/remotax/calculators/remote-worker-tax.html): Compliance modeling for international employees.
+- [Remote Work Savings Calculator](https://afrix.ir/remotax/calculators/remote-work-savings.html): Cost of living and net monthly surplus projections.

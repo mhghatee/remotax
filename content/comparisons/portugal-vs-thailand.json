@@ -6,7 +6,7 @@
     "TH"
   ],
   "h1": "Portugal vs Thailand Remote Worker Tax Comparison {{es.taxYear}}",
-  "metaTitle": "Portugal vs Thailand Tax Comparison {{es.taxYear}} — D8 vs DTV Net Pay",
+  "metaTitle": "Portugal vs Thailand Tax Comparison 2026 | Remotax",
   "metaDescription": "{{es.taxYear}} Portugal vs Thailand tax comparison. Compare Portugal IRS and IFICI vs Thailand progressive PIT and Por. 161/2566, living costs, and net pay.",
   "intro": "Evaluating Portugal against Thailand contrasts Western European coastal living with a prominent Southeast Asian digital nomad destination. Portugal offers Atlantic coastlines, EU stability, structured immigration via the D8 Nomad Visa, and potential EU citizenship after {{pt.citizenshipYears}} years. Thailand counters with a tropical climate, the 5-year Destination Thailand Visa (DTV), and living costs roughly 40% to 50% below European baselines. However, tax compliance in Thailand now requires navigating Revenue Department Instructions Por. 161/2566 and Por. 162/2566 for remitted funds, requiring a thorough financial assessment against Portugal's progressive IRS.",
   "regimeComparison": "Portugal taxes standard tax residents under progressive IRS brackets from {{pt.taxBrackets.bracketRangeLong}} (or {{pt.ifici.rate}} flat under IFICI for certified tech workers). Thailand taxes tax residents spending 180+ days on remitted foreign income under 8 progressive PIT brackets from {{th.taxBrackets.minRatePercent}} (up to {{th.taxBrackets.bracket1LimitFormatted}}) to {{th.taxBrackets.maxRatePercent}} (over ฿5,000,000). Crucially, Thailand allows a complete {{th.taxBrackets.minRatePercent}} offshore tax scenario if foreign earnings are kept entirely in overseas accounts and never remitted into Thailand.",

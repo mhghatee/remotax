@@ -70,7 +70,7 @@
     "path": "regimes/beckham-law-spain/",
     "countryCode": "ES",
     "regimeId": "beckham_law",
-    "primaryKeyword": "Spain Beckham Law 2026 Guide & Tax Calculator",
+    "primaryKeyword": "Spain Beckham Law 2026 Statutory Expat Guide",
     "secondaryKeywords": [
       "beckham law 24% flat rate",
       "special expatriate regime spain",
@@ -84,7 +84,7 @@
     "path": "regimes/ifici-portugal/",
     "countryCode": "PT",
     "regimeId": "d8_incentive",
-    "primaryKeyword": "Portugal IFICI Tax Regime 2026 (NHR 2.0 Guide)",
+    "primaryKeyword": "Portugal IFICI Tax Regime 2026 Statutory Guide",
     "secondaryKeywords": [
       "ifici 20% flat tax",
       "incentivo fiscal investigacao cientifica",
@@ -98,7 +98,7 @@
     "path": "regimes/dubai-virtual-working-programme/",
     "countryCode": "AE",
     "regimeId": "zero_tax_haven",
-    "primaryKeyword": "Dubai Virtual Working Programme 2026 Tax Guide",
+    "primaryKeyword": "Dubai Virtual Working Visa 2026 Expat Guide",
     "secondaryKeywords": [
       "dubai 1-year remote work visa",
       "uae zero income tax nomad",
@@ -112,7 +112,7 @@
     "path": "regimes/thailand-dtv/",
     "countryCode": "TH",
     "regimeId": "th_offshore_unremitted",
-    "primaryKeyword": "Thailand DTV Visa Tax Guide 2026 (Destination Thailand Visa)",
+    "primaryKeyword": "Thailand DTV Visa 2026 Tax & Remittance Guide",
     "secondaryKeywords": [
       "thailand dtv tax liability",
       "destination thailand visa tax rules",
@@ -126,7 +126,7 @@
     "path": "regimes/impatriati-italy/",
     "countryCode": "IT",
     "regimeId": "impatriati",
-    "primaryKeyword": "Italy Regime Impatriati 2026 Guide & Tax Calculator",
+    "primaryKeyword": "Italy Regime Impatriati 2026 Expat Guide",
     "secondaryKeywords": [
       "impatriati 50% exemption",
       "italy expat tax relief 2026",
@@ -1042,6 +1042,83 @@
       "200000 euro salary thailand net",
       "200k thailand take home pay",
       "thailand net salary 200000"
+    ]
+  },
+  {
+    "slug": "salary-directory",
+    "pageType": "salary-hub",
+    "path": "salary/",
+    "primaryKeyword": "Global Remote Salary Tax Benchmarks 2026",
+    "secondaryKeywords": [
+      "remote salary net pay 2026",
+      "expat take home salary comparison",
+      "digital nomad salary tax calculator",
+      "gross to net remote salary"
+    ]
+  },
+  {
+    "slug": "salary-spain",
+    "pageType": "salary-hub",
+    "path": "salary/spain/",
+    "countryCode": "ES",
+    "primaryKeyword": "Spain Salary Tax Calculator 2026 Tiers",
+    "secondaryKeywords": [
+      "spain salary net pay tiers",
+      "beckham law salary brackets 2026",
+      "spain take home pay calculator",
+      "spain gross to net salary"
+    ]
+  },
+  {
+    "slug": "salary-portugal",
+    "pageType": "salary-hub",
+    "path": "salary/portugal/",
+    "countryCode": "PT",
+    "primaryKeyword": "Portugal Salary Tax Calculator 2026 Tiers",
+    "secondaryKeywords": [
+      "portugal salary net pay tiers",
+      "ifici salary brackets 2026",
+      "portugal take home pay calculator",
+      "portugal gross to net salary"
+    ]
+  },
+  {
+    "slug": "salary-uae",
+    "pageType": "salary-hub",
+    "path": "salary/uae/",
+    "countryCode": "AE",
+    "primaryKeyword": "UAE Dubai Salary Tax Calculator 2026 Tiers",
+    "secondaryKeywords": [
+      "dubai salary net pay tiers",
+      "uae 0 tax salary brackets 2026",
+      "dubai take home pay calculator",
+      "uae gross to net salary aed"
+    ]
+  },
+  {
+    "slug": "salary-italy",
+    "pageType": "salary-hub",
+    "path": "salary/italy/",
+    "countryCode": "IT",
+    "primaryKeyword": "Italy Salary Tax Calculator 2026 Tiers",
+    "secondaryKeywords": [
+      "italy salary net pay tiers",
+      "impatriati salary brackets 2026",
+      "italy take home pay calculator",
+      "italy gross to net salary"
+    ]
+  },
+  {
+    "slug": "salary-thailand",
+    "pageType": "salary-hub",
+    "path": "salary/thailand/",
+    "countryCode": "TH",
+    "primaryKeyword": "Thailand Salary Tax Calculator 2026 Tiers",
+    "secondaryKeywords": [
+      "thailand salary net pay tiers",
+      "thailand dtv salary brackets 2026",
+      "thailand take home pay calculator",
+      "thailand gross to net salary thb"
     ]
   }
 ]
