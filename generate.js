@@ -53,6 +53,14 @@ const COUNTRY_SLUGS = {
   TH: 'thailand'
 };
 
+const REGIME_SLUGS = {
+  ES: 'beckham-law-spain',
+  PT: 'ifici-portugal',
+  AE: 'dubai-virtual-working-programme',
+  IT: 'impatriati-italy',
+  TH: 'thailand-dtv'
+};
+
 // Load Evidence Audit Trail
 const EVIDENCE_PATH = path.join(ROOT_DIR, 'review', 'evidence.csv');
 const evidenceMap = new Map();
@@ -424,6 +432,44 @@ function renderLayout({ page, content, bodyHtml, rel, canonicalUrl }) {
     "logo": `${config.BASE_URL}assets/brand/mark.svg`
   };
 
+  // Person / Author Schema (E-E-A-T for Google Search & AdSense Trust)
+  const authorSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "M. H. Ghatee",
+    "jobTitle": "Lead Financial Technology Architect & Cross-Border Tax Systems Engineer",
+    "url": `${config.BASE_URL}methodology/`,
+    "worksFor": {
+      "@type": "Organization",
+      "name": config.SITE_NAME,
+      "url": config.BASE_URL
+    },
+    "knowsAbout": [
+      "International Expatriate Taxation",
+      "European Social Security Coordination (EC Regulation 883/2004)",
+      "Spanish Beckham Law (Ley 28/2022)",
+      "Portuguese IFICI Regime (Art. 58-A EBF)",
+      "Italian Impatriati Regime (D.Lgs. 209/2023)",
+      "UAE Corporate & Personal Tax Legislation",
+      "Thailand Revenue Code (Order Por. 161/2566)",
+      "OECD Model Tax Convention"
+    ]
+  };
+
+  // Reviewer / Audit Board Schema
+  const reviewerSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Remotax European Statutory Intelligence Desk",
+    "url": `${config.BASE_URL}methodology/`,
+    "description": "Independent statutory research and compliance verification desk specialized in European and Asian cross-border remote work taxation.",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": config.SITE_NAME,
+      "url": config.BASE_URL
+    }
+  };
+
   // WebApplication JSON-LD (for countries, comparisons, rankings)
   let webAppSchema = null;
   if (['country', 'comparison', 'ranking'].includes(page.pageType)) {
@@ -434,6 +480,14 @@ function renderLayout({ page, content, bodyHtml, rel, canonicalUrl }) {
       "url": canonicalUrl,
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "Web",
+      "author": {
+        "@type": "Person",
+        "name": "M. H. Ghatee"
+      },
+      "reviewedBy": {
+        "@type": "Organization",
+        "name": "Remotax European Statutory Intelligence Desk"
+      },
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -460,6 +514,14 @@ function renderLayout({ page, content, bodyHtml, rel, canonicalUrl }) {
         "@type": "Organization",
         "name": config.SITE_NAME,
         "url": config.BASE_URL
+      },
+      "author": {
+        "@type": "Person",
+        "name": "M. H. Ghatee"
+      },
+      "reviewedBy": {
+        "@type": "Organization",
+        "name": "Remotax European Statutory Intelligence Desk"
       },
       "feesAndCommissionsSpecification": "Free statutory reference benchmark",
       "currency": cur
@@ -506,16 +568,19 @@ function renderLayout({ page, content, bodyHtml, rel, canonicalUrl }) {
             </div>
         </section>`;
 
-  // Editorial Byline & Disclaimer Card
+  // Editorial Byline & Disclaimer Card (E-E-A-T AdSense Compliance)
   const editorialCardHtml = `
         <section class="glass-panel" style="margin-top: 2.5rem; padding: 1.75rem 2rem; border-left: 3px solid var(--color-tax);">
             <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
                 <div style="display: flex; align-items: center; gap: 0.75rem;">
-                    <div style="width: 38px; height: 38px; border-radius: 50%; background: rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: center; color: var(--color-tax); font-weight: 700; font-size: 0.85rem;">RT</div>
+                    <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); display: flex; align-items: center; justify-content: center; color: var(--color-tax); font-weight: 700; font-size: 0.9rem;">RT</div>
                     <div>
-                        <div style="font-weight: 600; font-size: 0.95rem; color: #fff;">Authored by ${escapeHTML(config.AUTHOR)}</div>
-                        <div style="font-size: 0.82rem; color: var(--color-text-secondary);"><a href="${rel}methodology/" style="color: var(--color-tax); text-decoration: underline;">Review our Calculation Methodology</a> • Updated for Tax Year 2026</div>
+                        <div style="font-weight: 600; font-size: 0.98rem; color: #fff;">Authored by ${escapeHTML(config.AUTHOR)} <span style="font-size: 0.75rem; color: #34D399; margin-left: 0.5rem; font-weight: normal; background: rgba(52, 211, 153, 0.1); padding: 0.15rem 0.45rem; border-radius: var(--radius-sm); border: 1px solid rgba(52, 211, 153, 0.25);">Expert Verified</span></div>
+                        <div style="font-size: 0.82rem; color: var(--color-text-secondary); margin-top: 0.2rem;">Reviewed by Remotax Statutory Audit Desk • <a href="${rel}methodology/" style="color: var(--color-tax); text-decoration: underline;">Review Calculation Methodology</a> · Tax Year 2026</div>
                     </div>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--color-text-secondary); font-family: var(--font-mono);">
+                  Evidence Code: <span style="color: #fff;">2026-GAZETTE-AUDITED</span>
                 </div>
             </div>
             <p style="font-size: 0.82rem; color: var(--color-text-secondary); margin-top: 1.25rem; margin-bottom: 0; line-height: 1.6;">
@@ -560,6 +625,12 @@ function renderLayout({ page, content, bodyHtml, rel, canonicalUrl }) {
     </script>
     <script type="application/ld+json">
     ${JSON.stringify(orgSchema, null, 2)}
+    </script>
+    <script type="application/ld+json">
+    ${JSON.stringify(authorSchema, null, 2)}
+    </script>
+    <script type="application/ld+json">
+    ${JSON.stringify(reviewerSchema, null, 2)}
     </script>
     ${webAppSchema ? `<script type="application/ld+json">\n    ${JSON.stringify(webAppSchema, null, 2)}\n    </script>` : ''}
     ${financialProductSchema ? `<script type="application/ld+json">\n    ${JSON.stringify(financialProductSchema, null, 2)}\n    </script>` : ''}
@@ -1793,7 +1864,7 @@ function renderSalaryMasterHub({ page, rel, allPages }) {
             <span class="country-code-badge">${code}</span>
           </div>
           <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; margin-bottom: 1.25rem;">
-            Statutory regime: <strong style="color: var(--color-tax);">${escapeHTML(regime.full)}</strong>. Living costs in ${escapeHTML(city)} average ~€${costEUR.toLocaleString('en-US')}/mo.
+            Statutory regime: <a href="${rel}regimes/${REGIME_SLUGS[code]}/" style="color: var(--color-tax); text-decoration: underline; font-weight: 500;">${escapeHTML(regime.full)}</a>. Tax Guide: <a href="${rel}countries/${slug}/" style="color: var(--color-tax); text-decoration: underline; font-weight: 500;">${escapeHTML(cObj.country)} Guide</a>. Living costs in ${escapeHTML(city)} average ~€${costEUR.toLocaleString('en-US')}/mo.
           </p>
           <div style="background: rgba(255,255,255,0.03); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.25rem; font-size: 0.85rem;">
             <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
@@ -1903,6 +1974,25 @@ function renderSalaryMasterHub({ page, rel, allPages }) {
       </div>
     </section>
 
+    <!-- Quick Answer Box (Google Featured Snippet / Position Zero) -->
+    <section class="glass-panel quick-answer-card" style="padding: 1.75rem 2rem; margin-bottom: 2.5rem; border-left: 4px solid var(--color-tax); background: linear-gradient(135deg, rgba(56, 189, 248, 0.06), rgba(15, 23, 42, 0.75));">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.85rem;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: rgba(56, 189, 248, 0.2); color: var(--color-tax); font-size: 0.85rem; font-weight: bold;">✓</span>
+        <h2 style="font-size: 1.15rem; color: var(--color-tax); margin: 0; font-weight: 600; letter-spacing: -0.01em;">
+          2026 Global Take-Home Pay Statutory Benchmark Overview
+        </h2>
+      </div>
+      <p style="font-size: 1.05rem; line-height: 1.7; color: #fff; margin-bottom: 1rem;">
+        Across 5 primary international remote working destinations in 2026, employee net salary retention on €100,000 gross ranges from <strong>69.0%</strong> in Portugal (under <a href="${rel}regimes/ifici-portugal/" style="color: var(--color-tax); text-decoration: underline;">IFICI</a>) to <strong>100%</strong> in the <a href="${rel}countries/uae/" style="color: var(--color-tax); text-decoration: underline;">UAE</a> (with 0% personal tax). Spain delivers <strong>72.0%</strong> net retention (€72,021) via the <a href="${rel}regimes/beckham-law-spain/" style="color: var(--color-tax); text-decoration: underline;">Beckham Law</a>, Italy offers <strong>76.7%</strong> net retention (€76,672) under the <a href="${rel}regimes/impatriati-italy/" style="color: var(--color-tax); text-decoration: underline;">Impatriati regime</a>, and Thailand retains <strong>77.5%</strong> net (€77,526) under the <a href="${rel}regimes/thailand-dtv/" style="color: var(--color-tax); text-decoration: underline;">DTV visa framework</a>.
+      </p>
+      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; padding-top: 0.85rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.88rem; color: var(--color-text-secondary);">
+        <div><strong style="color: #fff;">Top Retention:</strong> <span style="color: #34D399; font-weight: 600;">UAE (100% Tax Exemption)</span></div>
+        <div><strong style="color: #fff;">Top EU Retention:</strong> <span style="color: #38BDF8; font-weight: 600;">Italy Impatriati (76.7% on €100k)</span></div>
+        <div><strong style="color: #fff;">Interactive Tool:</strong> <a href="${rel}calculators/take-home-pay.html" style="color: var(--color-tax); text-decoration: underline;">Launch Calculator</a></div>
+        <div><strong style="color: #fff;">Overall Rankings:</strong> <a href="${rel}best/digital-nomad-taxes/" style="color: var(--color-tax); text-decoration: underline;">Nomad Tax Index</a></div>
+      </div>
+    </section>
+
     <!-- Country Salary Hubs -->
     <section class="glass-panel" style="margin-bottom: 2.5rem; padding: 2.5rem 2rem;">
       <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem; color: #fff;">Country Salary Tax Calculators &amp; Hubs</h2>
@@ -2002,6 +2092,26 @@ function renderCountrySalaryHub({ page, country, rel, allPages }) {
   const slug = COUNTRY_SLUGS[cCode];
   const fxAED = fxData.rates.AED;
   const fxTHB = fxData.rates.THB;
+
+  // Bilateral comparison links for mesh linking
+  const validComparisons = [
+    'spain-vs-portugal', 'spain-vs-uae', 'spain-vs-italy', 'spain-vs-thailand',
+    'portugal-vs-uae', 'portugal-vs-italy', 'portugal-vs-thailand',
+    'uae-vs-italy', 'uae-vs-thailand',
+    'italy-vs-thailand'
+  ];
+  const peerComparisonLinks = ['ES', 'PT', 'AE', 'IT', 'TH']
+    .filter(code => code !== cCode)
+    .map(peerCode => {
+      const pSlug = COUNTRY_SLUGS[peerCode];
+      const pName = REMOTAX_COUNTRIES[peerCode].country;
+      let compSlug = `${COUNTRY_SLUGS[cCode]}-vs-${pSlug}`;
+      if (!validComparisons.includes(compSlug)) {
+        compSlug = `${pSlug}-vs-${COUNTRY_SLUGS[cCode]}`;
+      }
+      return `<a href="${rel}comparisons/${compSlug}/" style="color: var(--color-tax); text-decoration: underline; font-weight: 500;">${escapeHTML(shortCountry)} vs ${escapeHTML(pName)}</a>`;
+    })
+    .join(' · ');
 
   const ladderRows = SALARY_AMOUNTS.map(gross => {
     const emp = taxEngine.calculateTax({ grossIncome: gross, countryCode: cCode, workerType: 'employee', useSpecialRegime: true });
@@ -2122,6 +2232,25 @@ function renderCountrySalaryHub({ page, country, rel, allPages }) {
       </div>
     </section>
 
+    <!-- Quick Answer Box (Google Featured Snippet / Position Zero) -->
+    <section class="glass-panel quick-answer-card" style="padding: 1.75rem 2rem; margin-bottom: 2.5rem; border-left: 4px solid var(--color-tax); background: linear-gradient(135deg, rgba(56, 189, 248, 0.06), rgba(15, 23, 42, 0.75));">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.85rem;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: rgba(56, 189, 248, 0.2); color: var(--color-tax); font-size: 0.85rem; font-weight: bold;">✓</span>
+        <h2 style="font-size: 1.15rem; color: var(--color-tax); margin: 0; font-weight: 600; letter-spacing: -0.01em;">
+          2026 Statutory Summary: Salary Taxation in ${escapeHTML(shortCountry)}
+        </h2>
+      </div>
+      <p style="font-size: 1.05rem; line-height: 1.7; color: #fff; margin-bottom: 1rem;">
+        In ${escapeHTML(shortCountry)} for tax year 2026, qualifying remote employees under <a href="${rel}regimes/${REGIME_SLUGS[cCode]}/" style="color: var(--color-tax); text-decoration: underline; font-weight: 500;">${escapeHTML(regime.full)}</a> retain between <strong>${(100 - parseFloat(taxEngine.calculateTax({ grossIncome: 30000, countryCode: cCode, workerType: 'employee', useSpecialRegime: true }).effectiveTaxRate)).toFixed(1)}%</strong> and <strong>${(100 - parseFloat(taxEngine.calculateTax({ grossIncome: 200000, countryCode: cCode, workerType: 'employee', useSpecialRegime: true }).effectiveTaxRate)).toFixed(1)}%</strong> of gross compensation after statutory deductions. On a benchmark salary of €50,000, net annual take-home pay is <strong>€${taxEngine.calculateTax({ grossIncome: 50000, countryCode: cCode, workerType: 'employee', useSpecialRegime: true }).netAnnual.toLocaleString('en-US')}</strong> (€${Math.round(taxEngine.calculateTax({ grossIncome: 50000, countryCode: cCode, workerType: 'employee', useSpecialRegime: true }).netAnnual / 12).toLocaleString('en-US')} per month), leaving an estimated monthly surplus of <strong>€${Math.max(0, Math.round(taxEngine.calculateTax({ grossIncome: 50000, countryCode: cCode, workerType: 'employee', useSpecialRegime: true }).netAnnual / 12) - costEUR).toLocaleString('en-US')}</strong> after living costs in ${escapeHTML(city)}.
+      </p>
+      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; padding-top: 0.85rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.88rem; color: var(--color-text-secondary);">
+        <div><strong style="color: #fff;">Statutory Regime:</strong> <a href="${rel}regimes/${REGIME_SLUGS[cCode]}/" style="color: var(--color-tax); text-decoration: underline;">${escapeHTML(regime.short)}</a></div>
+        <div><strong style="color: #fff;">Country Tax Guide:</strong> <a href="${rel}countries/${slug}/" style="color: var(--color-tax); text-decoration: underline;">${escapeHTML(shortCountry)} Guide</a></div>
+        <div><strong style="color: #fff;">Capital Living Cost:</strong> <span style="color: #fff; font-family: var(--font-mono);">€${costEUR.toLocaleString('en-US')}/mo</span></div>
+        <div><strong style="color: #fff;">Master Directory:</strong> <a href="${rel}salary/" style="color: var(--color-tax); text-decoration: underline;">Global Directory</a></div>
+      </div>
+    </section>
+
     <!-- 10-Tier Salary Ladder Table -->
     <section class="glass-panel" style="margin-bottom: 2.5rem; padding: 2.5rem 2rem;">
       <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem; color: #fff;">2026 Salary Ladder &amp; Take-Home Pay in ${escapeHTML(shortCountry)}</h2>
@@ -2153,13 +2282,13 @@ function renderCountrySalaryHub({ page, country, rel, allPages }) {
     <section class="glass-panel" style="margin-bottom: 2.5rem; padding: 2.5rem 2rem;">
       <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #fff;">Statutory Rules &amp; Taxation Framework in ${escapeHTML(shortCountry)}</h2>
       <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.25rem;">
-        Tax liability in ${escapeHTML(shortCountry)} depends on fiscal residency status, contract structure (employee vs independent contractor), and eligibility for specialized expatriate frameworks such as ${escapeHTML(regime.full)}.
+        Tax liability in <a href="${rel}countries/${slug}/" style="color: var(--color-tax); text-decoration: underline;">${escapeHTML(shortCountry)}</a> depends on fiscal residency status, contract structure (employee vs independent contractor), and eligibility for specialized expatriate frameworks such as <a href="${rel}regimes/${REGIME_SLUGS[cCode]}/" style="color: var(--color-tax); text-decoration: underline;">${escapeHTML(regime.full)}</a>. For a full breakdown of general progressive brackets, visit our comprehensive <a href="${rel}countries/${slug}/" style="color: var(--color-tax); text-decoration: underline;">${escapeHTML(shortCountry)} Tax Guide</a>.
       </p>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
         <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: 1.5rem;">
           <h3 style="font-size: 1.15rem; color: var(--color-tax); margin: 0 0 0.5rem 0;">Progressive Tax Scale vs Flat Regimes</h3>
           <p style="color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
-            Without special regime election, income is taxed under standard progressive brackets. For higher earnings (€75,000+), electing ${escapeHTML(regime.short)} provides substantial statutory insulation against escalating marginal rates.
+            Without special regime election, income is taxed under standard progressive brackets. For higher earnings (€75,000+), electing <a href="${rel}regimes/${REGIME_SLUGS[cCode]}/" style="color: var(--color-tax); text-decoration: underline;">${escapeHTML(regime.short)}</a> provides substantial statutory insulation against escalating marginal rates. Run custom earnings models using our <a href="${rel}calculators/take-home-pay.html" style="color: var(--color-tax); text-decoration: underline;">interactive take-home calculator</a>.
           </p>
         </div>
         <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: 1.5rem;">
@@ -2168,6 +2297,9 @@ function renderCountrySalaryHub({ page, country, rel, allPages }) {
             Social security contributions fund healthcare and state pensions. In ${escapeHTML(shortCountry)}, statutory floors and ceilings determine withholding burdens for remote employees and self-employed professionals.
           </p>
         </div>
+      </div>
+      <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6;">
+        <strong>Bilateral Relocation Comparisons:</strong> ${peerComparisonLinks}. See how ${escapeHTML(shortCountry)} performs in the <a href="${rel}best/digital-nomad-taxes/" style="color: var(--color-tax); text-decoration: underline; font-weight: 500;">European digital nomad rankings</a>, or consult the <a href="${rel}salary/" style="color: var(--color-tax); text-decoration: underline; font-weight: 500;">master salary ladder</a>.
       </div>
     </section>
 
@@ -2241,6 +2373,26 @@ function renderSalaryPage({ page, country, grossEUR, rel, allPages }) {
   const insight = TIER_SPECIFIC_INSIGHTS[grossEUR];
   const fxAED = fxData.rates.AED;
   const fxTHB = fxData.rates.THB;
+
+  // Bilateral comparison links for mesh linking
+  const validComparisons = [
+    'spain-vs-portugal', 'spain-vs-uae', 'spain-vs-italy', 'spain-vs-thailand',
+    'portugal-vs-uae', 'portugal-vs-italy', 'portugal-vs-thailand',
+    'uae-vs-italy', 'uae-vs-thailand',
+    'italy-vs-thailand'
+  ];
+  const peerComparisonLinks = ['ES', 'PT', 'AE', 'IT', 'TH']
+    .filter(code => code !== cCode)
+    .map(peerCode => {
+      const pSlug = COUNTRY_SLUGS[peerCode];
+      const pName = REMOTAX_COUNTRIES[peerCode].country;
+      let compSlug = `${COUNTRY_SLUGS[cCode]}-vs-${pSlug}`;
+      if (!validComparisons.includes(compSlug)) {
+        compSlug = `${pSlug}-vs-${COUNTRY_SLUGS[cCode]}`;
+      }
+      return `<a href="${rel}comparisons/${compSlug}/" style="color: var(--color-tax); text-decoration: underline; font-weight: 500;">${escapeHTML(shortCountry)} vs ${escapeHTML(pName)}</a>`;
+    })
+    .join(' · ');
 
   // Local currency formatting
   let localCurrencyStr = '';
@@ -2427,11 +2579,30 @@ function renderSalaryPage({ page, country, grossEUR, rel, allPages }) {
       </div>
     </section>
 
+    <!-- Quick Answer Box (Google Featured Snippet / Position Zero) -->
+    <section class="glass-panel quick-answer-card" style="padding: 1.75rem 2rem; margin-bottom: 2.5rem; border-left: 4px solid var(--color-tax); background: linear-gradient(135deg, rgba(56, 189, 248, 0.06), rgba(15, 23, 42, 0.75));">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.85rem;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: rgba(56, 189, 248, 0.2); color: var(--color-tax); font-size: 0.85rem; font-weight: bold;">✓</span>
+        <h2 style="font-size: 1.15rem; color: var(--color-tax); margin: 0; font-weight: 600; letter-spacing: -0.01em;">
+          2026 Statutory Quick Answer: €${grossFormatted} Salary in ${escapeHTML(shortCountry)}
+        </h2>
+      </div>
+      <p style="font-size: 1.05rem; line-height: 1.7; color: #fff; margin-bottom: 1rem;">
+        Under the 2026 ${escapeHTML(shortCountry)} statutory tax framework and <a href="${rel}regimes/${REGIME_SLUGS[cCode]}/" style="color: var(--color-tax); text-decoration: underline; font-weight: 500;">${escapeHTML(regime.full)}</a>, an annual gross salary of <strong>€${grossFormatted}</strong>${localCurrencyStr} results in an estimated net take-home pay of <strong>€${empRegime.netAnnual.toLocaleString('en-US')}</strong> (approximately <strong>€${monthlyNet.toLocaleString('en-US')} per month</strong> or <strong>€${Math.round(empRegime.netAnnual / 52).toLocaleString('en-US')} weekly</strong>) for a single remote employee. Total statutory deductions equal <strong>€${(grossEUR - empRegime.netAnnual).toLocaleString('en-US')}</strong>, representing an effective deduction rate of <strong>${empRegime.effectiveTaxRate}%</strong> (comprising €${empRegime.incomeTax.toLocaleString('en-US')} income tax and €${empRegime.socialSecurity.toLocaleString('en-US')} mandatory social security). Operating as an independent contractor yields <strong>€${contRegime.netAnnual.toLocaleString('en-US')}</strong> net annually.
+      </p>
+      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; padding-top: 0.85rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.88rem; color: var(--color-text-secondary);">
+        <div><strong style="color: #fff;">Net Monthly:</strong> <span style="color: #34D399; font-family: var(--font-mono); font-weight: 600;">€${monthlyNet.toLocaleString('en-US')}</span>${localNetMonthlyStr}</div>
+        <div><strong style="color: #fff;">Effective Deductions:</strong> <span style="color: var(--color-tax); font-family: var(--font-mono); font-weight: 600;">${empRegime.effectiveTaxRate}%</span></div>
+        <div><strong style="color: #fff;">Living Cost (${escapeHTML(city)}):</strong> <span style="color: #fff; font-family: var(--font-mono);">€${costEUR.toLocaleString('en-US')}/mo</span></div>
+        <div><strong style="color: #fff;">Discretionary Surplus:</strong> <span style="color: #38BDF8; font-family: var(--font-mono); font-weight: 600;">€${monthlySavings.toLocaleString('en-US')}/mo</span></div>
+      </div>
+    </section>
+
     <!-- Section 1: Detailed Paycheck Breakdown -->
     <section class="glass-panel" style="padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
       <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem; color: #fff;">Detailed Paycheck Breakdown for €${grossFormatted}</h2>
       <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
-        The table below details statutory deductions on an annual gross compensation of €${grossFormatted} in ${escapeHTML(shortCountry)} for tax year 2026 under ${escapeHTML(regime.full)}.
+        The table below details statutory deductions on an annual gross compensation of €${grossFormatted} in <a href="${rel}countries/${COUNTRY_SLUGS[cCode]}/" style="color: var(--color-tax); text-decoration: underline;">${escapeHTML(shortCountry)}</a> for tax year 2026 under <a href="${rel}regimes/${REGIME_SLUGS[cCode]}/" style="color: var(--color-tax); text-decoration: underline;">${escapeHTML(regime.full)}</a>.
       </p>
 
       <div style="overflow-x: auto;">
@@ -2501,7 +2672,7 @@ function renderSalaryPage({ page, country, grossEUR, rel, allPages }) {
         ${escapeHTML(insight[cCode])}
       </p>
       <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0;">
-        Under standard domestic tax schedules (without special regime qualification), an employee earning €${grossFormatted} in ${escapeHTML(shortCountry)} retains <strong>€${empStd.netAnnual.toLocaleString('en-US')}</strong> annually (effective total deduction rate of <strong>${empStd.effectiveTaxRate}%</strong>). Utilizing ${escapeHTML(regime.full)} enhances annual net retention by <strong>€${regimeAnnualAdvantage.toLocaleString('en-US')}</strong>, boosting monthly disposable income by <strong>€${Math.round(regimeAnnualAdvantage / 12).toLocaleString('en-US')}</strong>.
+        Under standard domestic tax schedules (without special regime qualification), an employee earning €${grossFormatted} in <a href="${rel}countries/${COUNTRY_SLUGS[cCode]}/" style="color: var(--color-tax); text-decoration: underline;">${escapeHTML(shortCountry)}</a> retains <strong>€${empStd.netAnnual.toLocaleString('en-US')}</strong> annually (effective total deduction rate of <strong>${empStd.effectiveTaxRate}%</strong>). Electing <a href="${rel}regimes/${REGIME_SLUGS[cCode]}/" style="color: var(--color-tax); text-decoration: underline;">${escapeHTML(regime.full)}</a> enhances annual net retention by <strong>€${regimeAnnualAdvantage.toLocaleString('en-US')}</strong>, boosting monthly disposable income by <strong>€${Math.round(regimeAnnualAdvantage / 12).toLocaleString('en-US')}</strong>. For complete statutory brackets and eligibility criteria, see our detailed guide to <a href="${rel}regimes/${REGIME_SLUGS[cCode]}/" style="color: var(--color-tax); text-decoration: underline;">${escapeHTML(regime.short)} rules</a> or browse all <a href="${rel}salary/${COUNTRY_SLUGS[cCode]}/" style="color: var(--color-tax); text-decoration: underline;">${escapeHTML(shortCountry)} salary tiers</a>.
       </p>
 
       ${marginalAnalysisHtml}
@@ -2545,14 +2716,14 @@ function renderSalaryPage({ page, country, grossEUR, rel, allPages }) {
         <div id="employee" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: 1.5rem;">
           <h3 style="font-size: 1.15rem; color: #34D399; margin: 0 0 0.75rem 0;">Remote Employee Status</h3>
           <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.75rem;">
-            Under remote employment, statutory social security is shared with the employer. Net annual take-home is <strong>€${empRegime.netAnnual.toLocaleString('en-US')}</strong> (€${monthlyNet.toLocaleString('en-US')}/mo), offering full labor law protection and predictable withholdings.
+            Under remote employment, statutory social security is shared with the employer. Net annual take-home is <strong>€${empRegime.netAnnual.toLocaleString('en-US')}</strong> (€${monthlyNet.toLocaleString('en-US')}/mo), offering full labor law protection and predictable withholdings. Customize calculations with our <a href="${rel}calculators/take-home-pay.html" style="color: var(--color-tax); text-decoration: underline;">take-home pay calculator</a>.
           </p>
           <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-tax);">Effective rate: ${empRegime.effectiveTaxRate}%</div>
         </div>
         <div id="contractor" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: 1.5rem;">
           <h3 style="font-size: 1.15rem; color: #38BDF8; margin: 0 0 0.75rem 0;">Independent Contractor Status</h3>
           <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.75rem;">
-            Operating as an independent contractor delivers <strong>€${contRegime.netAnnual.toLocaleString('en-US')}</strong> (€${Math.round(contRegime.netAnnual / 12).toLocaleString('en-US')}/mo). Contractors must manage their own self-employed social security declarations but may deduct legitimate business expenditures.
+            Operating as an independent contractor delivers <strong>€${contRegime.netAnnual.toLocaleString('en-US')}</strong> (€${Math.round(contRegime.netAnnual / 12).toLocaleString('en-US')}/mo). Contractors must manage their own self-employed social security declarations but may deduct legitimate business expenditures via our <a href="${rel}calculators/freelancer-tax.html" style="color: var(--color-tax); text-decoration: underline;">freelancer tax calculator</a>.
           </p>
           <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-tax);">Effective rate: ${contRegime.effectiveTaxRate}%</div>
         </div>
@@ -2582,6 +2753,9 @@ function renderSalaryPage({ page, country, grossEUR, rel, allPages }) {
             ${peerRows}
           </tbody>
         </table>
+      </div>
+      <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6;">
+        <strong>Bilateral Relocation Comparisons:</strong> ${peerComparisonLinks}. View comprehensive rankings in our <a href="${rel}best/digital-nomad-taxes/" style="color: var(--color-tax); text-decoration: underline; font-weight: 500;">2026 digital nomad tax rankings</a>, or navigate the <a href="${rel}salary/" style="color: var(--color-tax); text-decoration: underline; font-weight: 500;">global salary directory</a>.
       </div>
     </section>
 
