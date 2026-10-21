@@ -712,12 +712,35 @@
     display: block;
 }
 
-/* --- Breadcrumb Navigation --- */
+/* --- Breadcrumb Navigation & Floating Nav Clearance --- */
+.pseo-layout-container {
+    padding-top: calc(var(--header-height, 72px) + 2rem);
+}
+
+@media (max-width: 768px) {
+    .pseo-layout-container {
+        padding-top: calc(var(--header-height, 72px) + 1.25rem + env(safe-area-inset-top, 0px));
+    }
+}
+
+/* Defensive fallback for any container with breadcrumb as first child */
+main.container:has(> .breadcrumb-nav:first-child) {
+    padding-top: calc(var(--header-height, 72px) + 2rem);
+}
+
+@media (max-width: 768px) {
+    main.container:has(> .breadcrumb-nav:first-child) {
+        padding-top: calc(var(--header-height, 72px) + 1.25rem + env(safe-area-inset-top, 0px));
+    }
+}
+
 .breadcrumb-nav {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 0.5rem;
     font-size: 0.84rem;
+    line-height: 1.5;
     color: var(--text-muted);
     margin-bottom: 1.5rem;
 }

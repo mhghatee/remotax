@@ -240,6 +240,7 @@ const criticalParts = [
     ".nav-brand-title .brand-tax{color:var(--horizon-peach,#F8DFC0)}",
     ".nav-brand-tag{padding:0.2rem 0.5rem;font-size:0.7rem;font-family:var(--font-mono);background:rgba(217,119,47,0.15);border:1px solid rgba(217,119,47,0.4);border-radius:9999px;color:var(--horizon-peach)}",
     ".container{max-width:1200px;margin:0 auto;padding:0 1.5rem}",
+    ".pseo-layout-container{padding-top:calc(var(--header-height,72px) + 2rem)}@media (max-width:768px){.pseo-layout-container{padding-top:calc(var(--header-height,72px) + 1.25rem + env(safe-area-inset-top,0px))}}",
     FONTS_CSS
 ];
 const criticalMin = minifyCSS(criticalParts.join('\n'));

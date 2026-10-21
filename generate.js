@@ -708,7 +708,7 @@ function renderLayout({ page, content, bodyHtml, rel, canonicalUrl }) {
     </div>
 
     <!-- Main Content Container -->
-    <main id="main-content" class="container">
+    <main id="main-content" class="container pseo-layout-container">
         ${breadcrumbHtml}
         ${bodyHtml}
         ${relatedLinksHtml}
@@ -1935,7 +1935,7 @@ function renderSalaryMasterHub({ page, rel, allPages }) {
 
   const bodyHtml = `
     <!-- Hero Section -->
-    <section class="hero-hub" style="padding: 3.5rem 0 2.5rem; text-align: center; position: relative;">
+    <section class="hero-hub" style="padding: 1.5rem 0 2.5rem; text-align: center; position: relative;">
       <div style="max-width: 900px; margin: 0 auto;">
         <div class="pill-tag" style="margin-bottom: 1.25rem;">
           <span class="pill-dot"></span> Tax Year 2026 Statutory Salary Directory
@@ -2193,7 +2193,7 @@ function renderCountrySalaryHub({ page, country, rel, allPages }) {
 
   const bodyHtml = `
     <!-- Hero Section -->
-    <section class="hero-hub" style="padding: 3.5rem 0 2.5rem; text-align: center; position: relative;">
+    <section class="hero-hub" style="padding: 1.5rem 0 2.5rem; text-align: center; position: relative;">
       <div style="max-width: 900px; margin: 0 auto;">
         <div class="pill-tag" style="margin-bottom: 1.25rem;">
           <span class="pill-dot"></span> Tax Year 2026 Statutory Salary Brackets • ${escapeHTML(shortCountry)}
@@ -2537,7 +2537,7 @@ function renderSalaryPage({ page, country, grossEUR, rel, allPages }) {
 
   const bodyHtml = `
     <!-- Hero Section -->
-    <section class="hero-hub" style="padding: 3.5rem 0 2.5rem; text-align: center; position: relative;">
+    <section class="hero-hub" style="padding: 1.5rem 0 2.5rem; text-align: center; position: relative;">
       <div style="max-width: 900px; margin: 0 auto;">
         <div class="pill-tag" style="margin-bottom: 1.25rem;">
           <span class="pill-dot"></span> Tax Year 2026 Statutory Calculation • ${escapeHTML(shortCountry)}
