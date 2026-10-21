@@ -638,7 +638,7 @@ function renderLayout({ page, content, bodyHtml, rel, canonicalUrl }) {
 
     <!-- Anti-White-Flash & Master Liquid Glass Stylesheet -->
     <style>html{background:#070B0F;color-scheme:dark;}</style>
-    <link rel="stylesheet" href="${rel}css/remotax.min.css?v=4.5.0">
+    <link rel="stylesheet" href="${rel}css/remotax.min.css?v=4.6.0">
 </head>
 <body>
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
@@ -708,7 +708,7 @@ function renderLayout({ page, content, bodyHtml, rel, canonicalUrl }) {
     </div>
 
     <!-- Main Content Container -->
-    <main id="main-content" class="container pseo-layout-container">
+    <main id="main-content" class="container pseo-layout-container" style="padding-top: calc(var(--header-height, 72px) + 2.5rem) !important;">
         ${breadcrumbHtml}
         ${bodyHtml}
         ${relatedLinksHtml}

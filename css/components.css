@@ -714,12 +714,12 @@
 
 /* --- Breadcrumb Navigation & Floating Nav Clearance --- */
 .pseo-layout-container {
-    padding-top: calc(var(--header-height, 72px) + 2rem);
+    padding-top: calc(var(--header-height, 72px) + 2.5rem) !important;
 }
 
 @media (max-width: 768px) {
     .pseo-layout-container {
-        padding-top: calc(var(--header-height, 72px) + 1.25rem + env(safe-area-inset-top, 0px));
+        padding-top: calc(var(--header-height, 72px) + 1.5rem + env(safe-area-inset-top, 0px)) !important;
     }
 }
 
